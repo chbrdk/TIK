@@ -1,0 +1,15 @@
+{
+  "name": "@msqdx/persona-reality-spec",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Persona Reality specs, schema, and golden fixtures for AUDION + Unity",
+  "license": "Apache-2.0",
+  "scripts": {
+    "validate:schema": "node scripts/validate-schema.mjs",
+    "test": "npm run validate:schema"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}
