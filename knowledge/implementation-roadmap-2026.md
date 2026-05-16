@@ -47,17 +47,16 @@ flowchart TB
   Registry --> iPad
 ```
 
-### Repo-Strategie (Multi-Repo, OSS-ready)
+### Repo-Strategie (TIK Monorepo + MSQ Deploy-Repos)
 
-| Repo | Lizenz (Vorschlag) | Inhalt |
-|------|-------------------|--------|
-| **TIK** (dieses Repo) | Apache-2.0 | Specs, OpenAPI, JSON Schema, Cursor rules, golden configs, `knowledge/` |
-| **persona-reality-unity** (neu) | MIT | Unity 6 LTS Projekt, Addressables, Timelines |
-| **AUDION-v2** (bestehend) | Apache-2.0 | Neues Modul `apps/persona-reality-api/` oder Router-Prefix `/v1` |
-| **persona-reality-companion** (neu) | MIT | iPad PWA / React Native, WebSocket bridge |
-| **msqdx-persona-reality-schema** (optional, neu) | MIT | Shared npm + PyPI package aus OpenAPI |
+| Pfad / Repo | Lizenz | Inhalt |
+|-------------|--------|--------|
+| **TIK** (Monorepo) | Apache-2.0 + MIT (`unity/`) | Specs, `backend/`, `unity/`, fixtures, `knowledge/` |
+| **AUDION-v2** (Deploy) | Apache-2.0 | Spiegelt `TIK/backend/` für Coolify-Produktion |
+| **companion/** (später in TIK oder eigen) | MIT | iPad PWA, WebSocket bridge |
+| **CHECKION / PLEXON** | — | Föderierte Produkte, keine VR-Runtime |
 
-**Warum nicht Monorepo:** PLEXON, CHECKION, AUDION sind bereits getrennte Deploy-Einheiten auf Coolify. TIK bleibt die **Spezifikations-Quelle**; Code-Repos consumen Version-Tags (`schema@1.0.0`).
+**TIK = eine Git-URL für OSS.** AUDION/CHECKION/PLEXON bleiben separate Deploy-Einheiten; Sync-Doku: `knowledge/audion-sync.md`.
 
 ---
 

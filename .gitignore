@@ -1,2 +1,23 @@
 node_modules/
 .DS_Store
+
+# Unity (unity/)
+unity/[Ll]ibrary/
+unity/[Tt]emp/
+unity/[Oo]bj/
+unity/[Bb]uild/
+unity/[Bb]uilds/
+unity/[Ll]ogs/
+unity/[Uu]ser[Ss]ettings/
+unity/[Mm]emoryCaptures/
+unity/*.csproj
+unity/*.sln
+unity/.vs/
+
+# Python (backend/)
+backend/.venv/
+backend/**/__pycache__/
+backend/**/*.egg-info/
+backend/.pytest_cache/
+backend/dist/
+backend/build/

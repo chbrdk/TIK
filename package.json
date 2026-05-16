@@ -6,7 +6,10 @@
   "license": "Apache-2.0",
   "scripts": {
     "validate:schema": "node scripts/validate-schema.mjs",
-    "test": "npm run validate:schema"
+    "sync:unity": "bash scripts/sync-unity-fixture.sh",
+    "test": "npm run validate:schema",
+    "test:backend": "cd backend && python -m pytest -q",
+    "test:all": "npm run validate:schema && npm run sync:unity && npm run test:backend"
   },
   "devDependencies": {
     "ajv": "^8.17.1",

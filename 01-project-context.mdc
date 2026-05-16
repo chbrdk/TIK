@@ -47,10 +47,13 @@ Abstract, glowing presence (not photoreal humanoid). ElevenLabs voice. Speaks BE
 
 ## Reference documents
 
-- `persona_reality_v1_spec.md` — Master spec (dramaturgy, schema, scripts, perf budget)
-- `audion-persona-to-scene.openapi.yaml` — AUDION API contract
-- `unity-project-skeleton.md` — Unity architecture, folder structure, key contracts
-- `scene_config.v1.schema.json` — JSON Schema for the runtime config
+- `persona_reality_v1_spec.md` — Master spec (dramaturgy, schema, scripts, perf budget) — wenn vorhanden
+- `audion-persona-to-scene.openapi.yaml` — AUDION API contract (repo root)
+- `unity-project-skeleton.md` — Unity architecture (repo root)
+- `scene_config.v1.schema.json` — JSON Schema (repo root)
+- `unity/` — Unity 6 Quest client
+- `backend/` — FastAPI `/v1` session composer
+- `fixtures/golden/` — Golden scene_config sessions
 
 When in doubt, consult these in this order. Do not invent fields or break naming conventions.
 
