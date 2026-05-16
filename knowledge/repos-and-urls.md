@@ -11,7 +11,7 @@ Stand: Juni 2026
 | Repo | GitHub | Zweck |
 |------|--------|-------|
 | TIK (Specs) | https://github.com/chbrdk/TIK | OpenAPI, Schema, Rules, Knowledge |
-| persona-reality-unity | *TBD — anlegen* | Unity 6 Quest 3 Client |
+| persona-reality-unity | `/Users/m1air/GITHUB/persona-reality-unity` (GitHub TBD) | Unity 6 Quest 3 Client |
 | persona-reality-companion | *TBD — anlegen* | iPad Booth App |
 | AUDION-v2 | *intern* | `/v1` Session Composer (Modul) |
 | CHECKION | *intern* | GEO/Ranking/Domain Metriken |
