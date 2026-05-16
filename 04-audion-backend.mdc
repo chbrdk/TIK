@@ -1,0 +1,211 @@
+---
+description: AUDION backend conventions, matching algorithm, and OpenAPI source-of-truth
+globs: ["backend/**/*.py", "backend/**/*.ts", "backend/**/*.js", "**/audion*.yaml", "**/audion*.yml", "**/openapi*.yaml"]
+alwaysApply: false
+---
+
+# AUDION Backend Rules
+
+The AUDION API composes `scene_config.json` for the Persona Reality experience. OpenAPI spec at `audion-persona-to-scene.openapi.yaml` is the **source of truth**. Generate types from it; do not hand-write divergent models.
+
+## Stack assumptions
+
+- **Python / FastAPI** (matching existing AUDION/brandion infrastructure)
+- **Pydantic v2** for models — generate from OpenAPI via `datamodel-code-generator`
+- **PostgreSQL + pgvector** for persona + environment library (matching existing infra)
+- **Voyage AI embeddings** for persona/environment matching auxiliary scoring
+- **Claude API** for any LLM-driven narrative generation
+- **Deployment:** Coolify on Hetzner, same pattern as audion/brandion
+- **Validation:** strict JSON Schema validation against `scene_config.v1.schema.json` BEFORE returning any response
+
+## The primary endpoint
+
+```
+POST /v1/sessions
+  body: { persona_id, language, client_id?, environment_overrides? }
+  returns: full SceneConfig (validated)
+  status: 201
+```
+
+This is the **only endpoint** the booth iPad calls in production. Everything else (`/personas`, `/environments`, `/environments/match`) exists for tooling, debugging, and the iPad's persona-selector UI.
+
+## Composition flow (server-side)
+
+```python
+async def compose_session(req: SessionRequest) -> SceneConfig:
+    persona = await load_persona(req.persona_id)
+    if not persona:
+        raise NotFoundError("persona")
+    
+    # 1. Match environment per act
+    environments = await match_environments_for_persona(persona)  # returns 5
+    
+    # 2. Pull data layers (async, parallel)
+    echeon_task = pull_echeon_feed(persona)
+    checkion_task = pull_checkion_snapshot(persona, req.client_id)
+    
+    # 3. Build diegetic metrics from persona + AUDION dataset
+    audion_metrics = build_diegetic_metrics(persona, environments)
+    
+    # 4. Apply brand layer if client specified
+    brand_layer = None
+    if req.client_id:
+        brand_layer = await load_brand_layer(req.client_id)
+    
+    # 5. Assemble narrative beats (Timeline-aligned per act)
+    beats = build_narrative_beats(persona, environments, req.language)
+    
+    # 6. Resolve voiceover track IDs (ElevenLabs pre-generated, just IDs in config)
+    # (No live generation in this hot path.)
+    
+    echeon = await echeon_task
+    checkion = await checkion_task
+    
+    config = SceneConfig(
+        meta=Meta(
+            scene_id=generate_session_id(),
+            persona_id=persona.id,
+            generated_at=utcnow(),
+            duration_sec=300,
+            language=req.language,
+            client_id=req.client_id,
+            schema_version="1.0",
+        ),
+        persona=persona.to_data(),
+        avatar=persona.avatar,
+        environments=environments,
+        narrative_beats=beats,
+        data_layers=DataLayers(
+            echeon=echeon,
+            checkion=checkion,
+            audion=AudionLayer(diegetic_metrics=audion_metrics),
+            storyblok=load_storyblok_mockups(persona),
+        ),
+        brand_layer=brand_layer,
+        report=ReportRef(
+            qr_url=f"https://msqdx.de/pr/r/{session_id}",
+            report_id=session_id,
+        ),
+    )
+    
+    validate_against_schema(config)
+    await persist_session(config)
+    return config
+```
+
+## Environment Matching Algorithm
+
+Implementation reference (do not deviate without changing the docs):
+
+```python
+WEIGHTS = {
+    "setting": 0.40,
+    "style":   0.20,
+    "time":    0.20,
+    "mood":    0.15,
+    "region":  0.05,
+}
+
+# Act → expected setting class
+ACT_SETTING_CONSTRAINTS = {
+    1: ["void_minimal"],
+    2: ["home_kitchen", "home_bath"],
+    3: ["workplace_office", "home_office", "workplace_workshop"],
+    4: ["home_living"],
+    5: ["void_constellation"],
+}
+
+# Act → expected time-of-day band
+ACT_TIME_BANDS = {
+    1: ["neutral"],
+    2: ["early_morning", "morning"],
+    3: ["midday", "afternoon"],
+    4: ["evening"],
+    5: ["neutral"],
+}
+
+def score(env: Environment, persona: Persona, act: int) -> float:
+    return (
+        WEIGHTS["setting"] * setting_match(env, act) +
+        WEIGHTS["style"]   * style_match(env, persona) +
+        WEIGHTS["time"]    * time_match(env, act) +
+        WEIGHTS["mood"]    * mood_match(env, persona, act) +
+        WEIGHTS["region"]  * region_match(env, persona)
+    )
+
+def setting_match(env: Environment, act: int) -> float:
+    return 1.0 if env.setting_class in ACT_SETTING_CONSTRAINTS[act] else 0.0
+
+def style_match(env: Environment, persona: Persona) -> float:
+    # Derived from persona.sector + decision_style; example mapping:
+    preferred = STYLE_PREFERENCES[(persona.axes.sector, persona.axes.decision_style)]
+    return 1.0 if env.style in preferred else 0.5
+
+# ... similar for time, mood, region
+
+async def match_environments_for_persona(persona: Persona) -> list[EnvironmentBinding]:
+    library = await load_all_environments()
+    bindings = []
+    for act in range(1, 6):
+        candidates = [(env, score(env, persona, act)) for env in library]
+        candidates.sort(key=lambda x: (-x[1], -x[0].version_priority))
+        winner = candidates[0][0]
+        bindings.append(EnvironmentBinding(
+            act=act,
+            environment_id=winner.id,
+            lighting_preset=preset_for(act),
+            time_of_day=time_for(act),
+        ))
+    return bindings
+```
+
+Tie-break: `version_priority` descending, then deterministic alphabetical on env ID. Determinism matters because the same persona should yield the same environment selection across runs (unless config changes).
+
+## Caching strategy
+
+| Resource | TTL | Notes |
+|---|---|---|
+| Persona definitions | 1 h | Static; pre-warm on deploy |
+| Environment library | 1 h | Static; pre-warm on deploy |
+| echeon feed per persona | 30 min | Pull fresh at booth open + every 30 min |
+| CHECKION snapshot per client | 1 h | Rarely changes intraday |
+| ElevenLabs voiceover tracks | Permanent | Generated once, served via Addressables (bundled into APK) |
+| Brand layers | 1 h | Per-client |
+| Session configs | 24 h | For the take-home report endpoint |
+
+## DSGVO / data handling
+
+- Visitor input from the iPad onboarding (industry + role selection) is **not PII** and not persisted beyond the session.
+- Take-home report URL contains only the `session_id`; the report includes the persona played, not visitor identity. No tracking.
+- echeon, CHECKION, AUDION data is aggregate persona-level, not visitor-level.
+- Storyblok mockup textures are pre-baked PNGs hosted on MSQ DX CDN; no live web requests from Quest.
+- Voice tracks (ElevenLabs) are pre-generated and bundled; no live TTS at runtime.
+
+This is important when pitching to Bosch, Vaillant, KSB. Cite it.
+
+## Error responses
+
+All errors return:
+```json
+{ "code": "...", "message": "...", "details": { ... } }
+```
+
+Standard codes:
+- `persona_not_found` (404)
+- `client_not_found` (404)
+- `environment_match_failed` (500) — no environment matched for an act; check library coverage
+- `schema_validation_failed` (500) — internal bug, ship logs
+- `data_layer_unavailable` (503) — echeon/CHECKION upstream down; client should retry
+
+## Testing
+
+- Snapshot test every persona × language combination against a golden `scene_config.json` per release.
+- Schema validation test runs on every CI build.
+- Latency target: p95 < 1.5 s for `POST /v1/sessions` (it's blocking the iPad → Quest handoff).
+
+## Anti-patterns
+
+- Don't add fields to `SceneConfig` without updating: OpenAPI spec → JSON Schema → Pydantic models → Unity C# DTOs → this rule file. All five.
+- Don't call ElevenLabs at request time. Tracks are pre-generated; only IDs flow.
+- Don't fetch echeon synchronously in the request path without timeout. 800 ms timeout with cached fallback.
+- Don't store the visitor's iPad selection in any user-identifiable way.

@@ -1,0 +1,173 @@
+---
+description: scene_config.json schema reference — attach when working with config JSON or its C# DTOs
+globs: ["**/scene_config*.json", "**/SceneConfig*.cs", "**/PersonaData*.cs", "**/NarrativeBeat*.cs", "**/*.schema.json"]
+alwaysApply: false
+---
+
+# scene_config.json — Schema Reference
+
+The `scene_config.json` is the **single source of truth** that AUDION writes and Unity reads. Treat it like an API contract. Schema authoritative file: `scene_config.v1.schema.json`. Version it. Never add ad-hoc fields.
+
+## Top-level shape
+
+```json
+{
+  "meta": { ... },
+  "persona": { ... },
+  "avatar": { ... },
+  "environments": [ ... ],         // exactly 5 entries, one per act
+  "narrative_beats": [ ... ],      // ordered, per act
+  "data_layers": { ... },          // echeon, checkion, audion, storyblok
+  "brand_layer": { ... } | null,   // optional client co-branding
+  "report": { ... }                // QR target for take-home
+}
+```
+
+## `meta`
+
+```json
+{
+  "scene_id": "se_8f3a1c92",          // UUID for this session
+  "persona_id": "klaus_dortmund",      // canonical persona key
+  "generated_at": "2026-05-15T09:30:00Z",
+  "duration_sec": 300,                 // target experience length
+  "language": "de",                    // "de" | "en"
+  "client_id": null,                   // optional brand
+  "schema_version": "1.0"
+}
+```
+
+## `persona`
+
+Persona axes are the matrix dimensions. AUDION's environment matcher reads these. Do not add new axis values without versioning the schema.
+
+```json
+{
+  "display_name": "Klaus Berger",
+  "age": 47,
+  "gender_expression": "male",
+  "location": "Dortmund, DE",
+  "occupation": "Hausverwalter (WEG-Verwaltung)",
+  "household": "verheiratet, 2 Kinder (12, 15)",
+  "income_band": "mid",
+  "axes": {
+    "sector": "b2b_smb_decision_maker",
+    "life_stage": "established_career",
+    "tech_affinity": "mainstream",
+    "decision_style": "rational",
+    "industry": "shk"
+  },
+  "pain_points": [ "..." ],
+  "decision_drivers": [ "..." ]
+}
+```
+
+## `environments`
+
+Exactly 5 entries. Index by `act` (1..5). The `environment_id` is a canonical key into the EnvironmentSO library; Unity resolves it via the registry.
+
+```json
+[
+  { "act": 1, "environment_id": "env_void_mirror_v1", "lighting_preset": "void_minimal", "time_of_day": "neutral" },
+  { "act": 2, "environment_id": "env_kitchen_lived_in_dach_v1", "lighting_preset": "morning_warm", "time_of_day": "07:15" },
+  ...
+]
+```
+
+Lighting presets: `morning_warm | midday_neutral | afternoon_golden | evening_warm | night_cool | void_minimal`.
+
+## `narrative_beats`
+
+Ordered list. Each beat has an `act` (which Timeline to attach to) and a trigger contract.
+
+```json
+{
+  "act": 2,
+  "trigger_type": "pickup",                    // timer | look_at | pickup | sit_down | stand_up | scene_enter | ui_interact
+  "trigger_target": "phone_main",              // GameObject ID (matches Anchor on prefab)
+  "delay_sec": 0,                              // delay AFTER trigger before VO fires
+  "duration_sec": 8,                           // total beat duration
+  "voiceover_track_id": "nova_de_act2_02",
+  "ambient_audio_id": "kitchen_morning_loop",  // optional
+  "haptic_pattern": "soft_pulse",              // none | soft_pulse | double_tap | alert
+  "ui_overlay": {                              // optional
+    "type": "news_feed",                       // news_feed | dashboard | notification | metric_badge | qr_code
+    "anchor_object": "phone_main",
+    "payload": { "feed_source": "echeon.feed_items" }
+  }
+}
+```
+
+## `data_layers.audion.diegetic_metrics`
+
+The metrics rendered **as part of the world**, not as floating charts. Each anchor object in the environment prefab has a `DiegeticMetricAnchor` component that responds.
+
+```json
+{
+  "metric_id": "compliance_pressure",
+  "label": "Compliance-Filter",
+  "value": 73,
+  "anchor_object": "wall_calendar",      // must exist in environment prefab
+  "animation_preset": "glow_warm"        // glow_warm | pulse_red | flicker | color_shift | particle_burst | scale_breath
+}
+```
+
+## `data_layers.echeon.feed_items`
+
+The persona-filtered news feed shown on Phone in Act 2. Pre-fetched server-side. Booth strategy: pull once at booth open, cache 30 min.
+
+```json
+{
+  "headline": "BEG-Förderung 2026 verschärft: Was Verwalter jetzt wissen müssen",
+  "source": "Haufe",
+  "category": "regulation",
+  "relevance_score": 0.94,
+  "published_at": "2026-05-14T08:00:00Z"
+}
+```
+
+## `brand_layer` (optional)
+
+Co-branding overlay. When present, Unity applies `props_swap` (replaces generic objects with branded equivalents) and color tokens.
+
+```json
+{
+  "client_id": "vaillant",
+  "logo_texture": "https://cdn.msqdx.de/brands/vaillant/logo.png",
+  "color_primary": "#005F61",
+  "color_secondary": "#FFFFFF",
+  "props_swap": [
+    { "from_asset": "generic_boiler", "to_asset": "vaillant_arotherm" }
+  ]
+}
+```
+
+## ID conventions
+
+All IDs in `scene_config.json` are **snake_case**:
+
+- Persona IDs: `klaus_dortmund`, `anna_stuttgart`
+- Environment IDs: `env_{setting}_{style}_{region}_v{n}` → `env_kitchen_lived_in_dach_v1`
+- Voiceover IDs: `nova_{lang}_act{n}_{seq}` → `nova_de_act2_03`
+- Diegetic metric IDs: domain-named → `compliance_pressure`, `stress_peak_evening`
+- Asset IDs (hero assets): `{brand}_{product}` → `vaillant_arotherm`, `porsche_keyfob`
+- Anchor object IDs in scenes: lowercase functional → `phone_main`, `monitor_left`, `wall_calendar`
+
+## Validation
+
+- **AUDION side:** validate against `scene_config.v1.schema.json` before responding.
+- **Unity side:** Editor-only schema check via `Json.Schema` package; runtime is try/catch with sane defaults.
+- **Required-at-minimum fields:** `meta.scene_id`, `meta.persona_id`, `meta.language`, `persona.axes`, all 5 `environments` entries, at least one `narrative_beat` per act.
+
+## Versioning rules
+
+- Any **additive** change (new optional field) is minor (1.0 → 1.1).
+- Any **removal**, **rename**, or **type change** is major (1.x → 2.0) and requires AUDION + Unity to ship together.
+- The Unity Loader rejects unknown major versions hard-fail.
+
+## Anti-patterns
+
+- Don't add fields not in the schema "just for one client." Use `brand_layer.props_swap` and `data_layers.*` payloads.
+- Don't put binary blobs in the JSON. URLs only; pre-cache textures via Addressables.
+- Don't depend on field order; consumers parse by key.
+- Don't embed translations. `language` is fixed at session start. Generate separate sessions for DE vs EN.

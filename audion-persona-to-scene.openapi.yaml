@@ -1,0 +1,610 @@
+openapi: 3.1.0
+info:
+  title: AUDION — Persona Reality API
+  version: 1.0.0
+  description: |
+    Endpoints that compose a `scene_config.json` for the Persona Reality VR experience.
+    
+    ## Composition Flow
+    
+    1. Booth iPad calls `POST /sessions` with a `persona_id` + optional `client_id` + `language`.
+    2. AUDION resolves the persona, runs the **environment matching algorithm** (see below),
+       gathers signals from echeon and CHECKION, and assembles the full scene_config.
+    3. Booth iPad receives the composed payload + a one-time `session_id` and pushes
+       it to the Quest 3 over the booth WiFi (WebSocket or direct REST).
+    
+    ## Environment Matching Algorithm
+    
+    For each of the 5 narrative acts, AUDION selects the best-matching environment from the
+    library using a weighted score across the persona's 5 axes:
+    
+    ```
+    score(env, persona, act) =
+        w_setting   * setting_match(env, persona, act)   +
+        w_style     * style_match(env, persona)          +
+        w_region    * region_match(env, persona)         +
+        w_time      * time_match(env, act)               +
+        w_mood      * mood_match(env, persona, act)
+    ```
+    
+    Default weights: `setting=0.40, style=0.20, time=0.20, mood=0.15, region=0.05`.
+    
+    Each `*_match` function returns 0.0 – 1.0 based on tag overlap. Persona's `sector`,
+    `life_stage`, and `decision_style` drive `style` + `mood` weighting. The `act` number
+    drives `time` (Act 2 → morning, Act 4 → evening, etc.) and `setting_class` constraints
+    (Act 1/5 → `void_*`, Act 2 → `home_kitchen` / `home_bath`, Act 3 → `workplace_*` /
+    `home_office`, Act 4 → `home_living`).
+    
+    The matcher returns the highest-scoring environment; ties broken by `version_priority`
+    descending.
+
+servers:
+  - url: https://api.audion.msqdx.de/v1
+    description: Production
+  - url: https://audion-staging.msqdx.de/v1
+    description: Staging
+  - url: http://localhost:8000/v1
+    description: Local dev
+
+tags:
+  - name: sessions
+    description: Compose and retrieve full Persona Reality sessions
+  - name: personas
+    description: Browse and inspect persona library
+  - name: environments
+    description: Browse and inspect environment library
+  - name: data
+    description: Per-session data layer endpoints (echeon, CHECKION)
+  - name: reports
+    description: Take-home report retrieval (QR target)
+
+paths:
+  /sessions:
+    post:
+      tags: [sessions]
+      summary: Compose a new Persona Reality session
+      description: |
+        Generates a complete `scene_config.json` for a given persona and language.
+        This is the **primary endpoint** the booth iPad calls.
+      operationId: composeSession
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SessionRequest'
+            examples:
+              klaus_de:
+                summary: Klaus, German, no client co-branding
+                value:
+                  persona_id: klaus_dortmund
+                  language: de
+              klaus_vaillant:
+                summary: Klaus with Vaillant co-branding
+                value:
+                  persona_id: klaus_dortmund
+                  language: de
+                  client_id: vaillant
+      responses:
+        '201':
+          description: Session created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SceneConfig'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          description: Persona or client not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /sessions/{session_id}:
+    get:
+      tags: [sessions]
+      summary: Retrieve an existing session config
+      description: Useful for retrying after Quest network glitches.
+      operationId: getSession
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SceneConfig'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /personas:
+    get:
+      tags: [personas]
+      summary: List available personas
+      description: Used by the iPad onboarding UI to render the selector.
+      operationId: listPersonas
+      parameters:
+        - in: query
+          name: sector
+          schema: { type: string }
+        - in: query
+          name: industry
+          schema: { type: string }
+        - in: query
+          name: lang
+          schema: { type: string, enum: [de, en], default: de }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PersonaSummary'
+
+  /personas/{persona_id}:
+    get:
+      tags: [personas]
+      summary: Get full persona details
+      operationId: getPersona
+      parameters:
+        - in: path
+          name: persona_id
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Persona'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /environments:
+    get:
+      tags: [environments]
+      summary: List environment shells
+      operationId: listEnvironments
+      parameters:
+        - in: query
+          name: setting_class
+          schema: { type: string }
+        - in: query
+          name: style
+          schema: { type: string }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Environment'
+
+  /environments/match:
+    post:
+      tags: [environments]
+      summary: Match environments to persona axes for a given act
+      description: |
+        Exposes the matching algorithm directly. Useful for debugging persona-environment
+        pairings before composing a full session.
+      operationId: matchEnvironments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [persona_id, act]
+              properties:
+                persona_id: { type: string }
+                act: { type: integer, minimum: 1, maximum: 5 }
+                top_k: { type: integer, default: 3 }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    environment_id: { type: string }
+                    score: { type: number, minimum: 0, maximum: 1 }
+                    breakdown:
+                      type: object
+                      properties:
+                        setting: { type: number }
+                        style: { type: number }
+                        region: { type: number }
+                        time: { type: number }
+                        mood: { type: number }
+
+  /sessions/{session_id}/echeon-feed:
+    get:
+      tags: [data]
+      summary: Refresh the echeon feed for an active session
+      description: |
+        Returns the persona-filtered news feed. Booth strategy: pull once at booth open,
+        re-pull every 30 min. Quest caches results locally — never call from headset.
+      operationId: getEcheonFeed
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+        - in: query
+          name: limit
+          schema: { type: integer, default: 8, maximum: 20 }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EcheonFeedItem'
+
+  /sessions/{session_id}/checkion-snapshot:
+    get:
+      tags: [data]
+      summary: Get CHECKION metrics snapshot for the session's client/industry
+      operationId: getCheckionSnapshot
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CheckionSnapshot'
+
+  /reports/{report_id}:
+    get:
+      tags: [reports]
+      summary: Get take-home report data (target of in-VR QR code)
+      description: Returns HTML for direct browser rendering on the visitor's phone.
+      operationId: getReport
+      parameters:
+        - in: path
+          name: report_id
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: OK
+          content:
+            text/html:
+              schema: { type: string }
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Report'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+components:
+  parameters:
+    SessionId:
+      in: path
+      name: session_id
+      required: true
+      schema: { type: string }
+
+  responses:
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+  schemas:
+    SessionRequest:
+      type: object
+      required: [persona_id, language]
+      properties:
+        persona_id: { type: string, example: klaus_dortmund }
+        language: { type: string, enum: [de, en] }
+        client_id: { type: string, nullable: true, description: Optional co-branding }
+        environment_overrides:
+          type: object
+          description: Optional per-act environment_id overrides (for debugging or curation)
+          additionalProperties: { type: string }
+
+    SceneConfig:
+      type: object
+      description: |
+        The complete scene config consumed by the Unity SceneConfigLoader.
+        Schema authoritative version is `scene_config.v1.schema.json` in the repo root.
+      required: [meta, persona, avatar, environments, narrative_beats, data_layers, report]
+      properties:
+        meta: { $ref: '#/components/schemas/Meta' }
+        persona: { $ref: '#/components/schemas/Persona' }
+        avatar: { $ref: '#/components/schemas/Avatar' }
+        environments:
+          type: array
+          minItems: 5
+          maxItems: 5
+          items: { $ref: '#/components/schemas/EnvironmentBinding' }
+        narrative_beats:
+          type: array
+          items: { $ref: '#/components/schemas/NarrativeBeat' }
+        data_layers: { $ref: '#/components/schemas/DataLayers' }
+        brand_layer:
+          $ref: '#/components/schemas/BrandLayer'
+          nullable: true
+        report: { $ref: '#/components/schemas/ReportRef' }
+
+    Meta:
+      type: object
+      required: [scene_id, persona_id, generated_at, duration_sec, language]
+      properties:
+        scene_id: { type: string }
+        persona_id: { type: string }
+        generated_at: { type: string, format: date-time }
+        duration_sec: { type: integer, default: 300 }
+        language: { type: string, enum: [de, en] }
+        client_id: { type: string, nullable: true }
+        schema_version: { type: string, default: "1.0" }
+
+    PersonaSummary:
+      type: object
+      properties:
+        id: { type: string }
+        display_name: { type: string }
+        short_descriptor: { type: string }
+        axes: { $ref: '#/components/schemas/PersonaAxes' }
+
+    Persona:
+      type: object
+      required: [id, display_name, axes]
+      properties:
+        id: { type: string }
+        display_name: { type: string }
+        age: { type: integer }
+        gender_expression: { type: string, enum: [male, female, androgynous] }
+        location: { type: string }
+        occupation: { type: string }
+        household: { type: string }
+        income_band: { type: string, enum: [low, mid, upper_mid, high, uhnw] }
+        axes: { $ref: '#/components/schemas/PersonaAxes' }
+        pain_points:
+          type: array
+          maxItems: 5
+          items: { type: string }
+        decision_drivers:
+          type: array
+          maxItems: 5
+          items: { type: string }
+
+    PersonaAxes:
+      type: object
+      required: [sector, life_stage, tech_affinity, decision_style, industry]
+      properties:
+        sector:
+          type: string
+          enum:
+            - b2c_mass
+            - b2c_premium
+            - b2c_lifestyle
+            - b2b_smb_decision_maker
+            - b2b_enterprise_buyer
+            - b2b_specialist
+            - b2b_c_level
+        life_stage:
+          type: string
+          enum: [young_pro, family_phase, established_career, empty_nester, retiree]
+        tech_affinity:
+          type: string
+          enum: [early_adopter, mainstream, skeptic]
+        decision_style:
+          type: string
+          enum: [rational, emotional, social_proof, status]
+        industry: { type: string }
+
+    Avatar:
+      type: object
+      required: [rpm_avatar_id, voice_id_elevenlabs]
+      properties:
+        rpm_avatar_id: { type: string }
+        voice_id_elevenlabs: { type: string }
+        outfit_preset:
+          type: string
+          enum: [business_casual, blue_collar, leisure, premium_casual, uniform]
+
+    Environment:
+      type: object
+      required: [id, setting_class, style, version_priority]
+      properties:
+        id: { type: string }
+        display_name: { type: string }
+        setting_class:
+          type: string
+          enum:
+            - home_living
+            - home_kitchen
+            - home_bath
+            - home_office
+            - workplace_office
+            - workplace_workshop
+            - workplace_warehouse
+            - retail_floor
+            - garage_showroom
+            - outdoor_urban
+            - outdoor_suburban
+            - mobility_car
+            - mobility_transit
+            - public_cafe
+            - industrial_floor
+            - void_minimal
+            - void_constellation
+        style:
+          type: string
+          enum: [modern_clean, lived_in_casual, industrial_functional, premium_curated, traditional_warm]
+        region:
+          type: string
+          enum: [dach, mediterranean, nordic, north_american, asian]
+        moods:
+          type: array
+          items:
+            type: string
+            enum: [calm, stressed, cozy, sterile, aspirational, chaotic]
+        version_priority: { type: integer, default: 1 }
+        addressable_key: { type: string, description: Unity Addressables primary key }
+
+    EnvironmentBinding:
+      type: object
+      required: [act, environment_id, lighting_preset, time_of_day]
+      properties:
+        act: { type: integer, minimum: 1, maximum: 5 }
+        environment_id: { type: string }
+        lighting_preset:
+          type: string
+          enum: [morning_warm, midday_neutral, afternoon_golden, evening_warm, night_cool, void_minimal]
+        time_of_day: { type: string }
+        weather: { type: string, default: clear }
+        skybox_id: { type: string, nullable: true }
+
+    NarrativeBeat:
+      type: object
+      required: [act, trigger_type, voiceover_track_id]
+      properties:
+        act: { type: integer, minimum: 1, maximum: 5 }
+        trigger_type:
+          type: string
+          enum: [timer, look_at, pickup, sit_down, stand_up, scene_enter, ui_interact]
+        trigger_target: { type: string, nullable: true }
+        delay_sec: { type: number, default: 0 }
+        duration_sec: { type: number }
+        voiceover_track_id: { type: string }
+        ambient_audio_id: { type: string, nullable: true }
+        haptic_pattern:
+          type: string
+          enum: [none, soft_pulse, double_tap, alert]
+          default: none
+        ui_overlay:
+          type: object
+          nullable: true
+          properties:
+            type:
+              type: string
+              enum: [news_feed, dashboard, notification, metric_badge, qr_code]
+            anchor_object: { type: string }
+            payload: { type: object, additionalProperties: true }
+
+    DataLayers:
+      type: object
+      properties:
+        echeon:
+          type: object
+          properties:
+            feed_items:
+              type: array
+              items: { $ref: '#/components/schemas/EcheonFeedItem' }
+            cache_ttl_sec: { type: integer, default: 3600 }
+        checkion: { $ref: '#/components/schemas/CheckionSnapshot' }
+        audion:
+          type: object
+          properties:
+            diegetic_metrics:
+              type: array
+              items: { $ref: '#/components/schemas/DiegeticMetric' }
+        storyblok:
+          type: object
+          properties:
+            page_variant_a_texture: { type: string, format: uri }
+            page_variant_b_texture: { type: string, format: uri }
+
+    EcheonFeedItem:
+      type: object
+      required: [headline, source, category, relevance_score]
+      properties:
+        headline: { type: string }
+        source: { type: string }
+        category: { type: string }
+        relevance_score: { type: number, minimum: 0, maximum: 1 }
+        published_at: { type: string, format: date-time }
+        url: { type: string, format: uri, nullable: true }
+
+    CheckionSnapshot:
+      type: object
+      properties:
+        metrics:
+          type: array
+          items:
+            type: object
+            properties:
+              label: { type: string }
+              value: { type: number }
+              unit: { type: string }
+              comparison_value: { type: number, nullable: true }
+              trend: { type: string, enum: [up, down, flat] }
+
+    DiegeticMetric:
+      type: object
+      required: [metric_id, value, anchor_object, animation_preset]
+      properties:
+        metric_id: { type: string }
+        label: { type: string }
+        value: { type: number }
+        unit: { type: string, nullable: true }
+        anchor_object: { type: string }
+        animation_preset:
+          type: string
+          enum: [glow_warm, pulse_red, flicker, color_shift, particle_burst, scale_breath]
+
+    BrandLayer:
+      type: object
+      properties:
+        client_id: { type: string }
+        logo_texture: { type: string, format: uri }
+        color_primary: { type: string, pattern: '^#[0-9A-Fa-f]{6}$' }
+        color_secondary: { type: string, pattern: '^#[0-9A-Fa-f]{6}$' }
+        props_swap:
+          type: array
+          items:
+            type: object
+            properties:
+              from_asset: { type: string }
+              to_asset: { type: string }
+
+    ReportRef:
+      type: object
+      required: [qr_url, report_id]
+      properties:
+        qr_url: { type: string, format: uri }
+        report_id: { type: string }
+
+    Report:
+      type: object
+      properties:
+        report_id: { type: string }
+        persona: { $ref: '#/components/schemas/Persona' }
+        experienced_at: { type: string, format: date-time }
+        client_id: { type: string, nullable: true }
+        key_takeaways:
+          type: array
+          items: { type: string }
+        scene_snapshots:
+          type: array
+          items: { type: string, format: uri }
+
+    Error:
+      type: object
+      required: [code, message]
+      properties:
+        code: { type: string }
+        message: { type: string }
+        details: { type: object, additionalProperties: true }

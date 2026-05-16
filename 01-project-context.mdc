@@ -1,0 +1,97 @@
+---
+description: Persona Reality — overarching project context. Always loaded.
+globs: []
+alwaysApply: true
+---
+
+# Persona Reality — Project Context
+
+You are working on **Persona Reality**, a VR-based persona immersion experience built by MSQ DX. The user is Christoph Mayer, Lead AI Architect.
+
+## What we are building
+
+A 5-minute VR experience on Meta Quest 3 that puts trade-show visitors into the life of one of their target-audience personas. They become the persona, see what they see, feel the brand touchpoints, and exit with a complete understanding of an audience segment. The experience showcases MSQ DX's AI product suite (AUDION, echeon, CHECKION) as the invisible engine behind the persona logic.
+
+## Five Acts
+
+1. **The Transformation** — black void, mirror reveal, user morphs into persona
+2. **The Morning Information Diet** — echeon-powered news feed on persona's phone
+3. **The Workday** — Storyblok-personalized vs generic web, CHECKION dashboard
+4. **The Evening / Moment of Truth** — AUDION metrics rendered diegetically in scene
+5. **The Reveal** — persona graph as 3D constellation, MSQ DX brand outro
+
+## Guide character: NOVA
+
+Abstract, glowing presence (not photoreal humanoid). ElevenLabs voice. Speaks BETWEEN actions, never over them. Tone: calm, precise, slightly philosophical, never salesy. Always speaks AT the user, not WITH them. German default with English fallback.
+
+## Stack
+
+- **Unity 6 LTS** + URP + Single-Pass Stereo → Quest 3 standalone (Android, ARM64, IL2CPP, Vulkan)
+- **Meta XR All-in-One SDK** + XR Interaction Toolkit + OpenXR
+- **Ready Player Me** for persona avatars
+- **ElevenLabs** for NOVA and persona inner monologue (DE + EN)
+- **AUDION API** (FastAPI / Python on Coolify+Hetzner) — composes `scene_config.json`
+- **echeon API** — persona-filtered news signals
+- **CHECKION API** (optional) — GEO/AEO visibility metrics
+- **Storyblok** — pre-rendered page-variant textures (not live-fetched into Quest)
+- **iPad companion app** — onboarding, sends scene_config via WebSocket to Quest
+- **Take-home report** — generated server-side, accessed via in-VR QR code
+
+## Architectural pillars (non-negotiable)
+
+1. **Data-driven.** Everything (personas, environments, animations, voiceovers) lives in ScriptableObjects. Scripts never hard-reference assets; they go through `AssetReference` on SOs.
+2. **`scene_config.json` is the contract.** AUDION writes it, Unity reads it. Schema version pinned. Treat like an API spec.
+3. **Matrix not catalog.** Persona/environment combinations are composed at runtime from typed axes (5 persona axes, 5 environment axes), not authored one-by-one.
+4. **Performance-first.** Quest 3 hard targets: 90 fps sustained, < 200 draw calls, < 500k tris, < 1.5 GB texture memory. Pre-build validator enforces this.
+5. **Offline-resilient at the booth.** All assets local-bundled. Only network dependency at runtime: WebSocket from iPad with config. echeon/CHECKION data is server-pre-fetched and embedded in config.
+
+## Reference documents
+
+- `persona_reality_v1_spec.md` — Master spec (dramaturgy, schema, scripts, perf budget)
+- `audion-persona-to-scene.openapi.yaml` — AUDION API contract
+- `unity-project-skeleton.md` — Unity architecture, folder structure, key contracts
+- `scene_config.v1.schema.json` — JSON Schema for the runtime config
+
+When in doubt, consult these in this order. Do not invent fields or break naming conventions.
+
+## Naming conventions
+
+- C# classes/methods/properties: **PascalCase**
+- C# fields/locals: **camelCase**
+- JSON keys, asset IDs, addressable keys: **snake_case**
+- Asset ID examples: `env_kitchen_lived_in_dach_v1`, `klaus_dortmund`, `nova_de_act2_03`, `vaillant_arotherm`
+- Prefab prefixes: `env_*` (environments), `int_*` (interactables), `ui_*` (UI), `_*` (core singletons)
+
+## Persona axes (canonical)
+
+`sector` ∈ {b2c_mass, b2c_premium, b2c_lifestyle, b2b_smb_decision_maker, b2b_enterprise_buyer, b2b_specialist, b2b_c_level}
+`life_stage` ∈ {young_pro, family_phase, established_career, empty_nester, retiree}
+`tech_affinity` ∈ {early_adopter, mainstream, skeptic}
+`decision_style` ∈ {rational, emotional, social_proof, status}
+`industry` ∈ {automotive, shk, industrial_b2b, energy, finance, retail, health, pharma, mobility, it_saas, fmcg, tourism, media, education, public_sector}
+
+## Environment axes (canonical)
+
+`setting_class` ∈ {home_living, home_kitchen, home_bath, home_office, workplace_office, workplace_workshop, workplace_warehouse, retail_floor, garage_showroom, outdoor_urban, outdoor_suburban, mobility_car, mobility_transit, public_cafe, industrial_floor, void_minimal, void_constellation}
+`style` ∈ {modern_clean, lived_in_casual, industrial_functional, premium_curated, traditional_warm}
+`region` ∈ {dach, mediterranean, nordic, north_american, asian}
+`mood` ∈ {calm, stressed, cozy, sterile, aspirational, chaotic}
+
+## When user asks for code
+
+- Match Unity 6 + URP idioms. No HDRP. No deprecated Light or Camera APIs.
+- Avoid GC allocations in hot paths (per-frame Update). Pool, cache, MaterialPropertyBlock.
+- Prefer events over coroutines for narrative flow.
+- For JSON: Newtonsoft.Json (`com.unity.nuget.newtonsoft-json`), not JsonUtility.
+- For async: `Task` + Addressables `await`, not coroutines.
+
+## Things to push back on
+
+- "Let's generate everything live at the booth" → unreliable. Pre-compose, ship config.
+- "Codec Avatar / photoreal NOVA" → out of scope for v1. Stylized presence.
+- "Live API calls from Quest" → no. Booth WiFi is unreliable. Pre-cache everything in the config.
+- "Just hard-code the asset reference" → no. Always through SO + Addressables.
+
+## What this project is NOT
+
+Not a game. Not a metaverse playground. Not an AI tech demo. It is a **strategic empathy tool**, delivered as VR. Every design decision should serve that frame.
