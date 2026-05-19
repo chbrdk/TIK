@@ -1,0 +1,191 @@
+{
+  "act": 4,
+  "blueprint_id": "product_default_act_04",
+  "persona_id": "klaus_dortmund",
+  "story": {
+    "core_message_de": "Was dich wirklich belastet — Druck und Compliance werden im Raum spürbar.",
+    "core_message_en": "What truly weighs on you — pressure and compliance felt in the space.",
+    "user_feeling": "Erschöpfung, Reflexion, Abendstimmung",
+    "nova_role": "Emotional validieren, nicht pathologisieren"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "living-evening-pilot",
+      "prompt_en": "Cozy DACH living room evening, warm lamp light, sofa, wall calendar, documents on side table, photorealistic 360 interior, intimate scale",
+      "negative_prompt": "office, daylight harsh, empty",
+      "camera_notes": "sofa_main anchor center of couch; metrics float near calendar and documents",
+      "anchor_placements": [
+        {
+          "anchor_id": "sofa_main",
+          "description": "Sofa seat center"
+        },
+        {
+          "anchor_id": "wall_calendar",
+          "description": "Calendar on living room wall"
+        },
+        {
+          "anchor_id": "kitchen_counter_docs",
+          "description": "Document stack on side table"
+        }
+      ]
+    },
+    "prop_notes": "Diegetic metric badges (glow/pulse), no flat overlay"
+  },
+  "environment": {
+    "setting_class": "home_living",
+    "style_hint": "lived_in_casual, evening warm",
+    "region_hint": "dach",
+    "time_of_day": "19:45",
+    "lighting_preset": "evening_warm",
+    "environment_id_example": "env_home_living_lived_in_dach_v1"
+  },
+  "voiceover_tracks": {
+    "nova_de_act4_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Abend. Du lässt den Tag auf dem Sofa ausklingen.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "AUDION macht sichtbar, was dich wirklich beschäftigt.",
+          "at_sec": 5,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Compliance, Entscheidungsdruck — nicht abstrakt, sondern hier im Raum.",
+          "at_sec": 10,
+          "pause_after_sec": 0.6
+        }
+      ]
+    }
+  },
+  "act_script": {
+    "act": 4,
+    "target_duration_sec": 50,
+    "ambient_audio_id": "living_evening_loop",
+    "pre_beat_cues": [
+      {
+        "type": "ambient",
+        "ambient_audio_id": "living_evening_loop",
+        "action": "start",
+        "at_sec": 0
+      },
+      {
+        "type": "hint_primary",
+        "anchor_object": "sofa_main",
+        "at_sec": 2
+      }
+    ],
+    "beat_cue_templates": {
+      "nova_de_act4_01": [
+        {
+          "type": "hint_hide",
+          "anchor_object": "sofa_main",
+          "at_sec": 0,
+          "delay_from_beat": true
+        },
+        {
+          "type": "diegetic_metric",
+          "metric_id": "compliance_pressure",
+          "animation_preset": "glow_warm",
+          "at_sec": 2,
+          "delay_from_beat": true
+        },
+        {
+          "type": "diegetic_metric",
+          "metric_id": "stress_peak_evening",
+          "animation_preset": "pulse_red",
+          "at_sec": 5,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 20,
+          "delay_from_beat": true
+        }
+      ]
+    }
+  },
+  "narrative_beat": {
+    "act": 4,
+    "trigger_type": "sit_down",
+    "trigger_target": "sofa_main",
+    "delay_sec": 0,
+    "duration_sec": 50,
+    "voiceover_track_id": "nova_de_act4_01",
+    "ambient_audio_id": "living_evening_loop",
+    "haptic_pattern": "soft_pulse",
+    "ui_overlay": null,
+    "lines": [
+      {
+        "text": "Abend. Du lässt den Tag auf dem Sofa ausklingen.",
+        "at_sec": 0,
+        "pause_after_sec": 0.5
+      },
+      {
+        "text": "AUDION macht sichtbar, was dich wirklich beschäftigt.",
+        "at_sec": 5,
+        "pause_after_sec": 0.5
+      },
+      {
+        "text": "Compliance, Entscheidungsdruck — nicht abstrakt, sondern hier im Raum.",
+        "at_sec": 10,
+        "pause_after_sec": 0.6
+      }
+    ],
+    "estimated_duration_sec": 16,
+    "cues": [
+      {
+        "type": "hint_hide",
+        "anchor_object": "sofa_main",
+        "at_sec": 0,
+        "delay_from_beat": true
+      },
+      {
+        "type": "diegetic_metric",
+        "metric_id": "compliance_pressure",
+        "animation_preset": "glow_warm",
+        "at_sec": 2,
+        "delay_from_beat": true
+      },
+      {
+        "type": "diegetic_metric",
+        "metric_id": "stress_peak_evening",
+        "animation_preset": "pulse_red",
+        "at_sec": 5,
+        "delay_from_beat": true
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 20,
+        "delay_from_beat": true
+      }
+    ],
+    "_beat_cue_template_key": "nova_de_act4_01"
+  },
+  "data_layer_slice": {
+    "audion": {
+      "diegetic_metrics": [
+        {
+          "metric_id": "compliance_pressure",
+          "label": "Compliance-Filter",
+          "value": 73,
+          "unit": "%",
+          "anchor_object": "wall_calendar",
+          "animation_preset": "glow_warm"
+        },
+        {
+          "metric_id": "stress_peak_evening",
+          "label": "Entscheidungsdruck",
+          "value": 61,
+          "unit": "%",
+          "anchor_object": "kitchen_counter_docs",
+          "animation_preset": "pulse_red"
+        }
+      ]
+    }
+  }
+}

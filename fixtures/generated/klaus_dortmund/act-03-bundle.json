@@ -1,0 +1,205 @@
+{
+  "act": 3,
+  "blueprint_id": "product_default_act_03",
+  "persona_id": "klaus_dortmund",
+  "story": {
+    "core_message_de": "Wie Auftraggeber dich digital wahrnehmen — Sichtbarkeit, Ranking, Website-Qualität.",
+    "core_message_en": "How clients perceive you digitally — visibility, ranking, website quality.",
+    "user_feeling": "Professionell, leicht angespannt, Blick auf Monitor",
+    "nova_role": "Metriken einordnen, nicht technisch überladen"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "modern-office-360",
+      "prompt_en": "Photorealistic modern open-plan home office, daylight, desk with monitor, ergonomic chair, grey carpet, DACH apartment scale, 360 interior, monitor clearly visible on left desk area",
+      "negative_prompt": "outdoor only, empty void, night club",
+      "camera_notes": "monitor_left anchor on left monitor screen; user approaches from room center",
+      "anchor_placements": [
+        {
+          "anchor_id": "monitor_left",
+          "description": "Left monitor screen center, eye level when seated"
+        }
+      ]
+    },
+    "prop_notes": "3D bar chart diegetic on monitor surface (not HUD overlay)"
+  },
+  "environment": {
+    "setting_class": "home_office",
+    "style_hint": "modern_clean, lived-in DACH",
+    "region_hint": "dach",
+    "time_of_day": "11:30",
+    "lighting_preset": "midday_neutral",
+    "environment_id_example": "env_home_office_lived_in_dach_v1"
+  },
+  "voiceover_tracks": {
+    "nova_de_act3_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 15,
+      "lines": [
+        {
+          "text": "Vormittag im Homeoffice — zwischen E-Mails und Abrechnungen.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "CHECKION zeigt dir, wie sichtbar deine Verwaltung online ist.",
+          "at_sec": 6,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Schau auf den Monitor links.",
+          "at_sec": 11,
+          "pause_after_sec": 0.6
+        }
+      ]
+    },
+    "nova_de_act3_02": {
+      "speaker": "nova",
+      "estimated_duration_sec": 12,
+      "lines": [
+        {
+          "text": "GEO-Sichtbarkeit, Ranking, Website-Score — auf einen Blick.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "So erleben Auftraggeber deine digitale Präsenz.",
+          "at_sec": 5,
+          "pause_after_sec": 0.6
+        }
+      ]
+    }
+  },
+  "act_script": {
+    "act": 3,
+    "target_duration_sec": 55,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "track_id": "nova_de_act3_01",
+        "at_sec": 0
+      },
+      {
+        "type": "hint_primary",
+        "anchor_object": "monitor_left",
+        "at_sec": 12
+      },
+      {
+        "type": "chart_show",
+        "anchor_object": "monitor_left",
+        "at_sec": 13
+      }
+    ],
+    "beat_cue_templates": {
+      "nova_de_act3_02": [
+        {
+          "type": "hint_hide",
+          "anchor_object": "monitor_left",
+          "at_sec": 0,
+          "delay_from_beat": true
+        },
+        {
+          "type": "chart_show",
+          "anchor_object": "monitor_left",
+          "at_sec": 4,
+          "delay_from_beat": true
+        },
+        {
+          "type": "chart_hide",
+          "anchor_object": "monitor_left",
+          "at_sec": 12,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 14,
+          "delay_from_beat": true
+        }
+      ]
+    }
+  },
+  "narrative_beat": {
+    "act": 3,
+    "trigger_type": "look_at",
+    "trigger_target": "monitor_left",
+    "delay_sec": 1,
+    "duration_sec": 55,
+    "voiceover_track_id": "nova_de_act3_02",
+    "ambient_audio_id": null,
+    "haptic_pattern": "none",
+    "ui_overlay": {
+      "type": "dashboard",
+      "anchor_object": "monitor_left",
+      "payload": {
+        "source": "checkion.metrics"
+      }
+    },
+    "lines": [
+      {
+        "text": "GEO-Sichtbarkeit, Ranking, Website-Score — auf einen Blick.",
+        "at_sec": 0,
+        "pause_after_sec": 0.5
+      },
+      {
+        "text": "So erleben Auftraggeber deine digitale Präsenz.",
+        "at_sec": 5,
+        "pause_after_sec": 0.6
+      }
+    ],
+    "estimated_duration_sec": 12,
+    "cues": [
+      {
+        "type": "hint_hide",
+        "anchor_object": "monitor_left",
+        "at_sec": 0,
+        "delay_from_beat": true
+      },
+      {
+        "type": "chart_show",
+        "anchor_object": "monitor_left",
+        "at_sec": 4,
+        "delay_from_beat": true
+      },
+      {
+        "type": "chart_hide",
+        "anchor_object": "monitor_left",
+        "at_sec": 12,
+        "delay_from_beat": true
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 14,
+        "delay_from_beat": true
+      }
+    ],
+    "_beat_cue_template_key": "nova_de_act3_02"
+  },
+  "data_layer_slice": {
+    "checkion": {
+      "metrics": [
+        {
+          "label": "GEO-Sichtbarkeit",
+          "value": 68,
+          "unit": "%",
+          "comparison_value": 54,
+          "trend": "up"
+        },
+        {
+          "label": "Google-Ranking",
+          "value": 72,
+          "unit": "%",
+          "comparison_value": null,
+          "trend": "flat"
+        },
+        {
+          "label": "Website-Score",
+          "value": 81,
+          "unit": "%",
+          "comparison_value": 76,
+          "trend": "up"
+        }
+      ]
+    }
+  }
+}

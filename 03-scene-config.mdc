@@ -6,7 +6,7 @@ alwaysApply: false
 
 # scene_config.json — Schema Reference
 
-The `scene_config.json` is the **single source of truth** that AUDION writes and Unity reads. Treat it like an API contract. Schema authoritative file: `scene_config.v1.schema.json`. Version it. Never add ad-hoc fields.
+The `scene_config.json` is the **single source of truth** that AUDION writes and WebXR reads. Treat it like an API contract. Schema authoritative file: `scene_config.v1.schema.json`. Version it. Never add ad-hoc fields.
 
 ## Top-level shape
 
@@ -64,7 +64,7 @@ Persona axes are the matrix dimensions. AUDION's environment matcher reads these
 
 ## `environments`
 
-Exactly 5 entries. Index by `act` (1..5). The `environment_id` is a canonical key into the EnvironmentSO library; Unity resolves it via the registry.
+Exactly 5 entries. Index by `act` (1..5). The `environment_id` is a canonical key; WebXR resolves it to `public/worlds/<slug>/` via manifest mapping.
 
 ```json
 [
@@ -128,7 +128,7 @@ The persona-filtered news feed shown on Phone in Act 2. Pre-fetched server-side.
 
 ## `brand_layer` (optional)
 
-Co-branding overlay. When present, Unity applies `props_swap` (replaces generic objects with branded equivalents) and color tokens.
+Co-branding overlay. When present, WebXR applies `props_swap` (replaces generic objects with branded equivalents) and color tokens.
 
 ```json
 {
@@ -156,14 +156,14 @@ All IDs in `scene_config.json` are **snake_case**:
 ## Validation
 
 - **AUDION side:** validate against `scene_config.v1.schema.json` before responding.
-- **Unity side:** Editor-only schema check via `Json.Schema` package; runtime is try/catch with sane defaults.
+- **WebXR side:** Zod/ajv against `scene_config.v1.schema.json` at load; fail fast on invalid contract.
 - **Required-at-minimum fields:** `meta.scene_id`, `meta.persona_id`, `meta.language`, `persona.axes`, all 5 `environments` entries, at least one `narrative_beat` per act.
 
 ## Versioning rules
 
 - Any **additive** change (new optional field) is minor (1.0 → 1.1).
-- Any **removal**, **rename**, or **type change** is major (1.x → 2.0) and requires AUDION + Unity to ship together.
-- The Unity Loader rejects unknown major versions hard-fail.
+- Any **removal**, **rename**, or **type change** is major (1.x → 2.0) and requires AUDION + WebXR to ship together.
+- The WebXR loader rejects unknown major versions hard-fail.
 
 ## Anti-patterns
 

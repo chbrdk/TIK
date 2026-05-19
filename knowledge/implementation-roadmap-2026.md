@@ -19,7 +19,7 @@ flowchart TB
 
   subgraph booth [Booth Runtime]
     iPad[iPad Companion — React Native / PWA]
-    Quest[Quest 3 — Unity 6 URP]
+    Quest[Quest 3 — WebXR Browser]
     iPad -->|POST /v1/sessions| AUDION
     iPad -->|WebSocket scene_config| Quest
   end
@@ -51,7 +51,7 @@ flowchart TB
 
 | Pfad / Repo | Lizenz | Inhalt |
 |-------------|--------|--------|
-| **TIK** (Monorepo) | Apache-2.0 + MIT (`unity/`) | Specs, `backend/`, `unity/`, fixtures, `knowledge/` |
+| **TIK** (Monorepo) | Apache-2.0 | Specs, `backend/`, `webxr/`, fixtures, `knowledge/` |
 | **AUDION-v2** (Deploy) | Apache-2.0 | Spiegelt `TIK/backend/` für Coolify-Produktion |
 | **companion/** (später in TIK oder eigen) | MIT | iPad PWA, WebSocket bridge |
 | **CHECKION / PLEXON** | — | Föderierte Produkte, keine VR-Runtime |
@@ -62,19 +62,17 @@ flowchart TB
 
 ## 2. Tech-Stack (State of the Art, Juni 2026)
 
-### Unity Client (Quest 3)
+### WebXR Client (Quest 3)
 
 | Komponente | Version / Wahl | Begründung |
 |------------|----------------|------------|
-| Engine | **Unity 6 LTS** (6000.0.x) | LTS-Stabilität, URP-first |
-| Render | **URP** Single-Pass Stereo | Quest-Standard |
-| XR | **OpenXR** + **Unity Meta OpenXR** | Meta empfiehlt OpenXR statt Legacy Oculus Plugin ([Unity Meta Quest workflow](https://docs.unity3d.com/6000.0/Documentation/Manual/xr-meta-quest-develop.html)) |
-| Interaction | **XR Interaction Toolkit 3.x** | ~35% weniger Interactor-Overhead vs 2.x; Ziel-Latenz 55–75ms |
-| Avatare | **Ready Player Me** WebView/GLB loader | Spec-konform |
-| JSON | **Newtonsoft.Json** (Unity NuGet) | snake_case, Enums |
-| Assets | **Addressables** local-bundled | Booth-offline |
-| Narrative | **Unity Timeline** pro Act | Spec: kein Act-FSM |
-| CI | **GameCI** + custom Performance Validator | Build + Budget-Gates |
+| Runtime | **Vite** + **React** + **R3F** | Gleiche Basis wie image-blaster |
+| Splats | **@sparkjsdev/spark** + World Labs `.spz` | Booth worlds aus image-blaster |
+| XR | **WebXR Device API** | Quest Browser, kein APK |
+| Assets | `webxr/public/worlds/` + precache | Booth-offline |
+| Narrative | `NarrativeBeatRunner` + timeouts | `scene_config` beats |
+| Authoring | **image-blaster** | Welten + `anchors.json` |
+| CI | Vitest + schema validate | Kein native build pipeline |
 
 ### AUDION Backend (/v1)
 
@@ -147,7 +145,7 @@ Details: `knowledge/plexon-integration.md`
 | Deliverable | Owner | Done when |
 |-------------|-------|-----------|
 | `scene_config.v1.schema.json` | TIK | Validiert golden JSON |
-| `fixtures/golden/klaus_dortmund_de.json` | TIK | Unity + pytest grün |
+| `fixtures/golden/klaus_dortmund_de.json` | TIK | WebXR + pytest grün |
 | `LICENSE` (Apache-2.0) + `README.md` | TIK | OSS-klar |
 | `knowledge/repos-and-urls.md` | TIK | Keine hardcoded URLs im Code |
 | CI: Schema-Validate on PR | TIK | GitHub Action |
@@ -157,13 +155,13 @@ Details: `knowledge/plexon-integration.md`
 | Deliverable | Repo |
 |-------------|------|
 | OpenAPI → Pydantic (`apps/persona-reality-api/schemas/`) | AUDION-v2 |
-| OpenAPI → C# DTOs (generated or hand-maintained `Scripts/Data/`) | persona-reality-unity |
+| OpenAPI → TypeScript types (`webxr/src/schema/`) | TIK webxr |
 | `POST /v1/sessions` **stub** → golden config | AUDION-v2 |
 | `GET /v1/personas` aus VR-Persona-Tabelle | AUDION-v2 |
 | pytest: schema + snapshot | AUDION-v2 |
-| Vitest/Editor: JSON schema check | persona-reality-unity |
+| Vitest: JSON schema check | TIK webxr |
 
-**Exit:** Unity lädt Mock-Session ohne iPad; iPad könnte REST stub callen.
+**Exit:** WebXR lädt Mock-Session ohne iPad; iPad könnte REST stub callen.
 
 ### Phase 2 — AUDION Composer MVP (Woche 4–6)
 
@@ -179,20 +177,18 @@ Details: `knowledge/plexon-integration.md`
 
 **Exit:** `curl POST /v1/sessions` liefert valides, persona-spezifisches JSON.
 
-### Phase 3 — Unity Runtime Core (Woche 4–8, parallel)
+### Phase 3 — WebXR Runtime Core (Woche 4–8, parallel)
 
 | Deliverable | Details |
 |-------------|---------|
-| Projekt-Scaffold | Struktur aus `unity-project-skeleton.md` |
-| `SceneConfigLoader` + DTOs | Newtonsoft, link.xml |
-| `ActDirector` + 5 Timeline-Skelette | Act 1–5 placeholder envs |
-| `BeatTriggerSystem` + TriggerBase | Events, kein coroutine coupling |
-| Addressables groups | environments, voiceovers_de/en |
-| `BoothCompanionListener` | WebSocket mock in Editor |
-| `90_EnvironmentSandbox` | Artist iteration |
-| Performance Validator (Editor) | Draw calls, tris, materials |
+| `webxr/` scaffold | Vite, R3F, Spark |
+| `SceneConfigLoader` + Zod | Golden tests |
+| `ActDirector` Acts 2–4 | Splat worlds + overlays |
+| `sync-world-from-blaster.sh` | image-blaster → public/worlds |
+| iPad WebSocket stub | `companion:mock` |
+| Quest FPS profiling | `webxr-pilot-results.md` |
 
-**Exit:** Play Mode mit `dev_klaus_dortmund.json` durch alle 5 Acts (greybox).
+**Exit:** Quest Browser durch Acts 2–3 mit synced splat world.
 
 ### Phase 4 — Content & Data Layers (Woche 8–12)
 
@@ -200,7 +196,7 @@ Details: `knowledge/plexon-integration.md`
 |-------------|---------|
 | 3 VR Personas seed | klaus_dortmund, +2 |
 | 8–12 Environment shells | Matrix-Abdeckung Acts 1–5 |
-| NOVA VO tracks (DE) | ElevenLabs batch → Addressables |
+| NOVA VO tracks (DE) | ElevenLabs batch → `public/audio/` |
 | `EcheonFeedRenderer` auf Phone | Act 2 |
 | `CheckionDashboardRenderer` | Act 3 Monitor |
 | `DiegeticMetricAnchor` + 2 presets | glow_warm, pulse_red |
@@ -219,7 +215,7 @@ Details: `knowledge/plexon-integration.md`
 | „Nächster Besucher“ Reset | Signal an Quest |
 | Offline queue | Retry wenn AUDION kurz down |
 
-**Exit:** Booth-Flow ohne Unity Editor.
+**Exit:** Booth-Flow ohne Dev-Tools am Stand.
 
 ### Phase 6 — PLEXON & Ops (Woche 12–14)
 
@@ -246,7 +242,7 @@ Details: `knowledge/plexon-integration.md`
 | Deliverable | Details |
 |-------------|---------|
 | Public TIK repo | Specs + Schema (bereits GitHub) |
-| Unity repo public | MIT, CONTRIBUTING, issue templates |
+| WebXR client documented | README + booth guide |
 | AUDION /v1 docs | OpenAPI in README |
 | „Build your own booth“ guide | Ohne MSQ-interne Secrets |
 
@@ -273,7 +269,7 @@ Timeout: **800ms** pro Upstream, cached fallback (TIK-Regel).
 | JSON Schema validate | TIK CI, AUDION pre-response |
 | Golden snapshot diff | AUDION pytest |
 | OpenAPI breaking change | oasdiff in TIK PR |
-| Unity Performance Validator | GameCI + manual vor Messe |
+| WebXR FPS gate | Quest manual + vitest vor Messe |
 | Federation contract test | PLEXON vitest + cross-repo smoke |
 | Latency p95 < 1.5s | k6 oder pytest-benchmark auf `/v1/sessions` |
 
@@ -295,7 +291,7 @@ Timeout: **800ms** pro Upstream, cached fallback (TIK-Regel).
 
 1. **TIK:** `scene_config.v1.schema.json` + `fixtures/golden/klaus_dortmund_de.json` (erledigt in diesem PR)
 2. **AUDION-v2:** Branch `feat/persona-reality-v1` — Router-Skeleton + pytest gegen golden
-3. **persona-reality-unity:** Unity Hub Projekt anlegen, Package Manifest, `SceneConfigLoader` Stub
+3. **TIK webxr:** `SceneConfigLoader` + sync script für erste Küchen-Welt
 4. **PLEXON:** Issue/Ticket für `persona_reality` Registry-Eintrag (kein Code bis Phase 6)
 5. **CHECKION:** Service-Token mit Zugriff auf Demo-Projekt für Snapshot-Adapter
 

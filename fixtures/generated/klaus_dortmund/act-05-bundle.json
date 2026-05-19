@@ -1,0 +1,100 @@
+{
+  "act": 5,
+  "blueprint_id": "product_default_act_05",
+  "persona_id": "klaus_dortmund",
+  "story": {
+    "core_message_de": "Rückblick auf den Tag + Take-home — die drei Produktschichten im Kontext.",
+    "core_message_en": "Day recap + take-home — three product layers in context.",
+    "user_feeling": "Abschluss, Klarheit, Neugier auf Report",
+    "nova_role": "Synthese, dann klare Handlungsaufforderung (QR)"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "void-constellation",
+      "prompt_en": "Abstract dark void with glowing constellation points, subtle depth, minimalist, no furniture, cinematic space for QR panel and persona graph nodes",
+      "negative_prompt": "kitchen, office, daylight window",
+      "camera_notes": "qr_panel anchor floating at comfortable reading distance",
+      "anchor_placements": [
+        {
+          "anchor_id": "qr_panel",
+          "description": "Floating QR / report panel"
+        }
+      ]
+    },
+    "prop_notes": "QR code 3D prop; optional persona node constellation"
+  },
+  "environment": {
+    "setting_class": "void_constellation",
+    "style_hint": "abstract stars, persona graph",
+    "region_hint": "neutral",
+    "time_of_day": "neutral",
+    "lighting_preset": "void_minimal",
+    "environment_id_example": "env_void_constellation_v1"
+  },
+  "voiceover_tracks": {
+    "nova_de_act5_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 18,
+      "lines": [
+        {
+          "text": "Du hast Klaus Berger fünf Minuten lang erlebt.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "echeon, CHECKION, AUDION — ein Tag aus seiner Perspektive.",
+          "at_sec": 5,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Scanne den Code — dein Report wartet.",
+          "at_sec": 11,
+          "pause_after_sec": 0.6
+        }
+      ]
+    }
+  },
+  "act_script": {
+    "act": 5,
+    "target_duration_sec": 45,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [],
+    "beat_cue_templates": {}
+  },
+  "narrative_beat": {
+    "act": 5,
+    "trigger_type": "timer",
+    "trigger_target": null,
+    "delay_sec": 5,
+    "duration_sec": 45,
+    "voiceover_track_id": "nova_de_act5_01",
+    "ambient_audio_id": null,
+    "haptic_pattern": "none",
+    "ui_overlay": {
+      "type": "qr_code",
+      "anchor_object": "qr_panel",
+      "payload": {}
+    },
+    "lines": [
+      {
+        "text": "Du hast Klaus Berger fünf Minuten lang erlebt.",
+        "at_sec": 0,
+        "pause_after_sec": 0.5
+      },
+      {
+        "text": "echeon, CHECKION, AUDION — ein Tag aus seiner Perspektive.",
+        "at_sec": 5,
+        "pause_after_sec": 0.5
+      },
+      {
+        "text": "Scanne den Code — dein Report wartet.",
+        "at_sec": 11,
+        "pause_after_sec": 0.6
+      }
+    ],
+    "estimated_duration_sec": 18,
+    "cues": [],
+    "_beat_cue_template_key": "nova_de_act5_01"
+  },
+  "data_layer_slice": {}
+}

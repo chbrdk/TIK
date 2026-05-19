@@ -162,7 +162,7 @@ Ermöglicht Messe-Setup-Debugging aus PLEXON Board ohne Quest.
 
 ## 8. Implementierungsreihenfolge PLEXON
 
-1. **Phase 1–4:** Kein PLEXON-Code nötig (AUDION + Unity mit API Token)
+1. **Phase 1–4:** Kein PLEXON-Code nötig (AUDION + WebXR mit API Token)
 2. **Phase 5:** iPad nutzt PLEXON Login + Entitlement-Check
 3. **Phase 6:** Registry-Eintrag, Usage Events, env vars in Coolify
 4. **Phase 7+:** Admin-Bindings UI, Board MCP Tools

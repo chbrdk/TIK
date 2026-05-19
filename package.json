@@ -2,14 +2,20 @@
   "name": "@msqdx/persona-reality-spec",
   "version": "1.0.0",
   "private": true,
-  "description": "Persona Reality specs, schema, and golden fixtures for AUDION + Unity",
+  "description": "Persona Reality specs, schema, golden fixtures, WebXR client, and AUDION backend",
   "license": "Apache-2.0",
   "scripts": {
     "validate:schema": "node scripts/validate-schema.mjs",
-    "sync:unity": "bash scripts/sync-unity-fixture.sh",
-    "test": "npm run validate:schema",
+    "validate:persona-inputs": "node scripts/validate-persona-inputs.mjs",
+    "validate:persona-profile": "node scripts/validate-persona-profile.mjs",
+    "validate:act-blueprint": "node scripts/validate-act-blueprint.mjs",
+    "compile:persona": "node scripts/compile-persona-profile.mjs",
+    "compile:act": "node scripts/compile-act-blueprint.mjs",
+    "build:session": "node scripts/build-session.mjs",
+    "sync:webxr-world": "bash webxr/scripts/sync-world-from-blaster.sh",
+    "test": "npm run validate:schema && npm run validate:persona-inputs && npm run validate:persona-profile && npm run validate:act-blueprint && node scripts/test-act-blueprint.mjs && node scripts/test-persona-pipeline.mjs && node scripts/test-session-arc-compile.mjs",
     "test:backend": "cd backend && python -m pytest -q",
-    "test:all": "npm run validate:schema && npm run sync:unity && npm run test:backend"
+    "test:all": "npm run validate:schema && npm run test:backend"
   },
   "devDependencies": {
     "ajv": "^8.17.1",

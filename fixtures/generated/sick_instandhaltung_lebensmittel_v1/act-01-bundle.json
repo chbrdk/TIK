@@ -1,0 +1,125 @@
+{
+  "act": 1,
+  "blueprint_id": "sick_instandhaltung_act_01",
+  "persona_id": "sick_instandhaltung_lebensmittel_v1",
+  "story": {
+    "core_message_de": "Der Besucher wird zum Instandhalter — Spiegel im dunklen Void, Arbeitskleidung erscheint.",
+    "core_message_en": "Identity shift — you become Thomas Berger; the disruption and audit day at filling begins.",
+    "user_feeling": "Neugier, industrielle Präzision, Fokus auf Spiegel/Transformation",
+    "nova_role": "Einladend, sachlich, nicht verkäuferisch — zwischen den Handlungen sprechen"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "void-mirror",
+      "prompt_en": "Abstract dark void, single tall mirror, cool industrial rim light, subtle floor reflection, maintenance uniform silhouette hint, cinematic VR scale",
+      "negative_prompt": "clutter, people faces, text, logos, outdoor, warm cozy kitchen, living room",
+      "camera_notes": "User faces mirror at eye level; avatar reveal centered in reflection",
+      "anchor_placements": [
+        {
+          "anchor_id": "mirror_center",
+          "description": "mirror_center — from session_arc"
+        }
+      ]
+    },
+    "prop_notes": "RPM avatar morph; navy work uniform with hi-vis vest"
+  },
+  "environment": {
+    "environment_id": "env_void_mirror_sick_v1",
+    "world_slug": "void-mirror",
+    "scene_concept_de": "Minimaler schwarzer Raum, Spiegel zeigt kurz Zivilkleidung, dann Silhouette mit Werkuniform, Warnweste und Sicherheitsschuhen — erster Blick auf den Produktionstag.",
+    "setting_class": "void_minimal",
+    "style_hint": "abstract mirror, industrial undertone",
+    "region_hint": "neutral",
+    "time_of_day": "neutral",
+    "lighting_preset": "void_minimal"
+  },
+  "scene_environment": {
+    "act": 1,
+    "environment_id": "env_void_mirror_sick_v1",
+    "world_slug": "void-mirror",
+    "lighting_preset": "void_minimal",
+    "time_of_day": "neutral",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "placeholder",
+    "scene_concept_de": "Minimaler schwarzer Raum, Spiegel zeigt kurz Zivilkleidung, dann Silhouette mit Werkuniform, Warnweste und Sicherheitsschuhen — erster Blick auf den Produktionstag."
+  },
+  "voiceover_tracks": {
+    "nova_de_act1_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Willkommen bei Persona Reality.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Gleich wirst du jemand anderem — Thomas Berger, Leiter Instandhaltung in Regensburg.",
+          "at_sec": 4,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Schau in den Spiegel. Dein Stör- und Audit-Tag an der Abfülllinie beginnt jetzt.",
+          "at_sec": 9,
+          "pause_after_sec": 0.6
+        }
+      ]
+    }
+  },
+  "act_script": {
+    "act": 1,
+    "target_duration_sec": 16,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "track_id": "nova_de_act1_01",
+        "at_sec": 0
+      },
+      {
+        "type": "fade",
+        "at_sec": 15,
+        "duration_sec": 0.6,
+        "mode": "out"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 16
+      }
+    ],
+    "beat_cue_templates": {}
+  },
+  "narrative_beat": {
+    "act": 1,
+    "trigger_type": "scene_enter",
+    "trigger_target": "mirror_center",
+    "delay_sec": 2,
+    "duration_sec": 16,
+    "voiceover_track_id": "nova_de_act1_01",
+    "ambient_audio_id": null,
+    "haptic_pattern": "none",
+    "ui_overlay": null,
+    "lines": [
+      {
+        "text": "Willkommen bei Persona Reality.",
+        "at_sec": 0,
+        "pause_after_sec": 0.5
+      },
+      {
+        "text": "Gleich wirst du jemand anderem — Thomas Berger, Leiter Instandhaltung in Regensburg.",
+        "at_sec": 4,
+        "pause_after_sec": 0.5
+      },
+      {
+        "text": "Schau in den Spiegel. Dein Stör- und Audit-Tag an der Abfülllinie beginnt jetzt.",
+        "at_sec": 9,
+        "pause_after_sec": 0.6
+      }
+    ],
+    "estimated_duration_sec": 16,
+    "cues": [],
+    "_beat_cue_template_key": "nova_de_act1_01"
+  },
+  "data_layer_slice": {}
+}

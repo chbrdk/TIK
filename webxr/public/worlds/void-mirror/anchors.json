@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "world": "void-mirror",
+  "environment_id": "env_void_mirror_sick_v1",
+  "mode": "world_and_anchors_only",
+  "semantics": {
+    "metric_scale_factor": 0.8155398,
+    "ground_plane_offset": 0.4400119,
+    "flip_y": true
+  },
+  "pipeline": {
+    "generate_3d_objects": false,
+    "generate_sfx": false,
+    "world_prompt_en": "Abstract minimal void room with a tall vertical mirror surface, cool industrial rim light, photorealistic, dark floor, subtle fog, maintenance uniform silhouette hint in reflection, cinematic, 360 equirectangular interior",
+    "splat_tier": "150k"
+  },
+  "anchors": [
+    {
+      "id": "mirror_center",
+      "label": "mirror center",
+      "description": "Center of mirror plane, 1.45m height",
+      "trigger_type": "scene_enter",
+      "trigger_target": "mirror_center",
+      "position": [
+        0,
+        1.45,
+        -2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "placement_status": "inherited_default",
+      "evidence": {}
+    }
+  ],
+  "updated_at": "2026-05-19T06:27:19.007Z"
+}

@@ -1,0 +1,6 @@
+{
+  "ifs_audit_binder_stack": [0.35, 0.95, -0.75],
+  "cip_control_panel": [-0.85, 1.38, -1.85],
+  "spare_parts_shelf_sparse": [1.25, 1.25, -1.55],
+  "technician_stool": [0.0, 0.48, -0.35]
+}

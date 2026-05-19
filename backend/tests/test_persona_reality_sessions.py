@@ -25,6 +25,11 @@ def test_compose_session_klaus_de_returns_201_and_valid_schema():
     assert data["data_layers"]["echeon"]["feed_items"]
     assert data["data_layers"]["checkion"]["metrics"]
 
+    act2 = next(b for b in data["narrative_beats"] if b["act"] == 2)
+    assert act2.get("lines")
+    assert any("echeon" in line["text"] for line in act2["lines"])
+    assert act2.get("cues")
+
 
 def test_compose_session_unknown_persona_404():
     response = client.post(

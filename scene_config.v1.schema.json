@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://msqdx.de/schemas/persona-reality/scene_config.v1.schema.json",
   "title": "Persona Reality Scene Config",
-  "description": "Runtime contract between AUDION session composer and Unity SceneConfigLoader. Version 1.0.",
+  "description": "Runtime contract between AUDION session composer and WebXR SceneConfigLoader. Version 1.0.",
   "type": "object",
   "required": ["meta", "persona", "avatar", "environments", "narrative_beats", "data_layers", "report"],
   "additionalProperties": false,
@@ -108,6 +108,7 @@
       "required": ["rpm_avatar_id", "voice_id_elevenlabs"],
       "additionalProperties": false,
       "properties": {
+        "avatar_asset_id": { "type": "string", "minLength": 1 },
         "rpm_avatar_id": { "type": "string", "minLength": 1 },
         "voice_id_elevenlabs": { "type": "string", "minLength": 1 },
         "outfit_preset": {
@@ -136,7 +137,12 @@
         },
         "time_of_day": { "type": "string" },
         "weather": { "type": "string", "default": "clear" },
-        "skybox_id": { "type": ["string", "null"] }
+        "skybox_id": { "type": ["string", "null"] },
+        "world_slug": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$",
+          "description": "image-blaster world slug for WebXR splat load (agent-authored per session)"
+        }
       }
     },
     "NarrativeBeat": {
@@ -169,7 +175,45 @@
         },
         "ui_overlay": {
           "oneOf": [{ "$ref": "#/$defs/UiOverlay" }, { "type": "null" }]
+        },
+        "lines": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/VoiceoverLine" }
+        },
+        "estimated_duration_sec": { "type": "number", "minimum": 0 },
+        "cues": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/BeatCue" }
         }
+      }
+    },
+    "VoiceoverLine": {
+      "type": "object",
+      "required": ["text", "at_sec"],
+      "additionalProperties": false,
+      "properties": {
+        "text": { "type": "string", "minLength": 1 },
+        "at_sec": { "type": "number", "minimum": 0 },
+        "pause_after_sec": { "type": "number", "minimum": 0 }
+      }
+    },
+    "BeatCue": {
+      "type": "object",
+      "required": ["type", "at_sec"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "type": "string" },
+        "at_sec": { "type": "number", "minimum": 0 },
+        "delay_from_beat": { "type": "boolean" },
+        "track_id": { "type": "string" },
+        "anchor_object": { "type": "string" },
+        "metric_id": { "type": "string" },
+        "animation_preset": { "type": "string" },
+        "ambient_audio_id": { "type": "string" },
+        "action": { "type": "string" },
+        "duration_sec": { "type": "number" },
+        "mode": { "type": "string" },
+        "pattern": { "type": "string" }
       }
     },
     "UiOverlay": {

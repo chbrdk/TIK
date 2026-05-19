@@ -1,0 +1,289 @@
+{
+  "meta": {
+    "persona_id": "schott_glasbau_ingenieur",
+    "schema_version": "1.0",
+    "language": "de",
+    "display_title": "Markus Weber · Glasbau-Ingenieur Mainz"
+  },
+  "inputs": {
+    "target_audience": "Glasbau-Ingenieure und Fassadenplaner, 32–48 Jahre, DACH, technisch-rationaler Entscheider, hohe Anforderungen an Statik, Bauphysik und Normenkonformität bei Konstruktions- und Sicherheitsglas, enge Abstimmung mit Architektur und Tragwerksplanung",
+    "company": {
+      "name": "Schott",
+      "industry": "industrial_b2b",
+      "description": "Internationaler Spezialglas-Hersteller mit Fokus auf technisches und architektonisches Glas: Konstruktionsglas, Sicherheits- und Funktionsglas für Fassaden, Gebäudehülle und anspruchsvolle Bauvorhaben. Messe-Demo: immersive Persona Reality für Fachpublikum Glasbau."
+    },
+    "language": "de",
+    "session_label": "Markus Weber — Glasbau-Ingenieur Schott"
+  },
+  "persona": {
+    "id": "schott_glasbau_ingenieur",
+    "display_name": "Markus Weber",
+    "age": 41,
+    "gender_expression": "male",
+    "location": "Mainz",
+    "occupation": "Glasbau-Ingenieur",
+    "household": "verheiratet, 1 Kind (7)",
+    "income_band": "upper_mid",
+    "axes": {
+      "sector": "b2b_specialist",
+      "life_stage": "established_career",
+      "tech_affinity": "early_adopter",
+      "decision_style": "rational",
+      "industry": "industrial_b2b"
+    },
+    "pain_points": [
+      "Komplexe Nachweise für punktgelagertes Konstruktionsglas und Scheibenverbund",
+      "Spannungsfeld zwischen Architekturwunsch, Statik und Lieferfähigkeit bei Sonderformaten",
+      "Aktualisierte EU-Normen und bauphysikalische Grenzwerte (G-Wert, Brandschutz, Absturzsicherung)",
+      "Schnittstellenkonflikte zwischen Fassadenbauer, Tragwerksplaner und Glaslieferant auf der Baustelle"
+    ],
+    "decision_drivers": [
+      "Nachweisbare Sicherheit und Zertifizierbarkeit über den gesamten Projektlebenszyklus",
+      "Reproduzierbare Qualität und dokumentierte Materialeigenschaften",
+      "Termintreue und technischer Support bei Sonderlösungen",
+      "Gesamtwirtschaftlichkeit inklusive Montage- und Wartungsrisiko"
+    ],
+    "narrative_hook_de": "Ein Projektetag zwischen Fassadenmodell, Statiknachweis und der Frage, ob die gewünschte Glasgeometrie wirklich baubar ist.",
+    "narrative_hook_en": "A project day balancing facade models, structural proof, and whether the desired glass geometry is actually buildable."
+  },
+  "avatar_hints": {
+    "outfit_preset": "business_casual",
+    "visual_description_en": "Male, early 40s, business casual with safety vest nearby, technical planner, focused, German engineering office"
+  },
+  "company_context": {
+    "name": "Schott",
+    "industry": "industrial_b2b",
+    "value_proposition_de": "Spezialglas-Kompetenz für anspruchsvolle Gebäudehüllen — heute als immersive Persona-Erfahrung für Fachentscheider im Glasbau.",
+    "messaging_guardrails": [
+      "Persona first, Produkt unsichtbar im Hintergrund",
+      "Kein Hard-Sell auf der Messe",
+      "NOVA spricht zwischen Handlungen, nicht darüber",
+      "Technische Präzision, keine Marketing-Floskeln"
+    ],
+    "booth_products": ["echeon", "checkion", "audion"],
+    "echeon": {
+      "feed_angle_de": "Normen, Fassadentechnik und Markttrends, die Glasbau-Ingenieure im Tagesgeschäft betreffen",
+      "categories": ["regulation", "technology", "market"],
+      "headline_templates": [
+        "EN 16612 Update: Was {{persona.occupation}} bei punktgelagertem Glas beachten müssen",
+        "Großformat-Konstruktionsglas: Praxis aus einem Hochhausprojekt in Frankfurt",
+        "Fassadenbrandschutz und Glasaufbau: neue Leitfäden im Überblick"
+      ]
+    },
+    "checkion": {
+      "visibility_angle_de": "Wie Auftraggeber, Architekten und Generalplaner den Glasbau-Experten und {{company.name}} online wahrnehmen",
+      "suggested_metrics": [
+        {
+          "label": "Fach-Sichtbarkeit",
+          "value": 64,
+          "unit": "%",
+          "comparison_value": 51,
+          "trend": "up",
+          "rationale_de": "Im Fachsegment sichtbar, Wachstum bei Planer-Suchanfragen"
+        },
+        {
+          "label": "Referenzprojekt-Ranking",
+          "value": 71,
+          "unit": "%",
+          "comparison_value": null,
+          "trend": "flat",
+          "rationale_de": "Stabile Auffindbarkeit über Referenzfassaden"
+        },
+        {
+          "label": "Technik-Content-Score",
+          "value": 78,
+          "unit": "%",
+          "comparison_value": 69,
+          "trend": "up",
+          "rationale_de": "Starke Fachinhalte, noch Luft bei Video-Nachweisen"
+        }
+      ]
+    },
+    "audion": {
+      "inner_life_angle_de": "Abend am Küchentisch: offene Statikfragen und Verantwortung für die Fassadenentscheidung",
+      "suggested_metrics": [
+        {
+          "metric_id": "norm_compliance_load",
+          "label": "Normen-Filter",
+          "value": 76,
+          "unit": "%",
+          "anchor_object": "desk_norm_folder",
+          "animation_preset": "glow_warm",
+          "rationale_de": "Zertifizierung und Nachweise dominieren den Abend"
+        },
+        {
+          "metric_id": "project_risk_evening",
+          "label": "Projektrisiko",
+          "value": 58,
+          "unit": "%",
+          "anchor_object": "facade_detail_print",
+          "animation_preset": "pulse_red",
+          "rationale_de": "Offene Detailfragen zur Glaslagerung vor Baustellenfreigabe"
+        }
+      ]
+    },
+    "storyblok": {
+      "personalized_page_angle_de": "Website-Variante mit Fassaden-Referenzen und technischen Datenblättern für Planer",
+      "generic_page_angle_de": "Generische Hersteller-Übersicht ohne projektspezifischen Glasbau-Kontext"
+    }
+  },
+  "session_arc": {
+    "throughline_de": "Ein Hochhaus-Fassadenprojekt in Frankfurt zwingt Markus Weber zwischen Statiknachweis, Architekturwunsch und Lieferfähigkeit — von der ersten Meldung bis zur Abendentscheidung.",
+    "throughline_en": "A Frankfurt high-rise facade project forces Markus Weber to balance structural proof, architectural ambition, and manufacturability — from the first alert to the evening decision.",
+    "day_structure_de": "Projekttag (kein generischer Wohnungs-Alltag): Planungstisch → Ingenieurbüro → Projektraum am Abend.",
+    "anti_patterns_de": [
+      "Keine Küche-morgens / Homeoffice-mittags / Sofa-abends ohne Glasbau-Bezug",
+      "Kein Handy-pickup nur weil Act 2 historisch in der Küche war"
+    ],
+    "acts": {
+      "1": {
+        "dramatic_beat_de": "Der Besucher wird zum Ingenieur — Spiegel im dunklen Void.",
+        "scene_concept_de": "Minimaler schwarzer Raum, ein Spiegel zeigt kurz die Alltagskleidung, dann die Silhouette eines Planers mit Sicherheitsweste im Hintergrund.",
+        "environment_id": "env_void_mirror_schott_v1",
+        "world_slug": "void-mirror",
+        "setting_class": "void_minimal",
+        "lighting_preset": "void_minimal",
+        "time_of_day": "neutral",
+        "primary_anchor": "mirror_center",
+        "trigger_type": "scene_enter",
+        "trigger_target": "mirror_center",
+        "product_layer": "onboarding",
+        "splat_prompt_en": "Abstract dark void, single tall mirror, subtle cool rim light, minimal floor reflection, cinematic VR scale"
+      },
+      "2": {
+        "dramatic_beat_de": "Erste Signale zum Projekt — kuratierter Fach-Feed auf dem Planungstablet.",
+        "scene_concept_de": "Helles Planungsbüro am Morgen: großer Tisch mit ausgedruckten Fassadenschnitten, Tablet liegt zwischen Rollen und Markierungen, Stadt-Skyline durchs Fenster.",
+        "environment_id": "env_schott_facade_planning_morning_v1",
+        "world_slug": "schott-facade-planning-morning",
+        "setting_class": "workplace_office",
+        "style_hint": "technical, lived_in, DACH engineering",
+        "region_hint": "dach",
+        "lighting_preset": "morning_warm",
+        "time_of_day": "07:40",
+        "primary_anchor": "planning_tablet",
+        "secondary_anchors": ["facade_section_print", "wall_project_schedule"],
+        "trigger_type": "pickup",
+        "trigger_target": "planning_tablet",
+        "product_layer": "echeon",
+        "splat_prompt_en": "Photorealistic engineering planning room morning, large table with facade elevation prints and red markup, tablet on table showing news UI area, glass samples corner, Frankfurt high-rise hint through window, 360 interior, professional DACH scale",
+        "negative_prompt_en": "home kitchen, sofa, empty showroom, night club"
+      },
+      "3": {
+        "dramatic_beat_de": "Wie Planer und Auftraggeber den Experten online sehen — Monitor mit Sichtbarkeits-Metriken.",
+        "scene_concept_de": "Offenes Ingenieurbüro mittags: linker Großmonitor am Schreibtisch, CAD-Fassade auf Screen, Stühle für Abstimmung mit Architekten.",
+        "environment_id": "env_schott_engineering_review_midday_v1",
+        "world_slug": "schott-engineering-review",
+        "setting_class": "workplace_office",
+        "lighting_preset": "midday_neutral",
+        "time_of_day": "11:20",
+        "primary_anchor": "monitor_left",
+        "secondary_anchors": ["cad_workstation"],
+        "trigger_type": "look_at",
+        "trigger_target": "monitor_left",
+        "product_layer": "checkion",
+        "splat_prompt_en": "Modern engineering office daylight, desk with large left monitor clearly visible, facade CAD on screen, glass specimen shelf, grey carpet, DACH scale, 360 interior for VR chart overlay on monitor",
+        "negative_prompt_en": "kitchen, bedroom, outdoor only"
+      },
+      "4": {
+        "dramatic_beat_de": "Abendliche Last: offene Nachweise und Projektrisiko vor der Baustellenfreigabe.",
+        "scene_concept_de": "Projektraum nach Feierabend: Schreibtischlampe, Ordner mit Normen, großformatiger Fassadendetail-Druck, leerer Stuhl — innere Metriken schweben an Dokumenten.",
+        "environment_id": "env_schott_project_room_evening_v1",
+        "world_slug": "schott-project-room-evening",
+        "setting_class": "workplace_office",
+        "style_hint": "intimate, technical, evening",
+        "lighting_preset": "evening_warm",
+        "time_of_day": "19:30",
+        "primary_anchor": "desk_norm_folder",
+        "secondary_anchors": ["facade_detail_print", "wall_calendar"],
+        "trigger_type": "sit_down",
+        "trigger_target": "desk_chair",
+        "product_layer": "audion",
+        "splat_prompt_en": "Dim engineering project room evening, warm desk lamp, norm binders and facade detail print on desk, chair facing desk, documents stack, cozy but tense atmosphere, 360 interior",
+        "negative_prompt_en": "living room sofa, kitchen, bright midday"
+      },
+      "5": {
+        "dramatic_beat_de": "Zusammenführung — Persona-Graph und Take-home für Schott.",
+        "scene_concept_de": "Void mit leuchtender Constellation und QR-Panel für den Report.",
+        "environment_id": "env_void_constellation_schott_v1",
+        "world_slug": "void-constellation",
+        "setting_class": "void_constellation",
+        "lighting_preset": "void_minimal",
+        "time_of_day": "neutral",
+        "primary_anchor": "qr_panel",
+        "trigger_type": "timer",
+        "trigger_target": "qr_panel",
+        "product_layer": "closure",
+        "splat_prompt_en": "Abstract dark space, floating persona constellation nodes, QR panel floating at eye level, minimal stars, cinematic"
+      }
+    }
+  },
+  "act_data": {
+    "2": {
+      "echeon_feed": {
+        "item_count": 3,
+        "headline_templates": [
+          "EN 16612 Update: Was Glasbau-Ingenieure bei punktgelagertem Glas beachten müssen",
+          "Großformat-Konstruktionsglas: Praxis aus einem Hochhausprojekt in Frankfurt",
+          "Fassadenbrandschutz und Glasaufbau: neue Leitfäden im Überblick"
+        ]
+      }
+    },
+    "3": {
+      "checkion_chart": {
+        "metrics": [
+          {
+            "label": "Fach-Sichtbarkeit",
+            "value": 64,
+            "unit": "%",
+            "comparison_value": 51,
+            "trend": "up",
+            "rationale_de": "Planer-Segment wächst, noch nicht Marktführer-Sichtbarkeit"
+          },
+          {
+            "label": "Referenzprojekt-Ranking",
+            "value": 71,
+            "unit": "%",
+            "comparison_value": null,
+            "trend": "flat",
+            "rationale_de": "Referenzfassaden stabil auffindbar"
+          },
+          {
+            "label": "Technik-Content-Score",
+            "value": 78,
+            "unit": "%",
+            "comparison_value": 69,
+            "trend": "up",
+            "rationale_de": "Technische Inhalte über Branchenschnitt"
+          }
+        ]
+      }
+    },
+    "4": {
+      "audion_diegetic": {
+        "metrics": [
+          {
+            "metric_id": "norm_compliance_load",
+            "label": "Normen-Filter",
+            "value": 76,
+            "unit": "%",
+            "anchor_object": "desk_norm_folder",
+            "animation_preset": "glow_warm",
+            "rationale_de": "Nachweise und Normen im Kopf"
+          },
+          {
+            "metric_id": "project_risk_evening",
+            "label": "Projektrisiko",
+            "value": 58,
+            "unit": "%",
+            "anchor_object": "facade_detail_print",
+            "animation_preset": "pulse_red",
+            "rationale_de": "Offene Detailfreigabe vor Montagestart"
+          }
+        ]
+      }
+    },
+    "5": {
+      "recap_emphasis_de": "Drei Produktschichten eines Glasbau-Projekttags — Take-home Report für {{company.name}}"
+    }
+  }
+}

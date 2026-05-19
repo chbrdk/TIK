@@ -1,0 +1,9 @@
+{
+  "name": "tik-image-blaster-tools",
+  "private": true,
+  "type": "module",
+  "description": "image-blaster health-check dependencies (spz-js)",
+  "dependencies": {
+    "spz-js": "1.2.5"
+  }
+}

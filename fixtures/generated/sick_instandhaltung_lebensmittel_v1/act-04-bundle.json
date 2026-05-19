@@ -1,0 +1,209 @@
+{
+  "act": 4,
+  "blueprint_id": "sick_instandhaltung_act_04",
+  "persona_id": "sick_instandhaltung_lebensmittel_v1",
+  "story": {
+    "core_message_de": "Verlängerter CIP, knappe Ersatzteile — innere Last vor dem Audit.",
+    "core_message_en": "Extended CIP, sparse spares — outage risk and audit pressure become tangible in the technical room.",
+    "user_feeling": "Erschöpfung, Verantwortung, späte Werk-Atmosphäre",
+    "nova_role": "Emotional validieren, sachlich — nicht pathologisieren"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "sick-cip-technical-room-evening",
+      "prompt_en": "Food plant CIP technical room evening, warm functional lighting, glowing CIP control panel with extended cycle display, stack of IFS audit binders on metal desk, sparse spare parts shelf for valve manifolds, technician stool, stainless pipes, tense atmosphere, 360 interior",
+      "negative_prompt": "living room sofa, kitchen, home bedroom, bright midday office",
+      "camera_notes": "technician_stool for sit_down; metrics float at cip_control_panel and ifs_audit_binder_stack",
+      "anchor_placements": [
+        {
+          "anchor_id": "ifs_audit_binder_stack",
+          "description": "ifs_audit_binder_stack — from session_arc"
+        },
+        {
+          "anchor_id": "cip_control_panel",
+          "description": "cip_control_panel — from session_arc"
+        },
+        {
+          "anchor_id": "spare_parts_shelf_sparse",
+          "description": "spare_parts_shelf_sparse — from session_arc"
+        }
+      ]
+    },
+    "prop_notes": "Diegetic metric badges (glow/pulse) at CIP panel and audit binders"
+  },
+  "environment": {
+    "environment_id": "env_sick_cip_technical_room_evening_v1",
+    "world_slug": "sick-cip-technical-room-evening",
+    "scene_concept_de": "CIP- und Hygienetechnikraum spätabends: leuchtendes CIP-Panel mit verlängertem Zyklus, IFS-Audit-Ordnerstapel, fast leeres Ersatzteilregal für Ventilinseln, ein Stuhl — Metriken an Panel und Ordnern.",
+    "setting_class": "workplace_workshop",
+    "style_hint": "hygienic technical, tense evening",
+    "region_hint": "dach",
+    "time_of_day": "21:15",
+    "lighting_preset": "evening_warm"
+  },
+  "scene_environment": {
+    "act": 4,
+    "environment_id": "env_sick_cip_technical_room_evening_v1",
+    "world_slug": "sick-cip-technical-room-evening",
+    "lighting_preset": "evening_warm",
+    "time_of_day": "21:15",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "splat",
+    "scene_concept_de": "CIP- und Hygienetechnikraum spätabends: leuchtendes CIP-Panel mit verlängertem Zyklus, IFS-Audit-Ordnerstapel, fast leeres Ersatzteilregal für Ventilinseln, ein Stuhl — Metriken an Panel und Ordnern."
+  },
+  "voiceover_tracks": {
+    "nova_de_act4_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 14,
+      "lines": [
+        {
+          "text": "Spätabend im CIP-Raum. Der Reinigungszyklus läuft länger als geplant — die Linie bleibt still.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Setz dich. Hier wird die Last greifbar — am Panel und in den Audit-Ordnern.",
+          "at_sec": 7,
+          "pause_after_sec": 0.6
+        }
+      ]
+    },
+    "nova_de_act4_02": {
+      "speaker": "nova",
+      "estimated_duration_sec": 14,
+      "lines": [
+        {
+          "text": "AUDION macht sichtbar, was dich wirklich beschäftigt.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Ausfallrisiko, Audit-Druck — nicht abstrakt, sondern hier im Raum.",
+          "at_sec": 5,
+          "pause_after_sec": 0.6
+        }
+      ]
+    }
+  },
+  "act_script": {
+    "act": 4,
+    "target_duration_sec": 50,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "track_id": "nova_de_act4_01",
+        "at_sec": 0
+      },
+      {
+        "type": "hint_primary",
+        "anchor_object": "technician_stool",
+        "at_sec": 14
+      }
+    ],
+    "beat_cue_templates": {
+      "nova_de_act4_02": [
+        {
+          "type": "hint_hide",
+          "anchor_object": "technician_stool",
+          "at_sec": 0,
+          "delay_from_beat": true
+        },
+        {
+          "type": "diegetic_metric",
+          "metric_id": "outage_risk_load",
+          "animation_preset": "pulse_red",
+          "at_sec": 2,
+          "delay_from_beat": true
+        },
+        {
+          "type": "diegetic_metric",
+          "metric_id": "audit_compliance_pressure",
+          "animation_preset": "glow_warm",
+          "at_sec": 5,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 20,
+          "delay_from_beat": true
+        }
+      ]
+    }
+  },
+  "narrative_beat": {
+    "act": 4,
+    "trigger_type": "sit_down",
+    "trigger_target": "technician_stool",
+    "delay_sec": 0,
+    "duration_sec": 50,
+    "voiceover_track_id": "nova_de_act4_02",
+    "ambient_audio_id": null,
+    "haptic_pattern": "soft_pulse",
+    "ui_overlay": null,
+    "lines": [
+      {
+        "text": "AUDION macht sichtbar, was dich wirklich beschäftigt.",
+        "at_sec": 0,
+        "pause_after_sec": 0.5
+      },
+      {
+        "text": "Ausfallrisiko, Audit-Druck — nicht abstrakt, sondern hier im Raum.",
+        "at_sec": 5,
+        "pause_after_sec": 0.6
+      }
+    ],
+    "estimated_duration_sec": 14,
+    "cues": [
+      {
+        "type": "hint_hide",
+        "anchor_object": "technician_stool",
+        "at_sec": 0,
+        "delay_from_beat": true
+      },
+      {
+        "type": "diegetic_metric",
+        "metric_id": "outage_risk_load",
+        "animation_preset": "pulse_red",
+        "at_sec": 2,
+        "delay_from_beat": true
+      },
+      {
+        "type": "diegetic_metric",
+        "metric_id": "audit_compliance_pressure",
+        "animation_preset": "glow_warm",
+        "at_sec": 5,
+        "delay_from_beat": true
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 20,
+        "delay_from_beat": true
+      }
+    ],
+    "_beat_cue_template_key": "nova_de_act4_02"
+  },
+  "data_layer_slice": {
+    "audion": {
+      "diegetic_metrics": [
+        {
+          "metric_id": "outage_risk_load",
+          "label": "Ausfallrisiko",
+          "value": 81,
+          "unit": "%",
+          "anchor_object": "cip_control_panel",
+          "animation_preset": "pulse_red"
+        },
+        {
+          "metric_id": "audit_compliance_pressure",
+          "label": "Audit-Druck",
+          "value": 74,
+          "unit": "%",
+          "anchor_object": "ifs_audit_binder_stack",
+          "animation_preset": "glow_warm"
+        }
+      ]
+    }
+  }
+}

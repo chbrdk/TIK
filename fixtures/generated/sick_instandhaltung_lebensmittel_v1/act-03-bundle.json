@@ -1,0 +1,226 @@
+{
+  "act": 3,
+  "blueprint_id": "sick_instandhaltung_act_03",
+  "persona_id": "sick_instandhaltung_lebensmittel_v1",
+  "story": {
+    "core_message_de": "Im Leitstand: wie Betrieb und Sensorik-Anbieter digital wahrgenommen werden.",
+    "core_message_en": "In the control room: how the plant and SICK are perceived digitally.",
+    "user_feeling": "Analytisch, professionell, Blick auf Wandmonitor",
+    "nova_role": "Metriken einordnen, pragmatisch, nicht technisch überladen"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "sick-production-control-room",
+      "prompt_en": "Industrial production control room daylight, large wall monitor clearly visible for chart overlay, shift log on console, switch cabinets, window to factory hall roof, grey functional interior, DACH scale, 360 interior for VR",
+      "negative_prompt": "kitchen, bedroom, home office, outdoor only",
+      "camera_notes": "wall_monitor_visibility anchor on large wall screen; shift log on console below",
+      "anchor_placements": [
+        {
+          "anchor_id": "wall_monitor_visibility",
+          "description": "wall_monitor_visibility — from session_arc"
+        },
+        {
+          "anchor_id": "shift_log_console",
+          "description": "shift_log_console — from session_arc"
+        },
+        {
+          "anchor_id": "window_plant_overview",
+          "description": "window_plant_overview — from session_arc"
+        }
+      ]
+    },
+    "prop_notes": "3D bar chart diegetic on wall monitor (not HUD overlay)"
+  },
+  "environment": {
+    "environment_id": "env_sick_production_control_room_v1",
+    "world_slug": "sick-production-control-room",
+    "scene_concept_de": "Produktionsleitstand mittags: großer Wandmonitor mit Sichtbarkeits-Metriken, Schaltschränke im Hintergrund, Schichtbuch auf Konsole, Blick durch Fenster auf Hallendach.",
+    "setting_class": "workplace_office",
+    "style_hint": "industrial_functional, control room",
+    "region_hint": "dach",
+    "time_of_day": "11:30",
+    "lighting_preset": "midday_neutral"
+  },
+  "scene_environment": {
+    "act": 3,
+    "environment_id": "env_sick_production_control_room_v1",
+    "world_slug": "sick-production-control-room",
+    "lighting_preset": "midday_neutral",
+    "time_of_day": "11:30",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "splat",
+    "scene_concept_de": "Produktionsleitstand mittags: großer Wandmonitor mit Sichtbarkeits-Metriken, Schaltschränke im Hintergrund, Schichtbuch auf Konsole, Blick durch Fenster auf Hallendach."
+  },
+  "voiceover_tracks": {
+    "nova_de_act3_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 18,
+      "lines": [
+        {
+          "text": "Halb zwölf — Leitstand. Die Linie steht noch. Schichtbuch offen.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "CHECKION zeigt, wie sichtbar dein Werk und SICK AG im Fachsegment online sind.",
+          "at_sec": 6,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Schau auf den Wandmonitor.",
+          "at_sec": 14,
+          "pause_after_sec": 0.6
+        }
+      ]
+    },
+    "nova_de_act3_02": {
+      "speaker": "nova",
+      "estimated_duration_sec": 14,
+      "lines": [
+        {
+          "text": "Betriebs-Sichtbarkeit, Lieferanten-Ranking, Technik-Content-Score — auf einen Blick.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "So erleben Produktionsleitung und Zulieferer eure digitale Präsenz.",
+          "at_sec": 6,
+          "pause_after_sec": 0.6
+        }
+      ]
+    }
+  },
+  "act_script": {
+    "act": 3,
+    "target_duration_sec": 55,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "track_id": "nova_de_act3_01",
+        "at_sec": 0
+      },
+      {
+        "type": "hint_primary",
+        "anchor_object": "wall_monitor_visibility",
+        "at_sec": 15
+      },
+      {
+        "type": "chart_show",
+        "anchor_object": "wall_monitor_visibility",
+        "at_sec": 16
+      }
+    ],
+    "beat_cue_templates": {
+      "nova_de_act3_02": [
+        {
+          "type": "hint_hide",
+          "anchor_object": "wall_monitor_visibility",
+          "at_sec": 0,
+          "delay_from_beat": true
+        },
+        {
+          "type": "chart_show",
+          "anchor_object": "wall_monitor_visibility",
+          "at_sec": 4,
+          "delay_from_beat": true
+        },
+        {
+          "type": "chart_hide",
+          "anchor_object": "wall_monitor_visibility",
+          "at_sec": 12,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 14,
+          "delay_from_beat": true
+        }
+      ]
+    }
+  },
+  "narrative_beat": {
+    "act": 3,
+    "trigger_type": "look_at",
+    "trigger_target": "wall_monitor_visibility",
+    "delay_sec": 1,
+    "duration_sec": 55,
+    "voiceover_track_id": "nova_de_act3_02",
+    "ambient_audio_id": null,
+    "haptic_pattern": "none",
+    "ui_overlay": {
+      "type": "dashboard",
+      "anchor_object": "wall_monitor_visibility",
+      "payload": {
+        "source": "checkion.metrics"
+      }
+    },
+    "lines": [
+      {
+        "text": "Betriebs-Sichtbarkeit, Lieferanten-Ranking, Technik-Content-Score — auf einen Blick.",
+        "at_sec": 0,
+        "pause_after_sec": 0.5
+      },
+      {
+        "text": "So erleben Produktionsleitung und Zulieferer eure digitale Präsenz.",
+        "at_sec": 6,
+        "pause_after_sec": 0.6
+      }
+    ],
+    "estimated_duration_sec": 14,
+    "cues": [
+      {
+        "type": "hint_hide",
+        "anchor_object": "wall_monitor_visibility",
+        "at_sec": 0,
+        "delay_from_beat": true
+      },
+      {
+        "type": "chart_show",
+        "anchor_object": "wall_monitor_visibility",
+        "at_sec": 4,
+        "delay_from_beat": true
+      },
+      {
+        "type": "chart_hide",
+        "anchor_object": "wall_monitor_visibility",
+        "at_sec": 12,
+        "delay_from_beat": true
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 14,
+        "delay_from_beat": true
+      }
+    ],
+    "_beat_cue_template_key": "nova_de_act3_02"
+  },
+  "data_layer_slice": {
+    "checkion": {
+      "metrics": [
+        {
+          "label": "Betriebs-Sichtbarkeit",
+          "value": 58,
+          "unit": "%",
+          "comparison_value": 44,
+          "trend": "up"
+        },
+        {
+          "label": "Lieferanten-Ranking Sensorik",
+          "value": 72,
+          "unit": "%",
+          "comparison_value": 65,
+          "trend": "up"
+        },
+        {
+          "label": "Technik-Content-Score",
+          "value": 69,
+          "unit": "%",
+          "comparison_value": 61,
+          "trend": "up"
+        }
+      ]
+    }
+  }
+}

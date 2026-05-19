@@ -1,0 +1,221 @@
+{
+  "act": 2,
+  "blueprint_id": "sick_instandhaltung_act_02",
+  "persona_id": "sick_instandhaltung_lebensmittel_v1",
+  "story": {
+    "core_message_de": "Linie steht — erster Blick auf Störungssignale und Branchen-Feed am Wartungswagen.",
+    "core_message_en": "The line is down — early shift starts with curated input on downtime, sensors, and audit.",
+    "user_feeling": "Unter Druck, informiert, Werk-Realität",
+    "nova_role": "Kontext geben, dann schweigen während Feed-Lesen am Wartungswagen"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "sick-filling-line-stoppage",
+      "prompt_en": "Photorealistic beverage filling line early morning, stainless steel hygienic environment, stopped conveyor with red HMI alarm visible, maintenance cart with tablet showing news feed area, empty bottles lane, wet floor reflections, DACH food plant scale, 360 industrial interior",
+      "negative_prompt": "home kitchen, sofa, office desk, living room, bright showroom",
+      "camera_notes": "Tablet on maintenance cart within arm reach; HMI alarm panel visible left",
+      "anchor_placements": [
+        {
+          "anchor_id": "maintenance_tablet_cart",
+          "description": "maintenance_tablet_cart — from session_arc"
+        },
+        {
+          "anchor_id": "line_hmi_alarm_panel",
+          "description": "line_hmi_alarm_panel — from session_arc"
+        },
+        {
+          "anchor_id": "conveyor_guard_rail",
+          "description": "conveyor_guard_rail — from session_arc"
+        }
+      ]
+    },
+    "prop_notes": "Tablet prop + pickup hotspot; red HMI state on panel"
+  },
+  "environment": {
+    "environment_id": "env_sick_filling_line_stoppage_early_v1",
+    "world_slug": "sick-filling-line-stoppage",
+    "scene_concept_de": "Abfülllinie in der Frühschicht: rote HMI-Meldung, leere Flaschenbahn, Wartungswagen mit Tablet neben Förderstrecke, Feuchtraum-Beleuchtung, Hygiene-Schilder an Edelstahlverkleidung.",
+    "setting_class": "industrial_floor",
+    "style_hint": "hygienic, stainless, lived_in production",
+    "region_hint": "dach",
+    "time_of_day": "05:45",
+    "lighting_preset": "morning_warm"
+  },
+  "scene_environment": {
+    "act": 2,
+    "environment_id": "env_sick_filling_line_stoppage_early_v1",
+    "world_slug": "sick-filling-line-stoppage",
+    "lighting_preset": "morning_warm",
+    "time_of_day": "05:45",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "splat",
+    "scene_concept_de": "Abfülllinie in der Frühschicht: rote HMI-Meldung, leere Flaschenbahn, Wartungswagen mit Tablet neben Förderstrecke, Feuchtraum-Beleuchtung, Hygiene-Schilder an Edelstahlverkleidung."
+  },
+  "voiceover_tracks": {
+    "nova_de_act2_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 22,
+      "lines": [
+        {
+          "text": "Kurz vor sechs — Abfüllhalle in Regensburg. Die Linie steht.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Rote Meldung am HMI. IFS-Audit in zwei Tagen. Jede Minute zählt.",
+          "at_sec": 6,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Am Wartungswagen wartet dein Tablet. Der Tag beginnt mit Informationen.",
+          "at_sec": 14,
+          "pause_after_sec": 0.6
+        }
+      ]
+    },
+    "nova_de_act2_02": {
+      "speaker": "nova",
+      "estimated_duration_sec": 22,
+      "lines": [
+        {
+          "text": "Das ist dein echeon-Feed — kuratiert für Leiter Instandhaltung wie dich.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Stillstände, Sensorik, Audit-Vorbereitung — was Food-Produktion heute bewegt.",
+          "at_sec": 6,
+          "pause_after_sec": 0.6
+        }
+      ]
+    }
+  },
+  "act_script": {
+    "act": 2,
+    "target_duration_sec": 60,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "track_id": "nova_de_act2_01",
+        "at_sec": 0
+      },
+      {
+        "type": "hint_primary",
+        "anchor_object": "maintenance_tablet_cart",
+        "at_sec": 18
+      }
+    ],
+    "beat_cue_templates": {
+      "nova_de_act2_02": [
+        {
+          "type": "hint_hide",
+          "anchor_object": "maintenance_tablet_cart",
+          "at_sec": 0,
+          "delay_from_beat": true
+        },
+        {
+          "type": "overlay_show",
+          "at_sec": 6,
+          "delay_from_beat": true
+        },
+        {
+          "type": "overlay_hide",
+          "at_sec": 18,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 22,
+          "delay_from_beat": true
+        }
+      ]
+    }
+  },
+  "narrative_beat": {
+    "act": 2,
+    "trigger_type": "pickup",
+    "trigger_target": "maintenance_tablet_cart",
+    "delay_sec": 0,
+    "duration_sec": 60,
+    "voiceover_track_id": "nova_de_act2_02",
+    "ambient_audio_id": null,
+    "haptic_pattern": "soft_pulse",
+    "ui_overlay": {
+      "type": "news_feed",
+      "anchor_object": "maintenance_tablet_cart",
+      "payload": {
+        "feed_source": "echeon.feed_items"
+      }
+    },
+    "lines": [
+      {
+        "text": "Das ist dein echeon-Feed — kuratiert für Leiter Instandhaltung wie dich.",
+        "at_sec": 0,
+        "pause_after_sec": 0.5
+      },
+      {
+        "text": "Stillstände, Sensorik, Audit-Vorbereitung — was Food-Produktion heute bewegt.",
+        "at_sec": 6,
+        "pause_after_sec": 0.6
+      }
+    ],
+    "estimated_duration_sec": 22,
+    "cues": [
+      {
+        "type": "hint_hide",
+        "anchor_object": "maintenance_tablet_cart",
+        "at_sec": 0,
+        "delay_from_beat": true
+      },
+      {
+        "type": "overlay_show",
+        "at_sec": 6,
+        "delay_from_beat": true
+      },
+      {
+        "type": "overlay_hide",
+        "at_sec": 18,
+        "delay_from_beat": true
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 22,
+        "delay_from_beat": true
+      }
+    ],
+    "_beat_cue_template_key": "nova_de_act2_02"
+  },
+  "data_layer_slice": {
+    "echeon": {
+      "feed_items": [
+        {
+          "headline": "Predictive Maintenance in Abfülllinien: Was Instandhaltungsleiter bei Vibrationssensorik beachten müssen",
+          "source": "Haufe",
+          "category": "operations",
+          "relevance_score": 0.9,
+          "published_at": "2026-05-19T06:48:42.703Z",
+          "url": null
+        },
+        {
+          "headline": "IFS-Audit-Vorbereitung: Dokumentationslücken nach ungeplantem CIP — Branchenpraxis",
+          "source": "SHK Profi",
+          "category": "technology",
+          "relevance_score": 0.85,
+          "published_at": "2026-05-19T06:48:42.714Z",
+          "url": null
+        },
+        {
+          "headline": "Fehlalarme an Förderstrecken: Wann Objekterkennung neu kalibriert werden muss",
+          "source": "SHK Profi",
+          "category": "regulation",
+          "relevance_score": 0.8,
+          "published_at": "2026-05-19T06:48:42.714Z",
+          "url": null
+        }
+      ],
+      "cache_ttl_sec": 1800
+    }
+  }
+}

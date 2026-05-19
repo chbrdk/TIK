@@ -1,0 +1,728 @@
+{
+  "persona_id": "klaus_dortmund",
+  "acts": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "voiceover_tracks": {
+    "nova_de_act1_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 12,
+      "lines": [
+        {
+          "text": "Willkommen bei Persona Reality.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Gleich wirst du jemand anderem — Klaus Berger, Hausverwalter aus Dortmund.",
+          "at_sec": 4,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Schau in den Spiegel. Das ist dein Morgen.",
+          "at_sec": 9,
+          "pause_after_sec": 0.6
+        }
+      ]
+    },
+    "nova_de_act2_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 18,
+      "lines": [
+        {
+          "text": "Sieben Uhr — Küche in deinem MFH in Dortmund.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Die Nebenkostenabrechnung liegt noch auf dem Tisch.",
+          "at_sec": 5,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Dein Handy vibriert. Der Tag beginnt mit Informationen.",
+          "at_sec": 11,
+          "pause_after_sec": 0.6
+        }
+      ]
+    },
+    "nova_de_act2_02": {
+      "speaker": "nova",
+      "estimated_duration_sec": 20,
+      "lines": [
+        {
+          "text": "Das ist dein echeon-Feed — kuratiert für Hausverwalter wie dich.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Förderungen, SHK-News, alles was deine Eigentümer beschäftigt.",
+          "at_sec": 6,
+          "pause_after_sec": 0.6
+        }
+      ]
+    },
+    "nova_de_act3_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 15,
+      "lines": [
+        {
+          "text": "Vormittag im Homeoffice — zwischen E-Mails und Abrechnungen.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "CHECKION zeigt dir, wie sichtbar deine Verwaltung online ist.",
+          "at_sec": 6,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Schau auf den Monitor links.",
+          "at_sec": 11,
+          "pause_after_sec": 0.6
+        }
+      ]
+    },
+    "nova_de_act3_02": {
+      "speaker": "nova",
+      "estimated_duration_sec": 12,
+      "lines": [
+        {
+          "text": "GEO-Sichtbarkeit, Ranking, Website-Score — auf einen Blick.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "So erleben Auftraggeber deine digitale Präsenz.",
+          "at_sec": 5,
+          "pause_after_sec": 0.6
+        }
+      ]
+    },
+    "nova_de_act4_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Abend. Du lässt den Tag auf dem Sofa ausklingen.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "AUDION macht sichtbar, was dich wirklich beschäftigt.",
+          "at_sec": 5,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Compliance, Entscheidungsdruck — nicht abstrakt, sondern hier im Raum.",
+          "at_sec": 10,
+          "pause_after_sec": 0.6
+        }
+      ]
+    },
+    "nova_de_act5_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 18,
+      "lines": [
+        {
+          "text": "Du hast Klaus Berger fünf Minuten lang erlebt.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "echeon, CHECKION, AUDION — ein Tag aus seiner Perspektive.",
+          "at_sec": 5,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Scanne den Code — dein Report wartet.",
+          "at_sec": 11,
+          "pause_after_sec": 0.6
+        }
+      ]
+    }
+  },
+  "act_scripts": [
+    {
+      "act": 1,
+      "target_duration_sec": 14,
+      "ambient_audio_id": null,
+      "pre_beat_cues": [
+        {
+          "type": "subtitle",
+          "track_id": "nova_de_act1_01",
+          "at_sec": 0
+        },
+        {
+          "type": "fade",
+          "at_sec": 13,
+          "duration_sec": 0.6,
+          "mode": "out"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 14
+        }
+      ],
+      "beat_cue_templates": {}
+    },
+    {
+      "act": 2,
+      "target_duration_sec": 60,
+      "ambient_audio_id": "kitchen_morning_loop",
+      "pre_beat_cues": [
+        {
+          "type": "ambient",
+          "ambient_audio_id": "kitchen_morning_loop",
+          "action": "start",
+          "at_sec": 0
+        },
+        {
+          "type": "subtitle",
+          "track_id": "nova_de_act2_01",
+          "at_sec": 0
+        },
+        {
+          "type": "hint_primary",
+          "anchor_object": "phone_main",
+          "at_sec": 15
+        }
+      ],
+      "beat_cue_templates": {
+        "nova_de_act2_02": [
+          {
+            "type": "hint_hide",
+            "anchor_object": "phone_main",
+            "at_sec": 0,
+            "delay_from_beat": true
+          },
+          {
+            "type": "overlay_show",
+            "at_sec": 6,
+            "delay_from_beat": true
+          },
+          {
+            "type": "overlay_hide",
+            "at_sec": 18,
+            "delay_from_beat": true
+          },
+          {
+            "type": "act_advance",
+            "at_sec": 22,
+            "delay_from_beat": true
+          }
+        ]
+      }
+    },
+    {
+      "act": 3,
+      "target_duration_sec": 55,
+      "ambient_audio_id": null,
+      "pre_beat_cues": [
+        {
+          "type": "subtitle",
+          "track_id": "nova_de_act3_01",
+          "at_sec": 0
+        },
+        {
+          "type": "hint_primary",
+          "anchor_object": "monitor_left",
+          "at_sec": 12
+        },
+        {
+          "type": "chart_show",
+          "anchor_object": "monitor_left",
+          "at_sec": 13
+        }
+      ],
+      "beat_cue_templates": {
+        "nova_de_act3_02": [
+          {
+            "type": "hint_hide",
+            "anchor_object": "monitor_left",
+            "at_sec": 0,
+            "delay_from_beat": true
+          },
+          {
+            "type": "chart_show",
+            "anchor_object": "monitor_left",
+            "at_sec": 4,
+            "delay_from_beat": true
+          },
+          {
+            "type": "chart_hide",
+            "anchor_object": "monitor_left",
+            "at_sec": 12,
+            "delay_from_beat": true
+          },
+          {
+            "type": "act_advance",
+            "at_sec": 14,
+            "delay_from_beat": true
+          }
+        ]
+      }
+    },
+    {
+      "act": 4,
+      "target_duration_sec": 50,
+      "ambient_audio_id": "living_evening_loop",
+      "pre_beat_cues": [
+        {
+          "type": "ambient",
+          "ambient_audio_id": "living_evening_loop",
+          "action": "start",
+          "at_sec": 0
+        },
+        {
+          "type": "hint_primary",
+          "anchor_object": "sofa_main",
+          "at_sec": 2
+        }
+      ],
+      "beat_cue_templates": {
+        "nova_de_act4_01": [
+          {
+            "type": "hint_hide",
+            "anchor_object": "sofa_main",
+            "at_sec": 0,
+            "delay_from_beat": true
+          },
+          {
+            "type": "diegetic_metric",
+            "metric_id": "compliance_pressure",
+            "animation_preset": "glow_warm",
+            "at_sec": 2,
+            "delay_from_beat": true
+          },
+          {
+            "type": "diegetic_metric",
+            "metric_id": "stress_peak_evening",
+            "animation_preset": "pulse_red",
+            "at_sec": 5,
+            "delay_from_beat": true
+          },
+          {
+            "type": "act_advance",
+            "at_sec": 20,
+            "delay_from_beat": true
+          }
+        ]
+      }
+    },
+    {
+      "act": 5,
+      "target_duration_sec": 45,
+      "ambient_audio_id": null,
+      "pre_beat_cues": [],
+      "beat_cue_templates": {}
+    }
+  ],
+  "narrative_beats": [
+    {
+      "act": 1,
+      "trigger_type": "scene_enter",
+      "trigger_target": null,
+      "delay_sec": 2,
+      "duration_sec": 14,
+      "voiceover_track_id": "nova_de_act1_01",
+      "ambient_audio_id": null,
+      "haptic_pattern": "none",
+      "ui_overlay": null,
+      "lines": [
+        {
+          "text": "Willkommen bei Persona Reality.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Gleich wirst du jemand anderem — Klaus Berger, Hausverwalter aus Dortmund.",
+          "at_sec": 4,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Schau in den Spiegel. Das ist dein Morgen.",
+          "at_sec": 9,
+          "pause_after_sec": 0.6
+        }
+      ],
+      "estimated_duration_sec": 12,
+      "cues": []
+    },
+    {
+      "act": 2,
+      "trigger_type": "pickup",
+      "trigger_target": "phone_main",
+      "delay_sec": 0,
+      "duration_sec": 60,
+      "voiceover_track_id": "nova_de_act2_02",
+      "ambient_audio_id": "kitchen_morning_loop",
+      "haptic_pattern": "soft_pulse",
+      "ui_overlay": {
+        "type": "news_feed",
+        "anchor_object": "phone_main",
+        "payload": {
+          "feed_source": "echeon.feed_items"
+        }
+      },
+      "lines": [
+        {
+          "text": "Das ist dein echeon-Feed — kuratiert für Hausverwalter wie dich.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Förderungen, SHK-News, alles was deine Eigentümer beschäftigt.",
+          "at_sec": 6,
+          "pause_after_sec": 0.6
+        }
+      ],
+      "estimated_duration_sec": 20,
+      "cues": [
+        {
+          "type": "hint_hide",
+          "anchor_object": "phone_main",
+          "at_sec": 0,
+          "delay_from_beat": true
+        },
+        {
+          "type": "overlay_show",
+          "at_sec": 6,
+          "delay_from_beat": true
+        },
+        {
+          "type": "overlay_hide",
+          "at_sec": 18,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 22,
+          "delay_from_beat": true
+        }
+      ]
+    },
+    {
+      "act": 3,
+      "trigger_type": "look_at",
+      "trigger_target": "monitor_left",
+      "delay_sec": 1,
+      "duration_sec": 55,
+      "voiceover_track_id": "nova_de_act3_02",
+      "ambient_audio_id": null,
+      "haptic_pattern": "none",
+      "ui_overlay": {
+        "type": "dashboard",
+        "anchor_object": "monitor_left",
+        "payload": {
+          "source": "checkion.metrics"
+        }
+      },
+      "lines": [
+        {
+          "text": "GEO-Sichtbarkeit, Ranking, Website-Score — auf einen Blick.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "So erleben Auftraggeber deine digitale Präsenz.",
+          "at_sec": 5,
+          "pause_after_sec": 0.6
+        }
+      ],
+      "estimated_duration_sec": 12,
+      "cues": [
+        {
+          "type": "hint_hide",
+          "anchor_object": "monitor_left",
+          "at_sec": 0,
+          "delay_from_beat": true
+        },
+        {
+          "type": "chart_show",
+          "anchor_object": "monitor_left",
+          "at_sec": 4,
+          "delay_from_beat": true
+        },
+        {
+          "type": "chart_hide",
+          "anchor_object": "monitor_left",
+          "at_sec": 12,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 14,
+          "delay_from_beat": true
+        }
+      ]
+    },
+    {
+      "act": 4,
+      "trigger_type": "sit_down",
+      "trigger_target": "sofa_main",
+      "delay_sec": 0,
+      "duration_sec": 50,
+      "voiceover_track_id": "nova_de_act4_01",
+      "ambient_audio_id": "living_evening_loop",
+      "haptic_pattern": "soft_pulse",
+      "ui_overlay": null,
+      "lines": [
+        {
+          "text": "Abend. Du lässt den Tag auf dem Sofa ausklingen.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "AUDION macht sichtbar, was dich wirklich beschäftigt.",
+          "at_sec": 5,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Compliance, Entscheidungsdruck — nicht abstrakt, sondern hier im Raum.",
+          "at_sec": 10,
+          "pause_after_sec": 0.6
+        }
+      ],
+      "estimated_duration_sec": 16,
+      "cues": [
+        {
+          "type": "hint_hide",
+          "anchor_object": "sofa_main",
+          "at_sec": 0,
+          "delay_from_beat": true
+        },
+        {
+          "type": "diegetic_metric",
+          "metric_id": "compliance_pressure",
+          "animation_preset": "glow_warm",
+          "at_sec": 2,
+          "delay_from_beat": true
+        },
+        {
+          "type": "diegetic_metric",
+          "metric_id": "stress_peak_evening",
+          "animation_preset": "pulse_red",
+          "at_sec": 5,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 20,
+          "delay_from_beat": true
+        }
+      ]
+    },
+    {
+      "act": 5,
+      "trigger_type": "timer",
+      "trigger_target": null,
+      "delay_sec": 5,
+      "duration_sec": 45,
+      "voiceover_track_id": "nova_de_act5_01",
+      "ambient_audio_id": null,
+      "haptic_pattern": "none",
+      "ui_overlay": {
+        "type": "qr_code",
+        "anchor_object": "qr_panel",
+        "payload": {}
+      },
+      "lines": [
+        {
+          "text": "Du hast Klaus Berger fünf Minuten lang erlebt.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "echeon, CHECKION, AUDION — ein Tag aus seiner Perspektive.",
+          "at_sec": 5,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Scanne den Code — dein Report wartet.",
+          "at_sec": 11,
+          "pause_after_sec": 0.6
+        }
+      ],
+      "estimated_duration_sec": 18,
+      "cues": []
+    }
+  ],
+  "data_layer_slices": [
+    {},
+    {
+      "echeon": {
+        "feed_items": [
+          {
+            "headline": "Förderung 2026: Was Hausverwalter jetzt wissen müssen",
+            "source": "Haufe",
+            "category": "regulation",
+            "relevance_score": 0.9,
+            "published_at": "2026-05-18T16:47:19.657Z",
+            "url": null
+          },
+          {
+            "headline": "Wärmepumpen in Bestands-MFH: Praxisbericht",
+            "source": "SHK Profi",
+            "category": "technology",
+            "relevance_score": 0.85,
+            "published_at": "2026-05-18T16:47:19.658Z",
+            "url": null
+          },
+          {
+            "headline": "Eigentümerversammlung: neue Pflichten im Überblick",
+            "source": "SHK Profi",
+            "category": "market",
+            "relevance_score": 0.8,
+            "published_at": "2026-05-18T16:47:19.658Z",
+            "url": null
+          }
+        ],
+        "cache_ttl_sec": 1800
+      }
+    },
+    {
+      "checkion": {
+        "metrics": [
+          {
+            "label": "GEO-Sichtbarkeit",
+            "value": 68,
+            "unit": "%",
+            "comparison_value": 54,
+            "trend": "up"
+          },
+          {
+            "label": "Google-Ranking",
+            "value": 72,
+            "unit": "%",
+            "comparison_value": null,
+            "trend": "flat"
+          },
+          {
+            "label": "Website-Score",
+            "value": 81,
+            "unit": "%",
+            "comparison_value": 76,
+            "trend": "up"
+          }
+        ]
+      }
+    },
+    {
+      "audion": {
+        "diegetic_metrics": [
+          {
+            "metric_id": "compliance_pressure",
+            "label": "Compliance-Filter",
+            "value": 73,
+            "unit": "%",
+            "anchor_object": "wall_calendar",
+            "animation_preset": "glow_warm"
+          },
+          {
+            "metric_id": "stress_peak_evening",
+            "label": "Entscheidungsdruck",
+            "value": 61,
+            "unit": "%",
+            "anchor_object": "kitchen_counter_docs",
+            "animation_preset": "pulse_red"
+          }
+        ]
+      }
+    },
+    {}
+  ],
+  "image_prompts_by_act": {
+    "1": {
+      "splat_world": {
+        "slug_hint": "void-mirror-pilot",
+        "prompt_en": "Abstract minimal void room with a tall vertical mirror surface, soft rim light, photorealistic, no furniture, dark floor, subtle fog, cinematic, 360 equirectangular interior",
+        "negative_prompt": "clutter, people, text, logos, outdoor",
+        "camera_notes": "User faces mirror at eye level; avatar reveal centered in reflection",
+        "anchor_placements": [
+          {
+            "anchor_id": "mirror_center",
+            "description": "Center of mirror plane, 1.45m height"
+          }
+        ]
+      },
+      "prop_notes": "RPM avatar morph target at mirror; no product UI"
+    },
+    "2": {
+      "splat_world": {
+        "slug_hint": "tik-kitchen-pilot",
+        "prompt_en": "Lived-in DACH apartment kitchen morning, warm daylight, wooden counters, coffee cup, papers on table, phone on counter, photorealistic 360 interior, cozy but professional",
+        "negative_prompt": "empty showroom, night, sci-fi, blur",
+        "camera_notes": "Phone anchor on counter within arm reach; calendar on wall visible",
+        "anchor_placements": [
+          {
+            "anchor_id": "phone_main",
+            "description": "Smartphone on kitchen counter"
+          },
+          {
+            "anchor_id": "wall_calendar",
+            "description": "Wall calendar near kitchen"
+          }
+        ]
+      },
+      "prop_notes": "Phone prop + hotspot for pickup interaction"
+    },
+    "3": {
+      "splat_world": {
+        "slug_hint": "modern-office-360",
+        "prompt_en": "Photorealistic modern open-plan home office, daylight, desk with monitor, ergonomic chair, grey carpet, DACH apartment scale, 360 interior, monitor clearly visible on left desk area",
+        "negative_prompt": "outdoor only, empty void, night club",
+        "camera_notes": "monitor_left anchor on left monitor screen; user approaches from room center",
+        "anchor_placements": [
+          {
+            "anchor_id": "monitor_left",
+            "description": "Left monitor screen center, eye level when seated"
+          }
+        ]
+      },
+      "prop_notes": "3D bar chart diegetic on monitor surface (not HUD overlay)"
+    },
+    "4": {
+      "splat_world": {
+        "slug_hint": "living-evening-pilot",
+        "prompt_en": "Cozy DACH living room evening, warm lamp light, sofa, wall calendar, documents on side table, photorealistic 360 interior, intimate scale",
+        "negative_prompt": "office, daylight harsh, empty",
+        "camera_notes": "sofa_main anchor center of couch; metrics float near calendar and documents",
+        "anchor_placements": [
+          {
+            "anchor_id": "sofa_main",
+            "description": "Sofa seat center"
+          },
+          {
+            "anchor_id": "wall_calendar",
+            "description": "Calendar on living room wall"
+          },
+          {
+            "anchor_id": "kitchen_counter_docs",
+            "description": "Document stack on side table"
+          }
+        ]
+      },
+      "prop_notes": "Diegetic metric badges (glow/pulse), no flat overlay"
+    },
+    "5": {
+      "splat_world": {
+        "slug_hint": "void-constellation",
+        "prompt_en": "Abstract dark void with glowing constellation points, subtle depth, minimalist, no furniture, cinematic space for QR panel and persona graph nodes",
+        "negative_prompt": "kitchen, office, daylight window",
+        "camera_notes": "qr_panel anchor floating at comfortable reading distance",
+        "anchor_placements": [
+          {
+            "anchor_id": "qr_panel",
+            "description": "Floating QR / report panel"
+          }
+        ]
+      },
+      "prop_notes": "QR code 3D prop; optional persona node constellation"
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://msqdx.de/schemas/persona-reality/narrative_manifest.v1.schema.json",
+  "title": "Persona Reality Narrative Manifest",
+  "description": "Authoring source for voiceover lines and act timeline cues. Merged into scene_config at compose time.",
+  "type": "object",
+  "required": ["meta", "voiceover_tracks", "act_scripts"],
+  "additionalProperties": false,
+  "properties": {
+    "meta": { "$ref": "#/$defs/Meta" },
+    "voiceover_tracks": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/VoiceoverTrack" }
+    },
+    "act_scripts": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": { "$ref": "#/$defs/ActScript" }
+    }
+  },
+  "$defs": {
+    "Meta": {
+      "type": "object",
+      "required": ["persona_id", "language", "schema_version"],
+      "additionalProperties": false,
+      "properties": {
+        "persona_id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+        "language": { "type": "string", "enum": ["de", "en"] },
+        "schema_version": { "type": "string", "const": "1.0" }
+      }
+    },
+    "VoiceoverLine": {
+      "type": "object",
+      "required": ["text", "at_sec"],
+      "additionalProperties": false,
+      "properties": {
+        "text": { "type": "string", "minLength": 1 },
+        "at_sec": { "type": "number", "minimum": 0 },
+        "pause_after_sec": { "type": "number", "minimum": 0, "default": 0.4 }
+      }
+    },
+    "VoiceoverTrack": {
+      "type": "object",
+      "required": ["lines", "estimated_duration_sec", "speaker"],
+      "additionalProperties": false,
+      "properties": {
+        "lines": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/VoiceoverLine" }
+        },
+        "estimated_duration_sec": { "type": "number", "minimum": 0 },
+        "speaker": { "type": "string", "const": "nova" }
+      }
+    },
+    "ActScript": {
+      "type": "object",
+      "required": ["act", "target_duration_sec", "pre_beat_cues"],
+      "additionalProperties": false,
+      "properties": {
+        "act": { "type": "integer", "minimum": 1, "maximum": 5 },
+        "target_duration_sec": { "type": "number", "minimum": 10 },
+        "ambient_audio_id": { "type": ["string", "null"] },
+        "pre_beat_cues": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/TimelineCue" }
+        },
+        "post_enter_cues": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/TimelineCue" }
+        },
+        "beat_cue_templates": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/TimelineCue" }
+          },
+          "description": "Keyed by voiceover_track_id — merged onto matching narrative beat"
+        }
+      }
+    },
+    "TimelineCue": {
+      "type": "object",
+      "required": ["type", "at_sec"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "subtitle",
+            "hint_primary",
+            "hint_hide",
+            "overlay_show",
+            "overlay_hide",
+            "chart_show",
+            "chart_hide",
+            "diegetic_metric",
+            "diegetic_metric_off",
+            "ambient",
+            "fade",
+            "haptic",
+            "act_advance",
+            "session_complete"
+          ]
+        },
+        "at_sec": { "type": "number", "minimum": 0 },
+        "delay_from_beat": { "type": "boolean", "default": false },
+        "track_id": { "type": "string" },
+        "anchor_object": { "type": "string" },
+        "metric_id": { "type": "string" },
+        "animation_preset": {
+          "type": "string",
+          "enum": [
+            "glow_warm",
+            "pulse_red",
+            "flicker",
+            "color_shift",
+            "particle_burst",
+            "scale_breath"
+          ]
+        },
+        "ambient_audio_id": { "type": "string" },
+        "action": { "type": "string", "enum": ["start", "stop"] },
+        "duration_sec": { "type": "number", "minimum": 0 },
+        "mode": { "type": "string", "enum": ["in", "out"] },
+        "pattern": { "type": "string", "enum": ["none", "soft_pulse", "double_tap", "alert"] }
+      }
+    }
+  }
+}

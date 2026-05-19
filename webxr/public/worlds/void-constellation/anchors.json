@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "world": "void-constellation",
+  "environment_id": "env_void_constellation_sick_v1",
+  "mode": "world_and_anchors_only",
+  "semantics": {
+    "metric_scale_factor": 0.47653544,
+    "ground_plane_offset": 0.5285434,
+    "flip_y": true
+  },
+  "pipeline": {
+    "generate_3d_objects": false,
+    "generate_sfx": false,
+    "world_prompt_en": "Abstract dark space, floating persona constellation nodes, QR panel at eye level, subtle industrial accent lights suggesting conveyor and sensor motifs, minimal stars, cinematic",
+    "splat_tier": "150k"
+  },
+  "anchors": [
+    {
+      "id": "qr_panel",
+      "label": "qr panel",
+      "description": "Floating QR / report panel",
+      "trigger_type": "timer",
+      "trigger_target": "qr_panel",
+      "position": [
+        0,
+        1.4,
+        -1.55
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "placement_status": "inherited_default",
+      "evidence": {}
+    }
+  ],
+  "updated_at": "2026-05-19T06:27:19.013Z"
+}

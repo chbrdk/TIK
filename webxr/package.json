@@ -1,0 +1,42 @@
+{
+  "name": "persona-reality-webxr",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "sync:config": "bash scripts/sync-golden-config.sh",
+    "sync:world": "bash scripts/sync-world-from-blaster.sh",
+    "sync": "npm run sync:config && npm run sync:world",
+    "companion:mock": "node scripts/companion-ws-mock.mjs",
+    "postinstall": "npm run sync:config"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.0",
+    "@react-three/xr": "^6.6.29",
+    "@sparkjsdev/spark": "^2.0.0",
+    "qrcode": "^1.5.4",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "three": "0.180.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.19",
+    "@types/qrcode": "^1.5.6",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@types/three": "^0.180.0",
+    "@vitejs/plugin-basic-ssl": "^1.2.0",
+    "@vitejs/plugin-react": "^4.3.3",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.5",
+    "ws": "^8.18.0"
+  }
+}

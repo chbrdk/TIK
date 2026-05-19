@@ -1,0 +1,12 @@
+{
+  "slug": "modern-office-360",
+  "environment_id": "env_home_office_lived_in_dach_v1",
+  "splat_url": "/worlds/modern-office-360/splat.spz",
+  "splat_tier": "150k",
+  "collider_url": "/worlds/modern-office-360/collider.glb",
+  "semantics": {
+    "metric_scale_factor": 1.6493142,
+    "ground_plane_offset": 1.6121744,
+    "flip_y": true
+  }
+}

@@ -205,7 +205,7 @@ Standard codes:
 
 ## Anti-patterns
 
-- Don't add fields to `SceneConfig` without updating: OpenAPI spec → JSON Schema → Pydantic models → Unity C# DTOs → this rule file. All five.
+- Don't add fields to `SceneConfig` without updating: OpenAPI spec → JSON Schema → Pydantic models → WebXR TypeScript types → this rule file. All five.
 - Don't call ElevenLabs at request time. Tracks are pre-generated; only IDs flow.
 - Don't fetch echeon synchronously in the request path without timeout. 800 ms timeout with cached fallback.
 - Don't store the visitor's iPad selection in any user-identifiable way.

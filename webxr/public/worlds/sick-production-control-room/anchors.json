@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "world": "sick-production-control-room",
+  "environment_id": "env_sick_production_control_room_v1",
+  "mode": "world_and_anchors_only",
+  "semantics": {
+    "metric_scale_factor": 1.2616198,
+    "ground_plane_offset": 1.5078275,
+    "flip_y": true
+  },
+  "pipeline": {
+    "generate_3d_objects": false,
+    "generate_sfx": false,
+    "world_prompt_en": "Industrial production control room daylight, large wall monitor clearly visible for chart overlay, shift log on console, switch cabinets, window to factory hall roof, grey functional interior, DACH scale, 360 interior for VR",
+    "splat_tier": "150k"
+  },
+  "anchors": [
+    {
+      "id": "wall_monitor_visibility",
+      "label": "wall monitor visibility",
+      "description": "Large wall monitor center, eye level standing",
+      "trigger_type": "look_at",
+      "trigger_target": "wall_monitor_visibility",
+      "position": [
+        0,
+        1.55,
+        -2.75
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "placement_status": "inherited_default",
+      "evidence": {}
+    },
+    {
+      "id": "shift_log_console",
+      "label": "shift log console",
+      "description": "Shift log book and keyboard on control console",
+      "trigger_type": "look_at",
+      "trigger_target": "shift_log_console",
+      "position": [
+        0,
+        0.88,
+        -0.85
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "placement_status": "inherited_default",
+      "evidence": {}
+    },
+    {
+      "id": "window_plant_overview",
+      "label": "window plant overview",
+      "description": "Window overlooking factory hall roof",
+      "trigger_type": "look_at",
+      "trigger_target": "window_plant_overview",
+      "position": [
+        1.45,
+        1.6,
+        -1.4
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "placement_status": "inherited_default",
+      "evidence": {}
+    }
+  ],
+  "updated_at": "2026-05-18T19:36:24.684Z"
+}

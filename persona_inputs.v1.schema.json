@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://msqdx.de/schemas/persona-reality/persona_inputs.v1.schema.json",
+  "title": "Persona Reality — Minimal Session Inputs",
+  "description": "Only two inputs for the persona agent: target audience and company.",
+  "type": "object",
+  "required": ["target_audience", "company"],
+  "additionalProperties": false,
+  "properties": {
+    "target_audience": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Zielgruppe: Rolle, Alter, Region, Mindset, Branche (freier Text)"
+    },
+    "company": { "$ref": "#/$defs/CompanyInput" },
+    "language": { "type": "string", "enum": ["de", "en"], "default": "de" },
+    "session_label": {
+      "type": "string",
+      "description": "Optional human label for this booth session"
+    }
+  },
+  "$defs": {
+    "CompanyInput": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "industry": { "type": "string", "description": "Canonical industry slug or free text" },
+        "description": {
+          "type": "string",
+          "description": "What the company does, booth goal, product focus"
+        },
+        "website": { "type": "string", "format": "uri" }
+      }
+    }
+  }
+}

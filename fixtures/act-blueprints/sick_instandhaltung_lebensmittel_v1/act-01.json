@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "blueprint_id": "sick_instandhaltung_act_01",
+    "schema_version": "1.0",
+    "language": "de",
+    "product_layer": "onboarding"
+  },
+  "act": 1,
+  "story": {
+    "core_message_de": "Identitätswechsel — du wirst Thomas Berger, der Stör- und Audit-Tag in der Abfüllung beginnt.",
+    "core_message_en": "Identity shift — you become Thomas Berger; the disruption and audit day at filling begins.",
+    "user_feeling": "Neugier, industrielle Präzision, Fokus auf Spiegel/Transformation",
+    "nova_role": "Einladend, sachlich, nicht verkäuferisch — zwischen den Handlungen sprechen"
+  },
+  "environment": {
+    "environment_id": "env_void_mirror_sick_v1",
+    "world_slug": "void-mirror",
+    "scene_concept_de": "Minimaler schwarzer Raum, Spiegel zeigt kurz Zivilkleidung, dann Silhouette mit Werkuniform, Warnweste und Sicherheitsschuhen — erster Blick auf den Produktionstag.",
+    "setting_class": "void_minimal",
+    "style_hint": "abstract mirror, industrial undertone",
+    "region_hint": "neutral",
+    "time_of_day": "neutral",
+    "lighting_preset": "void_minimal"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "void-mirror",
+      "prompt_en": "Abstract minimal void room with a tall vertical mirror surface, cool industrial rim light, photorealistic, dark floor, subtle fog, maintenance uniform silhouette hint in reflection, cinematic, 360 equirectangular interior",
+      "negative_prompt": "clutter, people faces, text, logos, outdoor, warm cozy kitchen, living room",
+      "camera_notes": "User faces mirror at eye level; avatar reveal centered in reflection",
+      "anchor_placements": [
+        { "anchor_id": "mirror_center", "description": "Center of mirror plane, 1.45m height" }
+      ]
+    },
+    "prop_notes": "RPM avatar morph; navy work uniform with hi-vis vest"
+  },
+  "voiceover": {
+    "pre_beat_tracks": [],
+    "beat_track": {
+      "track_id_suffix": "01",
+      "estimated_duration_sec": 16,
+      "lines": [
+        { "text": "Willkommen bei Persona Reality.", "at_sec": 0, "pause_after_sec": 0.5 },
+        {
+          "text": "Gleich wirst du jemand anderem — {{persona.display_name}}, {{persona.occupation}} in {{persona.location}}.",
+          "at_sec": 4,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Schau in den Spiegel. Dein Stör- und Audit-Tag an der Abfülllinie beginnt jetzt.",
+          "at_sec": 9,
+          "pause_after_sec": 0.6
+        }
+      ]
+    }
+  },
+  "interaction": {
+    "trigger_type": "scene_enter",
+    "trigger_target": "mirror_center",
+    "primary_anchor": "mirror_center",
+    "delay_sec": 2,
+    "haptic_pattern": "none"
+  },
+  "data_viz": { "mode": "none" },
+  "timeline": {
+    "target_duration_sec": 16,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      { "type": "subtitle", "track_id": "PLACEHOLDER", "at_sec": 0 },
+      { "type": "fade", "at_sec": 15, "duration_sec": 0.6, "mode": "out" },
+      { "type": "act_advance", "at_sec": 16 }
+    ],
+    "beat_cue_templates": []
+  }
+}

@@ -1,0 +1,342 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://msqdx.de/schemas/persona-reality/persona_profile.v1.schema.json",
+  "title": "Persona Reality — Persona Profile (agent output)",
+  "description": "Expanded persona + company context for all five acts. Produced by persona agent from persona_inputs.",
+  "type": "object",
+  "required": [
+    "meta",
+    "inputs",
+    "persona",
+    "company_context",
+    "session_arc",
+    "act_data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "meta": { "$ref": "#/$defs/Meta" },
+    "inputs": {
+      "type": "object",
+      "required": ["target_audience", "company"],
+      "properties": {
+        "target_audience": { "type": "string" },
+        "company": {
+          "type": "object",
+          "required": ["name"],
+          "properties": {
+            "name": { "type": "string" },
+            "industry": { "type": "string" },
+            "description": { "type": "string" },
+            "website": { "type": "string" }
+          }
+        },
+        "language": { "type": "string" },
+        "session_label": { "type": "string" }
+      }
+    },
+    "persona": { "$ref": "#/$defs/Persona" },
+    "avatar_hints": { "$ref": "#/$defs/AvatarHints" },
+    "company_context": { "$ref": "#/$defs/CompanyContext" },
+    "session_arc": { "$ref": "#/$defs/SessionArc" },
+    "act_data": { "$ref": "#/$defs/ActData" }
+  },
+  "$defs": {
+    "Meta": {
+      "type": "object",
+      "required": ["persona_id", "schema_version", "language"],
+      "additionalProperties": false,
+      "properties": {
+        "persona_id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+        "schema_version": { "type": "string", "const": "1.0" },
+        "language": { "type": "string", "enum": ["de", "en"] },
+        "display_title": { "type": "string" }
+      }
+    },
+    "Persona": {
+      "type": "object",
+      "required": ["id", "display_name", "occupation", "location", "axes"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+        "display_name": { "type": "string" },
+        "age": { "type": "integer", "minimum": 18, "maximum": 99 },
+        "gender_expression": { "type": "string", "enum": ["male", "female", "androgynous"] },
+        "location": { "type": "string" },
+        "occupation": { "type": "string" },
+        "household": { "type": "string" },
+        "income_band": {
+          "type": "string",
+          "enum": ["low", "mid", "upper_mid", "high", "uhnw"]
+        },
+        "axes": {
+          "type": "object",
+          "required": ["sector", "life_stage", "tech_affinity", "decision_style", "industry"],
+          "properties": {
+            "sector": { "type": "string" },
+            "life_stage": { "type": "string" },
+            "tech_affinity": { "type": "string" },
+            "decision_style": { "type": "string" },
+            "industry": { "type": "string" }
+          }
+        },
+        "pain_points": { "type": "array", "items": { "type": "string" }, "maxItems": 5 },
+        "decision_drivers": { "type": "array", "items": { "type": "string" }, "maxItems": 5 },
+        "narrative_hook_de": { "type": "string" },
+        "narrative_hook_en": { "type": "string" }
+      }
+    },
+    "AvatarHints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "outfit_preset": {
+          "type": "string",
+          "enum": ["business_casual", "blue_collar", "leisure", "premium_casual", "uniform"]
+        },
+        "visual_description_en": { "type": "string" }
+      }
+    },
+    "CompanyContext": {
+      "type": "object",
+      "required": ["name", "booth_products"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "industry": { "type": "string" },
+        "value_proposition_de": { "type": "string" },
+        "messaging_guardrails": { "type": "array", "items": { "type": "string" } },
+        "booth_products": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["echeon", "checkion", "audion"] },
+          "minItems": 1
+        },
+        "echeon": { "$ref": "#/$defs/EcheonContext" },
+        "checkion": { "$ref": "#/$defs/CheckionContext" },
+        "audion": { "$ref": "#/$defs/AudionContext" },
+        "storyblok": {
+          "type": "object",
+          "properties": {
+            "personalized_page_angle_de": { "type": "string" },
+            "generic_page_angle_de": { "type": "string" }
+          }
+        }
+      }
+    },
+    "EcheonContext": {
+      "type": "object",
+      "properties": {
+        "feed_angle_de": { "type": "string" },
+        "categories": { "type": "array", "items": { "type": "string" } },
+        "headline_templates": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "CheckionContext": {
+      "type": "object",
+      "properties": {
+        "visibility_angle_de": { "type": "string" },
+        "suggested_metrics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label", "value", "unit"],
+            "properties": {
+              "label": { "type": "string" },
+              "value": { "type": "number" },
+              "unit": { "type": "string" },
+              "comparison_value": { "type": ["number", "null"] },
+              "trend": { "type": "string", "enum": ["up", "down", "flat"] },
+              "rationale_de": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "AudionContext": {
+      "type": "object",
+      "properties": {
+        "inner_life_angle_de": { "type": "string" },
+        "suggested_metrics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["metric_id", "label", "value", "anchor_object", "animation_preset"],
+            "properties": {
+              "metric_id": { "type": "string" },
+              "label": { "type": "string" },
+              "value": { "type": "number" },
+              "unit": { "type": "string" },
+              "anchor_object": { "type": "string" },
+              "animation_preset": { "type": "string" },
+              "rationale_de": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "SessionArc": {
+      "type": "object",
+      "required": ["throughline_de", "throughline_en", "acts"],
+      "additionalProperties": false,
+      "description": "Agent-authored session story and per-act scene concepts. Not a fixed room catalog.",
+      "properties": {
+        "throughline_de": { "type": "string", "minLength": 20 },
+        "throughline_en": { "type": "string", "minLength": 20 },
+        "day_structure_de": {
+          "type": "string",
+          "description": "Optional: how the five beats connect as one day or project arc"
+        },
+        "anti_patterns_de": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "e.g. avoid generic kitchen→office→sofa unless narratively justified"
+        },
+        "acts": {
+          "type": "object",
+          "required": ["1", "2", "3", "4", "5"],
+          "additionalProperties": false,
+          "properties": {
+            "1": { "$ref": "#/$defs/ActArcScene" },
+            "2": { "$ref": "#/$defs/ActArcScene" },
+            "3": { "$ref": "#/$defs/ActArcScene" },
+            "4": { "$ref": "#/$defs/ActArcScene" },
+            "5": { "$ref": "#/$defs/ActArcScene" }
+          }
+        }
+      }
+    },
+    "ActArcScene": {
+      "type": "object",
+      "required": [
+        "dramatic_beat_de",
+        "scene_concept_de",
+        "environment_id",
+        "world_slug",
+        "setting_class",
+        "lighting_preset",
+        "time_of_day",
+        "primary_anchor",
+        "trigger_type",
+        "trigger_target"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "dramatic_beat_de": { "type": "string", "minLength": 10 },
+        "scene_concept_de": {
+          "type": "string",
+          "minLength": 30,
+          "description": "Free-form: place, time, mood, props, why this room fits the persona"
+        },
+        "environment_id": {
+          "type": "string",
+          "pattern": "^env_[a-z0-9_]+$",
+          "description": "Unique id for this session's room (not reused from other personas unless same world)"
+        },
+        "world_slug": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$",
+          "description": "image-blaster world folder name"
+        },
+        "setting_class": { "type": "string", "minLength": 3 },
+        "style_hint": { "type": "string" },
+        "region_hint": { "type": "string" },
+        "lighting_preset": {
+          "type": "string",
+          "enum": [
+            "morning_warm",
+            "midday_neutral",
+            "afternoon_golden",
+            "evening_warm",
+            "night_cool",
+            "void_minimal"
+          ]
+        },
+        "time_of_day": { "type": "string" },
+        "primary_anchor": { "type": "string" },
+        "secondary_anchors": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "trigger_type": {
+          "type": "string",
+          "enum": [
+            "timer",
+            "look_at",
+            "pickup",
+            "sit_down",
+            "stand_up",
+            "scene_enter",
+            "proximity"
+          ]
+        },
+        "trigger_target": { "type": "string" },
+        "product_layer": {
+          "type": "string",
+          "enum": ["onboarding", "echeon", "checkion", "audion", "closure"]
+        },
+        "splat_prompt_en": {
+          "type": "string",
+          "minLength": 40,
+          "description": "English Marble prompt; act agent may refine in blueprint"
+        },
+        "negative_prompt_en": { "type": "string" }
+      }
+    },
+    "ActData": {
+      "type": "object",
+      "description": "Per-act data overrides merged into act blueprints at compile time",
+      "properties": {
+        "1": { "$ref": "#/$defs/Act1Data" },
+        "2": { "$ref": "#/$defs/Act2Data" },
+        "3": { "$ref": "#/$defs/Act3Data" },
+        "4": { "$ref": "#/$defs/Act4Data" },
+        "5": { "$ref": "#/$defs/Act5Data" }
+      }
+    },
+    "Act1Data": {
+      "type": "object",
+      "properties": {
+        "mirror_scene_notes": { "type": "string" }
+      }
+    },
+    "Act2Data": {
+      "type": "object",
+      "properties": {
+        "echeon_feed": {
+          "type": "object",
+          "properties": {
+            "item_count": { "type": "integer" },
+            "headline_templates": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "Act3Data": {
+      "type": "object",
+      "properties": {
+        "checkion_chart": {
+          "type": "object",
+          "properties": {
+            "metrics": { "type": "array" }
+          }
+        }
+      }
+    },
+    "Act4Data": {
+      "type": "object",
+      "properties": {
+        "audion_diegetic": {
+          "type": "object",
+          "properties": {
+            "metrics": { "type": "array" }
+          }
+        }
+      }
+    },
+    "Act5Data": {
+      "type": "object",
+      "properties": {
+        "recap_emphasis_de": { "type": "string" }
+      }
+    }
+  }
+}

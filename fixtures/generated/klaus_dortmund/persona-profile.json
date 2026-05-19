@@ -1,0 +1,292 @@
+{
+  "meta": {
+    "persona_id": "klaus_dortmund",
+    "schema_version": "1.0",
+    "language": "de",
+    "display_title": "Klaus Berger · Hausverwalter Dortmund"
+  },
+  "inputs": {
+    "target_audience": "Hausverwalter in der WEG-Verwaltung, 42–55 Jahre, DACH, rationaler Entscheider, hohe Regulatory- und Nebenkosten-Themen, SHK- und Energieeffizienz im Bestand",
+    "company": {
+      "name": "MSQ DX",
+      "industry": "it_saas",
+      "description": "AI-Produktsuite für Persona Reality: echeon, CHECKION, AUDION. Messe-Demo."
+    },
+    "language": "de",
+    "session_label": "Klaus Berger — Golden Pilot"
+  },
+  "persona": {
+    "id": "klaus_dortmund",
+    "display_name": "Klaus Berger",
+    "age": 47,
+    "gender_expression": "male",
+    "location": "Dortmund",
+    "occupation": "Hausverwalter",
+    "household": "verheiratet, 2 Kinder (12, 15)",
+    "income_band": "mid",
+    "axes": {
+      "sector": "b2b_smb_decision_maker",
+      "life_stage": "established_career",
+      "tech_affinity": "mainstream",
+      "decision_style": "rational",
+      "industry": "shk"
+    },
+    "pain_points": [
+      "Steigende Nebenkosten und Energieeffizienz in Bestandsgebäuden",
+      "Komplexe Förderlandschaft (BEG, KfW)",
+      "Widersprüchliche Informationen von Handwerk und Herstellern"
+    ],
+    "decision_drivers": [
+      "Total Cost of Ownership über 15 Jahre",
+      "Verlässlichkeit des Installateurs",
+      "Compliance und Dokumentation für Eigentümerversammlungen"
+    ],
+    "narrative_hook_de": "Ein Tag aus dem Leben eines Verwalters, der zwischen Eigentümern, Regulatorik und digitalem Wandel navigiert.",
+    "narrative_hook_en": "A day in the life of a property manager balancing owners, regulation, and digital change."
+  },
+  "avatar_hints": {
+    "outfit_preset": "business_casual",
+    "visual_description_en": "Male, late 40s, business casual, approachable, slight fatigue, German office worker"
+  },
+  "company_context": {
+    "name": "MSQ DX",
+    "industry": "it_saas",
+    "value_proposition_de": "KI-gestützte Zielgruppen-Intelligenz für Marketing und Produkt — heute als immersive Persona-Erfahrung.",
+    "messaging_guardrails": [
+      "Persona first, Produkt unsichtbar im Hintergrund",
+      "Kein Hard-Sell auf der Messe",
+      "NOVA spricht zwischen Handlungen, nicht darüber"
+    ],
+    "booth_products": [
+      "echeon",
+      "checkion",
+      "audion"
+    ],
+    "echeon": {
+      "feed_angle_de": "Branchennews und Förderungen, die Verwalter und Eigentümer betreffen",
+      "categories": [
+        "regulation",
+        "technology",
+        "market"
+      ],
+      "headline_templates": [
+        "BEG-Förderung 2026: Was {{persona.occupation}} jetzt wissen müssen",
+        "Wärmepumpen in Bestands-MFH: Praxisbericht aus NRW",
+        "Eigentümerversammlung: neue Pflichten im Überblick"
+      ]
+    },
+    "checkion": {
+      "visibility_angle_de": "Wie Auftraggeber und Eigentümer die Verwaltung online wahrnehmen",
+      "suggested_metrics": [
+        {
+          "label": "GEO-Sichtbarkeit",
+          "value": 68,
+          "unit": "%",
+          "comparison_value": 54,
+          "trend": "up",
+          "rationale_de": "Sichtbar, aber mit Wachstumspotenzial in der Region"
+        },
+        {
+          "label": "Google-Ranking",
+          "value": 72,
+          "unit": "%",
+          "comparison_value": null,
+          "trend": "flat",
+          "rationale_de": "Stabile lokale Auffindbarkeit"
+        },
+        {
+          "label": "Website-Score",
+          "value": 81,
+          "unit": "%",
+          "comparison_value": 76,
+          "trend": "up",
+          "rationale_de": "Über Branchenschnitt, noch nicht Spitzengruppe"
+        }
+      ]
+    },
+    "audion": {
+      "inner_life_angle_de": "Abendliche Reflexion: Compliance und Entscheidungsdruck aus dem Tag",
+      "suggested_metrics": [
+        {
+          "metric_id": "compliance_pressure",
+          "label": "Compliance-Filter",
+          "value": 73,
+          "unit": "%",
+          "anchor_object": "wall_calendar",
+          "animation_preset": "glow_warm",
+          "rationale_de": "Regulatorik dominiert den mentalen Abend"
+        },
+        {
+          "metric_id": "stress_peak_evening",
+          "label": "Entscheidungsdruck",
+          "value": 61,
+          "unit": "%",
+          "anchor_object": "kitchen_counter_docs",
+          "animation_preset": "pulse_red",
+          "rationale_de": "Offene Entscheidungen aus dem Verwaltungstag"
+        }
+      ]
+    },
+    "storyblok": {
+      "personalized_page_angle_de": "Website-Variante mit Verwalter-Fokus und regionalen Referenzen",
+      "generic_page_angle_de": "Generische Anbieter-Seite ohne Zielgruppen-Spezifik"
+    }
+  },
+  "session_arc": {
+    "throughline_de": "Klaus Berger navigiert einen Verwaltungstag zwischen Eigentümerdruck, Regulatorik und dem Gefühl, digital sichtbar zu sein — bis zum Abend mit offenen Beschlüssen.",
+    "throughline_en": "Klaus Berger navigates a property manager's day between owner pressure, regulation, and digital visibility — ending with open decisions at night.",
+    "day_structure_de": "Klassischer Arbeitstag im Bestand (bewusst Wohn-/Büro-Mix, weil Hausverwalter oft von zu Hause arbeitet).",
+    "anti_patterns_de": [
+      "Diese Küche→Büro→Sofa-Kette ist für Klaus narrativ begründet, nicht als Default für andere Personas kopieren"
+    ],
+    "acts": {
+      "1": {
+        "dramatic_beat_de": "Wer wird er in den nächsten fünf Minuten?",
+        "scene_concept_de": "Void und Spiegel — Alltagshemd weicht der Silhouette eines Verwalters.",
+        "environment_id": "env_void_mirror_v1",
+        "world_slug": "void-mirror",
+        "setting_class": "void_minimal",
+        "lighting_preset": "void_minimal",
+        "time_of_day": "neutral",
+        "primary_anchor": "mirror_center",
+        "trigger_type": "scene_enter",
+        "trigger_target": "mirror_center",
+        "product_layer": "onboarding",
+        "splat_prompt_en": "Abstract black void, single mirror, soft neutral light, minimal reflection floor"
+      },
+      "2": {
+        "dramatic_beat_de": "Morgenfeed: Nebenkosten, BEG, SHK-News auf dem Handy.",
+        "scene_concept_de": "Küche in einem MFH in Dortmund, Nebenkostenbriefe auf dem Tisch, Handy vibriert.",
+        "environment_id": "env_kitchen_lived_in_dach_v1",
+        "world_slug": "tik-kitchen-pilot",
+        "setting_class": "home_kitchen",
+        "lighting_preset": "morning_warm",
+        "time_of_day": "07:15",
+        "primary_anchor": "phone_main",
+        "secondary_anchors": [
+          "wall_calendar",
+          "kitchen_counter_docs"
+        ],
+        "trigger_type": "pickup",
+        "trigger_target": "phone_main",
+        "product_layer": "echeon",
+        "splat_prompt_en": "Lived-in DACH apartment kitchen morning, warm daylight, papers on table, smartphone on counter, photorealistic 360 interior"
+      },
+      "3": {
+        "dramatic_beat_de": "Sichtbarkeit als Verwalter — CHECKION auf dem Monitor.",
+        "scene_concept_de": "Homeoffice mit Monitor, Unterlagen zu WEG und Energieeffizienz.",
+        "environment_id": "env_home_office_lived_in_dach_v1",
+        "world_slug": "modern-office-360",
+        "setting_class": "home_office",
+        "lighting_preset": "midday_neutral",
+        "time_of_day": "11:30",
+        "primary_anchor": "monitor_left",
+        "trigger_type": "look_at",
+        "trigger_target": "monitor_left",
+        "product_layer": "checkion",
+        "splat_prompt_en": "Photorealistic home office daylight, desk with left monitor visible, documents, DACH apartment scale, 360 interior"
+      },
+      "4": {
+        "dramatic_beat_de": "Abend: Compliance und Entscheidungsdruck werden spürbar.",
+        "scene_concept_de": "Wohnzimmer am Abend, Kalender und Akten auf dem Couchtisch.",
+        "environment_id": "env_home_living_lived_in_dach_v1",
+        "world_slug": "living-evening-pilot",
+        "setting_class": "home_living",
+        "lighting_preset": "evening_warm",
+        "time_of_day": "19:45",
+        "primary_anchor": "sofa_main",
+        "secondary_anchors": [
+          "wall_calendar",
+          "kitchen_counter_docs"
+        ],
+        "trigger_type": "sit_down",
+        "trigger_target": "sofa_main",
+        "product_layer": "audion",
+        "splat_prompt_en": "Cozy DACH living room evening, warm lamp, sofa, calendar on wall, documents on side table, 360 interior"
+      },
+      "5": {
+        "dramatic_beat_de": "Reveal und Report.",
+        "scene_concept_de": "Dunkler Void mit leuchtender Persona-Constellation und QR-Panel für den Take-home-Report.",
+        "environment_id": "env_void_constellation_v1",
+        "world_slug": "void-constellation",
+        "setting_class": "void_constellation",
+        "lighting_preset": "void_minimal",
+        "time_of_day": "neutral",
+        "primary_anchor": "qr_panel",
+        "trigger_type": "timer",
+        "trigger_target": "qr_panel",
+        "product_layer": "closure",
+        "splat_prompt_en": "Abstract void, glowing persona graph nodes, QR panel at eye level"
+      }
+    }
+  },
+  "act_data": {
+    "2": {
+      "echeon_feed": {
+        "item_count": 3,
+        "headline_templates": [
+          "BEG-Förderung 2026: Was Verwalter jetzt wissen müssen",
+          "Wärmepumpen in Bestands-MFH: Praxisbericht aus NRW",
+          "Eigentümerversammlung: neue Pflichten im Überblick"
+        ]
+      }
+    },
+    "3": {
+      "checkion_chart": {
+        "metrics": [
+          {
+            "label": "GEO-Sichtbarkeit",
+            "value": 68,
+            "unit": "%",
+            "comparison_value": 54,
+            "trend": "up",
+            "rationale_de": "Regionale Sichtbarkeit wächst"
+          },
+          {
+            "label": "Google-Ranking",
+            "value": 72,
+            "unit": "%",
+            "comparison_value": null,
+            "trend": "flat",
+            "rationale_de": "Stabil in lokaler Suche"
+          },
+          {
+            "label": "Website-Score",
+            "value": 81,
+            "unit": "%",
+            "comparison_value": 76,
+            "trend": "up",
+            "rationale_de": "Gute Website, leicht über Schnitt"
+          }
+        ]
+      }
+    },
+    "4": {
+      "audion_diegetic": {
+        "metrics": [
+          {
+            "metric_id": "compliance_pressure",
+            "label": "Compliance-Filter",
+            "value": 73,
+            "unit": "%",
+            "anchor_object": "wall_calendar",
+            "animation_preset": "glow_warm",
+            "rationale_de": "Regulatorik im Abendkopf"
+          },
+          {
+            "metric_id": "stress_peak_evening",
+            "label": "Entscheidungsdruck",
+            "value": 61,
+            "unit": "%",
+            "anchor_object": "kitchen_counter_docs",
+            "animation_preset": "pulse_red",
+            "rationale_de": "Offene Beschlüsse"
+          }
+        ]
+      }
+    },
+    "5": {
+      "recap_emphasis_de": "Drei Produktschichten eines Verwaltungstags — Take-home Report für {{company.name}}"
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 **Regel:** Keine Produkt-URLs in Anwendungscode hardcoden. Diese Datei + Umgebungsvariablen sind die Referenz.
 
-Stand: Juni 2026
+Stand: Mai 2026
 
 ---
 
@@ -10,10 +10,11 @@ Stand: Juni 2026
 
 | Pfad | Inhalt |
 |------|--------|
-| https://github.com/chbrdk/TIK | **Ein Repo:** Specs + `backend/` + `unity/` + fixtures |
+| https://github.com/chbrdk/TIK | Specs + `backend/` + `webxr/` + fixtures |
 | `fixtures/golden/` | Golden `scene_config.json` |
 | `backend/` | FastAPI `/v1` (OSS, standalone) |
-| `unity/` | Unity 6 Quest 3 Client |
+| `webxr/` | **Quest 3 WebXR client** (booth runtime) |
+| `knowledge/` | image-blaster, WebXR ops |
 
 ---
 
@@ -21,10 +22,11 @@ Stand: Juni 2026
 
 | Repo | Rolle |
 |------|--------|
+| **image-blaster** | Gaussian splat worlds + anchor authoring (`../image-blaster`) |
 | AUDION-v2 | Production API host (sync `backend/app/persona_reality` from TIK) |
 | CHECKION | GEO/Ranking/Domain Metriken |
 | PLEXON | Identity, Registry, Usage |
-| msqdx-design-system | UI (Companion PWA, später) |
+| msqdx-design-system | UI (Companion PWA) |
 
 ---
 
@@ -45,6 +47,8 @@ Stand: Juni 2026
 | Service | URL | Port |
 |---------|-----|------|
 | TIK backend | `http://localhost:8000/v1` | 8000 |
+| WebXR dev | `http://localhost:5173` | 5173 |
+| image-blaster viewer | `http://localhost:5173` | 5173 (separate app) |
 | CHECKION | `http://localhost:3000` | 3000 |
 | PLEXON | `http://localhost:3334` | 3334 |
 
@@ -52,7 +56,20 @@ Stand: Juni 2026
 # TIK monorepo
 npm test
 cd backend && uvicorn app.main:app --reload --port 8000
+cd webxr && npm run dev
 ```
+
+---
+
+## Gaussian splatting (WebXR)
+
+| Ressource | URL / Pfad |
+|-----------|------------|
+| **image-blaster** | `../image-blaster` · Setup: `knowledge/image-blaster-setup.md` · [GitHub](https://github.com/neilsonnn/image-blaster) |
+| WebXR sync script | `webxr/scripts/sync-world-from-blaster.sh` |
+| WebXR runtime guide | `knowledge/persona-reality-webxr-pilot.md` |
+| World Labs export docs | https://docs.worldlabs.ai/marble/export/gaussian-splat |
+| Meta Immersive Web SDK | https://iwsdk.dev/ |
 
 ---
 

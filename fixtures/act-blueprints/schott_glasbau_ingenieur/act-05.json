@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "blueprint_id": "schott_glasbau_act_05",
+    "schema_version": "1.0",
+    "language": "de",
+    "product_layer": "closure"
+  },
+  "act": 5,
+  "story": {
+    "core_message_de": "Rückblick auf einen Glasbau-Projekttag + Take-home für {{company.name}}.",
+    "core_message_en": "Recap of a glass construction project day + take-home for Schott.",
+    "user_feeling": "Abschluss, Klarheit, Neugier auf Report",
+    "nova_role": "Synthese, dann klare Handlungsaufforderung (QR)"
+  },
+  "environment": {
+    "setting_class": "void_constellation",
+    "style_hint": "abstract stars, persona graph, technical nodes",
+    "region_hint": "neutral",
+    "time_of_day": "neutral",
+    "lighting_preset": "void_minimal",
+    "environment_id_example": "env_void_constellation_v1"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "void-constellation",
+      "prompt_en": "Abstract dark void with glowing constellation points suggesting facade glass panels and data nodes, subtle depth, minimalist, no furniture, cinematic space for QR panel and persona graph",
+      "negative_prompt": "kitchen, office, daylight window, construction site clutter",
+      "camera_notes": "qr_panel anchor floating at comfortable reading distance",
+      "anchor_placements": [{ "anchor_id": "qr_panel", "description": "Floating QR / report panel" }]
+    },
+    "prop_notes": "QR code 3D prop; persona node constellation with glass/facade motif"
+  },
+  "voiceover": {
+    "pre_beat_tracks": [],
+    "beat_track": {
+      "track_id_suffix": "01",
+      "estimated_duration_sec": 20,
+      "lines": [
+        {
+          "text": "Du hast {{persona.display_name}} fünf Minuten lang erlebt.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "echeon, CHECKION, AUDION — ein Glasbau-Projekttag aus seiner Perspektive.",
+          "at_sec": 5,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Scanne den Code — dein Report für {{company.name}} wartet.",
+          "at_sec": 11,
+          "pause_after_sec": 0.6
+        }
+      ]
+    }
+  },
+  "interaction": {
+    "trigger_type": "timer",
+    "trigger_target": null,
+    "primary_anchor": "qr_panel",
+    "delay_sec": 5,
+    "haptic_pattern": "none"
+  },
+  "data_viz": {
+    "mode": "qr_closure",
+    "qr_closure": { "anchor_object": "qr_panel" }
+  },
+  "timeline": {
+    "target_duration_sec": 45,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [],
+    "beat_cue_templates": []
+  }
+}

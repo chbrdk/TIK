@@ -1,0 +1,100 @@
+{
+  "act": 5,
+  "blueprint_id": "schott_glasbau_act_05",
+  "persona_id": "schott_glasbau_ingenieur",
+  "story": {
+    "core_message_de": "Rückblick auf einen Glasbau-Projekttag + Take-home für Schott.",
+    "core_message_en": "Recap of a glass construction project day + take-home for Schott.",
+    "user_feeling": "Abschluss, Klarheit, Neugier auf Report",
+    "nova_role": "Synthese, dann klare Handlungsaufforderung (QR)"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "void-constellation",
+      "prompt_en": "Abstract dark void with glowing constellation points suggesting facade glass panels and data nodes, subtle depth, minimalist, no furniture, cinematic space for QR panel and persona graph",
+      "negative_prompt": "kitchen, office, daylight window, construction site clutter",
+      "camera_notes": "qr_panel anchor floating at comfortable reading distance",
+      "anchor_placements": [
+        {
+          "anchor_id": "qr_panel",
+          "description": "Floating QR / report panel"
+        }
+      ]
+    },
+    "prop_notes": "QR code 3D prop; persona node constellation with glass/facade motif"
+  },
+  "environment": {
+    "setting_class": "void_constellation",
+    "style_hint": "abstract stars, persona graph, technical nodes",
+    "region_hint": "neutral",
+    "time_of_day": "neutral",
+    "lighting_preset": "void_minimal",
+    "environment_id_example": "env_void_constellation_v1"
+  },
+  "voiceover_tracks": {
+    "nova_de_act5_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 20,
+      "lines": [
+        {
+          "text": "Du hast Markus Weber fünf Minuten lang erlebt.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "echeon, CHECKION, AUDION — ein Glasbau-Projekttag aus seiner Perspektive.",
+          "at_sec": 5,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Scanne den Code — dein Report für Schott wartet.",
+          "at_sec": 11,
+          "pause_after_sec": 0.6
+        }
+      ]
+    }
+  },
+  "act_script": {
+    "act": 5,
+    "target_duration_sec": 45,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [],
+    "beat_cue_templates": {}
+  },
+  "narrative_beat": {
+    "act": 5,
+    "trigger_type": "timer",
+    "trigger_target": null,
+    "delay_sec": 5,
+    "duration_sec": 45,
+    "voiceover_track_id": "nova_de_act5_01",
+    "ambient_audio_id": null,
+    "haptic_pattern": "none",
+    "ui_overlay": {
+      "type": "qr_code",
+      "anchor_object": "qr_panel",
+      "payload": {}
+    },
+    "lines": [
+      {
+        "text": "Du hast Markus Weber fünf Minuten lang erlebt.",
+        "at_sec": 0,
+        "pause_after_sec": 0.5
+      },
+      {
+        "text": "echeon, CHECKION, AUDION — ein Glasbau-Projekttag aus seiner Perspektive.",
+        "at_sec": 5,
+        "pause_after_sec": 0.5
+      },
+      {
+        "text": "Scanne den Code — dein Report für Schott wartet.",
+        "at_sec": 11,
+        "pause_after_sec": 0.6
+      }
+    ],
+    "estimated_duration_sec": 20,
+    "cues": [],
+    "_beat_cue_template_key": "nova_de_act5_01"
+  },
+  "data_layer_slice": {}
+}

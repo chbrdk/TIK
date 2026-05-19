@@ -1,0 +1,36 @@
+---
+description: Persona Reality uses WebXR only — never suggest Unity workflows
+globs: []
+alwaysApply: true
+---
+
+# Runtime: WebXR only (no Unity)
+
+**Persona Reality booth runtime is WebXR** (`TIK/webxr/` + Quest Browser), not a Unity APK.
+
+## Do not suggest or implement
+
+- Unity Editor, URP, IL2CPP, Quest APK builds
+- `unity/` client work, PLY import, Gaussian Splat Unity package
+- Any removed Unity import/sync scripts (see git history)
+- “Assign PLY to Kitchen GS Shell” or similar Unity menu paths
+
+## Asset pipeline (correct)
+
+1. **image-blaster** → World Labs `.spz` + `anchors.json` + `manifest.json`
+2. **Sync** → `webxr/scripts/sync-world-from-blaster.sh` → `webxr/public/worlds/<slug>/`
+3. **Viewer** → `image-blaster` `bun run dev` and/or `TIK/webxr` `npm run dev`
+4. **Anchor placement** → `/<slug>/anchors` in image-blaster viewer
+
+## Contract
+
+`scene_config.json` is read by **WebXR** (`webxr/`). AUDION/backend composes it; iPad companion sends it via WebSocket.
+
+## Docs to use
+
+- `knowledge/persona-reality-webxr-pilot.md`
+- `knowledge/image-blaster-setup.md`
+- `knowledge/image-blaster-world-anchors-only.md`
+- `knowledge/repos-and-urls.md`
+
+The `unity/` directory in this repo is **legacy archive** — do not extend it unless the user explicitly revives Unity.

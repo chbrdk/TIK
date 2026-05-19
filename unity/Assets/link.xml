@@ -1,4 +1,0 @@
-<linker>
-  <assembly fullname="Newtonsoft.Json" preserve="all"/>
-  <assembly fullname="PersonaReality.Runtime" preserve="all"/>
-</linker>

@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "blueprint_id": "product_default_act_03",
+    "schema_version": "1.0",
+    "language": "de",
+    "product_layer": "checkion"
+  },
+  "act": 3,
+  "story": {
+    "core_message_de": "Wie Auftraggeber dich digital wahrnehmen — Sichtbarkeit, Ranking, Website-Qualität.",
+    "core_message_en": "How clients perceive you digitally — visibility, ranking, website quality.",
+    "user_feeling": "Professionell, leicht angespannt, Blick auf Monitor",
+    "nova_role": "Metriken einordnen, nicht technisch überladen"
+  },
+  "environment": {
+    "environment_id": "env_home_office_lived_in_dach_v1",
+    "world_slug": "modern-office-360",
+    "scene_concept_de": "Legacy-Referenz: Homeoffice mit Monitor — nur wenn CHECKION-Szene dort Sinn ergibt.",
+    "setting_class": "home_office",
+    "style_hint": "modern_clean, lived-in DACH",
+    "region_hint": "dach",
+    "time_of_day": "11:30",
+    "lighting_preset": "midday_neutral"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "modern-office-360",
+      "prompt_en": "Photorealistic modern open-plan home office, daylight, desk with monitor, ergonomic chair, grey carpet, DACH apartment scale, 360 interior, monitor clearly visible on left desk area",
+      "negative_prompt": "outdoor only, empty void, night club",
+      "camera_notes": "monitor_left anchor on left monitor screen; user approaches from room center",
+      "anchor_placements": [
+        { "anchor_id": "monitor_left", "description": "Left monitor screen center, eye level when seated" }
+      ]
+    },
+    "prop_notes": "3D bar chart diegetic on monitor surface (not HUD overlay)"
+  },
+  "voiceover": {
+    "pre_beat_tracks": [
+      {
+        "track_id_suffix": "01",
+        "estimated_duration_sec": 15,
+        "lines": [
+          {
+            "text": "Vormittag im Homeoffice — zwischen E-Mails und Abrechnungen.",
+            "at_sec": 0,
+            "pause_after_sec": 0.5
+          },
+          {
+            "text": "CHECKION zeigt dir, wie sichtbar deine Verwaltung online ist.",
+            "at_sec": 6,
+            "pause_after_sec": 0.5
+          },
+          { "text": "Schau auf den Monitor links.", "at_sec": 11, "pause_after_sec": 0.6 }
+        ]
+      }
+    ],
+    "beat_track": {
+      "track_id_suffix": "02",
+      "estimated_duration_sec": 12,
+      "lines": [
+        {
+          "text": "GEO-Sichtbarkeit, Ranking, Website-Score — auf einen Blick.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "So erleben Auftraggeber deine digitale Präsenz.",
+          "at_sec": 5,
+          "pause_after_sec": 0.6
+        }
+      ]
+    }
+  },
+  "interaction": {
+    "trigger_type": "look_at",
+    "trigger_target": "monitor_left",
+    "primary_anchor": "monitor_left",
+    "delay_sec": 1,
+    "haptic_pattern": "none"
+  },
+  "data_viz": {
+    "mode": "checkion_chart",
+    "checkion_chart": {
+      "chart_type": "bar_3d",
+      "metrics": [
+        {
+          "label": "GEO-Sichtbarkeit",
+          "value": 68,
+          "unit": "%",
+          "comparison_value": 54,
+          "trend": "up",
+          "rationale_de": "Persona ist online sichtbar, aber mit Wachstumspotenzial"
+        },
+        {
+          "label": "Google-Ranking",
+          "value": 72,
+          "unit": "%",
+          "comparison_value": null,
+          "trend": "flat",
+          "rationale_de": "Stabile lokale Auffindbarkeit"
+        },
+        {
+          "label": "Website-Score",
+          "value": 81,
+          "unit": "%",
+          "comparison_value": 76,
+          "trend": "up",
+          "rationale_de": "Gute Website, leicht über Branchenschnitt"
+        }
+      ]
+    }
+  },
+  "timeline": {
+    "target_duration_sec": 55,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      { "type": "subtitle", "track_id": "PLACEHOLDER", "at_sec": 0 },
+      { "type": "hint_primary", "anchor_object": "monitor_left", "at_sec": 12 },
+      { "type": "chart_show", "anchor_object": "monitor_left", "at_sec": 13 }
+    ],
+    "beat_cue_templates": [
+      { "type": "hint_hide", "anchor_object": "monitor_left", "at_sec": 0, "delay_from_beat": true },
+      { "type": "chart_show", "anchor_object": "monitor_left", "at_sec": 4, "delay_from_beat": true },
+      { "type": "chart_hide", "anchor_object": "monitor_left", "at_sec": 12, "delay_from_beat": true },
+      { "type": "act_advance", "at_sec": 14, "delay_from_beat": true }
+    ]
+  }
+}

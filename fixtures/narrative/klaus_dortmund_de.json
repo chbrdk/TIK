@@ -1,0 +1,241 @@
+{
+  "meta": {
+    "persona_id": "klaus_dortmund",
+    "language": "de",
+    "schema_version": "1.0"
+  },
+  "voiceover_tracks": {
+    "nova_de_act1_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 12,
+      "lines": [
+        { "text": "Willkommen bei Persona Reality.", "at_sec": 0, "pause_after_sec": 0.5 },
+        {
+          "text": "Gleich wirst du jemand anderem — Klaus Berger, Hausverwalter aus Dortmund.",
+          "at_sec": 4,
+          "pause_after_sec": 0.5
+        },
+        { "text": "Schau in den Spiegel. Das ist dein Morgen.", "at_sec": 9, "pause_after_sec": 0.6 }
+      ]
+    },
+    "nova_de_act2_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 18,
+      "lines": [
+        { "text": "Sieben Uhr — Küche in deinem MFH in Dortmund.", "at_sec": 0, "pause_after_sec": 0.5 },
+        {
+          "text": "Die Nebenkostenabrechnung liegt noch auf dem Tisch.",
+          "at_sec": 5,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Dein Handy vibriert. Der Tag beginnt mit Informationen.",
+          "at_sec": 11,
+          "pause_after_sec": 0.6
+        }
+      ]
+    },
+    "nova_de_act2_02": {
+      "speaker": "nova",
+      "estimated_duration_sec": 20,
+      "lines": [
+        {
+          "text": "Das ist dein echeon-Feed — kuratiert für Verwalter wie dich.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Förderungen, SHK-News, alles was deine Eigentümer beschäftigt.",
+          "at_sec": 6,
+          "pause_after_sec": 0.6
+        }
+      ]
+    },
+    "nova_de_act3_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 15,
+      "lines": [
+        {
+          "text": "Vormittag im Homeoffice — zwischen E-Mails und Abrechnungen.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "CHECKION zeigt dir, wie sichtbar deine Verwaltung online ist.",
+          "at_sec": 6,
+          "pause_after_sec": 0.5
+        },
+        { "text": "Schau auf den Monitor links.", "at_sec": 11, "pause_after_sec": 0.6 }
+      ]
+    },
+    "nova_de_act3_02": {
+      "speaker": "nova",
+      "estimated_duration_sec": 12,
+      "lines": [
+        {
+          "text": "GEO-Sichtbarkeit, Ranking, Website-Score — auf einen Blick.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "So erleben Auftraggeber deine digitale Präsenz.",
+          "at_sec": 5,
+          "pause_after_sec": 0.6
+        }
+      ]
+    },
+    "nova_de_act4_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Abend. Du lässt den Tag auf dem Sofa ausklingen.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "AUDION macht sichtbar, was dich wirklich beschäftigt.",
+          "at_sec": 5,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Compliance, Entscheidungsdruck — nicht abstrakt, sondern hier im Raum.",
+          "at_sec": 10,
+          "pause_after_sec": 0.6
+        }
+      ]
+    },
+    "nova_de_act5_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 18,
+      "lines": [
+        {
+          "text": "Du hast Klaus Berger fünf Minuten lang erlebt.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "echeon, CHECKION, AUDION — ein Tag aus seiner Perspektive.",
+          "at_sec": 5,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Scanne den Code — dein Report wartet.",
+          "at_sec": 11,
+          "pause_after_sec": 0.6
+        }
+      ]
+    }
+  },
+  "act_scripts": [
+    {
+      "act": 1,
+      "target_duration_sec": 14,
+      "ambient_audio_id": null,
+      "pre_beat_cues": [
+        { "type": "subtitle", "track_id": "nova_de_act1_01", "at_sec": 0 },
+        { "type": "fade", "at_sec": 13, "duration_sec": 0.6, "mode": "out" },
+        { "type": "act_advance", "at_sec": 14 }
+      ],
+      "beat_cue_templates": {}
+    },
+    {
+      "act": 2,
+      "target_duration_sec": 60,
+      "ambient_audio_id": "kitchen_morning_loop",
+      "pre_beat_cues": [
+        { "type": "ambient", "ambient_audio_id": "kitchen_morning_loop", "action": "start", "at_sec": 0 },
+        { "type": "subtitle", "track_id": "nova_de_act2_01", "at_sec": 0 },
+        { "type": "hint_primary", "anchor_object": "phone_main", "at_sec": 15 }
+      ],
+      "beat_cue_templates": {
+        "nova_de_act2_02": [
+          { "type": "hint_hide", "anchor_object": "phone_main", "at_sec": 0, "delay_from_beat": true },
+          { "type": "overlay_show", "at_sec": 6, "delay_from_beat": true },
+          {
+            "type": "diegetic_metric",
+            "metric_id": "compliance_pressure",
+            "animation_preset": "glow_warm",
+            "at_sec": 10,
+            "delay_from_beat": true
+          },
+          {
+            "type": "diegetic_metric_off",
+            "metric_id": "compliance_pressure",
+            "at_sec": 13,
+            "delay_from_beat": true
+          },
+          { "type": "overlay_hide", "at_sec": 18, "delay_from_beat": true },
+          { "type": "act_advance", "at_sec": 22, "delay_from_beat": true }
+        ]
+      }
+    },
+    {
+      "act": 3,
+      "target_duration_sec": 55,
+      "ambient_audio_id": null,
+      "pre_beat_cues": [
+        { "type": "subtitle", "track_id": "nova_de_act3_01", "at_sec": 0 },
+        { "type": "hint_primary", "anchor_object": "monitor_left", "at_sec": 12 },
+        { "type": "chart_show", "anchor_object": "monitor_left", "at_sec": 13 }
+      ],
+      "beat_cue_templates": {
+        "nova_de_act3_02": [
+          { "type": "hint_hide", "anchor_object": "monitor_left", "at_sec": 0, "delay_from_beat": true },
+          {
+            "type": "chart_show",
+            "anchor_object": "monitor_left",
+            "at_sec": 4,
+            "delay_from_beat": true
+          },
+          {
+            "type": "chart_hide",
+            "anchor_object": "monitor_left",
+            "at_sec": 12,
+            "delay_from_beat": true
+          },
+          { "type": "act_advance", "at_sec": 14, "delay_from_beat": true }
+        ]
+      }
+    },
+    {
+      "act": 4,
+      "target_duration_sec": 50,
+      "ambient_audio_id": "living_evening_loop",
+      "pre_beat_cues": [
+        { "type": "ambient", "ambient_audio_id": "living_evening_loop", "action": "start", "at_sec": 0 },
+        { "type": "hint_primary", "anchor_object": "sofa_main", "at_sec": 2 }
+      ],
+      "beat_cue_templates": {
+        "nova_de_act4_01": [
+          { "type": "hint_hide", "anchor_object": "sofa_main", "at_sec": 0, "delay_from_beat": true },
+          {
+            "type": "diegetic_metric",
+            "metric_id": "compliance_pressure",
+            "animation_preset": "glow_warm",
+            "at_sec": 2,
+            "delay_from_beat": true
+          },
+          {
+            "type": "diegetic_metric",
+            "metric_id": "stress_peak_evening",
+            "animation_preset": "pulse_red",
+            "at_sec": 5,
+            "delay_from_beat": true
+          },
+          { "type": "act_advance", "at_sec": 20, "delay_from_beat": true }
+        ]
+      }
+    },
+    {
+      "act": 5,
+      "target_duration_sec": 40,
+      "ambient_audio_id": null,
+      "pre_beat_cues": [
+        { "type": "overlay_show", "at_sec": 17 },
+        { "type": "session_complete", "at_sec": 38 }
+      ],
+      "beat_cue_templates": {}
+    }
+  ]
+}

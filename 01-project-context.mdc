@@ -26,22 +26,21 @@ Abstract, glowing presence (not photoreal humanoid). ElevenLabs voice. Speaks BE
 
 ## Stack
 
-- **Unity 6 LTS** + URP + Single-Pass Stereo → Quest 3 standalone (Android, ARM64, IL2CPP, Vulkan)
-- **Meta XR All-in-One SDK** + XR Interaction Toolkit + OpenXR
-- **Ready Player Me** for persona avatars
+- **WebXR** (`webxr/`) — Quest 3 Browser, React Three Fiber + Spark splats (booth runtime)
+- **image-blaster** — Gaussian splat worlds + `anchors.json` authoring (`../image-blaster`)
 - **ElevenLabs** for NOVA and persona inner monologue (DE + EN)
 - **AUDION API** (FastAPI / Python on Coolify+Hetzner) — composes `scene_config.json`
 - **echeon API** — persona-filtered news signals
 - **CHECKION API** (optional) — GEO/AEO visibility metrics
-- **Storyblok** — pre-rendered page-variant textures (not live-fetched into Quest)
-- **iPad companion app** — onboarding, sends scene_config via WebSocket to Quest
+- **Storyblok** — pre-rendered page-variant textures (not live-fetched on headset)
+- **iPad companion app** — onboarding, sends scene_config via WebSocket to WebXR client
 - **Take-home report** — generated server-side, accessed via in-VR QR code
 
 ## Architectural pillars (non-negotiable)
 
 1. **Data-driven.** Everything (personas, environments, animations, voiceovers) lives in ScriptableObjects. Scripts never hard-reference assets; they go through `AssetReference` on SOs.
-2. **`scene_config.json` is the contract.** AUDION writes it, Unity reads it. Schema version pinned. Treat like an API spec.
-3. **Matrix not catalog.** Persona/environment combinations are composed at runtime from typed axes (5 persona axes, 5 environment axes), not authored one-by-one.
+2. **`scene_config.json` is the contract.** AUDION writes it, WebXR reads it. Schema version pinned. Treat like an API spec.
+3. **Agent-authored scenes.** Each session gets a `session_arc` in the persona profile: the persona agent picks the best environment per act (not a fixed kitchen/office/sofa chain). Product layers (echeon, CHECKION, AUDION) stay; rooms and triggers are free.
 4. **Performance-first.** Quest 3 hard targets: 90 fps sustained, < 200 draw calls, < 500k tris, < 1.5 GB texture memory. Pre-build validator enforces this.
 5. **Offline-resilient at the booth.** All assets local-bundled. Only network dependency at runtime: WebSocket from iPad with config. echeon/CHECKION data is server-pre-fetched and embedded in config.
 
@@ -49,9 +48,10 @@ Abstract, glowing presence (not photoreal humanoid). ElevenLabs voice. Speaks BE
 
 - `persona_reality_v1_spec.md` — Master spec (dramaturgy, schema, scripts, perf budget) — wenn vorhanden
 - `audion-persona-to-scene.openapi.yaml` — AUDION API contract (repo root)
-- `unity-project-skeleton.md` — Unity architecture (repo root)
 - `scene_config.v1.schema.json` — JSON Schema (repo root)
-- `unity/` — Unity 6 Quest client
+- `webxr/` — WebXR Quest client (runtime)
+- `knowledge/persona-reality-webxr-pilot.md` — WebXR ops
+- `knowledge/image-blaster-setup.md` — splat authoring
 - `backend/` — FastAPI `/v1` session composer
 - `fixtures/golden/` — Golden scene_config sessions
 
@@ -59,11 +59,10 @@ When in doubt, consult these in this order. Do not invent fields or break naming
 
 ## Naming conventions
 
-- C# classes/methods/properties: **PascalCase**
-- C# fields/locals: **camelCase**
-- JSON keys, asset IDs, addressable keys: **snake_case**
-- Asset ID examples: `env_kitchen_lived_in_dach_v1`, `klaus_dortmund`, `nova_de_act2_03`, `vaillant_arotherm`
-- Prefab prefixes: `env_*` (environments), `int_*` (interactables), `ui_*` (UI), `_*` (core singletons)
+- TypeScript/React: project conventions in `webxr/`
+- JSON keys, asset IDs, environment IDs: **snake_case**
+- Asset ID examples: `env_kitchen_lived_in_dach_v1`, `klaus_dortmund`, `nova_de_act2_03`
+- image-blaster world slugs: **kebab-case** (e.g. `schott-act2-kitchen`)
 
 ## Persona axes (canonical)
 
@@ -82,18 +81,16 @@ When in doubt, consult these in this order. Do not invent fields or break naming
 
 ## When user asks for code
 
-- Match Unity 6 + URP idioms. No HDRP. No deprecated Light or Camera APIs.
-- Avoid GC allocations in hot paths (per-frame Update). Pool, cache, MaterialPropertyBlock.
-- Prefer events over coroutines for narrative flow.
-- For JSON: Newtonsoft.Json (`com.unity.nuget.newtonsoft-json`), not JsonUtility.
-- For async: `Task` + Addressables `await`, not coroutines.
+- Default runtime work goes in **`webxr/`** (TypeScript, R3F, Spark).
+- Environment assets: **image-blaster** worlds + sync script, not Unity imports.
+- Quest perf: prefer `150k`/`100k` splat tiers; test in Quest Browser.
 
 ## Things to push back on
 
 - "Let's generate everything live at the booth" → unreliable. Pre-compose, ship config.
 - "Codec Avatar / photoreal NOVA" → out of scope for v1. Stylized presence.
 - "Live API calls from Quest" → no. Booth WiFi is unreliable. Pre-cache everything in the config.
-- "Just hard-code the asset reference" → no. Always through SO + Addressables.
+- "Use Unity for the booth build" → no. WebXR only (`no-unity-runtime.mdc`).
 
 ## What this project is NOT
 

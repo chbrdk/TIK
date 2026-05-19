@@ -1,0 +1,5 @@
+{
+  "maintenance_tablet_cart": [0.55, 1.0, -1.25],
+  "line_hmi_alarm_panel": [-1.15, 1.45, -2.1],
+  "conveyor_guard_rail": [0.0, 0.95, -2.4]
+}

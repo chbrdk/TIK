@@ -1,0 +1,56 @@
+{
+  "slug": "sick-cip-technical-room-evening",
+  "environment_id": "env_sick_cip_technical_room_evening_v1",
+  "splat_url": "/worlds/sick-cip-technical-room-evening/splat.spz",
+  "splat_tier": "150k",
+  "collider_url": "/worlds/sick-cip-technical-room-evening/collider.glb",
+  "semantics": {
+    "metric_scale_factor": 1.4922998,
+    "ground_plane_offset": 1.43205,
+    "flip_y": true
+  },
+  "mode": "world_and_anchors_only",
+  "anchors": [
+    {
+      "id": "ifs_audit_binder_stack",
+      "position": [
+        0.35,
+        0.95,
+        -0.75
+      ],
+      "trigger_type": "sit_down",
+      "trigger_target": "technician_stool"
+    },
+    {
+      "id": "cip_control_panel",
+      "position": [
+        -0.85,
+        1.38,
+        -1.85
+      ],
+      "trigger_type": "look_at",
+      "trigger_target": "cip_control_panel"
+    },
+    {
+      "id": "spare_parts_shelf_sparse",
+      "position": [
+        1.25,
+        1.25,
+        -1.55
+      ],
+      "trigger_type": "look_at",
+      "trigger_target": "spare_parts_shelf_sparse"
+    },
+    {
+      "id": "technician_stool",
+      "position": [
+        0,
+        0.48,
+        -0.35
+      ],
+      "trigger_type": "look_at",
+      "trigger_target": "technician_stool"
+    }
+  ],
+  "anchors_pending": []
+}

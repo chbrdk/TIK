@@ -1,0 +1,26 @@
+{
+  "slug": "void-constellation",
+  "environment_id": "env_void_constellation_sick_v1",
+  "splat_url": "/worlds/void-constellation/splat.spz",
+  "splat_tier": "150k",
+  "collider_url": "/worlds/void-constellation/collider.glb",
+  "semantics": {
+    "metric_scale_factor": 0.47653544,
+    "ground_plane_offset": 0.5285434,
+    "flip_y": true
+  },
+  "mode": "world_and_anchors_only",
+  "anchors": [
+    {
+      "id": "qr_panel",
+      "position": [
+        0,
+        1.4,
+        -1.55
+      ],
+      "trigger_type": "timer",
+      "trigger_target": "qr_panel"
+    }
+  ],
+  "anchors_pending": []
+}

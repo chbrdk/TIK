@@ -11,6 +11,7 @@ from .schemas import SessionRequest
 # TIK repo root (backend/app/persona_reality -> backend -> TIK)
 _REPO_ROOT = Path(__file__).resolve().parents[3]
 _GOLDEN_DIR = _REPO_ROOT / "fixtures" / "golden"
+_NARRATIVE_DIR = _REPO_ROOT / "fixtures" / "narrative"
 _SCHEMA_PATH = _REPO_ROOT / "scene_config.v1.schema.json"
 
 _sessions: dict[str, dict] = {}
@@ -41,6 +42,41 @@ def repo_root() -> Path:
     return _REPO_ROOT
 
 
+def load_narrative_manifest(persona_id: str, language: str) -> dict | None:
+    path = _NARRATIVE_DIR / f"{persona_id}_{language}.json"
+    if not path.is_file():
+        return None
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def merge_narrative_into_config(config: dict, manifest: dict | None) -> dict:
+    """Inline voiceover lines and beat cues from narrative manifest (matches Node merge script)."""
+    if not manifest:
+        return config
+
+    tracks = manifest.get("voiceover_tracks") or {}
+    scripts_by_act = {s["act"]: s for s in manifest.get("act_scripts") or []}
+
+    for beat in config.get("narrative_beats") or []:
+        track_id = beat.get("voiceover_track_id")
+        track = tracks.get(track_id) if track_id else None
+        if track:
+            beat["lines"] = copy.deepcopy(track.get("lines") or [])
+            beat["estimated_duration_sec"] = track.get("estimated_duration_sec")
+
+        act = beat.get("act")
+        script = scripts_by_act.get(act) if act else None
+        templates = (script or {}).get("beat_cue_templates") or {}
+        template = templates.get(track_id) if track_id else None
+        if template:
+            beat["cues"] = copy.deepcopy(template)
+
+        est = beat.get("estimated_duration_sec") or beat.get("duration_sec") or 8
+        beat["duration_sec"] = max(beat.get("duration_sec") or 0, est)
+
+    return config
+
+
 def load_golden_config(persona_id: str, language: str) -> dict:
     filename = _SUPPORTED_GOLDEN_KEYS.get((persona_id, language))
     if not filename:
@@ -57,6 +93,8 @@ def load_golden_config(persona_id: str, language: str) -> dict:
 
 def compose_session_stub(request: SessionRequest) -> dict:
     config = copy.deepcopy(load_golden_config(request.persona_id, request.language))
+    manifest = load_narrative_manifest(request.persona_id, request.language)
+    config = merge_narrative_into_config(config, manifest)
 
     scene_id = f"se_{uuid4().hex[:12]}"
     now = datetime.now(UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z")

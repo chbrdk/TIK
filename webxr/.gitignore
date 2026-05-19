@@ -1,0 +1,6 @@
+node_modules/
+dist/
+# Booth Gaussian splats + manifests (Persona Reality offline); keep versioned.
+# public/worlds/
+.DS_Store
+*.local
