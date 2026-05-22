@@ -1,0 +1,57 @@
+[
+  {
+    "act": 1,
+    "environment_id": "env_void_mirror",
+    "world_slug": "void-mirror",
+    "lighting_preset": "void_minimal",
+    "time_of_day": "timeless",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "placeholder",
+    "scene_concept_de": "Raum ohne Grenzen, Licht und Schatten. Dieter steht in der Mitte, sein Spiegelbild ist unscharf, verschoben — die Last der Entscheidungen, die Spannung zwischen Mensch und Rolle. Stimme aus dem Void: ‚Jede Entscheidung kostet Zeit oder Geld. Welche wählst du?'"
+  },
+  {
+    "act": 2,
+    "environment_id": "env_residential_morning_kitchen",
+    "world_slug": "home-morning-kitchen",
+    "lighting_preset": "morning_warm",
+    "time_of_day": "07:15",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "splat",
+    "scene_concept_de": "Moderne Küche oder Balkon, Morgengrauen oder erstes Licht. Kaffee kalt werdend auf der Arbeitsplatte. Dieter in Privatkleidung, Tablet neben dem Frühstück. Ein Push-Notification vom echeon-System: ‚Linie 3 gestern 23 Min Stillstand — Grund unklar.' Der Morgen wird augenblicklich beruflich. Die Fenster-Aussicht zeigt noch grauig-ruhige Umgebung — aber in Dieters Kopf läuft schon der Werk."
+  },
+  {
+    "act": 3,
+    "environment_id": "env_shopfloor_metalworking_line34",
+    "world_slug": "shopfloor-metalworking-lines",
+    "lighting_preset": "midday_neutral",
+    "time_of_day": "10:45",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "splat",
+    "scene_concept_de": "Werkhalle, Linie 3–4, Morgenshift in vollem Gange. Schichtleiter an einem mobilen checkion-Terminal, Prüfer mit Tablet in der Hand. Im Hintergrund Drehmaschinen, Fräsmaschinen, das Summen und Klacken der Produktion. Dieter kommt herein, spricht mit dem Schichtleiter: ‚Was ist gestern bei der Störung los gewesen?' Der Schichtleiter zeigt auf dem checkion-Screen: ‚Hier, Sensor-Fehler erkannt um 22:47, Cause: Verschmutzung. Wir haben's nachts noch repariert.' Die Transparenz ist plötzlich da — und Dieter sieht auch, dass die Fehlserie vermeidbar gewesen wäre. Spanreste auf dem Boden, der Geruch von Kühlmittel, Sicherheits-Warnwesten."
+  },
+  {
+    "act": 4,
+    "environment_id": "env_residential_evening_homeoffice",
+    "world_slug": "home-evening-study",
+    "lighting_preset": "evening_warm",
+    "time_of_day": "20:30",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "splat",
+    "scene_concept_de": "Wohnzimmer oder Homeoffice-Ecke, Abendlicht (Sonnenuntergang oder künstliche Beleuchtung). Dieter sitzt im Sessel oder am kleinen Schreibtisch, Laptop vor sich. audion-Auswertung auf dem Bildschirm: OEE-Graph, Fehler-Heatmap, Trends. Daneben liegen ausgedruckte Schichten-Reports, eine Notiz-Block, eine Tasse kalter Kaffee. Durch das Fenster die Lichter der Stadt oder die stillen Felder. Er ruft sich den Moment von morgens in Erinnerung — die Notification, die Frage ‚warum'. Jetzt hat er die Antwort, aber auch neue Einsichten: die Verschmutzung-Fehler tritt alle 2 Wochen auf, die Wartung muss anders rhythmisiert werden. Er macht sich eine Notiz: ‚Präventiv-Wartung Linie 3 — nächste Woche mit Schichtleiter besprechen.' Der Abend ist privat, aber der Verstand ist noch im Werk."
+  },
+  {
+    "act": 5,
+    "environment_id": "env_void_constellation",
+    "world_slug": "void-constellation",
+    "lighting_preset": "void_minimal",
+    "time_of_day": "timeless",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "placeholder",
+    "scene_concept_de": "Void-Space ähnlich Act 1, aber transformiert. Dieter ist nicht mehr fragmentiert, sondern sammelt: In seinen Händen liegen Notizen, Daten, echeon-Alerts, checkion-Befunde, audion-Insights — alle ineinander verfädelt. Hinter ihm zeichnet sich eine neue Schicht ab, neue Herausforderungen. Seine Stimme: ‚Morgen werde ich es besser wissen.' Ein Lichtstern oder QR-Code erscheint — die Einladung, die Reise weiterzugehen, tiefer einzusteigen in die MSQ-DX-Welt."
+  }
+]

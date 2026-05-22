@@ -1,0 +1,227 @@
+{
+  "act": 2,
+  "blueprint_id": "product_default_act_02",
+  "persona_id": "klaus_dortmund",
+  "story": {
+    "core_message_de": "Erste Signale zum Projekt — kuratierter Fach-Feed auf dem Planungstablet.",
+    "core_message_en": "The day starts with curated, relevant input — what matters to this role.",
+    "user_feeling": "Informiert, leicht unter Druck, Morgenrhythmus",
+    "nova_role": "Kontext geben, dann schweigen während Feed-Lesen"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "schott-facade-planning-morning",
+      "prompt_en": "Photorealistic engineering planning room morning, large table with facade elevation prints and red markup, tablet on table showing news UI area, glass samples corner, Frankfurt high-rise hint through window, 360 interior, professional DACH scale",
+      "negative_prompt": "home kitchen, sofa, empty showroom, night club",
+      "camera_notes": "Phone anchor on counter within arm reach; calendar on wall visible",
+      "anchor_placements": [
+        {
+          "anchor_id": "planning_tablet",
+          "description": "planning_tablet — from session_arc"
+        },
+        {
+          "anchor_id": "facade_section_print",
+          "description": "facade_section_print — from session_arc"
+        },
+        {
+          "anchor_id": "wall_project_schedule",
+          "description": "wall_project_schedule — from session_arc"
+        }
+      ]
+    },
+    "prop_notes": "Phone prop + hotspot for pickup interaction"
+  },
+  "environment": {
+    "environment_id": "env_schott_facade_planning_morning_v1",
+    "world_slug": "schott-facade-planning-morning",
+    "scene_concept_de": "Helles Planungsbüro am Morgen: großer Tisch mit ausgedruckten Fassadenschnitten, Tablet liegt zwischen Rollen und Markierungen, Stadt-Skyline durchs Fenster.",
+    "setting_class": "workplace_office",
+    "style_hint": "technical, lived_in, DACH engineering",
+    "region_hint": "dach",
+    "time_of_day": "07:40",
+    "lighting_preset": "morning_warm"
+  },
+  "scene_environment": {
+    "act": 2,
+    "environment_id": "env_schott_facade_planning_morning_v1",
+    "world_slug": "schott-facade-planning-morning",
+    "lighting_preset": "morning_warm",
+    "time_of_day": "07:40",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "splat",
+    "scene_concept_de": "Helles Planungsbüro am Morgen: großer Tisch mit ausgedruckten Fassadenschnitten, Tablet liegt zwischen Rollen und Markierungen, Stadt-Skyline durchs Fenster."
+  },
+  "voiceover_tracks": {
+    "nova_de_act2_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 18,
+      "lines": [
+        {
+          "text": "Sieben Uhr — Küche in deinem MFH in Dortmund.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Die Nebenkostenabrechnung liegt noch auf dem Tisch.",
+          "at_sec": 5,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Dein Handy vibriert. Der Tag beginnt mit Informationen.",
+          "at_sec": 11,
+          "pause_after_sec": 0.6
+        }
+      ]
+    },
+    "nova_de_act2_02": {
+      "speaker": "nova",
+      "estimated_duration_sec": 20,
+      "lines": [
+        {
+          "text": "Das ist dein echeon-Feed — kuratiert für Hausverwalter wie dich.",
+          "at_sec": 0,
+          "pause_after_sec": 0.5
+        },
+        {
+          "text": "Förderungen, SHK-News, alles was deine Eigentümer beschäftigt.",
+          "at_sec": 6,
+          "pause_after_sec": 0.6
+        }
+      ]
+    }
+  },
+  "act_script": {
+    "act": 2,
+    "target_duration_sec": 60,
+    "ambient_audio_id": "kitchen_morning_loop",
+    "pre_beat_cues": [
+      {
+        "type": "ambient",
+        "ambient_audio_id": "kitchen_morning_loop",
+        "action": "start",
+        "at_sec": 0
+      },
+      {
+        "type": "subtitle",
+        "track_id": "nova_de_act2_01",
+        "at_sec": 0
+      },
+      {
+        "type": "hint_primary",
+        "anchor_object": "phone_main",
+        "at_sec": 15
+      }
+    ],
+    "beat_cue_templates": {
+      "nova_de_act2_02": [
+        {
+          "type": "hint_hide",
+          "anchor_object": "phone_main",
+          "at_sec": 0,
+          "delay_from_beat": true
+        },
+        {
+          "type": "overlay_show",
+          "at_sec": 6,
+          "delay_from_beat": true
+        },
+        {
+          "type": "overlay_hide",
+          "at_sec": 18,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 22,
+          "delay_from_beat": true
+        }
+      ]
+    }
+  },
+  "narrative_beat": {
+    "act": 2,
+    "trigger_type": "pickup",
+    "trigger_target": "planning_tablet",
+    "delay_sec": 0,
+    "duration_sec": 60,
+    "voiceover_track_id": "nova_de_act2_02",
+    "ambient_audio_id": "kitchen_morning_loop",
+    "haptic_pattern": "soft_pulse",
+    "ui_overlay": {
+      "type": "news_feed",
+      "anchor_object": "planning_tablet",
+      "payload": {
+        "feed_source": "echeon.feed_items"
+      }
+    },
+    "lines": [
+      {
+        "text": "Das ist dein echeon-Feed — kuratiert für Hausverwalter wie dich.",
+        "at_sec": 0,
+        "pause_after_sec": 0.5
+      },
+      {
+        "text": "Förderungen, SHK-News, alles was deine Eigentümer beschäftigt.",
+        "at_sec": 6,
+        "pause_after_sec": 0.6
+      }
+    ],
+    "estimated_duration_sec": 20,
+    "cues": [
+      {
+        "type": "hint_hide",
+        "anchor_object": "phone_main",
+        "at_sec": 0,
+        "delay_from_beat": true
+      },
+      {
+        "type": "overlay_show",
+        "at_sec": 6,
+        "delay_from_beat": true
+      },
+      {
+        "type": "overlay_hide",
+        "at_sec": 18,
+        "delay_from_beat": true
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 22,
+        "delay_from_beat": true
+      }
+    ],
+    "_beat_cue_template_key": "nova_de_act2_02"
+  },
+  "data_layer_slice": {
+    "echeon": {
+      "feed_items": [
+        {
+          "headline": "EN 16612 Update: Was Glasbau-Ingenieure bei punktgelagertem Glas beachten müssen",
+          "source": "Haufe",
+          "category": "regulation",
+          "relevance_score": 0.9,
+          "published_at": "2026-05-18T18:50:00.355Z",
+          "url": null
+        },
+        {
+          "headline": "Großformat-Konstruktionsglas: Praxis aus einem Hochhausprojekt in Frankfurt",
+          "source": "SHK Profi",
+          "category": "technology",
+          "relevance_score": 0.85,
+          "published_at": "2026-05-18T18:50:00.355Z",
+          "url": null
+        },
+        {
+          "headline": "Fassadenbrandschutz und Glasaufbau: neue Leitfäden im Überblick",
+          "source": "SHK Profi",
+          "category": "market",
+          "relevance_score": 0.8,
+          "published_at": "2026-05-18T18:50:00.355Z",
+          "url": null
+        }
+      ],
+      "cache_ttl_sec": 1800
+    }
+  }
+}

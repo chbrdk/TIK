@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "world": "schott-munich-office-day",
+  "environment_id": null,
+  "mode": "world_and_anchors_only",
+  "semantics": {
+    "metric_scale_factor": 0.64343846,
+    "ground_plane_offset": 0.36779043,
+    "flip_y": true
+  },
+  "pipeline": {
+    "generate_3d_objects": false,
+    "generate_sfx": false,
+    "world_prompt_en": "Photorealistic modern architecture office, afternoon golden light 14:00, technical workspace with CAD laptop showing 3D glass facade model, rugged tablet on meeting table with checkion UI, glass material samples on shelves behind, architect physical model, technical drawings, collaborative team atmosphere, urban Munich cityscape visible through office windows, 360 professional technical environment",
+    "splat_tier": "150k"
+  },
+  "anchors": [
+    {
+      "id": "cad_laptop",
+      "label": "cad laptop",
+      "description": "CAD laptop center desk, 3D glass facade model on screen, eye-level seated view",
+      "trigger_type": "look_at",
+      "trigger_target": "cad_laptop",
+      "position": null,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "placement_status": "pending",
+      "evidence": {}
+    },
+    {
+      "id": "rugged_tablet_checkion",
+      "label": "rugged tablet checkion",
+      "description": "Rugged tablet on meeting table nearby, checkion app interface active",
+      "trigger_type": "look_at",
+      "trigger_target": "rugged_tablet_checkion",
+      "position": null,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "placement_status": "pending",
+      "evidence": {}
+    },
+    {
+      "id": "glass_samples_on_shelf",
+      "label": "glass samples on shelf",
+      "description": "Schott glass material samples on wall shelf behind desk",
+      "trigger_type": "look_at",
+      "trigger_target": "glass_samples_on_shelf",
+      "position": null,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "placement_status": "pending",
+      "evidence": {}
+    },
+    {
+      "id": "architect_model",
+      "label": "architect model",
+      "description": "Physical architect model on meeting table",
+      "trigger_type": "look_at",
+      "trigger_target": "architect_model",
+      "position": null,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "placement_status": "pending",
+      "evidence": {}
+    },
+    {
+      "id": "window_urban_view",
+      "label": "window urban view",
+      "description": "Window with modern Munich cityscape and golden afternoon light",
+      "trigger_type": "look_at",
+      "trigger_target": "window_urban_view",
+      "position": null,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "placement_status": "pending",
+      "evidence": {}
+    }
+  ],
+  "updated_at": "2026-05-22T07:04:53.502Z"
+}

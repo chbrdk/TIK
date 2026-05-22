@@ -9,7 +9,11 @@ export interface AnchorDefinition {
 
 export type EnvironmentKind = 'splat' | 'placeholder'
 
-export type PlaceholderVariant = 'void_mirror' | 'living_room' | 'void_constellation'
+export type PlaceholderVariant =
+  | 'void_mirror'
+  | 'living_room'
+  | 'void_constellation'
+  | 'void_digital_particles'
 
 export interface EnvironmentDefinition {
   /** Canonical Persona Reality environment_id (library key). */
@@ -42,7 +46,7 @@ export const ENVIRONMENT_REGISTRY: Record<string, EnvironmentDefinition> = {
   },
   env_kitchen_lived_in_dach_v1: {
     environmentId: 'env_kitchen_lived_in_dach_v1',
-    defaultAct: 2,
+    defaultAct: 0,
     kind: 'splat',
     worldSlug: KITCHEN_WORLD_SLUG,
     displayName: 'Küche',
@@ -77,6 +81,15 @@ export const ENVIRONMENT_REGISTRY: Record<string, EnvironmentDefinition> = {
       { id: 'wall_calendar', position: [-1.4, 1.5, -2.0] },
       { id: 'kitchen_counter_docs', position: [1.1, 0.95, -0.8] },
     ],
+    semantics: { metric_scale_factor: 1, ground_plane_offset: 0, flip_y: false },
+  },
+  env_void_digital_particles_v1: {
+    environmentId: 'env_void_digital_particles_v1',
+    defaultAct: 2,
+    kind: 'placeholder',
+    placeholderVariant: 'void_digital_particles',
+    displayName: 'Signal-Feld · Digital',
+    anchors: [{ id: 'diagram_center', position: [0, 1.35, -1.2] }],
     semantics: { metric_scale_factor: 1, ground_plane_offset: 0, flip_y: false },
   },
   env_void_constellation_v1: {

@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "blueprint_id": "schott_glasbau_ingenieur_v8_act_05",
+    "schema_version": "1.0",
+    "language": "de",
+    "product_layer": "closure"
+  },
+  "act": 5,
+  "story": {
+    "core_message_de": "Abends am Esstisch in der Vorstadt Stuttgart: Thomas atmet auf. Der Tag war eine Kette — überfordert morgens, fokussiert mittags, überrascht von Schotts Tiefe, jetzt reflektiv. Drei Lichter: sein Druck, Schotts Klarheit, seine Ruhe. Das Gefühl: Ich bin nicht allein in dieser Komplexität. Ein QR führt zu personalisiertem Schott-Content — genau die Norm, genau das Projekt, das ihm morgen Sicherheit gibt.",
+    "core_message_en": "Abends am Esstisch in der Vorstadt Stuttgart: Thomas atmet auf. Der Tag war eine Kette — überfordert morgens, fokussiert mittags, überrascht von Schotts Tiefe, jetzt reflektiv. Drei Lichter: sein Druck, Schotts Klarheit, seine Ruhe. Das Gefühl: Ich bin nicht allein in dieser Komplexität. Ein QR führt zu personalisiertem Schott-Content — genau die Norm, genau das Projekt, das ihm morgen Sicherheit gibt.",
+    "user_feeling": "Thomas sitzt erschöpft, aber geklärt da. Der Tag hat ihn durchgeschüttelt — zu viele Signale, zu viele Abstimmungen — doch in dieser Stille merkt er: Schott versteht seine Sprache. Nicht Baustellen-Optimierung, nicht Marketing-Glanz: technische Tiefe, Zuverlässigkeit, eine Hand, die greift. Er fühlt sich gesehen.",
+    "nova_role": "Die stille Stimme der Anerkennung — die seinen Tag benannt hat, ohne ihn zu überfordern. NOVA begleitet ihn in diese Void-Konstellation und zeigt: Deine Last ist Muster, dein Morgen-Druck ist Design, Schott kennt dich digital."
+  },
+  "environment": {
+    "environment_id": "env_void_constellation_closure_v1",
+    "world_slug": "void-constellation-closure",
+    "scene_concept_de": "Zeitlose Void-Konstellation: drei leuchtende Momente (Morgen / Website / Abend) verbunden durch fließende Linien. Sanfte Wärme und Kühle in Balance. Kontemplative Stille, unendliche Räumlichkeit — kein Ort, alle Orte, sein Esstisch überall.",
+    "setting_class": "void_closure",
+    "style_hint": "Abstract, minimalist, contemplative void space with three luminous focal points",
+    "region_hint": "Timeless, non-geographic — emotional landscape",
+    "time_of_day": "timeless",
+    "lighting_preset": "void_minimal"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "void-constellation-three-lights",
+      "prompt_en": "Abstract void constellation space, three luminous orbs connected by subtle flowing lines representing morning midday evening mood transitions, soft warm and cool light balance in harmony, contemplative stillness, timeless infinite expanse, 360 void closure serene atmosphere, no figures no text no locations",
+      "negative_prompt": "office, home, outdoor, daytime, people, construction, industrial, bright daylight, specific location, UI text, portrait, recognizable interior, workplace",
+      "anchor_placements": [
+        {
+          "anchor_id": "constellation_lights",
+          "description": "Three primary luminous orbs positioned at key sight lines: morning-warm (left), midday-neutral (center), evening-cool (right), each representing emotional anchor of Thomas's day arc"
+        },
+        {
+          "anchor_id": "connecting_lines",
+          "description": "Subtle flowing particle trails connecting the three orbs, visualizing the narrative thread of overload → focus → reflection"
+        },
+        {
+          "anchor_id": "soft_glow",
+          "description": "Ambient luminescence around the entire space, creating gentle containment — safety, wholeness, no harsh edges"
+        },
+        {
+          "anchor_id": "qr_anchor",
+          "description": "Manifest QR code object floating near primary viewing axis, positioned at comfortable focal distance for phone-based scanning, context: personalized Schott content link"
+        }
+      ]
+    },
+    "prop_notes": "No physical props in splat. WebXR anchors will overlay: (1) three luminous orbs with dynamic subtle glow animation, (2) connecting lines with soft particle flow, (3) QR code for closure interaction. All elements should feel ethereal, not solid — void-native."
+  },
+  "voiceover": {
+    "pre_beat_tracks": [
+      {
+        "track_id_suffix": "01",
+        "estimated_duration_sec": 16.0,
+        "lines": [
+          {
+            "text": "Der Tag war ein Seil. Morgens zu viele Enden gleichzeitig.",
+            "at_sec": 0.0,
+            "pause_after_sec": 1.2
+          },
+          {
+            "text": "Dann kam Klarheit — Schott kennt seine Sprache.",
+            "at_sec": 3.0,
+            "pause_after_sec": 1.5
+          },
+          {
+            "text": "Jetzt, abends: Thomas atmet auf. Nicht allein mit der Last.",
+            "at_sec": 6.0,
+            "pause_after_sec": 2.0
+          }
+        ]
+      }
+    ],
+    "beat_track": {
+      "track_id_suffix": "02",
+      "estimated_duration_sec": 16.0,
+      "lines": [
+        {
+          "text": "Drei Lichter im Nichts — sein Morgen-Druck, Schotts Klarheit, seine Ruhe.",
+          "at_sec": 0.0,
+          "pause_after_sec": 1.8
+        },
+        {
+          "text": "Nicht Baustellen-Optimierung. Nicht Marketing. Technische Tiefe, Zuverlässigkeit, eine Hand, die greift.",
+          "at_sec": 4.0,
+          "pause_after_sec": 2.0
+        },
+        {
+          "text": "Der QR führt ihn zu den genauen Normen, genau dem Projekt, das ihm morgen Sicherheit gibt.",
+          "at_sec": 7.5,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Schott versteht seinen Tag. Digital. Menschlich. Präzise.",
+          "at_sec": 10.0,
+          "pause_after_sec": 2.2
+        }
+      ]
+    }
+  },
+  "interaction": {
+    "trigger_type": "scene_enter",
+    "trigger_target": "void_space",
+    "primary_anchor": "constellation_lights",
+    "delay_sec": 0,
+    "haptic_pattern": "soft_pulse"
+  },
+  "data_viz": {
+    "mode": "qr_closure",
+    "qr_closure": {
+      "anchor_object": "constellation_lights"
+    }
+  },
+  "timeline": {
+    "target_duration_sec": 24.0,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "at_sec": 0.0,
+        "track_id": "01"
+      },
+      {
+        "type": "overlay_show",
+        "at_sec": 1.5,
+        "anchor_object": "constellation_lights"
+      },
+      {
+        "type": "hint_primary",
+        "at_sec": 4.0,
+        "anchor_object": "soft_glow"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 12.0
+      }
+    ],
+    "beat_cue_templates": [
+      {
+        "type": "subtitle",
+        "at_sec": 0.0,
+        "delay_from_beat": true,
+        "track_id": "02"
+      },
+      {
+        "type": "overlay_transition",
+        "at_sec": 3.0,
+        "delay_from_beat": true,
+        "anchor_object": "connecting_lines",
+        "mode": "in"
+      },
+      {
+        "type": "emphasis",
+        "at_sec": 7.0,
+        "delay_from_beat": true,
+        "anchor_object": "constellation_lights"
+      },
+      {
+        "type": "hint_secondary",
+        "at_sec": 11.0,
+        "delay_from_beat": true,
+        "anchor_object": "qr_anchor"
+      },
+      {
+        "type": "overlay_show",
+        "at_sec": 12.0,
+        "delay_from_beat": true,
+        "anchor_object": "qr_anchor",
+        "mode": "in"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 24.0,
+        "delay_from_beat": true
+      }
+    ]
+  }
+}

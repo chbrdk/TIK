@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "narrative_preview",
+  "provider": "google-gemini",
+  "model": "gemini-2.5-flash-image",
+  "status": "completed",
+  "submitted_at": "2026-05-22T08:58:00Z",
+  "prompt": "Empty photorealistic environment plate for 3D Gaussian splat world generation. Architecture and atmosphere only: walls, floors, windows, lighting, materials, generic furniture without narrative staging. No people, no human silhouettes, no faces, no hands. No readable text, logos, UI screens, dashboards, or QR codes. Wide establishing interior or exterior view, clean sightlines, 360-friendly. Setting:\nIndustrial shopfloor with CNC turning and milling lines in active morning shift. Shift supervisor in safety vest holding mobile checkion terminal displaying quality data and sensor logs. Precision components on fixtures, metal chips and coolant smell evident. Fluorescent overhead lighting, machine noise, workers focused on their stations. Plant manager in background observing the terminal data. Realistic factory atmosphere, technical precision visible.\nSpatial layout (architecture only, do not add people or story props): Werkhalle, Linie 3–4, Morgenshift in vollem Gange. Schichtleiter mit mobilem checkion-Terminal in der Hand, Prüfer mit Tablet in der Nähe. Drehmaschinen und Fräsmaschinen laufen, Summen und Klacken der Produktion. Im Hintergrund Spanreste auf dem Boden, Geruch von Kühlmittel. Sicherheits-Warnwesten sichtbar. Dieter kommt herein, fragt nach der gestrigen Störung. Der Schichtleiter zeigt auf dem Screen: ‚Sensor-Fehler erkannt um 22:47, Ursache: Verschmutzung. Wir haben's nachts repariert.'\n Output style: empty architectural reference photo for world capture, not a movie still with actors or a marketing scene with models.\n\nAvoid: people, person, human figure, silhouette, crowd, portrait, face, hands, readable text, logo, watermark, UI overlay, HUD, dashboard on screen, speech bubble, comic panel, storyboard, cinematic action scene, multiple focal characters, product advertisement with model, empty factory, after-hours quiet, office environment, clean white walls, abstract digital interface only, no workers present, bright clean laboratory, sterile boardroo",
+  "act": 3,
+  "persona_id": "weber_betriebsleiter_metallverarbeitung_v1",
+  "world_slug": "shopfloor-metalworking-lines",
+  "output": "act-03.png"
+}

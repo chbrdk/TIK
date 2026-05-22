@@ -15,6 +15,9 @@
     "sync:webxr-world": "bash webxr/scripts/sync-world-from-blaster.sh",
     "test": "npm run validate:schema && npm run validate:persona-inputs && npm run validate:persona-profile && npm run validate:act-blueprint && node scripts/test-act-blueprint.mjs && node scripts/test-persona-pipeline.mjs && node scripts/test-session-arc-compile.mjs",
     "test:backend": "cd backend && python -m pytest -q",
+    "test:pipeline": "cd backend && PYTHONPATH=. .venv/bin/pytest -q -m 'not slow' tests/",
+    "test:pipeline:full": "cd backend && PYTHONPATH=. .venv/bin/pytest -q tests/",
+    "test:pipeline:live": "bash scripts/test-pipeline-api-live.sh",
     "test:all": "npm run validate:schema && npm run test:backend"
   },
   "devDependencies": {

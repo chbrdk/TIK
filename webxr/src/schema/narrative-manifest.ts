@@ -19,6 +19,7 @@ const timelineCueSchema = z.object({
   duration_sec: z.number().optional(),
   mode: z.enum(['in', 'out']).optional(),
   pattern: z.string().optional(),
+  layer: z.enum(['echeon', 'audion', 'checkion', 'cms']).optional(),
 })
 
 export const narrativeManifestSchema = z.object({

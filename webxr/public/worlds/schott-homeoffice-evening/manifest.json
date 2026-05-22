@@ -1,0 +1,12 @@
+{
+  "slug": "schott-homeoffice-evening",
+  "environment_id": "env_kitchen_lived_in_dach_v1",
+  "splat_url": "/worlds/schott-homeoffice-evening/splat.spz",
+  "splat_tier": "150k",
+  "collider_url": "/worlds/schott-homeoffice-evening/collider.glb",
+  "semantics": {
+    "metric_scale_factor": 1,
+    "ground_plane_offset": 0,
+    "flip_y": true
+  }
+}

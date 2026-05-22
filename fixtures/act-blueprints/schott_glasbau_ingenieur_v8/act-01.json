@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "blueprint_id": "schott_glasbau_ingenieur_v8_act01",
+    "schema_version": "1.0",
+    "language": "de",
+    "product_layer": "onboarding"
+  },
+  "act": 1,
+  "story": {
+    "core_message_de": "Thomas erkennt sich in einem digitalen Spiegel — nicht als einzelne Person, sondern als Abbild aus vielen echten Profilen von Ingenieuren wie ihm. Seine Entscheidungsmuster, seine Frustration über Informationsbruch, seine Präzision bei Normen und Kosten. Es verstört ihn leicht: Passt das wirklich zu mir? Gleichzeitig nickt er — ja, genau so ticke ich.",
+    "core_message_en": "Thomas recognizes himself in a digital mirror — not as an individual, but as a composite reflection of many real profiles of engineers like him. His decision patterns, his frustration with information gaps, his precision on norms and costs. It unsettles him slightly: Does that really describe me? Yet he nods — yes, that's exactly how I work.",
+    "user_feeling": "Thomas sitzt in stiller Entscheidung. Nachdenklich, präzise, leicht verunsichert: Wird er hier wirklich verstanden? Die Erkennung trifft ihn — nicht invasiv, sondern wie ein ruhiger Spiegel, der sein Inneres benennt. Erleichterung, dass seine Komplexität nicht auf eine Role reduziert wird.",
+    "nova_role": "Die ruhige Stimme der Selbsterkenntnis — NOVA benennt ohne zu urteilen, was ihn antreibt und blockiert, und schafft Raum für die Frage: Kann ich diesem Spiegel vertrauen?"
+  },
+  "environment": {
+    "environment_id": "env_void_mirror_identity_v1",
+    "world_slug": "void-mirror-identity",
+    "scene_concept_de": "Zeitlose Void: diffuses Licht, große reflektierende Spiegelfläche. Keine Objekte, keine Baustelle, keine Büroroutine — nur der Raum zwischen Frage und Erkenntnis. Thomas' Silhouette, digitale Gitter-Overlay, das sein Profil andeutet ohne es auszustellen.",
+    "setting_class": "void_introspection",
+    "style_hint": "minimalist, contemplative, philosophical, digital-ethereal",
+    "region_hint": "timeless, no specific geography",
+    "time_of_day": "timeless",
+    "lighting_preset": "void_minimal"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "void-mirror-identity-abstract-reflection",
+      "prompt_en": "Abstract void space with minimal diffuse lighting, large reflective mirror surface dominating center, subtle digital grid overlay suggesting data or profile pattern, ethereal philosophical atmosphere, 360 immersive environment, cool tones, no figures, no text, no location markers, timeless and contemplative",
+      "negative_prompt": "people, office, kitchen, construction site, bright daylight, specific architecture, readable UI text, portrait, photography, real location, busy environment",
+      "anchor_placements": [
+        {
+          "anchor_id": "void_mirror",
+          "description": "Large reflective surface center-front, mirror-like quality suggesting recognition and self-reflection"
+        },
+        {
+          "anchor_id": "grid_pattern",
+          "description": "Subtle digital grid overlay on or around mirror, suggesting data profile or pattern recognition without explicit UI"
+        },
+        {
+          "anchor_id": "light_source",
+          "description": "Diffuse ambient light source above/around void, creating introspective mood, no harsh shadows"
+        }
+      ]
+    },
+    "prop_notes": "No narrative props or tools visible in splat. NOVA voiceover and text overlay will anchor the emotional recognition without objects."
+  },
+  "voiceover": {
+    "pre_beat_tracks": [],
+    "beat_track": {
+      "track_id_suffix": "01",
+      "estimated_duration_sec": 16.0,
+      "lines": [
+        {
+          "text": "Thomas, 47, Stuttgart. Leitender Ingenieur. Zwei erwachsene Kinder. Homeoffice am Esstisch nach dem Abendbrot.",
+          "at_sec": 13.0,
+          "pause_after_sec": 2.0
+        },
+        {
+          "text": "Jeden Morgen: Informationen aus Dutzenden Kanälen. Architekten, Glaslieferanten, Montagebetriebe. Jeder mit seiner Dringlichkeit.",
+          "at_sec": 16.0,
+          "pause_after_sec": 2.0
+        },
+        {
+          "text": "Was ihn nervt? Der Informationsbruch. Die manuellen Abstimmungen. Die U-Werte, Schallschutz, Brandsicherheit — jedes Mal neu zusammengetragen.",
+          "at_sec": 19.0,
+          "pause_after_sec": 2.0
+        },
+        {
+          "text": "Was ihn antreibt? Präzision. Normen-Konformität. Zeitersparnis. Dass seine Projekte rentabel werden.",
+          "at_sec": 22.0,
+          "pause_after_sec": 2.0
+        },
+        {
+          "text": "Abends ist er erschöpft-reflektiv. Er braucht Klarheit, nicht neue Fluten.",
+          "at_sec": 25.0,
+          "pause_after_sec": 2.0
+        },
+        {
+          "text": "Erkennst du dich wieder?",
+          "at_sec": 28.0,
+          "pause_after_sec": 3.0
+        }
+      ]
+    }
+  },
+  "interaction": {
+    "trigger_type": "scene_enter",
+    "trigger_target": "mirror_surface",
+    "primary_anchor": "void_mirror",
+    "delay_sec": 0,
+    "haptic_pattern": "soft_pulse"
+  },
+  "data_viz": {
+    "mode": "none"
+  },
+  "timeline": {
+    "target_duration_sec": 32.0,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "at_sec": 1.0,
+        "track_id": "00"
+      },
+      {
+        "type": "hint_primary",
+        "at_sec": 6.0,
+        "anchor_object": "void_mirror"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 14.0
+      }
+    ],
+    "beat_cue_templates": [
+      {
+        "type": "overlay_show",
+        "at_sec": 13.0,
+        "delay_from_beat": true
+      },
+      {
+        "type": "subtitle",
+        "at_sec": 13.0,
+        "track_id": "01"
+      },
+      {
+        "type": "grid_illuminate",
+        "at_sec": 22.0,
+        "delay_from_beat": true,
+        "anchor_object": "grid_pattern"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 31.0,
+        "delay_from_beat": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "schott-munich-office-day",
+  "environment_id": "schott-munich-office-day",
+  "splat_url": "/worlds/schott-munich-office-day/splat.spz",
+  "splat_tier": "150k",
+  "collider_url": "/worlds/schott-munich-office-day/collider.glb",
+  "semantics": {
+    "metric_scale_factor": 0.64343846,
+    "ground_plane_offset": 0.36779043,
+    "flip_y": true
+  },
+  "mode": "world_and_anchors_only",
+  "anchors": [],
+  "anchors_pending": [
+    "cad_laptop",
+    "rugged_tablet_checkion",
+    "glass_samples_on_shelf",
+    "architect_model",
+    "window_urban_view"
+  ]
+}

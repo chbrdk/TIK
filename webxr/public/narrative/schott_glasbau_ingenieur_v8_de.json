@@ -1,0 +1,545 @@
+{
+  "meta": {
+    "persona_id": "schott_glasbau_ingenieur_v8",
+    "language": "de",
+    "schema_version": "1.0"
+  },
+  "voiceover_tracks": {
+    "nova_de_act1_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Thomas, 47, Stuttgart. Leitender Ingenieur. Zwei erwachsene Kinder. Homeoffice am Esstisch nach dem Abendbrot.",
+          "at_sec": 13,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Jeden Morgen: Informationen aus Dutzenden Kanälen. Architekten, Glaslieferanten, Montagebetriebe. Jeder mit seiner Dringlichkeit.",
+          "at_sec": 16,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Was ihn nervt? Der Informationsbruch. Die manuellen Abstimmungen. Die U-Werte, Schallschutz, Brandsicherheit — jedes Mal neu zusammengetragen.",
+          "at_sec": 19,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Was ihn antreibt? Präzision. Normen-Konformität. Zeitersparnis. Dass seine Projekte rentabel werden.",
+          "at_sec": 22,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Abends ist er erschöpft-reflektiv. Er braucht Klarheit, nicht neue Fluten.",
+          "at_sec": 25,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Erkennst du dich wieder?",
+          "at_sec": 28,
+          "pause_after_sec": 3
+        }
+      ]
+    },
+    "nova_de_act2_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Sieben Uhr zwanzig. Thomas öffnet seinen Morgenüberblick — und sofort wird ihm zu viel.",
+          "at_sec": 0,
+          "pause_after_sec": 1.2
+        },
+        {
+          "text": "Zu viele Signale gleichzeitig. Normen-Updates, Lieferanten-Meldungen, was in der Welt gerade passiert.",
+          "at_sec": 2.5,
+          "pause_after_sec": 0.8
+        },
+        {
+          "text": "Er ist nicht dafür gemacht, alles auf einmal zu verarbeiten. Er braucht Prioritäten.",
+          "at_sec": 4.5,
+          "pause_after_sec": 1.5
+        }
+      ]
+    },
+    "nova_de_act2_02": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Dann sieht er die drei Meldungen, die wirklich sein München-Projekt betreffen.",
+          "at_sec": 6.5,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Schallschutz-Norm überarbeitet — das ändert die Spezifikation. Lieferkette: Glasverzögerung kommende Woche. München: Signal vom Bauleiter, dass heute die Abstimmung läuft.",
+          "at_sec": 8,
+          "pause_after_sec": 1.2
+        },
+        {
+          "text": "Der Druck fällt ab. Er atmet auf.",
+          "at_sec": 10.5,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Aber die Anspannung bleibt. Weil er weiß: Lieferketten sind nicht einfach, und Normen-Überarbeitungen bedeuten Koordination.",
+          "at_sec": 11.8,
+          "pause_after_sec": 1.3
+        },
+        {
+          "text": "Heute wird es präzise und straff.",
+          "at_sec": 14.2,
+          "pause_after_sec": 0.8
+        }
+      ]
+    },
+    "nova_de_act3_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Kurz vor Mittag, Homeoffice-Ecke in Stuttgart. Thomas öffnet die Schott-Website, wie so oft — und wartet auf das, was immer kommt: breite Konzern-Sprache, glatte Bilder für Investoren.",
+          "at_sec": 0,
+          "pause_after_sec": 1.2
+        },
+        {
+          "text": "Seine Zeit ist knapp. Die Münchner Fassade wartet, die Lieferkette zittert, und es gibt Dutzende Tools, die er abfragen muss, bevor 14 Uhr die nächste Abstimmung ist.",
+          "at_sec": 5,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Er scrollt ungeduldig — wird das heute wieder Minuten kosten oder spricht es ihn an?",
+          "at_sec": 10,
+          "pause_after_sec": 0.8
+        }
+      ]
+    },
+    "nova_de_act3_02": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Da — nicht Konzern-Floskeln. Fassaden-Cases. Cases, die sein München-Projekt treffen, die Schallschutz-Normen und Brandspezifikationen nennen, die er braucht.",
+          "at_sec": 15,
+          "pause_after_sec": 1.2
+        },
+        {
+          "text": "Und die Website zeigt es nicht als Marketing-Show: Technische Tiefe, 84 Prozent vollständig, Planungsunterlagen sichtbar, Normkonformität klar.",
+          "at_sec": 19,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Thomas atmet leise auf. Vielleicht — nur vielleicht — versteht Schott online doch, wer er ist. Nicht der Investor, nicht die Masse. Ein Fassadenplaner, der Klarheit braucht.",
+          "at_sec": 25,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Die Skepsis weicht, aber die Frage bleibt: Reicht das für echte Zusammenarbeit, oder ist es geschicktes Framing?",
+          "at_sec": 32,
+          "pause_after_sec": 0.8
+        }
+      ]
+    },
+    "nova_de_act4_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "20:30. Thomas sitzt im Warmen seiner Schreibtischlampe, das Homeoffice ist sein Zufluchtsort nach einem Tag voller Abstimmungen.",
+          "at_sec": 0,
+          "pause_after_sec": 1.2
+        },
+        {
+          "text": "Die Familie ist im Wohnzimmer, leise. Er öffnet seinen Laptop und schaut auf die Bilanz des Tages — Informationsdruck am Morgen, offene Fragen, ungelöste Abstimmungen.",
+          "at_sec": 3,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Er atmet aus. Nicht alles kann er ändern. Aber wissen, wo er steht — das braucht er.",
+          "at_sec": 6,
+          "pause_after_sec": 1.2
+        }
+      ]
+    },
+    "nova_de_act4_02": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Morgen: 68 Prozent. Die Informationsflut — Mails, Signale, Anfragen von Lieferanten. Sein Hirn war auf Überload.",
+          "at_sec": 9,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Jetzt, abends, sieht er klarer. Welche Last bleibt real? Welche kann er delegieren oder morgen lösen?",
+          "at_sec": 12,
+          "pause_after_sec": 1.2
+        },
+        {
+          "text": "82 Prozent Klarheit jetzt. Das ist nicht Optimierung — das ist innere Ordnung.",
+          "at_sec": 15,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Er schaut auf die roten Notizen neben seinem Laptop. Die Auszüge von der Website zeigen, wo Schott mit ihm ist — in seinen Normen, seinen Spezifikationen, seinen Fragen.",
+          "at_sec": 18,
+          "pause_after_sec": 1.2
+        },
+        {
+          "text": "Ein Partner, der die Präzision versteht — das ist das, was er braucht.",
+          "at_sec": 21,
+          "pause_after_sec": 1.5
+        }
+      ]
+    },
+    "nova_de_act5_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Der Tag war ein Seil. Morgens zu viele Enden gleichzeitig.",
+          "at_sec": 0,
+          "pause_after_sec": 1.2
+        },
+        {
+          "text": "Dann kam Klarheit — Schott kennt seine Sprache.",
+          "at_sec": 3,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Jetzt, abends: Thomas atmet auf. Nicht allein mit der Last.",
+          "at_sec": 6,
+          "pause_after_sec": 2
+        }
+      ]
+    },
+    "nova_de_act5_02": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Drei Lichter im Nichts — sein Morgen-Druck, Schotts Klarheit, seine Ruhe.",
+          "at_sec": 0,
+          "pause_after_sec": 1.8
+        },
+        {
+          "text": "Nicht Baustellen-Optimierung. Nicht Marketing. Technische Tiefe, Zuverlässigkeit, eine Hand, die greift.",
+          "at_sec": 4,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Der QR führt ihn zu den genauen Normen, genau dem Projekt, das ihm morgen Sicherheit gibt.",
+          "at_sec": 7.5,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Schott versteht seinen Tag. Digital. Menschlich. Präzise.",
+          "at_sec": 10,
+          "pause_after_sec": 2.2
+        }
+      ]
+    }
+  },
+  "act_scripts": [
+    {
+      "act": 1,
+      "target_duration_sec": 32,
+      "ambient_audio_id": null,
+      "pre_beat_cues": [
+        {
+          "type": "subtitle",
+          "at_sec": 1,
+          "track_id": "00"
+        },
+        {
+          "type": "hint_primary",
+          "at_sec": 6,
+          "anchor_object": "void_mirror"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 14
+        }
+      ],
+      "beat_cue_templates": {
+        "nova_de_act1_01": [
+          {
+            "type": "overlay_show",
+            "at_sec": 13,
+            "delay_from_beat": true
+          },
+          {
+            "type": "subtitle",
+            "at_sec": 13,
+            "track_id": "01"
+          },
+          {
+            "type": "grid_illuminate",
+            "at_sec": 22,
+            "delay_from_beat": true,
+            "anchor_object": "grid_pattern"
+          },
+          {
+            "type": "act_advance",
+            "at_sec": 31,
+            "delay_from_beat": true
+          }
+        ]
+      }
+    },
+    {
+      "act": 2,
+      "target_duration_sec": 22,
+      "ambient_audio_id": null,
+      "pre_beat_cues": [
+        {
+          "type": "pipeline_diagram",
+          "at_sec": 0,
+          "layer": "echeon",
+          "anchor_object": "diagram_center"
+        },
+        {
+          "type": "subtitle",
+          "at_sec": 0,
+          "track_id": "01"
+        },
+        {
+          "type": "hint_primary",
+          "at_sec": 2,
+          "anchor_object": "diagram_center"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 14
+        }
+      ],
+      "beat_cue_templates": {
+        "nova_de_act2_02": [
+          {
+            "type": "subtitle",
+            "at_sec": 6.5,
+            "track_id": "02",
+            "delay_from_beat": true
+          },
+          {
+            "type": "pipeline_diagram_off",
+            "at_sec": 20,
+            "delay_from_beat": true
+          },
+          {
+            "type": "act_advance",
+            "at_sec": 22,
+            "delay_from_beat": true
+          }
+        ]
+      }
+    },
+    {
+      "act": 3,
+      "target_duration_sec": 42,
+      "ambient_audio_id": null,
+      "pre_beat_cues": [
+        {
+          "type": "subtitle",
+          "at_sec": 0,
+          "track_id": "01"
+        },
+        {
+          "type": "hint_primary",
+          "at_sec": 4,
+          "anchor_object": "monitor_left"
+        },
+        {
+          "type": "ambient_cue",
+          "at_sec": 8,
+          "anchor_object": "desk_lamp"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 16
+        }
+      ],
+      "beat_cue_templates": {
+        "nova_de_act3_02": [
+          {
+            "type": "overlay_show",
+            "at_sec": 14,
+            "delay_from_beat": true,
+            "anchor_object": "monitor_left"
+          },
+          {
+            "type": "data_viz_animate",
+            "at_sec": 18,
+            "delay_from_beat": true,
+            "anchor_object": "monitor_left"
+          },
+          {
+            "type": "chart_pulse",
+            "at_sec": 23,
+            "delay_from_beat": true,
+            "anchor_object": "monitor_left"
+          },
+          {
+            "type": "sentiment_shift",
+            "at_sec": 28,
+            "anchor_object": "monitor_left",
+            "mode": "in"
+          },
+          {
+            "type": "act_advance",
+            "at_sec": 40,
+            "delay_from_beat": true
+          }
+        ]
+      }
+    },
+    {
+      "act": 4,
+      "target_duration_sec": 24,
+      "ambient_audio_id": null,
+      "pre_beat_cues": [
+        {
+          "type": "subtitle",
+          "at_sec": 0,
+          "track_id": "01"
+        },
+        {
+          "type": "scene_establish",
+          "at_sec": 1.5
+        },
+        {
+          "type": "hint_primary",
+          "at_sec": 3,
+          "anchor_object": "home_office_laptop"
+        },
+        {
+          "type": "mood_ambient",
+          "at_sec": 5
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 13
+        }
+      ],
+      "beat_cue_templates": {
+        "nova_de_act4_02": [
+          {
+            "type": "metric_reveal",
+            "at_sec": 9,
+            "delay_from_beat": true,
+            "anchor_object": "audion_dashboard_screen"
+          },
+          {
+            "type": "data_viz_animate",
+            "at_sec": 10.5,
+            "delay_from_beat": true
+          },
+          {
+            "type": "overlay_show",
+            "at_sec": 12,
+            "delay_from_beat": true
+          },
+          {
+            "type": "metric_reveal",
+            "at_sec": 15,
+            "delay_from_beat": true,
+            "anchor_object": "red_pen_notes"
+          },
+          {
+            "type": "data_viz_animate",
+            "at_sec": 16.5,
+            "delay_from_beat": true
+          },
+          {
+            "type": "metric_reveal",
+            "at_sec": 18,
+            "delay_from_beat": true,
+            "anchor_object": "checkion_printouts"
+          },
+          {
+            "type": "data_viz_animate",
+            "at_sec": 19.5,
+            "delay_from_beat": true
+          },
+          {
+            "type": "reflection_peak",
+            "at_sec": 21,
+            "delay_from_beat": true
+          },
+          {
+            "type": "act_advance",
+            "at_sec": 24,
+            "delay_from_beat": true
+          }
+        ]
+      }
+    },
+    {
+      "act": 5,
+      "target_duration_sec": 24,
+      "ambient_audio_id": null,
+      "pre_beat_cues": [
+        {
+          "type": "subtitle",
+          "at_sec": 0,
+          "track_id": "01"
+        },
+        {
+          "type": "overlay_show",
+          "at_sec": 1.5,
+          "anchor_object": "constellation_lights"
+        },
+        {
+          "type": "hint_primary",
+          "at_sec": 4,
+          "anchor_object": "soft_glow"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 12
+        }
+      ],
+      "beat_cue_templates": {
+        "nova_de_act5_02": [
+          {
+            "type": "subtitle",
+            "at_sec": 0,
+            "delay_from_beat": true,
+            "track_id": "02"
+          },
+          {
+            "type": "overlay_transition",
+            "at_sec": 3,
+            "delay_from_beat": true,
+            "anchor_object": "connecting_lines",
+            "mode": "in"
+          },
+          {
+            "type": "emphasis",
+            "at_sec": 7,
+            "delay_from_beat": true,
+            "anchor_object": "constellation_lights"
+          },
+          {
+            "type": "hint_secondary",
+            "at_sec": 11,
+            "delay_from_beat": true,
+            "anchor_object": "qr_anchor"
+          },
+          {
+            "type": "overlay_show",
+            "at_sec": 12,
+            "delay_from_beat": true,
+            "anchor_object": "qr_anchor",
+            "mode": "in"
+          },
+          {
+            "type": "act_advance",
+            "at_sec": 24,
+            "delay_from_beat": true
+          }
+        ]
+      }
+    }
+  ]
+}

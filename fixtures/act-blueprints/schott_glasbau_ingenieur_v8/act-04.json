@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "blueprint_id": "schott_glasbau_ingenieur_v8_act_04",
+    "schema_version": "1.0",
+    "language": "de",
+    "product_layer": "audion"
+  },
+  "act": 4,
+  "story": {
+    "core_message_de": "Abends um 20:30 in seinem Homeoffice sitzt Dr. Thomas Reinhard vor dem Laptop und bilanziert seinen Tag — die Informationsflut am Morgen, die offenen Abstimmungen mit den Lieferanten, die Frage, ob Schott ihn wirklich versteht. Statt noch mehr Daten braucht er Klarheit: Welche Last bleibt, welche kann er loslassen? Die innere Stimme sagt ihm: Präzision und Partnerschaft, nicht Chaos.",
+    "core_message_en": "Abends um 20:30 in seinem Homeoffice sitzt Dr. Thomas Reinhard vor dem Laptop und bilanziert seinen Tag — die Informationsflut am Morgen, die offenen Abstimmungen mit den Lieferanten, die Frage, ob Schott ihn wirklich versteht. Statt noch mehr Daten braucht er Klarheit: Welche Last bleibt, welche kann er loslassen? Die innere Stimme sagt ihm: Präzision und Partnerschaft, nicht Chaos.",
+    "user_feeling": "Erschöpft und nachdenklich. Der Morgen mit zu vielen Signalen zieht noch nach, aber jetzt, im Warmen seiner Lampe, kann er sortieren. Er fühlt sich präzise, wenn die Prioritäten klar sind — und irritiert, wenn Abstimmungen offen bleiben. Abends braucht er keine neuen Fragen, sondern innere Ordnung und das Gefühl, dass ein Partner (Schott) seine Sorgfalt versteht.",
+    "nova_role": "Die ruhige Stimme, die seinen Erschöpfungszustand benennt und ihm hilft, zwischen echtem Druck und lösbaren Aufgaben zu unterscheiden — kein neuer Input, sondern Klarheit über das, was der Tag war."
+  },
+  "environment": {
+    "environment_id": "env_schott_homeoffice_evening_v1",
+    "world_slug": "schott-homeoffice-evening",
+    "scene_concept_de": "Homeoffice 20:30, warme Schreibtischlampe, Laptop mit innerer Tagesbilanz (Druck, Klarheit, Lektionen), Notizbuch mit roten Notizen, Checkion-Ausdrucke auf dem Schreibtisch, Familie unscharf im Hintergrund (Wohnzimmer), Blick ins dunkle Fenster mit Spiegelung der warmen Innenraumbeleuchtung.",
+    "setting_class": "home_study_evening",
+    "style_hint": "intimate, warm-lit home office, professional yet comfortable, family present but not intrusive, reflective",
+    "region_hint": "dach",
+    "time_of_day": "20:30",
+    "lighting_preset": "evening_warm"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "schott-homeoffice-evening",
+      "prompt_en": "Photorealistic intimate home office evening scene, warm desk lamp casting soft light across wooden desk, open laptop in center, printed technical documents and field reports scattered with red pen markings, reflection in dark window showing cozy home interior warmth against night outside, blurred family silhouettes in background living room, professional yet comfortable atmosphere, 360 panoramic view, no people in foreground, no readable UI text on screens",
+      "negative_prompt": "bright open plan office, empty conference room, cold fluorescent lighting, industrial warehouse, construction site at night, daytime, people in meeting, public space, portrait, UI text, crowded",
+      "anchor_placements": [
+        {
+          "anchor_id": "home_office_laptop",
+          "description": "Center desk, laptop displaying audion dashboard with project metrics and lessons-learned data visualization"
+        },
+        {
+          "anchor_id": "audion_dashboard_screen",
+          "description": "Laptop screen: inner-life metrics (information load, clarity, decision weight) with warm glow animation"
+        },
+        {
+          "anchor_id": "checkion_printouts",
+          "description": "Desk surface left side: printed technical reports with red pen annotations marking priority and resolution"
+        },
+        {
+          "anchor_id": "desk_lamp",
+          "description": "Upper right, warm warm light source creating intimate focus pool"
+        },
+        {
+          "anchor_id": "reflection_window",
+          "description": "Background, dark window with soft interior reflection showing home warmth against night"
+        },
+        {
+          "anchor_id": "red_pen_notes",
+          "description": "Notizbuch rechts neben Laptop mit handschriftlichen Notizen und roten Markierungen"
+        }
+      ]
+    },
+    "prop_notes": "Laptop (audion dashboard), Notizbuch mit Kugelschreiber, rote Markierungen auf Checkion-Ausdrucken, Schreibtischlampe (warm), Familie unscharf im Hintergrund — alle Props dienen innerer Reflexion, nicht Arbeitsoptimierung."
+  },
+  "voiceover": {
+    "pre_beat_tracks": [
+      {
+        "track_id_suffix": "01",
+        "estimated_duration_sec": 16.0,
+        "lines": [
+          {
+            "text": "20:30. Thomas sitzt im Warmen seiner Schreibtischlampe, das Homeoffice ist sein Zufluchtsort nach einem Tag voller Abstimmungen.",
+            "at_sec": 0.0,
+            "pause_after_sec": 1.2
+          },
+          {
+            "text": "Die Familie ist im Wohnzimmer, leise. Er öffnet seinen Laptop und schaut auf die Bilanz des Tages — Informationsdruck am Morgen, offene Fragen, ungelöste Abstimmungen.",
+            "at_sec": 3.0,
+            "pause_after_sec": 1.5
+          },
+          {
+            "text": "Er atmet aus. Nicht alles kann er ändern. Aber wissen, wo er steht — das braucht er.",
+            "at_sec": 6.0,
+            "pause_after_sec": 1.2
+          }
+        ]
+      }
+    ],
+    "beat_track": {
+      "track_id_suffix": "02",
+      "estimated_duration_sec": 16.0,
+      "lines": [
+        {
+          "text": "Morgen: 68 Prozent. Die Informationsflut — Mails, Signale, Anfragen von Lieferanten. Sein Hirn war auf Überload.",
+          "at_sec": 9.0,
+          "pause_after_sec": 1.0
+        },
+        {
+          "text": "Jetzt, abends, sieht er klarer. Welche Last bleibt real? Welche kann er delegieren oder morgen lösen?",
+          "at_sec": 12.0,
+          "pause_after_sec": 1.2
+        },
+        {
+          "text": "82 Prozent Klarheit jetzt. Das ist nicht Optimierung — das ist innere Ordnung.",
+          "at_sec": 15.0,
+          "pause_after_sec": 1.0
+        },
+        {
+          "text": "Er schaut auf die roten Notizen neben seinem Laptop. Die Auszüge von der Website zeigen, wo Schott mit ihm ist — in seinen Normen, seinen Spezifikationen, seinen Fragen.",
+          "at_sec": 18.0,
+          "pause_after_sec": 1.2
+        },
+        {
+          "text": "Ein Partner, der die Präzision versteht — das ist das, was er braucht.",
+          "at_sec": 21.0,
+          "pause_after_sec": 1.5
+        }
+      ]
+    }
+  },
+  "interaction": {
+    "trigger_type": "sit_down",
+    "trigger_target": "office_chair",
+    "primary_anchor": "home_office_laptop",
+    "delay_sec": 0,
+    "haptic_pattern": "soft_pulse"
+  },
+  "data_viz": {
+    "mode": "audion_diegetic",
+    "audion_diegetic": {
+      "metrics": [
+        {
+          "metric_id": "info_overload_morning",
+          "label": "Morgen-Druck",
+          "value": 68.0,
+          "unit": "%",
+          "anchor_object": "home_office_laptop",
+          "animation_preset": "pulse_red"
+        },
+        {
+          "metric_id": "evening_clarity",
+          "label": "Abend-Klarheit",
+          "value": 74.0,
+          "unit": "%",
+          "anchor_object": "desk_lamp",
+          "animation_preset": "glow_warm"
+        }
+      ]
+    }
+  },
+  "timeline": {
+    "target_duration_sec": 24.0,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "at_sec": 0.0,
+        "track_id": "01"
+      },
+      {
+        "type": "scene_establish",
+        "at_sec": 1.5
+      },
+      {
+        "type": "hint_primary",
+        "at_sec": 3.0,
+        "anchor_object": "home_office_laptop"
+      },
+      {
+        "type": "mood_ambient",
+        "at_sec": 5.0
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 13.0
+      }
+    ],
+    "beat_cue_templates": [
+      {
+        "type": "metric_reveal",
+        "at_sec": 9.0,
+        "delay_from_beat": true,
+        "anchor_object": "audion_dashboard_screen"
+      },
+      {
+        "type": "data_viz_animate",
+        "at_sec": 10.5,
+        "delay_from_beat": true
+      },
+      {
+        "type": "overlay_show",
+        "at_sec": 12.0,
+        "delay_from_beat": true
+      },
+      {
+        "type": "metric_reveal",
+        "at_sec": 15.0,
+        "delay_from_beat": true,
+        "anchor_object": "red_pen_notes"
+      },
+      {
+        "type": "data_viz_animate",
+        "at_sec": 16.5,
+        "delay_from_beat": true
+      },
+      {
+        "type": "metric_reveal",
+        "at_sec": 18.0,
+        "delay_from_beat": true,
+        "anchor_object": "checkion_printouts"
+      },
+      {
+        "type": "data_viz_animate",
+        "at_sec": 19.5,
+        "delay_from_beat": true
+      },
+      {
+        "type": "reflection_peak",
+        "at_sec": 21.0,
+        "delay_from_beat": true
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 24.0,
+        "delay_from_beat": true
+      }
+    ]
+  }
+}

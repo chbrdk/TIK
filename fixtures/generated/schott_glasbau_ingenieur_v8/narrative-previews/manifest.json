@@ -1,0 +1,13 @@
+{
+  "persona_id": "schott_glasbau_ingenieur_v8",
+  "acts": [
+    2,
+    3,
+    4
+  ],
+  "paths": {
+    "2": "/narrative-previews/schott_glasbau_ingenieur_v8/act-02.png",
+    "3": "/narrative-previews/schott_glasbau_ingenieur_v8/act-03.png",
+    "4": "/narrative-previews/schott_glasbau_ingenieur_v8/act-04.png"
+  }
+}

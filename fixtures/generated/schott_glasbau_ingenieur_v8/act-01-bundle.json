@@ -1,0 +1,199 @@
+{
+  "act": 1,
+  "blueprint_id": "schott_glasbau_ingenieur_v8_act01",
+  "persona_id": "schott_glasbau_ingenieur_v8",
+  "story": {
+    "core_message_de": "Schwelle: In der Stille erkennt er sich — nicht als Foto, sondern als Abbild aus vielen echten Profilen. Nachdenklich, leicht unsicher: passt das wirklich zu mir?",
+    "core_message_en": "Thomas recognizes himself in a digital mirror — not as an individual, but as a composite reflection of many real profiles of engineers like him. His decision patterns, his frustration with information gaps, his precision on norms and costs. It unsettles him slightly: Does that really describe me? Yet he nods — yes, that's exactly how I work.",
+    "user_feeling": "Thomas sitzt in stiller Entscheidung. Nachdenklich, präzise, leicht verunsichert: Wird er hier wirklich verstanden? Die Erkennung trifft ihn — nicht invasiv, sondern wie ein ruhiger Spiegel, der sein Inneres benennt. Erleichterung, dass seine Komplexität nicht auf eine Role reduziert wird.",
+    "nova_role": "Die ruhige Stimme der Selbsterkenntnis — NOVA benennt ohne zu urteilen, was ihn antreibt und blockiert, und schafft Raum für die Frage: Kann ich diesem Spiegel vertrauen?"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "void-mirror-identity",
+      "prompt_en": "Abstract void space, minimal diffuse light, large reflective mirror surface, figure silhouette contemplating, digital grid overlay, philosophical identity question, 360 immersive void void-minimal lighting, timeless",
+      "negative_prompt": "office, kitchen, construction site, bright daylight, people, specific location",
+      "anchor_placements": [
+        {
+          "anchor_id": "void_mirror",
+          "description": "void_mirror — from session_arc"
+        }
+      ]
+    },
+    "prop_notes": "No narrative props or tools visible in splat. NOVA voiceover and text overlay will anchor the emotional recognition without objects."
+  },
+  "environment": {
+    "environment_id": "env_void_mirror_identity_v1",
+    "world_slug": "void-mirror-identity",
+    "scene_concept_de": "Void-Spiegel, diffuses Licht. Digitales Abbild — Entscheidungsmuster, Pain Points, Werte der Zielgruppe Glasfassaden-Ingenieur.",
+    "setting_class": "void_introspection",
+    "style_hint": "minimalist, contemplative, philosophical, digital-ethereal",
+    "region_hint": "timeless, no specific geography",
+    "time_of_day": "timeless",
+    "lighting_preset": "void_minimal"
+  },
+  "scene_environment": {
+    "act": 1,
+    "environment_id": "env_void_mirror_identity_v1",
+    "world_slug": "void-mirror-identity",
+    "lighting_preset": "void_minimal",
+    "time_of_day": "timeless",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "placeholder",
+    "scene_concept_de": "Void-Spiegel, diffuses Licht. Digitales Abbild — Entscheidungsmuster, Pain Points, Werte der Zielgruppe Glasfassaden-Ingenieur."
+  },
+  "voiceover_tracks": {
+    "nova_de_act1_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Thomas, 47, Stuttgart. Leitender Ingenieur. Zwei erwachsene Kinder. Homeoffice am Esstisch nach dem Abendbrot.",
+          "at_sec": 13,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Jeden Morgen: Informationen aus Dutzenden Kanälen. Architekten, Glaslieferanten, Montagebetriebe. Jeder mit seiner Dringlichkeit.",
+          "at_sec": 16,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Was ihn nervt? Der Informationsbruch. Die manuellen Abstimmungen. Die U-Werte, Schallschutz, Brandsicherheit — jedes Mal neu zusammengetragen.",
+          "at_sec": 19,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Was ihn antreibt? Präzision. Normen-Konformität. Zeitersparnis. Dass seine Projekte rentabel werden.",
+          "at_sec": 22,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Abends ist er erschöpft-reflektiv. Er braucht Klarheit, nicht neue Fluten.",
+          "at_sec": 25,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Erkennst du dich wieder?",
+          "at_sec": 28,
+          "pause_after_sec": 3
+        }
+      ]
+    }
+  },
+  "act_script": {
+    "act": 1,
+    "target_duration_sec": 32,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "at_sec": 1,
+        "track_id": "00"
+      },
+      {
+        "type": "hint_primary",
+        "at_sec": 6,
+        "anchor_object": "void_mirror"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 14
+      }
+    ],
+    "beat_cue_templates": {
+      "nova_de_act1_01": [
+        {
+          "type": "overlay_show",
+          "at_sec": 13,
+          "delay_from_beat": true
+        },
+        {
+          "type": "subtitle",
+          "at_sec": 13,
+          "track_id": "01"
+        },
+        {
+          "type": "grid_illuminate",
+          "at_sec": 22,
+          "delay_from_beat": true,
+          "anchor_object": "grid_pattern"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 31,
+          "delay_from_beat": true
+        }
+      ]
+    }
+  },
+  "narrative_beat": {
+    "act": 1,
+    "trigger_type": "scene_enter",
+    "trigger_target": "mirror_surface",
+    "delay_sec": 0,
+    "duration_sec": 32,
+    "voiceover_track_id": "nova_de_act1_01",
+    "ambient_audio_id": null,
+    "haptic_pattern": "soft_pulse",
+    "ui_overlay": null,
+    "lines": [
+      {
+        "text": "Thomas, 47, Stuttgart. Leitender Ingenieur. Zwei erwachsene Kinder. Homeoffice am Esstisch nach dem Abendbrot.",
+        "at_sec": 13,
+        "pause_after_sec": 2
+      },
+      {
+        "text": "Jeden Morgen: Informationen aus Dutzenden Kanälen. Architekten, Glaslieferanten, Montagebetriebe. Jeder mit seiner Dringlichkeit.",
+        "at_sec": 16,
+        "pause_after_sec": 2
+      },
+      {
+        "text": "Was ihn nervt? Der Informationsbruch. Die manuellen Abstimmungen. Die U-Werte, Schallschutz, Brandsicherheit — jedes Mal neu zusammengetragen.",
+        "at_sec": 19,
+        "pause_after_sec": 2
+      },
+      {
+        "text": "Was ihn antreibt? Präzision. Normen-Konformität. Zeitersparnis. Dass seine Projekte rentabel werden.",
+        "at_sec": 22,
+        "pause_after_sec": 2
+      },
+      {
+        "text": "Abends ist er erschöpft-reflektiv. Er braucht Klarheit, nicht neue Fluten.",
+        "at_sec": 25,
+        "pause_after_sec": 2
+      },
+      {
+        "text": "Erkennst du dich wieder?",
+        "at_sec": 28,
+        "pause_after_sec": 3
+      }
+    ],
+    "estimated_duration_sec": 16,
+    "cues": [
+      {
+        "type": "overlay_show",
+        "at_sec": 13,
+        "delay_from_beat": true
+      },
+      {
+        "type": "subtitle",
+        "at_sec": 13,
+        "track_id": "01"
+      },
+      {
+        "type": "grid_illuminate",
+        "at_sec": 22,
+        "delay_from_beat": true,
+        "anchor_object": "grid_pattern"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 31,
+        "delay_from_beat": true
+      }
+    ],
+    "_beat_cue_template_key": "nova_de_act1_01"
+  },
+  "data_layer_slice": {}
+}

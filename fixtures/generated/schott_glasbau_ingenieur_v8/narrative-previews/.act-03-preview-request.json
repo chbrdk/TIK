@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "narrative_preview",
+  "provider": "google-gemini",
+  "model": "gemini-2.5-flash-image",
+  "status": "completed",
+  "submitted_at": "2026-05-22T06:46:09Z",
+  "prompt": "Photorealistic modern architecture office, afternoon golden light 14:00, technical workspace with CAD laptop showing 3D glass facade model, rugged tablet on meeting table with checkion UI, glass material samples on shelves behind, architect physical model, technical drawings, collaborative team atmosphere, urban Munich cityscape visible through office windows, 360 professional technical environment\n\nAvoid: residential kitchen, home study, bright open plan, empty warehouse, night time, single isolated workspace, no professional context, construction site",
+  "act": 3,
+  "persona_id": "schott_glasbau_ingenieur_v8",
+  "world_slug": "schott-munich-office-day",
+  "output": "act-03.png"
+}

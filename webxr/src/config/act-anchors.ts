@@ -2,7 +2,7 @@
 export function primaryAnchorForAct(act: number): string | null {
   switch (act) {
     case 2:
-      return 'phone_main'
+      return 'diagram_center'
     case 3:
       return 'monitor_left'
     case 4:
@@ -20,7 +20,7 @@ export function actInteractionHint(act: number, desktop = false): string {
       case 1:
         return 'Akt 1 — NOVA läuft, N oder „Weiter“ für Akt 2'
       case 2:
-        return 'Klick: gelbe Kugel / Handy → echeon-Feed'
+        return 'Signal-Feld: Diagramm läuft · N = weiter'
       case 3:
         return 'Act 3: nach ~13 s CHECKION-Chart · Klick/M = Monitor · blaue Kugel'
       case 4:
@@ -35,7 +35,7 @@ export function actInteractionHint(act: number, desktop = false): string {
     case 1:
       return 'NOVA-Einstieg — automatisch weiter zu Akt 2'
     case 2:
-      return 'Gelbe Kugel / Handy = echeon-Feed'
+      return 'Signalfeld — tausende Punkte werden zu drei Meldungen'
     case 3:
       return 'Monitor / blaue Kugel = CHECKION-Dashboard'
     case 4:

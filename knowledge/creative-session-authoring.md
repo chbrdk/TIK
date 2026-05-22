@@ -9,7 +9,9 @@ Stand: Mai 2026
 1. **Throughline** — eine Geschichte in 5 Minuten
 2. **Pro Act** — bester Ort, Tageszeit, Anker, Trigger, Splat-Prompt
 
-Die MSQ-Produkte (echeon, CHECKION, AUDION) bleiben als **dramaturgische Jobs**; **Küche/Büro/Sofa** sind nur eine mögliche Lösung (z. B. Hausverwalter), nicht der Default.
+Die MSQ-Produkte (echeon, CHECKION, AUDION) bleiben als **dramaturgische Jobs**.
+
+**Tagesrhythmus (Default):** Act 2 Morgen **privat**, Act 3 Tag **beruflich**, Act 4 Abend **privat** — Company-Kontext in Story & Daten, aber **nicht** fünf Firmen-Räume hintereinander.
 
 ## Datenfluss
 
@@ -38,8 +40,8 @@ persona_inputs (Zielgruppe + Company)
 
 `fixtures/persona-profiles/schott_glasbau_ingenieur.json`:
 
-- Act 2: Planungstisch + Tablet (nicht Küchen-Handy)
-- Act 3: Ingenieurbüro + Monitor
-- Act 4: Projektraum Abend + Normenordner
+- Act 2: **Morgen privat** — Küche/Frühstück + Tablet (echeon), nicht Planungsbüro
+- Act 3: **Tag beruflich** — Ingenieurbüro + Monitor (checkion)
+- Act 4: **Abend privat** — Esstisch/Homeoffice (audion), nicht Firmen-Projektraum
 
 Welten in image-blaster unter `world_slug` aus `session_arc` anlegen und nach WebXR syncen.

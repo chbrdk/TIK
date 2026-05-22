@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "blueprint_id": "weber_betriebsleiter_metallverarbeitung_v1_act_01",
+    "schema_version": "1.0",
+    "language": "de",
+    "product_layer": "onboarding"
+  },
+  "act": 1,
+  "story": {
+    "core_message_de": "Dieter Hoffmann steht in der Schwelle zwischen Mensch und Rolle. Im Void — ohne Grenzen, ohne Licht — sieht er sein verzerrtes Spiegelbild. Eine Stimme aus dem Nichts fragt: ‚Jede Entscheidung kostet Zeit oder Geld. Welche wählst du?' Die Last der Verantwortung wird greifbar.",
+    "core_message_en": "Dieter Hoffmann stands at the threshold between person and role. In the void—boundless, lightless—he sees his distorted reflection. A voice from nowhere asks: 'Every decision costs time or money. Which will you choose?' The weight of responsibility becomes tangible.",
+    "user_feeling": "Introspection, uncertainty, weight of leadership, threshold moment",
+    "nova_role": "Inner voice, mirror consciousness, guide to the void"
+  },
+  "environment": {
+    "environment_id": "env_void_mirror",
+    "world_slug": "void-mirror",
+    "scene_concept_de": "Abstrakter Void-Raum, diffuses Licht und Schatten, keine feste Architektur. Dieter in der Mitte, sein Spiegelbild unscharf, verschoben — die visuelle Metapher für innere Zerrissenheit zwischen Mensch und Betriebsleiter-Rolle.",
+    "setting_class": "void_threshold",
+    "style_hint": "Minimalist, introspective, industrial undertones, fractured geometry",
+    "region_hint": "Timeless, non-geographic",
+    "time_of_day": "timeless",
+    "lighting_preset": "void_minimal"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "void-mirror",
+      "prompt_en": "Abstract void space with diffuse, fractured light. A man in dark silhouette stands center frame facing a cracked, off-focus mirror reflection. The reflection is distorted, slightly displaced, creating visual tension. Darkness surrounds, with subtle industrial textures (metal, concrete) barely visible in shadow. Minimalist, introspective, metaphorical weight. No machinery, no people, no daylight.",
+      "negative_prompt": "bright factory floor, active machinery, multiple workers, cheerful office lighting, daylight, clear reflections, happy atmosphere, modern corporate setting",
+      "anchor_placements": [
+        {
+          "anchor_id": "mirror_reflection",
+          "description": "Fractured mirror in the void, slightly off-center, reflecting Dieter's distorted silhouette"
+        },
+        {
+          "anchor_id": "void_floor",
+          "description": "Undefined ground plane dissolving into shadow"
+        },
+        {
+          "anchor_id": "light_source",
+          "description": "Diffuse, fractured light source casting long shadows, source not visible"
+        }
+      ]
+    },
+    "prop_notes": "No physical props. Pure atmosphere and silhouette. Mirror is metaphorical—distortion and blur are essential."
+  },
+  "voiceover": {
+    "pre_beat_tracks": [],
+    "beat_track": {
+      "track_id_suffix": "01",
+      "estimated_duration_sec": 16.0,
+      "lines": [
+        {
+          "text": "Dieter Hoffmann. Betriebsleiter. Werksleiter Metallverarbeitung.",
+          "at_sec": 2.0,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "{{persona.display_name}}, 48 Jahre. {{persona.occupation}}. {{company.name}}.",
+          "at_sec": 5.5,
+          "pause_after_sec": 2.0
+        },
+        {
+          "text": "Jede Entscheidung kostet Zeit oder Geld.",
+          "at_sec": 9.5,
+          "pause_after_sec": 1.0
+        },
+        {
+          "text": "Welche wählst du?",
+          "at_sec": 11.5,
+          "pause_after_sec": 3.0
+        }
+      ]
+    }
+  },
+  "interaction": {
+    "trigger_type": "scene_enter",
+    "trigger_target": "persona_entry",
+    "primary_anchor": "mirror_reflection",
+    "delay_sec": 0,
+    "haptic_pattern": "soft_pulse"
+  },
+  "data_viz": {
+    "mode": "none"
+  },
+  "timeline": {
+    "target_duration_sec": 18.0,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "at_sec": 0.0,
+        "track_id": "01"
+      },
+      {
+        "type": "hint_primary",
+        "at_sec": 2.0,
+        "anchor_object": "mirror_reflection"
+      },
+      {
+        "type": "ambient_drone",
+        "at_sec": 1.0,
+        "mode": "in"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 9.0
+      }
+    ],
+    "beat_cue_templates": [
+      {
+        "type": "overlay_show",
+        "at_sec": 5.0,
+        "delay_from_beat": true
+      },
+      {
+        "type": "light_shift",
+        "at_sec": 9.0,
+        "delay_from_beat": true
+      },
+      {
+        "type": "reflection_distort",
+        "at_sec": 11.0,
+        "delay_from_beat": true
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 16.0,
+        "delay_from_beat": true
+      }
+    ]
+  }
+}

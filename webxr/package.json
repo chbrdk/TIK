@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "VITE_STUDIO_API_BASE=/api vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "test": "vitest run",
@@ -24,6 +24,7 @@
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "three": "0.180.0",
+    "wouter": "^3.10.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {

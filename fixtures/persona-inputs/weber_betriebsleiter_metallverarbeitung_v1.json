@@ -1,0 +1,9 @@
+{
+  "target_audience": "Betriebsleiter und Werksleiter in der metallverarbeitenden Industrie, 42–55 Jahre, DACH. Verantwortung für OEE, Stillstandszeiten, Qualität und digitale Transformation auf der Shopfloor-Ebene. Schmerzpunkte: Medienbrüche zwischen ERP/MES und der Linie, fehlende Echtzeit-Transparenz bei Störungen, hoher Druck bei Kunden-Audits und Fachkräftemangel. Entscheidungsstil: pragmatisch, ROI-orientiert, will bewährte Prozesse nicht aufs Spiel setzen.",
+  "company": {
+    "name": "Weber Antriebstechnik GmbH",
+    "description": "Familiengeführtes Mittelstandsunternehmen mit Sitz in Baden-Württemberg, ca. 800 Mitarbeitende, Spezialist für Getriebe, Antriebssysteme und Präzisionskomponenten für Maschinenbau und Automotive-Zulieferer. Am Messestand werden die MSQ-DX-Produkte echeon (Shopfloor-Transparenz), checkion (Qualität & Traceability vor Ort) und audion (Auswertung, Lessons Learned) als durchgängige Story eines Produktionstags gezeigt — von der frühen Schichtplanung bis zur Abend-Auswertung."
+  },
+  "language": "de",
+  "session_label": "Weber Antriebstechnik GmbH"
+}

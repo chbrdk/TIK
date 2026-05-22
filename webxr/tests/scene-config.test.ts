@@ -24,6 +24,16 @@ describe('golden scene_config', () => {
     expect(pickup?.ui_overlay?.type).toBe('news_feed')
   })
 
+  it('accepts placeholder environments without world_slug', () => {
+    const schott = JSON.parse(
+      readFileSync(join(root, 'fixtures/golden/schott_glasbau_ingenieur_v8_de.json'), 'utf-8'),
+    )
+    const parsed = sceneConfigSchema.parse(schott)
+    const act2 = environmentForAct(parsed, 2)
+    expect(act2?.environment_id).toBe('env_void_digital_particles_v1')
+    expect(act2?.world_slug == null || act2?.world_slug === undefined).toBe(true)
+  })
+
   it('has look_at beat on monitor_left for act 3', () => {
     const beats = beatsForAct(config, 3)
     const look = beats.find((b) => b.trigger_type === 'look_at' && b.trigger_target === 'monitor_left')

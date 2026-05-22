@@ -16,6 +16,7 @@ _SCHEMA_PATH = _REPO_ROOT / "scene_config.v1.schema.json"
 
 _sessions: dict[str, dict] = {}
 
+# Legacy explicit keys; any fixtures/golden/{persona_id}_{lang}.json is also supported.
 _SUPPORTED_GOLDEN_KEYS: dict[tuple[str, str], str] = {
     ("klaus_dortmund", "de"): "klaus_dortmund_de.json",
 }
@@ -77,17 +78,21 @@ def merge_narrative_into_config(config: dict, manifest: dict | None) -> dict:
     return config
 
 
+def _golden_path(persona_id: str, language: str) -> Path | None:
+    explicit = _SUPPORTED_GOLDEN_KEYS.get((persona_id, language))
+    if explicit:
+        p = _GOLDEN_DIR / explicit
+        return p if p.is_file() else None
+    dynamic = _GOLDEN_DIR / f"{persona_id}_{language}.json"
+    return dynamic if dynamic.is_file() else None
+
+
 def load_golden_config(persona_id: str, language: str) -> dict:
-    filename = _SUPPORTED_GOLDEN_KEYS.get((persona_id, language))
-    if not filename:
-        if (persona_id, "de") in _SUPPORTED_GOLDEN_KEYS and language == "en":
+    path = _golden_path(persona_id, language)
+    if not path:
+        if _golden_path(persona_id, "de") and language == "en":
             raise LanguageNotAvailableError(persona_id, language)
         raise PersonaNotFoundError(persona_id)
-
-    path = _GOLDEN_DIR / filename
-    if not path.is_file():
-        raise FileNotFoundError(f"Golden fixture missing: {path}")
-
     return json.loads(path.read_text(encoding="utf-8"))
 
 
@@ -130,17 +135,32 @@ def get_session(scene_id: str) -> dict | None:
 
 
 def list_persona_summaries() -> list[dict]:
-    config = load_golden_config("klaus_dortmund", "de")
-    persona = config["persona"]
-    axes = persona["axes"]
-    return [
-        {
-            "id": persona["id"],
-            "display_name": persona["display_name"],
-            "short_descriptor": f"{persona['occupation']} · {persona['location']}",
-            "axes": axes,
-        }
-    ]
+    summaries: list[dict] = []
+    if not _GOLDEN_DIR.is_dir():
+        return summaries
+    seen: set[str] = set()
+    for path in sorted(_GOLDEN_DIR.glob("*_de.json")):
+        persona_id = path.stem[: -len("_de")]
+        if persona_id in seen:
+            continue
+        seen.add(persona_id)
+        try:
+            config = load_golden_config(persona_id, "de")
+        except (PersonaNotFoundError, FileNotFoundError):
+            continue
+        persona = config["persona"]
+        occ = persona.get("occupation", "")
+        loc = persona.get("location", "")
+        descriptor = f"{occ} · {loc}".strip(" · ") if occ or loc else persona.get("display_name", persona_id)
+        summaries.append(
+            {
+                "id": persona["id"],
+                "display_name": persona.get("display_name", persona_id),
+                "short_descriptor": descriptor,
+                "axes": persona.get("axes", {}),
+            }
+        )
+    return summaries
 
 
 def validate_against_schema(config: dict) -> None:

@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "blueprint_id": "weber_betriebsleiter_metallverarbeitung_v1_act_5",
+    "schema_version": "1.0",
+    "language": "de",
+    "product_layer": "closure"
+  },
+  "act": 5,
+  "story": {
+    "core_message_de": "Im zeitlosen Void sammelt Dieter alle Fäden zusammen: echeon-Alerts, checkion-Befunde, audion-Erkenntnisse verflechten sich in seinen Händen. Seine innere Stimme spricht von Kontinuität — morgen wird er es besser wissen. Ein Lichtstern leuchtet auf: die Einladung, tiefer in die Transparenz einzusteigen.",
+    "core_message_en": "In a timeless void, Dieter gathers the threads of the past day: echeon alerts, checkion findings, audion insights interwoven in his hands. His inner voice speaks of continuity—tomorrow he will know better. A light beacon glows: the invitation to dive deeper into digital transparency.",
+    "user_feeling": "reflective, empowered, forward-looking",
+    "nova_role": "Dieter als Sammler und Denker — nicht als erschöpfter Manager, sondern als jemand, der die Kontrolle über die Komplexität gewinnt."
+  },
+  "environment": {
+    "environment_id": "env_void_constellation",
+    "world_slug": "void-constellation",
+    "scene_concept_de": "Void-Space ähnlich Act 1, aber transformiert. Dieter ist nicht mehr fragmentiert, sondern sammelt: In seinen Händen liegen Notizen, Daten, echeon-Alerts, checkion-Befunde, audion-Insights — alle ineinander verfädelt. Hinter ihm zeichnet sich eine neue Schicht ab, neue Herausforderungen. Ein Lichtstern oder QR-Code erscheint — die Einladung, die Reise weiterzugehen.",
+    "setting_class": "void_threshold",
+    "style_hint": "ethereal, contemplative, synthesis-focused",
+    "region_hint": "abstract, timeless space",
+    "time_of_day": "timeless",
+    "lighting_preset": "void_minimal"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "void-constellation-closure",
+      "prompt_en": "Void space with soft ambient light. Figure (Dieter, 48, pragmatic bearing) holding or carrying layered papers, data streams, and glowing threads connecting between them. Sense of synthesis and integration. A star-like beacon or QR-code glowing softly in the distance. Hopeful but grounded, forward-looking. Minimal background, focus on hands and light connections. Atmosphere: contemplative resolve.",
+      "negative_prompt": "factory floor, office, kitchen, residential setting, bright daylight, crowds, concrete structures, machinery, workbench, desk, people in background",
+      "anchor_placements": [
+        {
+          "anchor_id": "qr_code_or_light_beacon",
+          "description": "Primary interaction anchor for void-constellation"
+        }
+      ]
+    },
+    "prop_notes": "Notizen, gefächerte Datenblätter, leuchtende Fäden oder Linien zwischen ihnen, QR-Code oder Lichtstern im Hintergrund, keine sichtbaren Werkzeuge oder Fertigungsausrüstung."
+  },
+  "voiceover": {
+    "pre_beat_tracks": [],
+    "beat_track": {
+      "track_id_suffix": "01",
+      "estimated_duration_sec": 16.0,
+      "lines": [
+        {
+          "text": "Eine Schicht ist vorbei. {{persona.display_name}}, Betriebsleiter bei {{company.name}}, hält in diesem Moment alle Fäden in der Hand.",
+          "at_sec": 0.0,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Die echeon-Alerts vom Morgen. Die checkion-Befunde vom Mittag. Die audion-Erkenntnisse vom Abend.",
+          "at_sec": 3.0,
+          "pause_after_sec": 2.0
+        },
+        {
+          "text": "Jeder Datenpunkt ist eine Antwort. Jede Antwort führt zu einer besseren Frage.",
+          "at_sec": 7.0,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Morgen wird er es besser wissen. Nicht weil er alles perfekt macht, sondern weil er heute sieht, was möglich ist.",
+          "at_sec": 10.0,
+          "pause_after_sec": 2.0
+        },
+        {
+          "text": "Ein Lichtstern erscheint — eine Einladung, tiefer einzusteigen. Nicht in neue Technologie um der Technologie willen.",
+          "at_sec": 14.0,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Sondern in die Kontinuität: echeon, checkion, audion — ein Kreis, der sich morgen aufs Neue öffnet.",
+          "at_sec": 17.0,
+          "pause_after_sec": 2.0
+        },
+        {
+          "text": "Die Reise endet hier nicht. Sie wird nur tiefer.",
+          "at_sec": 21.0,
+          "pause_after_sec": 1.0
+        }
+      ]
+    }
+  },
+  "interaction": {
+    "trigger_type": "look_at",
+    "trigger_target": "closing_beacon",
+    "primary_anchor": "qr_code_or_light_beacon",
+    "delay_sec": 0,
+    "haptic_pattern": "soft_pulse"
+  },
+  "data_viz": {
+    "mode": "qr_closure",
+    "qr_closure": {
+      "anchor_object": "qr_code_or_light_beacon"
+    }
+  },
+  "timeline": {
+    "target_duration_sec": 28.0,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "at_sec": 0.0,
+        "track_id": "act5_01"
+      },
+      {
+        "type": "hint_primary",
+        "at_sec": 3.0,
+        "anchor_object": "data_threads"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 11.0
+      }
+    ],
+    "beat_cue_templates": [
+      {
+        "type": "overlay_show",
+        "at_sec": 7.0,
+        "delay_from_beat": true
+      },
+      {
+        "type": "qr_or_beacon_activate",
+        "at_sec": 14.0,
+        "delay_from_beat": true,
+        "anchor_object": "closing_beacon"
+      },
+      {
+        "type": "haptic_trigger",
+        "at_sec": 21.0,
+        "delay_from_beat": true
+      },
+      {
+        "type": "act_closure",
+        "at_sec": 28.0,
+        "delay_from_beat": true
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 36.0
+      }
+    ]
+  }
+}

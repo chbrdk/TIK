@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "narrative_preview",
+  "provider": "google-gemini",
+  "model": "gemini-2.5-flash-image",
+  "status": "completed",
+  "submitted_at": "2026-05-22T06:46:02Z",
+  "prompt": "Photorealistic modern kitchen breakfast nook, warm golden sunlight streaming through large window, tablet on dining table displaying echeon feed with technical notifications, printed facade elevation sheets with red markup annotations, steaming coffee cup, technical notebook with hand-written notes, Stuttgart suburban garden hint outside, cozy lived-in engineer home, 360 interior photorealism\n\nAvoid: office boardroom, factory floor, construction site, conference room, night time, industrial warehouse, people at meeting table, baustelle",
+  "act": 2,
+  "persona_id": "schott_glasbau_ingenieur_v8",
+  "world_slug": "schott-kitchen-morning",
+  "output": "act-02.png"
+}

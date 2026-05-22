@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "narrative_preview",
+  "provider": "google-gemini",
+  "model": "gemini-2.5-flash-image",
+  "status": "completed",
+  "submitted_at": "2026-05-22T08:57:54Z",
+  "prompt": "Empty photorealistic environment plate for 3D Gaussian splat world generation. Architecture and atmosphere only: walls, floors, windows, lighting, materials, generic furniture without narrative staging. No people, no human silhouettes, no faces, no hands. No readable text, logos, UI screens, dashboards, or QR codes. Wide establishing interior or exterior view, clean sightlines, 360-friendly. Setting:\nModern kitchen in early morning light, approximately 7:15 AM. Man in casual clothing seated at wooden or stone table, holding tablet with glowing screen displaying shift data and notifications. Black coffee in ceramic mug on table, newspaper or planning notes at edge. Large windows with soft golden-warm light slanting through, revealing quiet residential street or garden beyond. Tablet screen shows production dashboard with warning icon for Line 3 downtime. Calm domestic atmosphere interrupted by digital alert. Professional readiness meeting morning routine.\nSpatial layout (architecture only, do not add people or story props): Moderne Küche oder offener Wohnbereich im Morgengrauen, etwa 07:15. Große Fenster mit diffusem, warmem Morgenlicht. Dieter in Privatkleidung (Hemd, locker) sitzt am Holz- oder Steintisch mit schwarzem Kaffee und Tablet. Das Tablet-Display leuchtet mit echeon-Feed: Schichtdaten, Anlagenstatus, eine Warn-Benachrichtigung oben. Am Tischrand eine Zeitung oder Notizblöcke. Dahinter: grauig-ruhige Wohnumgebung, vielleicht ein Balkonblick auf stille Straße. Der Moment, bevor die berufliche Realität ein\n Output style: empty architectural reference photo for world capture, not a movie still with actors or a marketing scene with models.\n\nAvoid: people, person, human figure, silhouette, crowd, portrait, face, hands, readable text, logo, watermark, UI overlay, HUD, dashboard on screen, speech bubble, comic panel, storyboard, cinematic action scene, multiple focal characters, product advertisement with model, factory floor, industrial machinery, office confere",
+  "act": 2,
+  "persona_id": "weber_betriebsleiter_metallverarbeitung_v1",
+  "world_slug": "home-morning-kitchen",
+  "output": "act-02.png"
+}

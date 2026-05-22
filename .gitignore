@@ -21,3 +21,7 @@ backend/**/*.egg-info/
 backend/.pytest_cache/
 backend/dist/
 backend/build/
+backend/.env
+
+# Pipeline jobs (runtime state)
+fixtures/jobs/

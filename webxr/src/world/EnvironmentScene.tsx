@@ -47,6 +47,7 @@ interface Props {
   feedItems?: FeedItem[]
   checkionMetrics?: CheckionMetric[]
   monitorChartVisible?: boolean
+  pipelineDiagramActive?: boolean
   reportQrUrl?: string | null
 }
 
@@ -67,6 +68,7 @@ export function EnvironmentScene({
   feedItems = [],
   checkionMetrics = [],
   monitorChartVisible = false,
+  pipelineDiagramActive = false,
   reportQrUrl,
 }: Props) {
   const mode = useXR((s) => s.mode)
@@ -150,6 +152,11 @@ export function EnvironmentScene({
             inVr={inVr}
             onAnchorSelect={handleAnchor}
             reportQrUrl={reportQrUrl}
+            pipelineDiagramActive={pipelineDiagramActive}
+            echeonHeadlines={feedItems.map((item) => ({
+              headline: item.headline ?? '',
+              source: item.source,
+            }))}
           />
         </HotspotRegistryProvider>
       </>

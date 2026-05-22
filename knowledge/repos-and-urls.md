@@ -42,13 +42,33 @@ Stand: Mai 2026
 
 ---
 
+## Persona Reality Studio (Admin + Pipeline)
+
+| Variable | Zweck | Beispiel |
+|----------|--------|---------|
+| `VITE_STUDIO_API_BASE` | WebXR Admin → FastAPI (Vite proxy `/api`) | `/api` |
+| `ANTHROPIC_API_KEY` | Claude Persona/Act agents | — |
+| `CLAUDE_MODEL` | Anthropic model id | `claude-sonnet-4-20250514` |
+| `TIK_REPO_ROOT` | Monorepo root für Node scripts | auto-detect |
+| `IMAGE_BLASTER_ROOT` | image-blaster repo für Marble | `../image-blaster` |
+| `GOOGLE_API_KEY` / `GEMINI_API_KEY` | Gemini Szenen-Vorschau (`gemini-2.5-flash-image`) | `backend/.env` |
+| `GEMINI_IMAGE_MODEL` | Optional, anderes Bildmodell | `gemini-2.5-flash-image` |
+| `FAL_KEY` | image-blaster Image-Edit (nicht Pipeline-Vorschau) | image-blaster `.env` |
+| `WORLD_LABS_API_KEY` | Marble world generation | — |
+| `PIPELINE_JOB_DIR` | Job JSON store | `fixtures/jobs` |
+| `IMAGE_BLASTER_DEV_URL` | Anchor editor links in Admin | `https://localhost:5174` |
+| `SPLAT_TIER` | WebXR sync tier | `150k` |
+
+Doku: `knowledge/persona-reality-studio.md`
+
 ## Local Development
 
 | Service | URL | Port |
 |---------|-----|------|
 | TIK backend | `http://localhost:8000/v1` | 8000 |
-| WebXR dev | `http://localhost:5173` | 5173 |
-| image-blaster viewer | `http://localhost:5173` | 5173 (separate app) |
+| WebXR dev + Studio `/admin` | `https://localhost:5173` | 5173 |
+| NOVA voiceover MP3 (published) | `/voiceovers/de/<track_id>.mp3` unter `webxr/public/voiceovers/de/` | — |
+| image-blaster viewer | `https://localhost:5174` | 5174 (nicht 5173) |
 | CHECKION | `http://localhost:3000` | 3000 |
 | PLEXON | `http://localhost:3334` | 3334 |
 

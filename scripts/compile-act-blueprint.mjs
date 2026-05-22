@@ -262,7 +262,11 @@ function buildNarrativeBeat(blueprint, persona, vars = templateVars(persona)) {
 
   let ui_overlay = null
   const viz = blueprint.data_viz
-  if (viz.mode === 'echeon_feed') {
+  const usesPipelineDiagram = [
+    ...(blueprint.timeline?.pre_beat_cues ?? []),
+    ...(blueprint.timeline?.beat_cue_templates ?? []),
+  ].some((c) => c.type === 'pipeline_diagram')
+  if (viz.mode === 'echeon_feed' && !usesPipelineDiagram) {
     ui_overlay = {
       type: 'news_feed',
       anchor_object: blueprint.interaction.primary_anchor,

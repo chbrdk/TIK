@@ -10,6 +10,7 @@ import { loadSceneProjectForSlug, glbUrlFromAssetId } from '@/runtime/SceneProje
 import { CompanionBridge } from '@/runtime/CompanionBridge'
 import { precacheUrls } from '@/runtime/AssetPrecache'
 import { AmbientAudio } from '@/runtime/AmbientAudio'
+import { unlockNovaAudio } from '@/runtime/NovaAudioSession'
 import { QuestMetrics } from '@/runtime/QuestMetrics'
 import { resolveAmbientUrl } from '@/config/ambient-audio'
 import { env, DESKTOP_PREVIEW_STORAGE_KEY } from '@/config/env'
@@ -86,6 +87,7 @@ export function App() {
     null,
   )
   const [monitorChartVisible, setMonitorChartVisible] = useState(false)
+  const [pipelineDiagramActive, setPipelineDiagramActive] = useState(false)
   const [feedItems, setFeedItems] = useState<FeedItem[]>([])
   const [checkionMetrics, setCheckionMetrics] = useState<CheckionMetric[]>([])
   const [subtitle, setSubtitle] = useState<{
@@ -193,6 +195,17 @@ export function App() {
             setOverlayFocusWorld(null)
           }
           break
+        case 'pipeline_diagram':
+          setPipelineDiagramActive(event.active)
+          if (event.active) {
+            setOverlay(null)
+            setMonitorChartVisible(false)
+          }
+          if (event.anchorObject) {
+            setHighlightAnchor(event.anchorObject)
+            resolveOverlayFocus(event.anchorObject)
+          }
+          break
         case 'hint':
           setHintModes((prev) => ({ ...prev, [event.anchorId]: event.mode }))
           break
@@ -242,6 +255,7 @@ export function App() {
       setOverlay(null)
       setOverlayFocusWorld(null)
       setMonitorChartVisible(false)
+      setPipelineDiagramActive(false)
       setSubtitle(null)
       setHintModes({})
       setActiveDiegetic({})
@@ -286,6 +300,7 @@ export function App() {
       setOverlay(null)
       setOverlayFocusWorld(null)
       setMonitorChartVisible(false)
+      setPipelineDiagramActive(false)
       directorRef.current?.dispose()
       narrativeRef.current?.dispose()
 
@@ -396,7 +411,9 @@ export function App() {
     let cancelled = false
     void (async () => {
       try {
-        await bootstrap()
+        const params = new URLSearchParams(window.location.search)
+        const configOverride = params.get('config') ?? undefined
+        await bootstrap(configOverride)
         if (!cancelled) setLoading(false)
       } catch (e) {
         if (!cancelled) {
@@ -446,10 +463,15 @@ export function App() {
     })
   }, [])
 
+  useEffect(() => {
+    if (desktopPreview) void unlockNovaAudio()
+  }, [desktopPreview])
+
   const onEnterVr = async () => {
     setVrError(null)
     setVrEntering(true)
     try {
+      await unlockNovaAudio()
       await xrStore.enterVR()
     } catch (e) {
       const msg = e instanceof Error ? e.message : String(e)
@@ -490,6 +512,7 @@ export function App() {
   }, [transitionToAct])
 
   const startDesktopPreview = useCallback(() => {
+    void unlockNovaAudio()
     localStorage.setItem(DESKTOP_PREVIEW_STORAGE_KEY, 'true')
     setDesktopPreview(true)
     setDesktopHelpCollapsed(false)
@@ -627,6 +650,7 @@ export function App() {
               feedItems={feedItems}
               checkionMetrics={checkionMetrics}
               monitorChartVisible={monitorChartVisible}
+              pipelineDiagramActive={pipelineDiagramActive}
               reportQrUrl={reportQrUrl}
             />
           )}

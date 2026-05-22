@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.persona_reality.router import router as persona_reality_router
+from app.pipeline.router import router as pipeline_router
 
 
 def create_app() -> FastAPI:
@@ -25,6 +26,7 @@ def create_app() -> FastAPI:
         return {"status": "ok"}
 
     app.include_router(persona_reality_router)
+    app.include_router(pipeline_router)
     return app
 
 

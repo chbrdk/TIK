@@ -1,0 +1,393 @@
+{
+  "meta": {
+    "persona_id": "schott_glasbau_ingenieur_v8",
+    "schema_version": "1.0",
+    "language": "de",
+    "display_title": "Dr. Thomas Reinhard — Glasbau-Ingenieur & Fassadenplaner"
+  },
+  "inputs": {
+    "target_audience": "Glasbau-Ingenieure und Fassadenplaner DACH, technische Entscheider bei Glasfassaden",
+    "company": {
+      "name": "Schott",
+      "description": "Internationaler Technologiekonzern mit Fokus auf Spezialglas, Glasfasern und innovative Materialien für Architektur und Industrie.",
+      "industry": "industrial_b2b"
+    },
+    "language": "de",
+    "session_label": "Schott"
+  },
+  "persona": {
+    "id": "schott_glasbau_ingenieur_v8",
+    "display_name": "Dr. Thomas Reinhard",
+    "occupation": "Leitender Ingenieur für Glasfassaden & Projektmanagement",
+    "location": "Stuttgart, Baden-Württemberg, DACH-Region",
+    "axes": {
+      "sector": "b2b_specialist",
+      "life_stage": "established_career",
+      "tech_affinity": "early_adopter",
+      "decision_style": "rational",
+      "industry": "industrial_b2b"
+    },
+    "age": 47,
+    "gender_expression": "male",
+    "household": "{\"family_status\": \"verheiratet, zwei erwachsene Kinder\", \"home_type\": \"Einfamilienhaus mit Homeoffice-Ecke\", \"region\": \"Vorstadt Stuttgart\"}",
+    "pain_points": [
+      "Koordination zwischen Architekten, Glaslieferanten und Montagebetrieben führt zu Informationsbruch und Verzögerungen",
+      "Technische Spezifikationen (U-Wert, Schallschutz, Brandsicherheit) müssen bei jeder Anfrage neu zusammengetragen werden",
+      "Fehlerquoten bei manueller Dokumentation und Abweichungsverwaltung auf der Baustelle",
+      "Druck, digitale Workflow-Lösungen zu evaluieren, ohne bewährte Prozesse zu gefährden",
+      "Ständige Abstimmung zwischen verschiedenen Planungstools und Schott-Katalogdaten"
+    ],
+    "decision_drivers": [
+      "Technische Zuverlässigkeit und Normkonformität (DIN, EN, Schott-Standards)",
+      "Projektrentabilität: Zeit- und Kosteneinsparungen pro Projekt",
+      "Kollaborative Effizienz: nahtlose Integration mit bestehenden CAD- und Planungsprozessen",
+      "Langfristige Partnerschaft mit Schott und Vertrauensverhältnis zu Produktbetreuung",
+      "ROI durch digitale Transparenz und Fehlerreduktion"
+    ],
+    "narrative_hook_de": "Thomas ist nachdenklich und präzise — morgens leicht überfordert, wenn zu viele Signale gleichzeitig kommen, dann fokussiert, sobald Prioritäten klar sind. Bei Haftung und Normen entscheidungsfreudig; bei offener Abstimmung kurz angebunden. Abends erschöpft-reflektiv: er braucht Klarheit, keine neue Informationsflut.",
+    "narrative_hook_en": "Thomas is thoughtful and precise — briefly overwhelmed when too many signals arrive at once, then focused once priorities are clear. Decisive on norms and liability; terse when coordination is vague. Evenings are tired and reflective."
+  },
+  "company_context": {
+    "name": "Schott",
+    "industry": "industrial_b2b",
+    "value_proposition_de": "Schott stellt hochperformante Spezialgläser und digitale Lösungen für Glasfassaden bereit, die Planung, Produktion und Montage transparent und effizient verbinden.",
+    "booth_products": [
+      "echeon",
+      "checkion",
+      "audion"
+    ],
+    "echeon": {
+      "feed_angle_de": "Welt und Branche gefiltert für Fassadenplaner: was ihn nervt, was sein München-Projekt betrifft, was er sonst in 40 E-Mails verpassen würde",
+      "categories": [
+        "industry",
+        "regulation",
+        "project"
+      ],
+      "headline_templates": [
+        "EN Schallschutz überarbeitet — betrifft deine Fassaden-Spezifikation",
+        "Lieferkette Glas: Verzögerung, die deinen Montageplan spürbar macht",
+        "München Baustelle: Signal, das heute deine Aufmerksamkeit braucht"
+      ]
+    },
+    "checkion": {
+      "visibility_angle_de": "Wie Schott online auf Glasfassaden-Ingenieure wirkt — Website, Cases, technische Tiefe vs. generisches Konzernmarketing",
+      "suggested_metrics": [
+        {
+          "label": "Relevanz Website",
+          "value": 78,
+          "unit": "%",
+          "comparison_value": 52,
+          "trend": "up",
+          "rationale_de": "Inhalte sprechen Fassadenplaner an, nicht nur Investor"
+        },
+        {
+          "label": "Technische Tiefe",
+          "value": 84,
+          "unit": "%",
+          "trend": "up",
+          "rationale_de": "Normen, Glasprodukte, Planungsunterlagen sichtbar"
+        },
+        {
+          "label": "Social Sichtbarkeit",
+          "value": 61,
+          "unit": "%",
+          "trend": "flat",
+          "rationale_de": "LinkedIn/Themen passen teilweise, noch Luft"
+        }
+      ]
+    },
+    "audion": {
+      "inner_life_angle_de": "Abend: mentale Last des Tages — Informationsdruck morgens vs. Klarheit abends, nicht Baustelle optimieren",
+      "suggested_metrics": [
+        {
+          "metric_id": "info_overload_morning",
+          "label": "Morgen-Druck",
+          "value": 68,
+          "unit": "%",
+          "anchor_object": "home_office_laptop",
+          "animation_preset": "pulse_red",
+          "rationale_de": "Zu viele Signale auf einmal"
+        },
+        {
+          "metric_id": "evening_clarity",
+          "label": "Abend-Klarheit",
+          "value": 74,
+          "unit": "%",
+          "anchor_object": "desk_lamp",
+          "animation_preset": "glow_warm",
+          "rationale_de": "Muster erkannt, Last leichter"
+        }
+      ]
+    },
+    "storyblok": {
+      "personalized_page_angle_de": "Schott-Seite mit Fassaden-Cases, Normen-Guides und Planungsdownloads für seine Rolle",
+      "generic_page_angle_de": "Generische Konzernseite ohne Fassadenplaner-Fokus"
+    }
+  },
+  "session_arc": {
+    "throughline_de": "Ein emotionaler Tag als Thomas: morgens kurz überfordert von der Informationsflut, dann fokussiert — mittags die Frage, ob Schott ihn online wirklich versteht — abends erschöpft, aber klarer. Alles nur im digitalen Raum: Feed, Website, innere Auswertung, personalisierter Content.",
+    "throughline_en": "An emotional day as Thomas: briefly overwhelmed by morning information, then focused — midday asking whether Schott truly speaks to him online — evening exhausted but clearer. All in digital space: feed, website, inner review, personalized content.",
+    "day_structure_de": "Gefühl: Unruhe → Fokus → Skepsis/Überraschung (Website) → Reflexion → Zugehörigkeit (QR)",
+    "anti_patterns_de": [
+      "Keine Toolnamen in NOVA (echeon/checkion/audion)",
+      "Kein Narrativ: Shopfloor optimieren, Prozesse transformieren, Baustelle als Hauptstory Act 3",
+      "Act 3 = Monitor/Website-Sichtbarkeit, nicht Montage-Freigabe",
+      "Act 4 = innere Last und digitale Klarheit, nicht Projekt-Lean-Beratung",
+      "Gefühl in dramatic_beat_de und später in voiceover — nicht nur Fakten"
+    ],
+    "acts": {
+      "1": {
+        "dramatic_beat_de": "Schwelle: In der Stille erkennt er sich — nicht als Foto, sondern als Abbild aus vielen echten Profilen. Nachdenklich, leicht unsicher: passt das wirklich zu mir?",
+        "scene_concept_de": "Void-Spiegel, diffuses Licht. Digitales Abbild — Entscheidungsmuster, Pain Points, Werte der Zielgruppe Glasfassaden-Ingenieur.",
+        "environment_id": "env_void_mirror_identity_v1",
+        "world_slug": "void-mirror-identity",
+        "setting_class": "void_introspection",
+        "lighting_preset": "void_minimal",
+        "time_of_day": "timeless",
+        "primary_anchor": "void_mirror",
+        "secondary_anchors": [],
+        "trigger_type": "scene_enter",
+        "trigger_target": "mirror_surface",
+        "product_layer": "onboarding",
+        "splat_prompt_en": "Abstract void space, minimal diffuse light, large reflective mirror surface, figure silhouette contemplating, digital grid overlay, philosophical identity question, 360 immersive void void-minimal lighting, timeless",
+        "negative_prompt_en": "office, kitchen, construction site, bright daylight, people, specific location"
+      },
+      "2": {
+        "dramatic_beat_de": "Morgen: Kurz überfordert — zu viel Welt auf einmal. Dann nur drei Meldungen, die wirklich sein Projekt betreffen. Er atmet auf, bleibt trotzdem angespannt.",
+        "scene_concept_de": "Küche Vorstadt, 07:20. Tablet: kuratierter Morgenüberblick (Norm, Lieferant, München) — nicht E-Mail-Chaos. Kaffee, Fassadenschnitte.",
+        "environment_id": "env_schott_kitchen_morning_v1",
+        "world_slug": "schott-kitchen-morning",
+        "setting_class": "residential_morning",
+        "style_hint": "lived_in, technical professional at home, DACH suburb, warm light, family-oriented",
+        "region_hint": "dach_south_west",
+        "lighting_preset": "morning_warm",
+        "time_of_day": "07:20",
+        "primary_anchor": "kitchen_tablet",
+        "secondary_anchors": [
+          "facade_print_on_table",
+          "window_morning_light",
+          "coffee_cup",
+          "technical_notes_pad"
+        ],
+        "trigger_type": "pickup",
+        "trigger_target": "kitchen_tablet",
+        "product_layer": "echeon",
+        "splat_prompt_en": "Photorealistic modern kitchen breakfast nook, warm golden sunlight through large window, tablet on dining table displaying echeon feed with technical notifications, printed facade elevation sheets with red markup annotations, steaming coffee cup, technical notebook with hand-written notes, Stuttgart suburban garden hint outside, cozy lived-in engineer home, 360 interior photorealism",
+        "negative_prompt_en": "office boardroom, factory floor, construction site, conference room, night time, industrial warehouse, people at meeting table"
+      },
+      "3": {
+        "dramatic_beat_de": "Mittags skeptisch: Kennt Schott mich online? Oder sehe ich wieder nur Konzernfloskeln? Neugier mischt sich mit kurzer Ungeduld.",
+        "scene_concept_de": "Homeoffice-Ecke, 11:45, Tageslicht. Monitor zeigt Schott-Website — personalisierte Fassaden-Cases vs. generische Startseite.",
+        "environment_id": "env_schott_homeoffice_digital_v1",
+        "world_slug": "schott-homeoffice-evening",
+        "setting_class": "home_office",
+        "style_hint": "lived-in home office, monitor as digital touchpoint",
+        "region_hint": "dach_south_west",
+        "lighting_preset": "midday_neutral",
+        "time_of_day": "11:45",
+        "primary_anchor": "monitor_left",
+        "secondary_anchors": [
+          "home_office_laptop",
+          "desk_lamp",
+          "technical_notes_pad"
+        ],
+        "trigger_type": "look_at",
+        "trigger_target": "monitor_left",
+        "product_layer": "checkion",
+        "splat_prompt_en": "Photorealistic home office nook midday, desk with large monitor and laptop, technical documents, warm neutral daylight through window, suburban interior, professional workspace without people, 360 interior",
+        "negative_prompt_en": "construction site, factory, conference hall, night, people, readable UI text on screen"
+      },
+      "4": {
+        "dramatic_beat_de": "Abend: Erschöpft, aber klarer. Die innere Last des Informationsdrucks morgens — und ob die Website ihn wirklich verstanden hat.",
+        "scene_concept_de": "Homeoffice 20:30, warme Lampe. Laptop: innere Tagesbilanz (Druck, Klarheit) — Gefühl, nicht Baustellen-Optimierung. Notizbuch, ruhige Familie im Hintergrund.",
+        "environment_id": "env_schott_homeoffice_evening_v1",
+        "world_slug": "schott-homeoffice-evening",
+        "setting_class": "home_study_evening",
+        "style_hint": "intimate, warm-lit home office, professional yet comfortable, family present but not intrusive, reflective",
+        "region_hint": "dach",
+        "lighting_preset": "evening_warm",
+        "time_of_day": "20:30",
+        "primary_anchor": "home_office_laptop",
+        "secondary_anchors": [
+          "audion_dashboard_screen",
+          "checkion_printouts",
+          "desk_lamp",
+          "reflection_window",
+          "red_pen_notes"
+        ],
+        "trigger_type": "sit_down",
+        "trigger_target": "office_chair",
+        "product_layer": "audion",
+        "splat_prompt_en": "Photorealistic intimate home office evening, warm desk lamp lighting, person at laptop displaying audion analytics dashboard with project metrics and lessons-learned data, printed checkion field reports spread across desk with red markup, reflection in dark window showing house interior warmth against night outside, family moving in blurred background (living room TV), professional yet cozy atmosphere, 360 home office evening introspection",
+        "negative_prompt_en": "bright open plan office, empty conference room, cold fluorescent lighting, industrial warehouse, construction site at night, day time, people in meeting, public space"
+      },
+      "5": {
+        "dramatic_beat_de": "Abschluss: Ruhe und Zugehörigkeit — der Tag als Gefühlskette: überfordert, fokussiert, überrascht, reflektiert. Schott kennt ihn digital.",
+        "scene_concept_de": "Void-Konstellation, drei Lichtmomente (Morgen/Website/Abend). QR zu personalisiertem Schott-Content.",
+        "environment_id": "env_void_constellation_closure_v1",
+        "world_slug": "void-constellation-closure",
+        "setting_class": "void_closure",
+        "lighting_preset": "void_minimal",
+        "time_of_day": "timeless",
+        "primary_anchor": "constellation_lights",
+        "secondary_anchors": [
+          "connecting_lines",
+          "soft_glow"
+        ],
+        "trigger_type": "scene_enter",
+        "trigger_target": "void_space",
+        "product_layer": "closure",
+        "splat_prompt_en": "Abstract void constellation space, three luminous orbs connected by subtle flowing lines morning midday evening mood, soft warm and cool light balance, contemplative stillness, timeless infinite expanse, 360 void closure serene",
+        "negative_prompt_en": "office, home, outdoor, daytime, people, construction, industrial, bright daylight, specific location"
+      }
+    }
+  },
+  "act_data": {
+    "1": {
+      "anchors": [
+        {
+          "name": "void_mirror",
+          "type": "symbolic",
+          "description": "Reflektive Oberfläche für Identitätsfrage"
+        }
+      ],
+      "headline_de": "Willkommen in Deiner digitalen Transformation",
+      "subheadline_de": "Als Glasbau-Ingenieur stellst Du Dich die Frage: Wie gestalte ich die Zukunft meiner Projekte?"
+    },
+    "2": {
+      "anchors": [
+        {
+          "name": "kitchen_tablet",
+          "type": "interaction",
+          "description": "echeon-App zeigt Morgen-Updates zum Münchner Fassadenprojekt"
+        },
+        {
+          "name": "facade_print_on_table",
+          "type": "prop",
+          "description": "Ausgedruckte Fassadenschnitte (Schnitt A–A, B–B) mit roten Markierungen (Montageerfordernisse, Glasstärke, U-Wert-Zonen)"
+        },
+        {
+          "name": "window_morning_light",
+          "type": "environment",
+          "description": "Morgenlicht symbolisiert Neubeginn und Klarheit für den Tag"
+        },
+        {
+          "name": "coffee_cup",
+          "type": "prop",
+          "description": "Warme Kaffeetasse als Ritual der Ruhe vor der Arbeit"
+        },
+        {
+          "name": "technical_notes_pad",
+          "type": "prop",
+          "description": "Handschriftliche Notizen zu gestrigen Offenen Punkte, bereits mit echeon-Aktualisierungen verglichen"
+        }
+      ],
+      "headline_de": "Morgen in Stuttgart — drei Meldungen zum Münchner Fassadenprojekt",
+      "metric_de": "3 neue technische Anfragen, 1 U-Wert-Anpassung geklärt, 2 zur Tagesabstimmung",
+      "subheadline_de": "Bevor Du das Haus verlässt, weißt Du, was heute im Projekt los ist.",
+      "emotion_de": "Ruhig, fokussiert, leicht erregt (positive Spannung für den Tag)",
+      "schott_context_de": "Thomas behält das Großprojekt im Blick — schon am Frühstückstisch, nicht erst am Schreibtisch."
+    },
+    "3": {
+      "anchors": [
+        {
+          "name": "cad_laptop",
+          "type": "interaction",
+          "description": "CAD-Workstation mit 3D-Modell der Münchner Bürofassade (Schott-Gläser CAD-integriert)"
+        },
+        {
+          "name": "rugged_tablet_checkion",
+          "type": "interaction",
+          "description": "Rugged Tablet mit checkion-App für Vor-Ort-Dokumentation und Live-QA-Checklisten"
+        },
+        {
+          "name": "glass_samples_on_shelf",
+          "type": "prop",
+          "description": "Physische Musterplatten (Schott Diamant®-Glas, Schott Duran®, farbneutrales Glas) auf Regal zur Farbabstimmung"
+        },
+        {
+          "name": "architect_model",
+          "type": "prop",
+          "description": "Physisches Architekten-Modell der Fassade, checkion-Tablet daneben für Freigabe-Foto"
+        },
+        {
+          "name": "whiteboard_sketches",
+          "type": "environment",
+          "description": "Skizzen zu Montagesequenzen und Abweichungsanalysen vom Morgen"
+        },
+        {
+          "name": "window_urban_view",
+          "type": "environment",
+          "description": "Blick auf München-Cityscyline, symbiotische Nähe zu echtem Bauprojekt"
+        }
+      ],
+      "headline_de": "Tag in München — Freigaben, Fotos, eine Abweichung an der Fassade",
+      "metric_de": "12 Montagefotos, 8 QA-Checklisten, 1 Abweichung Glasdicke +2 mm eskaliert, 2 h mit Architekt und Montageleiter",
+      "subheadline_de": "Jede Freigabe und Abweichung ist nachvollziehbar — Thomas kann sofort reagieren.",
+      "emotion_de": "Gestresst, aber professionell unter Kontrolle; echte Baustelle, echte Probleme, echte Lösungen",
+      "schott_context_de": "Transparenz auf der Baustelle — Schott-Standards bleiben gewährleistet, ohne Papier-Chaos."
+    },
+    "4": {
+      "anchors": [
+        {
+          "name": "home_office_laptop",
+          "type": "interaction",
+          "description": "Laptop mit audion-Dashboard: Tagesmetriken, Abweichungsanalyse, Fehler-Trend über 3 Projekte"
+        },
+        {
+          "name": "audion_dashboard_screen",
+          "type": "interaction",
+          "description": "audion zeigt: 48 h Projektdauer (prognostiziert 44 h, +4 h Abweichung), 3 Root-Cause-Kategorien (Kommunikation, Material, extern), Lessons Learned für Projekt 2025-A"
+        },
+        {
+          "name": "checkion_printouts",
+          "type": "prop",
+          "description": "Ausgedruckte checkion-Protokolle vom Vor-Ort-Einsatz (Fotos, QA-Berichte, Montageleiter-Unterschrift)"
+        },
+        {
+          "name": "desk_lamp",
+          "type": "environment",
+          "description": "Warme Schreibtischlampe vs. dunkler Abend draußen — Oase der Reflexion"
+        },
+        {
+          "name": "reflection_window",
+          "type": "environment",
+          "description": "Fenster zeigt Thomas sein eigenes Spiegelbild + gedimmte Wohnzimmer-Wärme dahinter"
+        },
+        {
+          "name": "red_pen_notes",
+          "type": "prop",
+          "description": "Roter Stift in der Hand — Handschriftliche Notizen zu audion-Erkenntnissen für morgen"
+        }
+      ],
+      "headline_de": "Abend zu Hause — was der Tag wirklich bedeutet",
+      "metric_de": "3 Abweichungen, 2 Prozess-Ursachen, 1 Zuschnitt +0,5 mm; Team-Trend wird schneller",
+      "subheadline_de": "In stiller Reflexion: nicht nur was passiert ist, sondern warum — und was morgen anders läuft.",
+      "emotion_de": "Müde, aber befriedigt; innere Last wird leichter; Hoffnung auf Verbesserung",
+      "schott_context_de": "Schott begleitet nicht nur Projekte, sondern das Lernen daraus — Partnerschaft über einzelne Baustellen hinaus."
+    },
+    "5": {
+      "anchors": [
+        {
+          "name": "constellation_lights",
+          "type": "symbolic",
+          "description": "Drei Lichtkörper (echeon, checkion, audion) zeigen Integration und Harmonie"
+        },
+        {
+          "name": "connecting_lines",
+          "type": "symbolic",
+          "description": "Sanfte Linien verbinden die Lichter — Symbol für reibungslosen Workflow"
+        },
+        {
+          "name": "soft_glow",
+          "type": "environment",
+          "description": "Warme, friedliche Beleuchtung — Erfüllung der Reise"
+        }
+      ],
+      "headline_de": "Abschluss: Ein Tag, ein Projekt, ein klarer nächster Schritt mit Schott",
+      "subheadline_de": "Von der ersten Meldung am Morgen bis zur Erkenntnis am Abend — durchgängig, ohne Brüche.",
+      "cta_de": "Scanne den QR-Code, um Deine nächste Projektphase mit Schott zu gestalten.",
+      "emotion_de": "Ruhe, Bestätigung, Aufbruch-Energie"
+    }
+  }
+}

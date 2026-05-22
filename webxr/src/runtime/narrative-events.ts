@@ -16,6 +16,12 @@ export type NarrativeEvent =
       anchorObject?: string
     }
   | {
+      type: 'pipeline_diagram'
+      layer: 'echeon' | 'audion' | 'checkion' | 'cms'
+      active: boolean
+      anchorObject?: string
+    }
+  | {
       type: 'diegetic'
       metricId: string
       preset: string

@@ -45,7 +45,7 @@ const narrativeBeatSchema = z.object({
 const environmentSchema = z.object({
   act: z.number().int(),
   environment_id: z.string(),
-  world_slug: z.string().optional(),
+  world_slug: z.string().nullable().optional(),
   lighting_preset: z.string().optional(),
   time_of_day: z.string().optional(),
   weather: z.string().optional(),

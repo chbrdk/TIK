@@ -1,0 +1,12 @@
+{
+  "id": "weber_betriebsleiter_metallverarbeitung_v1",
+  "display_name": "Dieter Hoffmann",
+  "occupation": "Betriebsleiter, Werksleiter Metallverarbeitung",
+  "location": "Baden-Württemberg, DACH",
+  "household": "{\"family_status\": \"verheiratet, 2 erwachsene Kinder\", \"commute_time_min\": 25, \"work_intensity\": \"high\"}",
+  "industry": "metallverarbeitung_automotive_zulieferer",
+  "sector": "industrial_manufacturing",
+  "language": "de",
+  "company_name": "Weber Antriebstechnik GmbH",
+  "company_industry": "industrial_b2b"
+}

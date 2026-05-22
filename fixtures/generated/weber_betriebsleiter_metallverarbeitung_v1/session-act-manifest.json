@@ -1,0 +1,961 @@
+{
+  "persona_id": "weber_betriebsleiter_metallverarbeitung_v1",
+  "acts": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "environment_bindings": [
+    {
+      "act": 1,
+      "environment_id": "env_void_mirror",
+      "world_slug": "void-mirror",
+      "lighting_preset": "void_minimal",
+      "time_of_day": "timeless",
+      "weather": "clear",
+      "skybox_id": null,
+      "kind": "placeholder",
+      "scene_concept_de": "Raum ohne Grenzen, Licht und Schatten. Dieter steht in der Mitte, sein Spiegelbild ist unscharf, verschoben — die Last der Entscheidungen, die Spannung zwischen Mensch und Rolle. Stimme aus dem Void: ‚Jede Entscheidung kostet Zeit oder Geld. Welche wählst du?'"
+    },
+    {
+      "act": 2,
+      "environment_id": "env_residential_morning_kitchen",
+      "world_slug": "home-morning-kitchen",
+      "lighting_preset": "morning_warm",
+      "time_of_day": "07:15",
+      "weather": "clear",
+      "skybox_id": null,
+      "kind": "splat",
+      "scene_concept_de": "Moderne Küche oder Balkon, Morgengrauen oder erstes Licht. Kaffee kalt werdend auf der Arbeitsplatte. Dieter in Privatkleidung, Tablet neben dem Frühstück. Ein Push-Notification vom echeon-System: ‚Linie 3 gestern 23 Min Stillstand — Grund unklar.' Der Morgen wird augenblicklich beruflich. Die Fenster-Aussicht zeigt noch grauig-ruhige Umgebung — aber in Dieters Kopf läuft schon der Werk."
+    },
+    {
+      "act": 3,
+      "environment_id": "env_shopfloor_metalworking_line34",
+      "world_slug": "shopfloor-metalworking-lines",
+      "lighting_preset": "midday_neutral",
+      "time_of_day": "10:45",
+      "weather": "clear",
+      "skybox_id": null,
+      "kind": "splat",
+      "scene_concept_de": "Werkhalle, Linie 3–4, Morgenshift in vollem Gange. Schichtleiter an einem mobilen checkion-Terminal, Prüfer mit Tablet in der Hand. Im Hintergrund Drehmaschinen, Fräsmaschinen, das Summen und Klacken der Produktion. Dieter kommt herein, spricht mit dem Schichtleiter: ‚Was ist gestern bei der Störung los gewesen?' Der Schichtleiter zeigt auf dem checkion-Screen: ‚Hier, Sensor-Fehler erkannt um 22:47, Cause: Verschmutzung. Wir haben's nachts noch repariert.' Die Transparenz ist plötzlich da — und Dieter sieht auch, dass die Fehlserie vermeidbar gewesen wäre. Spanreste auf dem Boden, der Geruch von Kühlmittel, Sicherheits-Warnwesten."
+    },
+    {
+      "act": 4,
+      "environment_id": "env_residential_evening_homeoffice",
+      "world_slug": "home-evening-study",
+      "lighting_preset": "evening_warm",
+      "time_of_day": "20:30",
+      "weather": "clear",
+      "skybox_id": null,
+      "kind": "splat",
+      "scene_concept_de": "Wohnzimmer oder Homeoffice-Ecke, Abendlicht (Sonnenuntergang oder künstliche Beleuchtung). Dieter sitzt im Sessel oder am kleinen Schreibtisch, Laptop vor sich. audion-Auswertung auf dem Bildschirm: OEE-Graph, Fehler-Heatmap, Trends. Daneben liegen ausgedruckte Schichten-Reports, eine Notiz-Block, eine Tasse kalter Kaffee. Durch das Fenster die Lichter der Stadt oder die stillen Felder. Er ruft sich den Moment von morgens in Erinnerung — die Notification, die Frage ‚warum'. Jetzt hat er die Antwort, aber auch neue Einsichten: die Verschmutzung-Fehler tritt alle 2 Wochen auf, die Wartung muss anders rhythmisiert werden. Er macht sich eine Notiz: ‚Präventiv-Wartung Linie 3 — nächste Woche mit Schichtleiter besprechen.' Der Abend ist privat, aber der Verstand ist noch im Werk."
+    },
+    {
+      "act": 5,
+      "environment_id": "env_void_constellation",
+      "world_slug": "void-constellation",
+      "lighting_preset": "void_minimal",
+      "time_of_day": "timeless",
+      "weather": "clear",
+      "skybox_id": null,
+      "kind": "placeholder",
+      "scene_concept_de": "Void-Space ähnlich Act 1, aber transformiert. Dieter ist nicht mehr fragmentiert, sondern sammelt: In seinen Händen liegen Notizen, Daten, echeon-Alerts, checkion-Befunde, audion-Insights — alle ineinander verfädelt. Hinter ihm zeichnet sich eine neue Schicht ab, neue Herausforderungen. Seine Stimme: ‚Morgen werde ich es besser wissen.' Ein Lichtstern oder QR-Code erscheint — die Einladung, die Reise weiterzugehen, tiefer einzusteigen in die MSQ-DX-Welt."
+    }
+  ],
+  "voiceover_tracks": {
+    "nova_de_act1_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Dieter Hoffmann. Betriebsleiter. Werksleiter Metallverarbeitung.",
+          "at_sec": 2,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Dieter Hoffmann, 48 Jahre. Betriebsleiter, Werksleiter Metallverarbeitung. Weber Antriebstechnik GmbH.",
+          "at_sec": 5.5,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Jede Entscheidung kostet Zeit oder Geld.",
+          "at_sec": 9.5,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Welche wählst du?",
+          "at_sec": 11.5,
+          "pause_after_sec": 3
+        }
+      ]
+    },
+    "nova_de_act2_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Dieter sitzt in der Küche, Kaffee wird kalt. Sein Tablet leuchtet auf — echeon zeigt den Shopfloor, auch wenn er noch zu Hause ist.",
+          "at_sec": 0,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Linie 3: 23 Minuten Stillstand gestern. Grund: unklar. Das ist die Art von Information, die den Morgen sofort verändern kann.",
+          "at_sec": 4.5,
+          "pause_after_sec": 2.5
+        },
+        {
+          "text": "Dieter kennt jeden Stillstand. Er kennt auch den Preis. Jede Minute ist sichtbar, jetzt sofort, noch bevor er sein Auto startet.",
+          "at_sec": 9.5,
+          "pause_after_sec": 3
+        }
+      ]
+    },
+    "nova_de_act3_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Dieter Hoffmann betritt die Halle. Die Maschinen laufen, die Schicht ist in vollem Gange.",
+          "at_sec": 0
+        },
+        {
+          "text": "Er spricht mit dem Schichtleiter: ‚Was ist gestern bei der Störung los gewesen?'",
+          "at_sec": 4
+        },
+        {
+          "text": "Der Schichtleiter zeigt auf dem checkion-Terminal: ‚Hier – Sensor-Fehler erkannt um 22:47. Ursache: Verschmutzung. Wir haben's nachts noch repariert.'",
+          "at_sec": 9,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Die Transparenz ist plötzlich da. Dieter Hoffmann sieht, dass die Fehlserie hätte vermieden werden können.",
+          "at_sec": 13
+        },
+        {
+          "text": "Eine schnelle Reaktion hätte Zeit und Material gespart. Aber wer hätte es gewusst – ohne diese Daten?",
+          "at_sec": 18
+        },
+        {
+          "text": "checkion zeigt nicht nur das Problem, sondern auch, wie teuer die Verzögerung war.",
+          "at_sec": 23,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Das ist die Last der Transparenz: Entscheidungen werden sichtbar. Und jede Sekunde zählt.",
+          "at_sec": 26
+        }
+      ]
+    },
+    "nova_de_act4_04": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Der Tag ist vorbei. Die Daten liegen vor mir.",
+          "at_sec": 2,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "OEE 78 Prozent. Nicht schlecht, aber nicht gut genug.",
+          "at_sec": 5.5,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Und da — Linie 3. Verschmutzungs-Fehler. Alle zwei Wochen. Immer zur gleichen Zeit.",
+          "at_sec": 9.5,
+          "pause_after_sec": 2.5
+        },
+        {
+          "text": "Das habe ich gefühlt. Jetzt kann ich es beweisen.",
+          "at_sec": 13.5,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Die Wartung muss anders rhythmisiert werden. Präventiv, nicht reaktiv.",
+          "at_sec": 17.5,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Dieter Hoffmann, du weißt jetzt, wo es weh tut. Und wie man es heilt.",
+          "at_sec": 21,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Nächste Woche mit dem Schichtleiter. Ein Plan entsteht.",
+          "at_sec": 25,
+          "pause_after_sec": 1
+        }
+      ]
+    },
+    "nova_de_act5_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Eine Schicht ist vorbei. Dieter Hoffmann, Betriebsleiter bei Weber Antriebstechnik GmbH, hält in diesem Moment alle Fäden in der Hand.",
+          "at_sec": 0,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Die echeon-Alerts vom Morgen. Die checkion-Befunde vom Mittag. Die audion-Erkenntnisse vom Abend.",
+          "at_sec": 3,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Jeder Datenpunkt ist eine Antwort. Jede Antwort führt zu einer besseren Frage.",
+          "at_sec": 7,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Morgen wird er es besser wissen. Nicht weil er alles perfekt macht, sondern weil er heute sieht, was möglich ist.",
+          "at_sec": 10,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Ein Lichtstern erscheint — eine Einladung, tiefer einzusteigen. Nicht in neue Technologie um der Technologie willen.",
+          "at_sec": 14,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Sondern in die Kontinuität: echeon, checkion, audion — ein Kreis, der sich morgen aufs Neue öffnet.",
+          "at_sec": 17,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Die Reise endet hier nicht. Sie wird nur tiefer.",
+          "at_sec": 21,
+          "pause_after_sec": 1
+        }
+      ]
+    }
+  },
+  "act_scripts": [
+    {
+      "act": 1,
+      "target_duration_sec": 18,
+      "ambient_audio_id": null,
+      "pre_beat_cues": [
+        {
+          "type": "subtitle",
+          "at_sec": 0,
+          "track_id": "01"
+        },
+        {
+          "type": "hint_primary",
+          "at_sec": 2,
+          "anchor_object": "mirror_reflection"
+        },
+        {
+          "type": "ambient_drone",
+          "at_sec": 1,
+          "mode": "in"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 9
+        }
+      ],
+      "beat_cue_templates": {
+        "nova_de_act1_01": [
+          {
+            "type": "overlay_show",
+            "at_sec": 5,
+            "delay_from_beat": true
+          },
+          {
+            "type": "light_shift",
+            "at_sec": 9,
+            "delay_from_beat": true
+          },
+          {
+            "type": "reflection_distort",
+            "at_sec": 11,
+            "delay_from_beat": true
+          },
+          {
+            "type": "act_advance",
+            "at_sec": 16,
+            "delay_from_beat": true
+          }
+        ]
+      }
+    },
+    {
+      "act": 2,
+      "target_duration_sec": 24,
+      "ambient_audio_id": null,
+      "pre_beat_cues": [
+        {
+          "type": "subtitle",
+          "at_sec": 0,
+          "track_id": "nova_de_act2_01"
+        },
+        {
+          "type": "visual_focus",
+          "at_sec": 1,
+          "anchor_object": "tablet_on_table"
+        },
+        {
+          "type": "hint_primary",
+          "at_sec": 6,
+          "anchor_object": "tablet_screen_notification"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 14
+        }
+      ],
+      "beat_cue_templates": {
+        "nova_de_act2_01": [
+          {
+            "type": "overlay_show",
+            "at_sec": 3,
+            "delay_from_beat": true
+          },
+          {
+            "type": "data_viz_reveal",
+            "at_sec": 7,
+            "delay_from_beat": true
+          },
+          {
+            "type": "haptic_trigger",
+            "at_sec": 6.5,
+            "delay_from_beat": true
+          },
+          {
+            "type": "act_advance",
+            "at_sec": 24,
+            "delay_from_beat": true
+          }
+        ]
+      }
+    },
+    {
+      "act": 3,
+      "target_duration_sec": 32,
+      "ambient_audio_id": null,
+      "pre_beat_cues": [
+        {
+          "type": "subtitle",
+          "at_sec": 0,
+          "track_id": "01"
+        },
+        {
+          "type": "hint_primary",
+          "at_sec": 9,
+          "anchor_object": "mobile_terminal_checkion"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 17
+        }
+      ],
+      "beat_cue_templates": {
+        "nova_de_act3_01": [
+          {
+            "type": "overlay_show",
+            "at_sec": 9,
+            "delay_from_beat": true
+          },
+          {
+            "type": "data_metric_highlight",
+            "at_sec": 13,
+            "delay_from_beat": true,
+            "anchor_object": "mobile_terminal_checkion"
+          },
+          {
+            "type": "data_metric_highlight",
+            "at_sec": 18,
+            "delay_from_beat": true,
+            "anchor_object": "mobile_terminal_checkion"
+          },
+          {
+            "type": "overlay_fade",
+            "at_sec": 30,
+            "delay_from_beat": true,
+            "mode": "out"
+          },
+          {
+            "type": "act_advance",
+            "at_sec": 32,
+            "delay_from_beat": true
+          }
+        ]
+      }
+    },
+    {
+      "act": 4,
+      "target_duration_sec": 32,
+      "ambient_audio_id": null,
+      "pre_beat_cues": [
+        {
+          "type": "subtitle",
+          "at_sec": 0,
+          "track_id": "nova_de_act4_04"
+        },
+        {
+          "type": "hint_primary",
+          "at_sec": 1.5,
+          "anchor_object": "laptop_with_audion_dashboard"
+        },
+        {
+          "type": "data_viz_show",
+          "at_sec": 3,
+          "anchor_object": "laptop_with_audion_dashboard"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 11
+        }
+      ],
+      "beat_cue_templates": {
+        "nova_de_act4_04": [
+          {
+            "type": "metric_highlight",
+            "at_sec": 5,
+            "delay_from_beat": true,
+            "anchor_object": "laptop_with_audion_dashboard"
+          },
+          {
+            "type": "data_transition",
+            "at_sec": 9,
+            "delay_from_beat": true,
+            "anchor_object": "laptop_with_audion_dashboard"
+          },
+          {
+            "type": "insight_pulse",
+            "at_sec": 13,
+            "delay_from_beat": true,
+            "anchor_object": "laptop_with_audion_dashboard"
+          },
+          {
+            "type": "overlay_show",
+            "at_sec": 21,
+            "delay_from_beat": true,
+            "anchor_object": "notepad_and_pen"
+          },
+          {
+            "type": "act_advance",
+            "at_sec": 30,
+            "delay_from_beat": true
+          }
+        ]
+      }
+    },
+    {
+      "act": 5,
+      "target_duration_sec": 28,
+      "ambient_audio_id": null,
+      "pre_beat_cues": [
+        {
+          "type": "subtitle",
+          "at_sec": 0,
+          "track_id": "act5_01"
+        },
+        {
+          "type": "hint_primary",
+          "at_sec": 3,
+          "anchor_object": "data_threads"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 11
+        }
+      ],
+      "beat_cue_templates": {
+        "nova_de_act5_01": [
+          {
+            "type": "overlay_show",
+            "at_sec": 7,
+            "delay_from_beat": true
+          },
+          {
+            "type": "qr_or_beacon_activate",
+            "at_sec": 14,
+            "delay_from_beat": true,
+            "anchor_object": "closing_beacon"
+          },
+          {
+            "type": "haptic_trigger",
+            "at_sec": 21,
+            "delay_from_beat": true
+          },
+          {
+            "type": "act_closure",
+            "at_sec": 28,
+            "delay_from_beat": true
+          },
+          {
+            "type": "act_advance",
+            "at_sec": 36
+          }
+        ]
+      }
+    }
+  ],
+  "narrative_beats": [
+    {
+      "act": 1,
+      "trigger_type": "scene_enter",
+      "trigger_target": "persona_entry",
+      "delay_sec": 0,
+      "duration_sec": 18,
+      "voiceover_track_id": "nova_de_act1_01",
+      "ambient_audio_id": null,
+      "haptic_pattern": "soft_pulse",
+      "ui_overlay": null,
+      "lines": [
+        {
+          "text": "Dieter Hoffmann. Betriebsleiter. Werksleiter Metallverarbeitung.",
+          "at_sec": 2,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Dieter Hoffmann, 48 Jahre. Betriebsleiter, Werksleiter Metallverarbeitung. Weber Antriebstechnik GmbH.",
+          "at_sec": 5.5,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Jede Entscheidung kostet Zeit oder Geld.",
+          "at_sec": 9.5,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Welche wählst du?",
+          "at_sec": 11.5,
+          "pause_after_sec": 3
+        }
+      ],
+      "estimated_duration_sec": 16,
+      "cues": [
+        {
+          "type": "overlay_show",
+          "at_sec": 5,
+          "delay_from_beat": true
+        },
+        {
+          "type": "light_shift",
+          "at_sec": 9,
+          "delay_from_beat": true
+        },
+        {
+          "type": "reflection_distort",
+          "at_sec": 11,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 16,
+          "delay_from_beat": true
+        }
+      ]
+    },
+    {
+      "act": 2,
+      "trigger_type": "pickup",
+      "trigger_target": "tablet_with_echeon_app",
+      "delay_sec": 0,
+      "duration_sec": 24,
+      "voiceover_track_id": "nova_de_act2_01",
+      "ambient_audio_id": null,
+      "haptic_pattern": "soft_pulse",
+      "ui_overlay": {
+        "type": "news_feed",
+        "anchor_object": "tablet_on_table",
+        "payload": {
+          "feed_source": "echeon.feed_items"
+        }
+      },
+      "lines": [
+        {
+          "text": "Dieter sitzt in der Küche, Kaffee wird kalt. Sein Tablet leuchtet auf — echeon zeigt den Shopfloor, auch wenn er noch zu Hause ist.",
+          "at_sec": 0,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Linie 3: 23 Minuten Stillstand gestern. Grund: unklar. Das ist die Art von Information, die den Morgen sofort verändern kann.",
+          "at_sec": 4.5,
+          "pause_after_sec": 2.5
+        },
+        {
+          "text": "Dieter kennt jeden Stillstand. Er kennt auch den Preis. Jede Minute ist sichtbar, jetzt sofort, noch bevor er sein Auto startet.",
+          "at_sec": 9.5,
+          "pause_after_sec": 3
+        }
+      ],
+      "estimated_duration_sec": 16,
+      "cues": [
+        {
+          "type": "overlay_show",
+          "at_sec": 3,
+          "delay_from_beat": true
+        },
+        {
+          "type": "data_viz_reveal",
+          "at_sec": 7,
+          "delay_from_beat": true
+        },
+        {
+          "type": "haptic_trigger",
+          "at_sec": 6.5,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 24,
+          "delay_from_beat": true
+        }
+      ]
+    },
+    {
+      "act": 3,
+      "trigger_type": "proximity",
+      "trigger_target": "shopfloor_work_station",
+      "delay_sec": 0,
+      "duration_sec": 32,
+      "voiceover_track_id": "nova_de_act3_01",
+      "ambient_audio_id": null,
+      "haptic_pattern": "soft_pulse",
+      "ui_overlay": {
+        "type": "dashboard",
+        "anchor_object": "mobile_terminal_checkion",
+        "payload": {
+          "source": "checkion.metrics"
+        }
+      },
+      "lines": [
+        {
+          "text": "Dieter Hoffmann betritt die Halle. Die Maschinen laufen, die Schicht ist in vollem Gange.",
+          "at_sec": 0
+        },
+        {
+          "text": "Er spricht mit dem Schichtleiter: ‚Was ist gestern bei der Störung los gewesen?'",
+          "at_sec": 4
+        },
+        {
+          "text": "Der Schichtleiter zeigt auf dem checkion-Terminal: ‚Hier – Sensor-Fehler erkannt um 22:47. Ursache: Verschmutzung. Wir haben's nachts noch repariert.'",
+          "at_sec": 9,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Die Transparenz ist plötzlich da. Dieter Hoffmann sieht, dass die Fehlserie hätte vermieden werden können.",
+          "at_sec": 13
+        },
+        {
+          "text": "Eine schnelle Reaktion hätte Zeit und Material gespart. Aber wer hätte es gewusst – ohne diese Daten?",
+          "at_sec": 18
+        },
+        {
+          "text": "checkion zeigt nicht nur das Problem, sondern auch, wie teuer die Verzögerung war.",
+          "at_sec": 23,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Das ist die Last der Transparenz: Entscheidungen werden sichtbar. Und jede Sekunde zählt.",
+          "at_sec": 26
+        }
+      ],
+      "estimated_duration_sec": 16,
+      "cues": [
+        {
+          "type": "overlay_show",
+          "at_sec": 9,
+          "delay_from_beat": true
+        },
+        {
+          "type": "data_metric_highlight",
+          "at_sec": 13,
+          "delay_from_beat": true,
+          "anchor_object": "mobile_terminal_checkion"
+        },
+        {
+          "type": "data_metric_highlight",
+          "at_sec": 18,
+          "delay_from_beat": true,
+          "anchor_object": "mobile_terminal_checkion"
+        },
+        {
+          "type": "overlay_fade",
+          "at_sec": 30,
+          "delay_from_beat": true,
+          "mode": "out"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 32,
+          "delay_from_beat": true
+        }
+      ]
+    },
+    {
+      "act": 4,
+      "trigger_type": "sit_down",
+      "trigger_target": "home_desk_chair",
+      "delay_sec": 0,
+      "duration_sec": 32,
+      "voiceover_track_id": "nova_de_act4_04",
+      "ambient_audio_id": null,
+      "haptic_pattern": "soft_pulse",
+      "ui_overlay": null,
+      "lines": [
+        {
+          "text": "Der Tag ist vorbei. Die Daten liegen vor mir.",
+          "at_sec": 2,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "OEE 78 Prozent. Nicht schlecht, aber nicht gut genug.",
+          "at_sec": 5.5,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Und da — Linie 3. Verschmutzungs-Fehler. Alle zwei Wochen. Immer zur gleichen Zeit.",
+          "at_sec": 9.5,
+          "pause_after_sec": 2.5
+        },
+        {
+          "text": "Das habe ich gefühlt. Jetzt kann ich es beweisen.",
+          "at_sec": 13.5,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Die Wartung muss anders rhythmisiert werden. Präventiv, nicht reaktiv.",
+          "at_sec": 17.5,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Dieter Hoffmann, du weißt jetzt, wo es weh tut. Und wie man es heilt.",
+          "at_sec": 21,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Nächste Woche mit dem Schichtleiter. Ein Plan entsteht.",
+          "at_sec": 25,
+          "pause_after_sec": 1
+        }
+      ],
+      "estimated_duration_sec": 16,
+      "cues": [
+        {
+          "type": "metric_highlight",
+          "at_sec": 5,
+          "delay_from_beat": true,
+          "anchor_object": "laptop_with_audion_dashboard"
+        },
+        {
+          "type": "data_transition",
+          "at_sec": 9,
+          "delay_from_beat": true,
+          "anchor_object": "laptop_with_audion_dashboard"
+        },
+        {
+          "type": "insight_pulse",
+          "at_sec": 13,
+          "delay_from_beat": true,
+          "anchor_object": "laptop_with_audion_dashboard"
+        },
+        {
+          "type": "overlay_show",
+          "at_sec": 21,
+          "delay_from_beat": true,
+          "anchor_object": "notepad_and_pen"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 30,
+          "delay_from_beat": true
+        }
+      ]
+    },
+    {
+      "act": 5,
+      "trigger_type": "look_at",
+      "trigger_target": "closing_beacon",
+      "delay_sec": 0,
+      "duration_sec": 28,
+      "voiceover_track_id": "nova_de_act5_01",
+      "ambient_audio_id": null,
+      "haptic_pattern": "soft_pulse",
+      "ui_overlay": {
+        "type": "qr_code",
+        "anchor_object": "qr_code_or_light_beacon",
+        "payload": {}
+      },
+      "lines": [
+        {
+          "text": "Eine Schicht ist vorbei. Dieter Hoffmann, Betriebsleiter bei Weber Antriebstechnik GmbH, hält in diesem Moment alle Fäden in der Hand.",
+          "at_sec": 0,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Die echeon-Alerts vom Morgen. Die checkion-Befunde vom Mittag. Die audion-Erkenntnisse vom Abend.",
+          "at_sec": 3,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Jeder Datenpunkt ist eine Antwort. Jede Antwort führt zu einer besseren Frage.",
+          "at_sec": 7,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Morgen wird er es besser wissen. Nicht weil er alles perfekt macht, sondern weil er heute sieht, was möglich ist.",
+          "at_sec": 10,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Ein Lichtstern erscheint — eine Einladung, tiefer einzusteigen. Nicht in neue Technologie um der Technologie willen.",
+          "at_sec": 14,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Sondern in die Kontinuität: echeon, checkion, audion — ein Kreis, der sich morgen aufs Neue öffnet.",
+          "at_sec": 17,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Die Reise endet hier nicht. Sie wird nur tiefer.",
+          "at_sec": 21,
+          "pause_after_sec": 1
+        }
+      ],
+      "estimated_duration_sec": 16,
+      "cues": [
+        {
+          "type": "overlay_show",
+          "at_sec": 7,
+          "delay_from_beat": true
+        },
+        {
+          "type": "qr_or_beacon_activate",
+          "at_sec": 14,
+          "delay_from_beat": true,
+          "anchor_object": "closing_beacon"
+        },
+        {
+          "type": "haptic_trigger",
+          "at_sec": 21,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_closure",
+          "at_sec": 28,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 36
+        }
+      ]
+    }
+  ],
+  "data_layer_slices": [
+    {},
+    {
+      "echeon": {
+        "feed_items": [],
+        "cache_ttl_sec": 1800
+      }
+    },
+    {
+      "checkion": {
+        "metrics": [
+          {
+            "label": "Sichtbarkeit",
+            "value": 72,
+            "unit": "%",
+            "trend": "up"
+          }
+        ]
+      }
+    },
+    {
+      "audion": {
+        "diegetic_metrics": [
+          {
+            "metric_id": "metric_1",
+            "label": "Wert",
+            "value": 50,
+            "unit": "%",
+            "anchor_object": "laptop_with_audion_dashboard",
+            "animation_preset": "glow_warm"
+          }
+        ]
+      }
+    },
+    {}
+  ],
+  "image_prompts_by_act": {
+    "1": {
+      "splat_world": {
+        "slug_hint": "void-mirror",
+        "prompt_en": "Abstract void space, diffuse light, man in silhouette facing a fractured mirror. Responsibility and uncertainty hanging in darkness. Minimalist, introspective, industrial undertones.",
+        "negative_prompt": "bright factory floor, people working, machinery, cheerful office, daylight",
+        "anchor_placements": [
+          {
+            "anchor_id": "mirror_reflection",
+            "description": "mirror_reflection — from session_arc"
+          }
+        ]
+      },
+      "prop_notes": "No physical props. Pure atmosphere and silhouette. Mirror is metaphorical—distortion and blur are essential."
+    },
+    "2": {
+      "splat_world": {
+        "slug_hint": "home-morning-kitchen",
+        "prompt_en": "Modern kitchen, warm morning light slanting through large windows. Man in casual clothes at wooden table with coffee and tablet. Tablet screen glowing with shift data, notifications visible. Calm domestic setting interrupted by work alert. Morning newspaper or planning sheets on table edge.",
+        "negative_prompt": "factory floor, office conference room, bright artificial lights, multiple people, industrial machinery, shift workers, crowded space",
+        "anchor_placements": [
+          {
+            "anchor_id": "tablet_on_table",
+            "description": "tablet_on_table — from session_arc"
+          }
+        ]
+      },
+      "prop_notes": "Tablet must show echeon app interface with shift overview, notification badge (Line 3 alert), production line status icons. Coffee mug should appear fresh but slightly cooled. Lighting soft but clear enough to read screen without glare. Scene emphasizes solitude and quiet before work intensity begins."
+    },
+    "3": {
+      "splat_world": {
+        "slug_hint": "shopfloor-metalworking-lines",
+        "prompt_en": "Industrial shopfloor with CNC machines, turning and milling lines. Morning shift active, workers in safety vests. Mobile terminal held by shift supervisor showing quality data and traceability logs. Fluorescent overhead lights, machine noise, metal chips and coolant smell. Realistic factory atmosphere, precision components visible on fixtures.",
+        "negative_prompt": "empty factory, after-hours quiet, office setting, clean white walls, abstract digital interface, no workers, bright clean lab, boardroom",
+        "anchor_placements": [
+          {
+            "anchor_id": "mobile_terminal_checkion",
+            "description": "mobile_terminal_checkion — from session_arc"
+          }
+        ]
+      },
+      "prop_notes": "Mobile checkion terminal (industrial tablet form factor, ruggedized, screen showing traceability log with timestamp 22:47 and sensor-error data). Tablet held by quality inspector. Safety vests on all personnel. Metal chips and coolant residue visible on floor near machines."
+    },
+    "4": {
+      "splat_world": {
+        "slug_hint": "home-evening-study",
+        "prompt_en": "Cozy home study corner in evening light. Man in comfortable casual clothes sitting at small desk with open laptop showing analytics dashboard (OEE, error heatmaps, trend graphs). Printed shift reports and notepad beside laptop. Warm desk lamp. Window showing evening cityscape or quiet landscape. Cup of coffee on desk. Reflective, analytical atmosphere.",
+        "negative_prompt": "bright open-plan office, conference room, factory floor, multiple people in meeting, artificial harsh lighting, computer lab, nightshift warehouse, crowded space",
+        "anchor_placements": [
+          {
+            "anchor_id": "laptop_with_audion_dashboard",
+            "description": "laptop_with_audion_dashboard — from session_arc"
+          }
+        ]
+      },
+      "prop_notes": "Audion dashboard on laptop is the visual centerpiece. Data should be legible but not overwhelming: OEE percentage (e.g., 78%), error timeline showing the two-week contamination cycle on Line 3, trend arrows. Printed reports and notepad ground the scene in both analog and digital work. Cold coffee cup is a poignant detail—Dieter has been thinking for hours."
+    },
+    "5": {
+      "splat_world": {
+        "slug_hint": "void-constellation",
+        "prompt_en": "Void space with soft ambient light. Figure holding or carrying layers of papers, data streams, glowing threads connecting between them. Sense of synthesis and integration. A star-like beacon or QR-code glowing in the distance. Hopeful but grounded, forward-looking.",
+        "negative_prompt": "factory floor, office, kitchen, residential setting, bright daylight, crowds, concrete structures",
+        "anchor_placements": [
+          {
+            "anchor_id": "qr_code_or_light_beacon",
+            "description": "qr_code_or_light_beacon — from session_arc"
+          }
+        ]
+      },
+      "prop_notes": "Notizen, gefächerte Datenblätter, leuchtende Fäden oder Linien zwischen ihnen, QR-Code oder Lichtstern im Hintergrund, keine sichtbaren Werkzeuge oder Fertigungsausrüstung."
+    }
+  }
+}

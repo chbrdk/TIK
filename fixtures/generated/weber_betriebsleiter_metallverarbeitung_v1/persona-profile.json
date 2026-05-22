@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "persona_id": "weber_betriebsleiter_metallverarbeitung_v1",
+    "schema_version": "1.0",
+    "language": "de",
+    "display_title": "Betriebsleiter Metallverarbeitung — Weber Antriebstechnik"
+  },
+  "inputs": {
+    "target_audience": "Betriebsleiter und Werksleiter in der metallverarbeitenden Industrie, 42–55 Jahre, DACH. Verantwortung für OEE, Stillstandszeiten, Qualität und digitale Transformation auf der Shopfloor-Ebene. Schmerzpunkte: Medienbrüche zwischen ERP/MES und der Linie, fehlende Echtzeit-Transparenz bei Störungen, hoher Druck bei Kunden-Audits und Fachkräftemangel. Entscheidungsstil: pragmatisch, ROI-orientiert, will bewährte Prozesse nicht aufs Spiel setzen.",
+    "company": {
+      "name": "Weber Antriebstechnik GmbH",
+      "description": "Familiengeführtes Mittelstandsunternehmen mit Sitz in Baden-Württemberg, ca. 800 Mitarbeitende, Spezialist für Getriebe, Antriebssysteme und Präzisionskomponenten für Maschinenbau und Automotive-Zulieferer. Am Messestand werden die MSQ-DX-Produkte echeon (Shopfloor-Transparenz), checkion (Qualität & Traceability vor Ort) und audion (Auswertung, Lessons Learned) als durchgängige Story eines Produktionstags gezeigt — von der frühen Schichtplanung bis zur Abend-Auswertung."
+    },
+    "language": "de",
+    "session_label": "Weber Antriebstechnik GmbH"
+  },
+  "persona": {
+    "id": "weber_betriebsleiter_metallverarbeitung_v1",
+    "display_name": "Dieter Hoffmann",
+    "occupation": "Betriebsleiter, Werksleiter Metallverarbeitung",
+    "location": "Baden-Württemberg, DACH",
+    "axes": {
+      "sector": "industrial_manufacturing",
+      "life_stage": "established_professional",
+      "tech_affinity": "pragmatic_adopter",
+      "decision_style": "roi_driven",
+      "industry": "metallverarbeitung_automotive_zulieferer"
+    },
+    "age": 48,
+    "gender_expression": "male",
+    "household": "{\"family_status\": \"verheiratet, 2 erwachsene Kinder\", \"commute_time_min\": 25, \"work_intensity\": \"high\"}",
+    "pain_points": [
+      "Medienbrüche zwischen ERP/MES und Produktionslinie — Informationsverlust, manuelle Datenerfassung",
+      "Fehlende Echtzeit-Transparenz bei Störungen; Reaktionszeit zu lang, Ursachenanalyse im Nachhinein",
+      "Hoher Prüfdruck bei Kunden-Audits (OEE, Qualität, Traceability); Nachweise müssen schnell vorliegen",
+      "Fachkräftemangel: weniger erfahrenes Personal, höheres Fehlerrisiko, Wissenstransfer schwierig",
+      "Stillstandszeiten kosten Geld; jede Minute zählt, aber Ursachen sind oft unklar oder verspätet bekannt"
+    ],
+    "decision_drivers": [
+      "Bewiesener ROI und schnelle Amortisation — keine Experimente",
+      "Nahtlose Integration in bestehende ERP/MES-Infrastruktur, minimale Disruptionen",
+      "Echtzeit-Sichtbarkeit auf Shopfloor-Ebene (OEE, Störungen, Qualität, Traceability)",
+      "Reduzierte Reaktionszeit bei Problemen; schnellere Ursachenanalyse",
+      "Audit-Readiness: Daten und Nachweise sofort abrufbar, compliance-konform"
+    ]
+  },
+  "company_context": {
+    "name": "Weber Antriebstechnik GmbH",
+    "industry": "industrial_b2b",
+    "value_proposition_de": "Durchgängige digitale Transparenz und Qualitätssicherung auf dem Shopfloor: von der frühen Schichtplanung (echeon) über Qualität & Traceability vor Ort (checkion) bis zur abendlichen Auswertung und Lessons Learned (audion).",
+    "booth_products": [
+      "echeon",
+      "checkion",
+      "audion"
+    ],
+    "echeon": {
+      "product_name": "echeon — Shopfloor-Transparenz & Schichtplanung",
+      "short_desc": "Echtzeit-Übersicht über Anlagenauslastung, Störungen und Produktionsstand auf dem Shopfloor. Integriert mit Planung und ERP.",
+      "use_case_act2": "Frühe Schichtplanung: Dieter prüft am Tablet vor Arbeitsbeginn, welche Anlagen geplant sind, wo Bottlenecks drohen."
+    },
+    "checkion": {
+      "product_name": "checkion — Qualität & Traceability vor Ort",
+      "short_desc": "Dezentralisierte Qualitätskontrolle und Komponentenverfolgung auf der Linie. Reduziert Medienbruch, erhöht Audit-Sicherheit.",
+      "use_case_act3": "Tagsüber: Schichtleiter nutzen checkion direkt am Arbeitsplatz. Dieter überwacht die Qualitätsmetriken zentral, kann schnell eingreifen."
+    },
+    "audion": {
+      "product_name": "audion — Auswertung, Lessons Learned & Optimierung",
+      "short_desc": "Datenbasierte Nachanalyse von Schichten: OEE, Fehlerquellen, Trends. Fundament für kontinuierliche Verbesserung.",
+      "use_case_act4": "Abends zu Hause: Dieter analysiert die Schicht-Daten, identifiziert Muster, plant Maßnahmen für morgen."
+    }
+  },
+  "session_arc": {
+    "throughline_de": "Ein echtes Produktionstags-Szenario eines erfahrenen Betriebsleiters: Der Druck wächst von frühmorgens (Schichtplanung, erste Informationen) über den Tag (Shopfloor-Realität, Störungen, Audit-Vorbereitung) bis zum Abend (Auswertung, Planung für morgen). Die drei MSQ-DX-Produkte (echeon, checkion, audion) werden nicht als isolierte Features, sondern als durchgängiger digitaler Workflow gezeigt — jeder Akt zeigt, wie eine Barriere oder ein Schmerz durch die nächste Stufe der Transparenz gelöst wird.",
+    "throughline_en": "A realistic manufacturing day for an experienced plant manager: Pressure rises from early morning (shift planning, first signals) through the day (shopfloor reality, disruptions, audit prep) to evening (analysis, next-day planning). The three MSQ-DX products (echeon, checkion, audion) are shown not as isolated features, but as a continuous digital workflow — each act reveals how a barrier or pain is resolved by the next layer of transparency.",
+    "day_structure_de": "06:30 Uhr: Dieter wacht auf, erste Gedanken zum Tag — Handy-Check auf echeon App (Overnight-Meldungen). 07:30 Uhr: Frühstück, Tablet-Planung (echeon Schichtstart). 09:00 Uhr: Ankunft Werk, Morgenbriefing mit Schichtleitern. 10:00–16:00 Uhr: Shopfloor, Meetings, checkion live auf Tablets/Terminals, Audit-Vorbereitung. 18:00 Uhr: Heimfahrt. 20:00 Uhr: Zuhause, audion-Auswertung auf Laptop, Reflektion, Planung.",
+    "anti_patterns_de": [
+      "Nicht alle Akte im gleichen Büro, Konferenzraum oder Messestand-Setting abhandeln — jeder Ort muss sinnlich unterschiedlich sein.",
+      "Act 2 nicht als Fabrik-Morgenshift oder Werkshalle darstellen; es ist privater Morgen zu Hause oder unterwegs, echeon kommt über Phone/Tablet.",
+      "Act 3 Shopfloor nicht abstrakt; konkrete Anlagen, Menschen, Lärm, Spanräume, Prüfboxen, checkion-Terminals sichtbar.",
+      "Act 4 nicht als leerer oder heller Büro-Raum nach Feierabend; Wohnzimmer, Homeoffice-Ecke, abendliches Licht, Unterlagen auf dem Tisch.",
+      "Keine generische Produktpräsentation ohne Berufsbezug — jedes Produkt muss an einen konkreten Schmerz und eine Entscheidung gebunden sein."
+    ],
+    "acts": {
+      "1": {
+        "dramatic_beat_de": "Identitätswechsel: wer bin ich als Betriebsleiter in dieser Welt? Spiegel, innere Stimme, erste Verantwortung.",
+        "scene_concept_de": "Raum ohne Grenzen, Licht und Schatten. Dieter steht in der Mitte, sein Spiegelbild ist unscharf, verschoben — die Last der Entscheidungen, die Spannung zwischen Mensch und Rolle. Stimme aus dem Void: ‚Jede Entscheidung kostet Zeit oder Geld. Welche wählst du?'",
+        "environment_id": "env_void_mirror",
+        "world_slug": "void-mirror",
+        "setting_class": "void_threshold",
+        "lighting_preset": "void_minimal",
+        "time_of_day": "timeless",
+        "primary_anchor": "mirror_reflection",
+        "trigger_type": "scene_enter",
+        "trigger_target": "persona_entry",
+        "product_layer": "onboarding",
+        "splat_prompt_en": "Abstract void space, diffuse light, man in silhouette facing a fractured mirror. Responsibility and uncertainty hanging in darkness. Minimalist, introspective, industrial undertones.",
+        "negative_prompt_en": "bright factory floor, people working, machinery, cheerful office, daylight"
+      },
+      "2": {
+        "dramatic_beat_de": "Alltag tritt in den Morgen: erste Signale, erste Sorgen. echeon wird zur Verlängerung des Bewusstseins.",
+        "scene_concept_de": "Moderne Küche oder Balkon, Morgengrauen oder erstes Licht. Kaffee kalt werdend auf der Arbeitsplatte. Dieter in Privatkleidung, Tablet neben dem Frühstück. Ein Push-Notification vom echeon-System: ‚Linie 3 gestern 23 Min Stillstand — Grund unklar.' Der Morgen wird augenblicklich beruflich. Die Fenster-Aussicht zeigt noch grauig-ruhige Umgebung — aber in Dieters Kopf läuft schon der Werk.",
+        "environment_id": "env_residential_morning_kitchen",
+        "world_slug": "home-morning-kitchen",
+        "setting_class": "residential_morning",
+        "lighting_preset": "morning_warm",
+        "time_of_day": "07:15",
+        "primary_anchor": "tablet_on_table",
+        "trigger_type": "pickup",
+        "trigger_target": "tablet_with_echeon_app",
+        "product_layer": "echeon",
+        "splat_prompt_en": "Modern kitchen, warm morning light slanting through large windows. Man in casual clothes at wooden table with coffee and tablet. Tablet screen glowing with shift data, notifications visible. Calm domestic setting interrupted by work alert. Morning newspaper or planning sheets on table edge.",
+        "negative_prompt_en": "factory floor, office conference room, bright artificial lights, multiple people, industrial machinery, shift workers, crowded space"
+      },
+      "3": {
+        "dramatic_beat_de": "Realität: Shopfloor ist chaotisch, dringend, menschlich. checkion macht das Unsichtbare sichtbar — aber die Entscheidungen sind immer noch hart.",
+        "scene_concept_de": "Werkhalle, Linie 3–4, Morgenshift in vollem Gange. Schichtleiter an einem mobilen checkion-Terminal, Prüfer mit Tablet in der Hand. Im Hintergrund Drehmaschinen, Fräsmaschinen, das Summen und Klacken der Produktion. Dieter kommt herein, spricht mit dem Schichtleiter: ‚Was ist gestern bei der Störung los gewesen?' Der Schichtleiter zeigt auf dem checkion-Screen: ‚Hier, Sensor-Fehler erkannt um 22:47, Cause: Verschmutzung. Wir haben's nachts noch repariert.' Die Transparenz ist plötzlich da — und Dieter sieht auch, dass die Fehlserie vermeidbar gewesen wäre. Spanreste auf dem Boden, der Geruch von Kühlmittel, Sicherheits-Warnwesten.",
+        "environment_id": "env_shopfloor_metalworking_line34",
+        "world_slug": "shopfloor-metalworking-lines",
+        "setting_class": "industrial_floor",
+        "lighting_preset": "midday_neutral",
+        "time_of_day": "10:45",
+        "primary_anchor": "mobile_terminal_checkion",
+        "trigger_type": "proximity",
+        "trigger_target": "shopfloor_work_station",
+        "product_layer": "checkion",
+        "splat_prompt_en": "Industrial shopfloor with CNC machines, turning and milling lines. Morning shift active, workers in safety vests. Mobile terminal held by shift supervisor showing quality data and traceability logs. Fluorescent overhead lights, machine noise, metal chips and coolant smell. Realistic factory atmosphere, precision components visible on fixtures.",
+        "negative_prompt_en": "empty factory, after-hours quiet, office setting, clean white walls, abstract digital interface, no workers, bright clean lab, boardroom"
+      },
+      "4": {
+        "dramatic_beat_de": "Innere Last und Rückblick: Der Tag ist vorbei, aber die Fragen bleiben. audion erlaubt Reflexion und Planung — ein Moment für sich selbst.",
+        "scene_concept_de": "Wohnzimmer oder Homeoffice-Ecke, Abendlicht (Sonnenuntergang oder künstliche Beleuchtung). Dieter sitzt im Sessel oder am kleinen Schreibtisch, Laptop vor sich. audion-Auswertung auf dem Bildschirm: OEE-Graph, Fehler-Heatmap, Trends. Daneben liegen ausgedruckte Schichten-Reports, eine Notiz-Block, eine Tasse kalter Kaffee. Durch das Fenster die Lichter der Stadt oder die stillen Felder. Er ruft sich den Moment von morgens in Erinnerung — die Notification, die Frage ‚warum'. Jetzt hat er die Antwort, aber auch neue Einsichten: die Verschmutzung-Fehler tritt alle 2 Wochen auf, die Wartung muss anders rhythmisiert werden. Er macht sich eine Notiz: ‚Präventiv-Wartung Linie 3 — nächste Woche mit Schichtleiter besprechen.' Der Abend ist privat, aber der Verstand ist noch im Werk.",
+        "environment_id": "env_residential_evening_homeoffice",
+        "world_slug": "home-evening-study",
+        "setting_class": "residential_evening",
+        "lighting_preset": "evening_warm",
+        "time_of_day": "20:30",
+        "primary_anchor": "laptop_with_audion_dashboard",
+        "trigger_type": "sit_down",
+        "trigger_target": "home_desk_chair",
+        "product_layer": "audion",
+        "splat_prompt_en": "Cozy home study corner in evening light. Man in comfortable casual clothes sitting at small desk with open laptop showing analytics dashboard (OEE, error heatmaps, trend graphs). Printed shift reports and notepad beside laptop. Warm desk lamp. Window showing evening cityscape or quiet landscape. Cup of coffee on desk. Reflective, analytical atmosphere.",
+        "negative_prompt_en": "bright open-plan office, conference room, factory floor, multiple people in meeting, artificial harsh lighting, computer lab, nightshift warehouse, crowded space"
+      },
+      "5": {
+        "dramatic_beat_de": "Abschluss und Kontinuität: Die Entscheidungen des Abends und die Einsichten fließen in den nächsten Morgen. Ein Kreis schließt sich, ein neuer öffnet sich.",
+        "scene_concept_de": "Void-Space ähnlich Act 1, aber transformiert. Dieter ist nicht mehr fragmentiert, sondern sammelt: In seinen Händen liegen Notizen, Daten, echeon-Alerts, checkion-Befunde, audion-Insights — alle ineinander verfädelt. Hinter ihm zeichnet sich eine neue Schicht ab, neue Herausforderungen. Seine Stimme: ‚Morgen werde ich es besser wissen.' Ein Lichtstern oder QR-Code erscheint — die Einladung, die Reise weiterzugehen, tiefer einzusteigen in die MSQ-DX-Welt.",
+        "environment_id": "env_void_constellation",
+        "world_slug": "void-constellation",
+        "setting_class": "void_threshold",
+        "lighting_preset": "void_minimal",
+        "time_of_day": "timeless",
+        "primary_anchor": "qr_code_or_light_beacon",
+        "trigger_type": "look_at",
+        "trigger_target": "closing_beacon",
+        "product_layer": "closure",
+        "splat_prompt_en": "Void space with soft ambient light. Figure holding or carrying layers of papers, data streams, glowing threads connecting between them. Sense of synthesis and integration. A star-like beacon or QR-code glowing in the distance. Hopeful but grounded, forward-looking.",
+        "negative_prompt_en": "factory floor, office, kitchen, residential setting, bright daylight, crowds, concrete structures"
+      }
+    }
+  },
+  "act_data": {
+    "1": {
+      "anchors": [
+        {
+          "anchor_id": "act1_mirror",
+          "type": "threshold_object",
+          "label": "Zerbrochener Spiegel",
+          "narrative_de": "Dieters Spiegelbild ist unscharf, verschoben — Ausdruck der gespaltenen Aufmerksamkeit zwischen Privatperson und Verantwortungsträger."
+        }
+      ]
+    },
+    "2": {
+      "anchors": [
+        {
+          "anchor_id": "act2_tablet",
+          "type": "primary_tool",
+          "label": "Tablet mit echeon App",
+          "narrative_de": "Erste Berührung mit echeon: Push-Notification ‚Linie 3 Stillstand'. Der berufliche Tag begin, bevor Dieter das Haus verlässt."
+        },
+        {
+          "anchor_id": "act2_coffee",
+          "type": "domestic_object",
+          "label": "Kaffee & Frühstück",
+          "narrative_de": "Symbol der Privatheit, die augenblicklich unterbrochen wird. Warm → Kalt, als Metapher für die Berufslast."
+        },
+        {
+          "anchor_id": "act2_window",
+          "type": "environment_feature",
+          "label": "Fenster zur ruhigen Landschaft",
+          "narrative_de": "Kontrast zwischen äußerer Ruhe und innerer Besorgnis. Der Blick nach außen ist noch privat, aber die Gedanken sind schon im Werk."
+        }
+      ],
+      "key_metrics_de": [
+        "echeon Shift-Readiness: Sind alle geplanten Anlagen verfügbar?",
+        "Overnight-Alerts: Gibt es ungelöste Störungen vom Vorabend?",
+        "OEE-Prognose: Welche Linie könnte heute zum Bottleneck?",
+        "Entscheidung: Mit welcher Priorität startet die Schicht?"
+      ]
+    },
+    "3": {
+      "anchors": [
+        {
+          "anchor_id": "act3_terminal",
+          "type": "primary_tool",
+          "label": "Mobile checkion Terminal beim Schichtleiter",
+          "narrative_de": "Zentrale Schnittstelle zwischen Shopfloor-Realität und digitaler Transparenz. Hier wird das Unsichtbare sichtbar."
+        },
+        {
+          "anchor_id": "act3_machinery",
+          "type": "environment_feature",
+          "label": "Produktionslinie 3–4, Drehmaschinen, Fräser",
+          "narrative_de": "Konkrete Fabrik-Realität: Lärm, Spanreste, Kühlmittel-Geruch. Nicht abstrakt."
+        },
+        {
+          "anchor_id": "act3_worker",
+          "type": "human_anchor",
+          "label": "Schichtleiter & Prüfer mit Tablet",
+          "narrative_de": "Team vor Ort nutzt checkion live. Dieter erlaubt sich, Fragen zu stellen, Ursachen zu verstehen."
+        },
+        {
+          "anchor_id": "act3_quality_issue",
+          "type": "narrative_event",
+          "label": "Sensor-Fehler erkannt: 22:47, Verschmutzung",
+          "narrative_de": "Das ‚Warum' aus dem Morgen wird beantwortet. Die Transparenz zeigt auch, dass frühere Prävention möglich gewesen wäre."
+        }
+      ],
+      "key_metrics_de": [
+        "checkion Echtzeit-Qualität: Fehlerquote, Ausschuss pro Linie",
+        "Traceability: Welche Chargen sind betroffen?",
+        "OEE-Verlauf: Wie hat sich die Anlagenauslastung entwickelt?",
+        "Audit-Vorbereitung: Sind alle Nachweise dokumentiert und abrufbar?",
+        "Entscheidung: Welche Maßnahmen müssen sofort laufen? Für welche ist eine Nachschicht nötig?"
+      ]
+    },
+    "4": {
+      "anchors": [
+        {
+          "anchor_id": "act4_laptop",
+          "type": "primary_tool",
+          "label": "Laptop mit audion Dashboard",
+          "narrative_de": "audion erlaubt Dieter, den ganzen Tag zu reflektieren. Daten ohne Zeitdruck, tiefere Einsichten."
+        },
+        {
+          "anchor_id": "act4_reports",
+          "type": "document_anchor",
+          "label": "Ausgedruckte Schichten-Reports, Notizblock",
+          "narrative_de": "Analog + Digital: Dieter notiert sich Handlungen für morgen, Präventiv-Maßnahmen, Gesprächspunkte mit dem Team."
+        },
+        {
+          "anchor_id": "act4_lamp",
+          "type": "environment_feature",
+          "label": "Warmes Abend-Licht, Schreibtischlampe",
+          "narrative_de": "Atmosphäre der Konzentration und Reflexion. Nicht der helle, unpersönliche Büro-Light."
+        },
+        {
+          "anchor_id": "act4_window",
+          "type": "environment_feature",
+          "label": "Fenster zur Abenddämmerung oder Nacht",
+          "narrative_de": "Innen warm, außen kühl. Symbol für die psychische Grenze zwischen Privatem und Beruflichem, die nie ganz scharf ist."
+        }
+      ],
+      "key_metrics_de": [
+        "audion OEE-Analyse: Verfügbarkeit, Leistung, Qualität pro Linie und Schicht",
+        "Fehler-Heatmap: Wo treten Probleme am häufigsten auf? Trends?",
+        "Ursachenanalyse: Warum ist Linie 3 alle 2 Wochen down?",
+        "Lessons Learned: Welche Maßnahmen sind wirksam?",
+        "Planung: Präventiv-Wartung, Schulung, Prozessanpassung",
+        "Entscheidung: Welche Einsicht ändert die Strategie für morgen?"
+      ]
+    },
+    "5": {
+      "anchors": [
+        {
+          "anchor_id": "act5_beacon",
+          "type": "symbolic_object",
+          "label": "QR-Code oder Lichtstern",
+          "narrative_de": "Einladung, tiefer einzusteigen. Die Reise ist nicht zu Ende — sie öffnet sich für den Besucher."
+        }
+      ]
+    }
+  }
+}

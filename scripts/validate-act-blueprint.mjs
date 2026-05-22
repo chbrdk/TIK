@@ -16,12 +16,20 @@ addFormats(ajv)
 const validate = ajv.compile(schema)
 
 const set = process.argv[2] ?? 'product-default'
+const singleFile = process.argv[3]
 const dir = join(ROOT, 'fixtures/act-blueprints', set)
-const files = readdirSync(dir).filter((f) => f.endsWith('.json'))
+
+let files
+if (singleFile) {
+  files = [singleFile.endsWith('.json') ? singleFile : `${singleFile}.json`]
+} else {
+  files = readdirSync(dir).filter((f) => f.endsWith('.json'))
+}
 
 let failed = 0
 for (const file of files) {
-  const data = JSON.parse(readFileSync(join(dir, file), 'utf-8'))
+  const path = join(dir, file)
+  const data = JSON.parse(readFileSync(path, 'utf-8'))
   if (!validate(data)) {
     console.error(`FAIL ${file}:`, validate.errors)
     failed++

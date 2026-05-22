@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "blueprint_id": "weber_betriebsleiter_act_02_echeon_morning",
+    "schema_version": "1.0",
+    "language": "de",
+    "product_layer": "echeon"
+  },
+  "act": 2,
+  "story": {
+    "core_message_de": "Kurz vor acht in der Küche: Dieter scrollt im echeon-Feed, während der Kaffee kalt wird. Eine Benachrichtigung reißt ihn aus dem Privaten — Linie 3, 23 Minuten Stillstand gestern, Grund noch unklar. Der Morgen wird augenblicklich zur Schicht.",
+    "core_message_en": "Just before eight in the kitchen: Dieter scrolls through the echeon feed while his coffee grows cold. A notification yanks him from the personal into the professional — Line 3, 23 minutes downtime yesterday, cause still unclear. The morning instantly becomes a shift.",
+    "user_feeling": "Aufmerksamkeit geteilt zwischen Privatem und Beruflichem; erste Sorge, erste Dringlichkeit",
+    "nova_role": "echeon-Assistent: Echtzeitblick auf Shopfloor-Störungen, noch vor Ort-Ankunft. Stille Durchdringung des Bewusstseins."
+  },
+  "environment": {
+    "environment_id": "env_residential_morning_kitchen",
+    "world_slug": "home-morning-kitchen",
+    "scene_concept_de": "Moderne Küche oder offener Wohnbereich im Morgengrauen, etwa 07:15. Große Fenster mit diffusem, warmem Morgenlicht. Dieter in Privatkleidung (Hemd, locker) sitzt am Holz- oder Steintisch mit schwarzem Kaffee und Tablet. Das Tablet-Display leuchtet mit echeon-Feed: Schichtdaten, Anlagenstatus, eine Warn-Benachrichtigung oben. Am Tischrand eine Zeitung oder Notizblöcke. Dahinter: grauig-ruhige Wohnumgebung, vielleicht ein Balkonblick auf stille Straße. Der Moment, bevor die berufliche Realität eindringt.",
+    "setting_class": "residential_morning",
+    "style_hint": "Fotorealistisch, warme Morgenlichtstimmung, Kontrast zwischen häuslicher Ruhe und leuchtender Tablet-Aktivität",
+    "region_hint": "Baden-Württemberg, deutsches Mittelstandswohnzimmer, gehobene Ausstattung",
+    "time_of_day": "07:15",
+    "lighting_preset": "morning_warm"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "kitchen-tablet-morning-alert",
+      "prompt_en": "Modern kitchen in early morning light, approximately 7:15 AM. Man in casual clothing seated at wooden or stone table, holding tablet with glowing screen displaying shift data and notifications. Black coffee in ceramic mug on table, newspaper or planning notes at edge. Large windows with soft golden-warm light slanting through, revealing quiet residential street or garden beyond. Tablet screen shows production dashboard with warning icon for Line 3 downtime. Calm domestic atmosphere interrupted by digital alert. Professional readiness meeting morning routine.",
+      "negative_prompt": "factory floor, industrial machinery, office conference room, bright fluorescent artificial lighting, multiple workers, shift change, crowded production hall, night shift, dark lighting, colleagues present, meeting room",
+      "anchor_placements": [
+        {
+          "anchor_id": "tablet_on_table",
+          "description": "Primary interaction anchor for home-morning-kitchen"
+        }
+      ]
+    },
+    "prop_notes": "Tablet must show echeon app interface with shift overview, notification badge (Line 3 alert), production line status icons. Coffee mug should appear fresh but slightly cooled. Lighting soft but clear enough to read screen without glare. Scene emphasizes solitude and quiet before work intensity begins."
+  },
+  "voiceover": {
+    "pre_beat_tracks": [],
+    "beat_track": {
+      "track_id_suffix": "01",
+      "estimated_duration_sec": 16.0,
+      "lines": [
+        {
+          "text": "Dieter sitzt in der Küche, Kaffee wird kalt. Sein Tablet leuchtet auf — echeon zeigt den Shopfloor, auch wenn er noch zu Hause ist.",
+          "at_sec": 0.0,
+          "pause_after_sec": 2.0
+        },
+        {
+          "text": "Linie 3: 23 Minuten Stillstand gestern. Grund: unklar. Das ist die Art von Information, die den Morgen sofort verändern kann.",
+          "at_sec": 4.5,
+          "pause_after_sec": 2.5
+        },
+        {
+          "text": "Dieter kennt jeden Stillstand. Er kennt auch den Preis. Jede Minute ist sichtbar, jetzt sofort, noch bevor er sein Auto startet.",
+          "at_sec": 9.5,
+          "pause_after_sec": 3.0
+        }
+      ]
+    }
+  },
+  "interaction": {
+    "trigger_type": "pickup",
+    "trigger_target": "tablet_with_echeon_app",
+    "primary_anchor": "tablet_on_table",
+    "delay_sec": 0,
+    "haptic_pattern": "soft_pulse"
+  },
+  "data_viz": {
+    "mode": "echeon_feed",
+    "echeon_feed": {
+      "item_count": 3,
+      "categories": [
+        "industry",
+        "operations"
+      ],
+      "headline_templates": []
+    }
+  },
+  "timeline": {
+    "target_duration_sec": 24.0,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "at_sec": 0.0,
+        "track_id": "PLACEHOLDER"
+      },
+      {
+        "type": "visual_focus",
+        "at_sec": 1.0,
+        "anchor_object": "tablet_on_table"
+      },
+      {
+        "type": "hint_primary",
+        "at_sec": 6.0,
+        "anchor_object": "tablet_screen_notification"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 14.0
+      }
+    ],
+    "beat_cue_templates": [
+      {
+        "type": "overlay_show",
+        "at_sec": 3.0,
+        "delay_from_beat": true
+      },
+      {
+        "type": "data_viz_reveal",
+        "at_sec": 7.0,
+        "delay_from_beat": true
+      },
+      {
+        "type": "haptic_trigger",
+        "at_sec": 6.5,
+        "delay_from_beat": true
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 24.0,
+        "delay_from_beat": true
+      }
+    ]
+  }
+}

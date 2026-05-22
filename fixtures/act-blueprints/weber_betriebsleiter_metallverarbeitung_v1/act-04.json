@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "blueprint_id": "weber_betriebsleiter_act04_audion_reflection",
+    "schema_version": "1.0",
+    "language": "de",
+    "product_layer": "audion"
+  },
+  "act": 4,
+  "story": {
+    "core_message_de": "Abends am Homeoffice-Schreibtisch: Dieter analysiert die audion-Auswertung des Tages. OEE-Graph, Fehler-Heatmaps und Trends auf dem Laptop-Bildschirm. Schichten-Reports liegen ausgedruckt daneben. Die innere Last des Tages verdichtet sich zu einer klaren Einsicht: Die Verschmutzungs-Fehler an Linie 3 treten alle zwei Wochen auf — die Wartung muss anders rhythmisiert werden. Ein Moment der Reflexion, bevor er eine Notiz macht: ‚Präventiv-Wartung Linie 3 — nächste Woche mit Schichtleiter besprechen.'",
+    "core_message_en": "Evening at home office desk: Dieter reviews the day's audion analysis. OEE graphs, error heatmaps, and trend data on the laptop screen. Printed shift reports scattered nearby. The day's uncertainty crystallizes into clarity: contamination errors on Line 3 follow a two-week cycle—maintenance timing must change. A moment of reflection before he writes a note: 'Preventive maintenance Line 3 — discuss with shift leader next week.'",
+    "user_feeling": "reflective, analytical, gaining agency",
+    "nova_role": "audion acts as Dieter's thinking partner, surfacing patterns he sensed but couldn't prove, validating his instincts and translating data into actionable next steps"
+  },
+  "environment": {
+    "environment_id": "env_residential_evening_homeoffice",
+    "world_slug": "home-evening-study",
+    "scene_concept_de": "Wohnzimmer oder Homeoffice-Ecke, Abendlicht. Dieter sitzt im Sessel oder am kleinen Schreibtisch, Laptop vor sich. audion-Auswertung auf dem Bildschirm: OEE-Graph, Fehler-Heatmap, Trends. Ausgedruckte Schichten-Reports und Notiz-Block neben dem Laptop. Warme Schreibtischlampe. Durch das Fenster die Lichter der Stadt oder die stillen Felder. Tasse kalter Kaffee auf dem Tisch. Privater Raum, aber der Verstand noch im Werk.",
+    "setting_class": "residential_evening",
+    "style_hint": "warm, introspective, data-focused, late-afternoon domestic calm",
+    "region_hint": "Baden-Württemberg home, understated comfort, traces of industrial work (printed reports, coffee cup)",
+    "time_of_day": "20:30",
+    "lighting_preset": "evening_warm"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "home-evening-study-audion-dashboard",
+      "prompt_en": "Cozy home study corner in warm evening light. Man in mid-forties, casual comfortable clothes, sitting at small desk with open laptop displaying audion analytics dashboard: OEE graph, error heatmap, trend visualizations in soft blue and amber tones. Printed shift reports and notepad with pen beside laptop. Warm desk lamp casting soft glow. Window behind showing evening cityscape or quiet landscape with distant lights. Cup of coffee on desk, slightly cold. Reflective, contemplative atmosphere. Analog and digital tools mixed. Soft evening shadows.",
+      "negative_prompt": "bright open-plan office, conference room, factory floor, multiple people, artificial harsh overhead lighting, computer lab environment, nightshift warehouse, crowded workspace, daytime bright sunlight, meeting in progress, standing position, multiple screens, visible colleagues, commercial office setup",
+      "anchor_placements": [
+        {
+          "anchor_id": "laptop_with_audion_dashboard",
+          "description": "Open laptop on desk displaying audion dashboard with OEE graphs, error heatmaps, and trend data in soft blue and amber. Screen is primary focus of gaze."
+        },
+        {
+          "anchor_id": "printed_shift_reports",
+          "description": "Stack of printed shift reports and performance summaries scattered or neatly stacked beside the laptop. Tangible evidence of the day's data."
+        },
+        {
+          "anchor_id": "notepad_and_pen",
+          "description": "Notepad with pen nearby, used for jotting down insights and action items. A page with handwritten note visible or in progress."
+        },
+        {
+          "anchor_id": "desk_lamp_warm",
+          "description": "Warm-toned desk lamp providing soft, focused light over the workspace. Creates intimate, analytical atmosphere."
+        },
+        {
+          "anchor_id": "coffee_cup_cold",
+          "description": "Cup of coffee on the desk, slightly cold from the day. Symbol of extended focus and the hours spent in thought."
+        },
+        {
+          "anchor_id": "window_evening_view",
+          "description": "Window showing evening cityscape or quiet landscape with distant lights. Outside world is calm and dark; inside is focused, analytical."
+        }
+      ]
+    },
+    "prop_notes": "Audion dashboard on laptop is the visual centerpiece. Data should be legible but not overwhelming: OEE percentage (e.g., 78%), error timeline showing the two-week contamination cycle on Line 3, trend arrows. Printed reports and notepad ground the scene in both analog and digital work. Cold coffee cup is a poignant detail—Dieter has been thinking for hours."
+  },
+  "voiceover": {
+    "pre_beat_tracks": [],
+    "beat_track": {
+      "track_id_suffix": "04",
+      "estimated_duration_sec": 16.0,
+      "lines": [
+        {
+          "text": "Der Tag ist vorbei. Die Daten liegen vor mir.",
+          "at_sec": 2.0,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "OEE 78 Prozent. Nicht schlecht, aber nicht gut genug.",
+          "at_sec": 5.5,
+          "pause_after_sec": 2.0
+        },
+        {
+          "text": "Und da — Linie 3. Verschmutzungs-Fehler. Alle zwei Wochen. Immer zur gleichen Zeit.",
+          "at_sec": 9.5,
+          "pause_after_sec": 2.5
+        },
+        {
+          "text": "Das habe ich gefühlt. Jetzt kann ich es beweisen.",
+          "at_sec": 13.5,
+          "pause_after_sec": 2.0
+        },
+        {
+          "text": "Die Wartung muss anders rhythmisiert werden. Präventiv, nicht reaktiv.",
+          "at_sec": 17.5,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "{{persona.display_name}}, du weißt jetzt, wo es weh tut. Und wie man es heilt.",
+          "at_sec": 21.0,
+          "pause_after_sec": 2.0
+        },
+        {
+          "text": "Nächste Woche mit dem Schichtleiter. Ein Plan entsteht.",
+          "at_sec": 25.0,
+          "pause_after_sec": 1.0
+        }
+      ]
+    }
+  },
+  "interaction": {
+    "trigger_type": "sit_down",
+    "trigger_target": "home_desk_chair",
+    "primary_anchor": "laptop_with_audion_dashboard",
+    "delay_sec": 0,
+    "haptic_pattern": "soft_pulse"
+  },
+  "data_viz": {
+    "mode": "audion_diegetic",
+    "audion_diegetic": {
+      "metrics": [
+        {
+          "metric_id": "metric_1",
+          "label": "Wert",
+          "value": 50.0,
+          "unit": "%",
+          "anchor_object": "laptop_with_audion_dashboard",
+          "animation_preset": "glow_warm"
+        }
+      ]
+    }
+  },
+  "timeline": {
+    "target_duration_sec": 32.0,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "at_sec": 0.0,
+        "track_id": "PLACEHOLDER"
+      },
+      {
+        "type": "hint_primary",
+        "at_sec": 1.5,
+        "anchor_object": "laptop_with_audion_dashboard"
+      },
+      {
+        "type": "data_viz_show",
+        "at_sec": 3.0,
+        "anchor_object": "laptop_with_audion_dashboard"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 11.0
+      }
+    ],
+    "beat_cue_templates": [
+      {
+        "type": "metric_highlight",
+        "at_sec": 5.0,
+        "delay_from_beat": true,
+        "anchor_object": "laptop_with_audion_dashboard"
+      },
+      {
+        "type": "data_transition",
+        "at_sec": 9.0,
+        "delay_from_beat": true,
+        "anchor_object": "laptop_with_audion_dashboard"
+      },
+      {
+        "type": "insight_pulse",
+        "at_sec": 13.0,
+        "delay_from_beat": true,
+        "anchor_object": "laptop_with_audion_dashboard"
+      },
+      {
+        "type": "overlay_show",
+        "at_sec": 21.0,
+        "delay_from_beat": true,
+        "anchor_object": "notepad_and_pen"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 30.0,
+        "delay_from_beat": true
+      }
+    ]
+  }
+}

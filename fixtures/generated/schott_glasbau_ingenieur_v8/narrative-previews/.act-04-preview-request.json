@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "narrative_preview",
+  "provider": "google-gemini",
+  "model": "gemini-2.5-flash-image",
+  "status": "completed",
+  "submitted_at": "2026-05-22T06:46:17Z",
+  "prompt": "Photorealistic intimate home office evening, warm desk lamp lighting, engineer at laptop displaying audion analytics dashboard with project metrics and lessons-learned data, printed checkion field reports spread across desk with red markup pen, reflection in dark window showing house interior warmth against night outside, family moving in blurred background with living room TV, professional yet cozy domestic atmosphere, 360 home office evening introspection\n\nAvoid: bright open plan office, empty conference room, cold fluorescent lighting, industrial warehouse, construction site at night, daytime, people in meeting, public space, corporate boardroom",
+  "act": 4,
+  "persona_id": "schott_glasbau_ingenieur_v8",
+  "world_slug": "schott-homeoffice-evening",
+  "output": "act-04.png"
+}

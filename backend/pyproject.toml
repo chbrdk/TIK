@@ -9,7 +9,8 @@ dependencies = [
     "uvicorn[standard]==0.38.0",
     "pydantic==2.10.4",
     "jsonschema==4.23.0",
-    "httpx==0.27.2",
+    "httpx>=0.28.1,<1.0.0",
+    "google-genai>=1.30.0",
 ]
 
 [project.optional-dependencies]
@@ -28,3 +29,6 @@ include = ["app", "app.*"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
+markers = [
+    "slow: full pipeline e2e (mocked Claude); skip in default CI",
+]

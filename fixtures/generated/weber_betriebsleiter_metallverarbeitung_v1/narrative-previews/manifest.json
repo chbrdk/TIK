@@ -1,0 +1,13 @@
+{
+  "persona_id": "weber_betriebsleiter_metallverarbeitung_v1",
+  "acts": [
+    2,
+    3,
+    4
+  ],
+  "paths": {
+    "2": "/narrative-previews/weber_betriebsleiter_metallverarbeitung_v1/act-02.png",
+    "3": "/narrative-previews/weber_betriebsleiter_metallverarbeitung_v1/act-03.png",
+    "4": "/narrative-previews/weber_betriebsleiter_metallverarbeitung_v1/act-04.png"
+  }
+}

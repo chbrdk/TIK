@@ -101,8 +101,14 @@
             "fade",
             "haptic",
             "act_advance",
-            "session_complete"
+            "session_complete",
+            "pipeline_diagram",
+            "pipeline_diagram_off"
           ]
+        },
+        "layer": {
+          "type": "string",
+          "enum": ["echeon", "audion", "checkion", "cms"]
         },
         "at_sec": { "type": "number", "minimum": 0 },
         "delay_from_beat": { "type": "boolean", "default": false },

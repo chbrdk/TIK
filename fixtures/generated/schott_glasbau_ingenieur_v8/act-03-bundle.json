@@ -1,0 +1,263 @@
+{
+  "act": 3,
+  "blueprint_id": "schott_glasbau_ingenieur_v8_act03_checkion_v1",
+  "persona_id": "schott_glasbau_ingenieur_v8",
+  "story": {
+    "core_message_de": "Mittags skeptisch: Kennt Schott mich online? Oder sehe ich wieder nur Konzernfloskeln? Neugier mischt sich mit kurzer Ungeduld.",
+    "core_message_en": "11:45 Uhr, Homeoffice-Ecke in Stuttgart: Thomas öffnet die Schott-Website und erwartet wieder generisches Konzernmarketing. Stattdessen sieht er Fassaden-Cases, die seine Projekte sprechen, technische Tiefe, die er braucht. Die Skepsis weicht einer leisen Überraschung — vielleicht versteht Schott doch, wer er ist.",
+    "user_feeling": "Thomas sitzt vor dem Monitor und fühlt sich kurz skeptisch, fast ungeduldig — wird die Website wieder Zeit verschwenden? Dann ein Moment der Überraschung: Die Inhalte treffen ihn, nicht den Konzern-Investor. Er atmet auf, aber bleibt kritisch: Passt das wirklich zu seinen Anforderungen, oder ist es nur geschicktes Marketing?",
+    "nova_role": "Die Stimme, die seine Mittags-Ungeduld ernst nimmt und ihm zeigt, dass Schott ihn digital sieht — nicht als Masse, sondern als Fassadenplaner, der Normen, Fehlerquoten und Partnerschaften braucht."
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "schott-homeoffice-evening",
+      "prompt_en": "Photorealistic home office nook midday, desk with large monitor and laptop, technical documents, warm neutral daylight through window, suburban interior, professional workspace without people, 360 interior",
+      "negative_prompt": "construction site, factory, conference hall, night, people, readable UI text on screen",
+      "anchor_placements": [
+        {
+          "anchor_id": "monitor_left",
+          "description": "monitor_left — from session_arc"
+        },
+        {
+          "anchor_id": "home_office_laptop",
+          "description": "home_office_laptop — from session_arc"
+        },
+        {
+          "anchor_id": "desk_lamp",
+          "description": "desk_lamp — from session_arc"
+        },
+        {
+          "anchor_id": "technical_notes_pad",
+          "description": "technical_notes_pad — from session_arc"
+        }
+      ]
+    },
+    "prop_notes": "Monitor screen remains neutral plate; Schott website content, chart overlays, and case-study thumbnails are WebXR-anchored. Desk documents should suggest engineering (sketches, specs, not readable), reinforcing his professional identity without distraction."
+  },
+  "environment": {
+    "environment_id": "env_schott_homeoffice_digital_v1",
+    "world_slug": "schott-homeoffice-evening",
+    "scene_concept_de": "Homeoffice-Ecke, 11:45, Tageslicht. Monitor zeigt Schott-Website — personalisierte Fassaden-Cases vs. generische Startseite.",
+    "setting_class": "home_office",
+    "style_hint": "lived-in home office, monitor as digital touchpoint",
+    "region_hint": "dach_south_west",
+    "time_of_day": "11:45",
+    "lighting_preset": "midday_neutral"
+  },
+  "scene_environment": {
+    "act": 3,
+    "environment_id": "env_schott_homeoffice_digital_v1",
+    "world_slug": "schott-homeoffice-evening",
+    "lighting_preset": "midday_neutral",
+    "time_of_day": "11:45",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "splat",
+    "scene_concept_de": "Homeoffice-Ecke, 11:45, Tageslicht. Monitor zeigt Schott-Website — personalisierte Fassaden-Cases vs. generische Startseite."
+  },
+  "voiceover_tracks": {
+    "nova_de_act3_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Kurz vor Mittag, Homeoffice-Ecke in Stuttgart. Thomas öffnet die Schott-Website, wie so oft — und wartet auf das, was immer kommt: breite Konzern-Sprache, glatte Bilder für Investoren.",
+          "at_sec": 0,
+          "pause_after_sec": 1.2
+        },
+        {
+          "text": "Seine Zeit ist knapp. Die Münchner Fassade wartet, die Lieferkette zittert, und es gibt Dutzende Tools, die er abfragen muss, bevor 14 Uhr die nächste Abstimmung ist.",
+          "at_sec": 5,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Er scrollt ungeduldig — wird das heute wieder Minuten kosten oder spricht es ihn an?",
+          "at_sec": 10,
+          "pause_after_sec": 0.8
+        }
+      ]
+    },
+    "nova_de_act3_02": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Da — nicht Konzern-Floskeln. Fassaden-Cases. Cases, die sein München-Projekt treffen, die Schallschutz-Normen und Brandspezifikationen nennen, die er braucht.",
+          "at_sec": 15,
+          "pause_after_sec": 1.2
+        },
+        {
+          "text": "Und die Website zeigt es nicht als Marketing-Show: Technische Tiefe, 84 Prozent vollständig, Planungsunterlagen sichtbar, Normkonformität klar.",
+          "at_sec": 19,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Thomas atmet leise auf. Vielleicht — nur vielleicht — versteht Schott online doch, wer er ist. Nicht der Investor, nicht die Masse. Ein Fassadenplaner, der Klarheit braucht.",
+          "at_sec": 25,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Die Skepsis weicht, aber die Frage bleibt: Reicht das für echte Zusammenarbeit, oder ist es geschicktes Framing?",
+          "at_sec": 32,
+          "pause_after_sec": 0.8
+        }
+      ]
+    }
+  },
+  "act_script": {
+    "act": 3,
+    "target_duration_sec": 42,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "at_sec": 0,
+        "track_id": "01"
+      },
+      {
+        "type": "hint_primary",
+        "at_sec": 4,
+        "anchor_object": "monitor_left"
+      },
+      {
+        "type": "ambient_cue",
+        "at_sec": 8,
+        "anchor_object": "desk_lamp"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 16
+      }
+    ],
+    "beat_cue_templates": {
+      "nova_de_act3_02": [
+        {
+          "type": "overlay_show",
+          "at_sec": 14,
+          "delay_from_beat": true,
+          "anchor_object": "monitor_left"
+        },
+        {
+          "type": "data_viz_animate",
+          "at_sec": 18,
+          "delay_from_beat": true,
+          "anchor_object": "monitor_left"
+        },
+        {
+          "type": "chart_pulse",
+          "at_sec": 23,
+          "delay_from_beat": true,
+          "anchor_object": "monitor_left"
+        },
+        {
+          "type": "sentiment_shift",
+          "at_sec": 28,
+          "anchor_object": "monitor_left",
+          "mode": "in"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 40,
+          "delay_from_beat": true
+        }
+      ]
+    }
+  },
+  "narrative_beat": {
+    "act": 3,
+    "trigger_type": "look_at",
+    "trigger_target": "monitor_left",
+    "delay_sec": 0,
+    "duration_sec": 42,
+    "voiceover_track_id": "nova_de_act3_02",
+    "ambient_audio_id": null,
+    "haptic_pattern": "soft_pulse",
+    "ui_overlay": {
+      "type": "dashboard",
+      "anchor_object": "monitor_left",
+      "payload": {
+        "source": "checkion.metrics"
+      }
+    },
+    "lines": [
+      {
+        "text": "Da — nicht Konzern-Floskeln. Fassaden-Cases. Cases, die sein München-Projekt treffen, die Schallschutz-Normen und Brandspezifikationen nennen, die er braucht.",
+        "at_sec": 15,
+        "pause_after_sec": 1.2
+      },
+      {
+        "text": "Und die Website zeigt es nicht als Marketing-Show: Technische Tiefe, 84 Prozent vollständig, Planungsunterlagen sichtbar, Normkonformität klar.",
+        "at_sec": 19,
+        "pause_after_sec": 1
+      },
+      {
+        "text": "Thomas atmet leise auf. Vielleicht — nur vielleicht — versteht Schott online doch, wer er ist. Nicht der Investor, nicht die Masse. Ein Fassadenplaner, der Klarheit braucht.",
+        "at_sec": 25,
+        "pause_after_sec": 1.5
+      },
+      {
+        "text": "Die Skepsis weicht, aber die Frage bleibt: Reicht das für echte Zusammenarbeit, oder ist es geschicktes Framing?",
+        "at_sec": 32,
+        "pause_after_sec": 0.8
+      }
+    ],
+    "estimated_duration_sec": 16,
+    "cues": [
+      {
+        "type": "overlay_show",
+        "at_sec": 14,
+        "delay_from_beat": true,
+        "anchor_object": "monitor_left"
+      },
+      {
+        "type": "data_viz_animate",
+        "at_sec": 18,
+        "delay_from_beat": true,
+        "anchor_object": "monitor_left"
+      },
+      {
+        "type": "chart_pulse",
+        "at_sec": 23,
+        "delay_from_beat": true,
+        "anchor_object": "monitor_left"
+      },
+      {
+        "type": "sentiment_shift",
+        "at_sec": 28,
+        "anchor_object": "monitor_left",
+        "mode": "in"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 40,
+        "delay_from_beat": true
+      }
+    ],
+    "_beat_cue_template_key": "nova_de_act3_02"
+  },
+  "data_layer_slice": {
+    "checkion": {
+      "metrics": [
+        {
+          "label": "Relevanz Website",
+          "value": 78,
+          "unit": "%",
+          "comparison_value": 52,
+          "trend": "up"
+        },
+        {
+          "label": "Technische Tiefe",
+          "value": 84,
+          "unit": "%",
+          "trend": "up"
+        },
+        {
+          "label": "Social Sichtbarkeit",
+          "value": 61,
+          "unit": "%",
+          "trend": "flat"
+        }
+      ]
+    }
+  }
+}

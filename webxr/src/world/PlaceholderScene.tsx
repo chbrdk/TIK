@@ -5,6 +5,8 @@ import { AnchorMarkers, type HintMode } from './AnchorMarkers'
 import { DiegeticMetricBadge, type DiegeticMetricData } from './DiegeticMetricBadge'
 import { anchorWorldPosition } from './anchorWorldPosition'
 import { LightingRig } from './LightingRig'
+import { DigitalParticleField } from './pipeline/DigitalParticleField'
+import { EcheonFilterDiagram3d, type EcheonFilterHeadline } from './pipeline/EcheonFilterDiagram3d'
 
 interface Props {
   environment: EnvironmentDefinition
@@ -16,6 +18,8 @@ interface Props {
   inVr?: boolean
   onAnchorSelect?: (id: string, world: [number, number, number]) => void
   reportQrUrl?: string | null
+  pipelineDiagramActive?: boolean
+  echeonHeadlines?: EcheonFilterHeadline[]
 }
 
 function ConstellationPoints() {
@@ -51,6 +55,8 @@ export function PlaceholderScene({
   inVr = false,
   onAnchorSelect,
   reportQrUrl,
+  pipelineDiagramActive = false,
+  echeonHeadlines = [],
 }: Props) {
   const variant = environment.placeholderVariant ?? 'void_mirror'
   const groundOffset = environment.semantics.ground_plane_offset
@@ -95,6 +101,14 @@ export function PlaceholderScene({
             <meshStandardMaterial color="#5c5048" />
           </mesh>
           <pointLight position={[0.8, 2.2, 0.5]} intensity={0.6} color="#ffcba4" />
+        </group>
+      )}
+      {variant === 'void_digital_particles' && (
+        <group>
+          <DigitalParticleField active />
+          <EcheonFilterDiagram3d headlines={echeonHeadlines} active={pipelineDiagramActive} />
+          <pointLight position={[0, 3, 1]} intensity={0.8} color="#6eb5ff" />
+          <pointLight position={[-2, 1, -2]} intensity={0.35} color="#aaccff" />
         </group>
       )}
       {variant === 'void_constellation' && (

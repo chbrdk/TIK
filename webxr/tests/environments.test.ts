@@ -22,9 +22,16 @@ describe('environments registry', () => {
     }
   })
 
-  it('maps act 2 to kitchen splat', () => {
-    expect(getEnvironmentByAct(2)?.worldSlug).toBe(KITCHEN_WORLD_SLUG)
-    expect(getEnvironmentByAct(2)?.kind).toBe('splat')
+  it('maps act 2 to digital particle void placeholder', () => {
+    const env = getEnvironmentByAct(2)
+    expect(env?.environmentId).toBe('env_void_digital_particles_v1')
+    expect(env?.placeholderVariant).toBe('void_digital_particles')
+    expect(env?.kind).toBe('placeholder')
+  })
+
+  it('still exposes kitchen splat by id for other personas', () => {
+    expect(getEnvironmentById('env_kitchen_lived_in_dach_v1')?.worldSlug).toBe(KITCHEN_WORLD_SLUG)
+    expect(getEnvironmentById('env_kitchen_lived_in_dach_v1')?.kind).toBe('splat')
   })
 
   it('maps act 3 to office splat', () => {

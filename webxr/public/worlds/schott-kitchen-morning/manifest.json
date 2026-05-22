@@ -1,0 +1,21 @@
+{
+  "slug": "schott-kitchen-morning",
+  "environment_id": "schott-kitchen-morning",
+  "splat_url": "/worlds/schott-kitchen-morning/splat.spz",
+  "splat_tier": "150k",
+  "collider_url": "/worlds/schott-kitchen-morning/collider.glb",
+  "semantics": {
+    "metric_scale_factor": 0.84592295,
+    "ground_plane_offset": 1.0607282,
+    "flip_y": true
+  },
+  "mode": "world_and_anchors_only",
+  "anchors": [],
+  "anchors_pending": [
+    "kitchen_tablet",
+    "facade_print_on_table",
+    "window_morning_light",
+    "coffee_cup",
+    "technical_notes_pad"
+  ]
+}

@@ -34,27 +34,39 @@ function main() {
   )
   const p = profileDoc.persona
 
-  const environments = manifest.environment_bindings.map((b) => ({
-    act: b.act,
-    environment_id: b.environment_id,
-    world_slug: b.world_slug,
-    lighting_preset: b.lighting_preset,
-    time_of_day: b.time_of_day,
-    weather: b.weather ?? 'clear',
-    skybox_id: b.skybox_id ?? null,
-  }))
+  const environments = manifest.environment_bindings.map((b) => {
+    const entry = {
+      act: b.act,
+      environment_id: b.environment_id,
+      lighting_preset: b.lighting_preset,
+      time_of_day: b.time_of_day,
+      weather: b.weather ?? 'clear',
+      skybox_id: b.skybox_id ?? null,
+    }
+    if (b.world_slug) entry.world_slug = b.world_slug
+    return entry
+  })
 
   const slices = manifest.data_layer_slices ?? []
   const data_layers = {
     echeon: slices[1]?.echeon ?? { feed_items: [], cache_ttl_sec: 1800 },
     checkion: slices[2]?.checkion ?? { metrics: [] },
     audion: slices[3]?.audion ?? { diegetic_metrics: [] },
-    storyblok: {
-      page_variant_a_texture:
-        'https://cdn.msqdx.de/persona-reality/storyblok/sick_personalized_v1.png',
-      page_variant_b_texture:
-        'https://cdn.msqdx.de/persona-reality/storyblok/sick_generic_v1.png',
-    },
+    storyblok: profileDoc.company_context?.storyblok
+      ? {
+          page_variant_a_texture:
+            profileDoc.company_context.storyblok.page_variant_a_texture ??
+            'https://cdn.msqdx.de/persona-reality/storyblok/sick_personalized_v1.png',
+          page_variant_b_texture:
+            profileDoc.company_context.storyblok.page_variant_b_texture ??
+            'https://cdn.msqdx.de/persona-reality/storyblok/sick_generic_v1.png',
+        }
+      : {
+          page_variant_a_texture:
+            'https://cdn.msqdx.de/persona-reality/storyblok/sick_personalized_v1.png',
+          page_variant_b_texture:
+            'https://cdn.msqdx.de/persona-reality/storyblok/sick_generic_v1.png',
+        },
   }
 
   const sceneId = `se_${profile}_${lang}`

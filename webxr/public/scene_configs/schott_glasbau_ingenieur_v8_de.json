@@ -1,0 +1,539 @@
+{
+  "meta": {
+    "scene_id": "se_schott_glasbau_ingenieur_v8_de",
+    "persona_id": "schott_glasbau_ingenieur_v8",
+    "generated_at": "2026-05-22T12:08:51Z",
+    "duration_sec": 300,
+    "language": "de",
+    "client_id": null,
+    "schema_version": "1.0"
+  },
+  "persona": {
+    "id": "schott_glasbau_ingenieur_v8",
+    "display_name": "Dr. Thomas Reinhard",
+    "age": 47,
+    "gender_expression": "male",
+    "location": "Stuttgart, Baden-Württemberg, DACH-Region",
+    "occupation": "Leitender Ingenieur für Glasfassaden & Projektmanagement",
+    "household": "{\"family_status\": \"verheiratet, zwei erwachsene Kinder\", \"home_type\": \"Einfamilienhaus mit Homeoffice-Ecke\", \"region\": \"Vorstadt Stuttgart\"}",
+    "axes": {
+      "sector": "b2b_specialist",
+      "life_stage": "established_career",
+      "tech_affinity": "early_adopter",
+      "decision_style": "rational",
+      "industry": "industrial_b2b"
+    },
+    "pain_points": [
+      "Koordination zwischen Architekten, Glaslieferanten und Montagebetrieben führt zu Informationsbruch und Verzögerungen",
+      "Technische Spezifikationen (U-Wert, Schallschutz, Brandsicherheit) müssen bei jeder Anfrage neu zusammengetragen werden",
+      "Fehlerquoten bei manueller Dokumentation und Abweichungsverwaltung auf der Baustelle",
+      "Druck, digitale Workflow-Lösungen zu evaluieren, ohne bewährte Prozesse zu gefährden",
+      "Ständige Abstimmung zwischen verschiedenen Planungstools und Schott-Katalogdaten"
+    ],
+    "decision_drivers": [
+      "Technische Zuverlässigkeit und Normkonformität (DIN, EN, Schott-Standards)",
+      "Projektrentabilität: Zeit- und Kosteneinsparungen pro Projekt",
+      "Kollaborative Effizienz: nahtlose Integration mit bestehenden CAD- und Planungsprozessen",
+      "Langfristige Partnerschaft mit Schott und Vertrauensverhältnis zu Produktbetreuung",
+      "ROI durch digitale Transparenz und Fehlerreduktion"
+    ]
+  },
+  "avatar": {
+    "avatar_asset_id": "avatar_schott_glasbau_ingenieur_v8_v1",
+    "rpm_avatar_id": "rpm_schott_glasbau_ingenieur_v8_v1",
+    "voice_id_elevenlabs": "el_schott_glasbau_ingenieur_v8_de_v1",
+    "outfit_preset": "business_casual"
+  },
+  "environments": [
+    {
+      "act": 1,
+      "environment_id": "env_void_mirror_identity_v1",
+      "lighting_preset": "void_minimal",
+      "time_of_day": "timeless",
+      "weather": "clear",
+      "skybox_id": null,
+      "world_slug": "void-mirror-identity"
+    },
+    {
+      "act": 2,
+      "environment_id": "env_void_digital_particles_v1",
+      "lighting_preset": "void_digital_cool",
+      "time_of_day": "07:20",
+      "weather": "clear",
+      "skybox_id": null
+    },
+    {
+      "act": 3,
+      "environment_id": "env_schott_homeoffice_digital_v1",
+      "lighting_preset": "midday_neutral",
+      "time_of_day": "11:45",
+      "weather": "clear",
+      "skybox_id": null,
+      "world_slug": "schott-homeoffice-evening"
+    },
+    {
+      "act": 4,
+      "environment_id": "env_schott_homeoffice_evening_v1",
+      "lighting_preset": "evening_warm",
+      "time_of_day": "20:30",
+      "weather": "clear",
+      "skybox_id": null,
+      "world_slug": "schott-homeoffice-evening"
+    },
+    {
+      "act": 5,
+      "environment_id": "env_void_constellation_closure_v1",
+      "lighting_preset": "void_minimal",
+      "time_of_day": "timeless",
+      "weather": "clear",
+      "skybox_id": null,
+      "world_slug": "void-constellation-closure"
+    }
+  ],
+  "narrative_beats": [
+    {
+      "act": 1,
+      "trigger_type": "scene_enter",
+      "trigger_target": "mirror_surface",
+      "delay_sec": 0,
+      "duration_sec": 32,
+      "voiceover_track_id": "nova_de_act1_01",
+      "ambient_audio_id": null,
+      "haptic_pattern": "soft_pulse",
+      "ui_overlay": null,
+      "lines": [
+        {
+          "text": "Thomas, 47, Stuttgart. Leitender Ingenieur. Zwei erwachsene Kinder. Homeoffice am Esstisch nach dem Abendbrot.",
+          "at_sec": 13,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Jeden Morgen: Informationen aus Dutzenden Kanälen. Architekten, Glaslieferanten, Montagebetriebe. Jeder mit seiner Dringlichkeit.",
+          "at_sec": 16,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Was ihn nervt? Der Informationsbruch. Die manuellen Abstimmungen. Die U-Werte, Schallschutz, Brandsicherheit — jedes Mal neu zusammengetragen.",
+          "at_sec": 19,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Was ihn antreibt? Präzision. Normen-Konformität. Zeitersparnis. Dass seine Projekte rentabel werden.",
+          "at_sec": 22,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Abends ist er erschöpft-reflektiv. Er braucht Klarheit, nicht neue Fluten.",
+          "at_sec": 25,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Erkennst du dich wieder?",
+          "at_sec": 28,
+          "pause_after_sec": 3
+        }
+      ],
+      "estimated_duration_sec": 16,
+      "cues": [
+        {
+          "type": "overlay_show",
+          "at_sec": 13,
+          "delay_from_beat": true
+        },
+        {
+          "type": "subtitle",
+          "at_sec": 13,
+          "track_id": "01"
+        },
+        {
+          "type": "grid_illuminate",
+          "at_sec": 22,
+          "delay_from_beat": true,
+          "anchor_object": "grid_pattern"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 31,
+          "delay_from_beat": true
+        }
+      ]
+    },
+    {
+      "act": 2,
+      "trigger_type": "scene_enter",
+      "trigger_target": "diagram_center",
+      "delay_sec": 0,
+      "duration_sec": 22,
+      "voiceover_track_id": "nova_de_act2_02",
+      "ambient_audio_id": null,
+      "haptic_pattern": "soft_pulse",
+      "ui_overlay": null,
+      "lines": [
+        {
+          "text": "Dann sieht er die drei Meldungen, die wirklich sein München-Projekt betreffen.",
+          "at_sec": 6.5,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Schallschutz-Norm überarbeitet — das ändert die Spezifikation. Lieferkette: Glasverzögerung kommende Woche. München: Signal vom Bauleiter, dass heute die Abstimmung läuft.",
+          "at_sec": 8,
+          "pause_after_sec": 1.2
+        },
+        {
+          "text": "Der Druck fällt ab. Er atmet auf.",
+          "at_sec": 10.5,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Aber die Anspannung bleibt. Weil er weiß: Lieferketten sind nicht einfach, und Normen-Überarbeitungen bedeuten Koordination.",
+          "at_sec": 11.8,
+          "pause_after_sec": 1.3
+        },
+        {
+          "text": "Heute wird es präzise und straff.",
+          "at_sec": 14.2,
+          "pause_after_sec": 0.8
+        }
+      ],
+      "estimated_duration_sec": 16,
+      "cues": [
+        {
+          "type": "subtitle",
+          "at_sec": 6.5,
+          "track_id": "02",
+          "delay_from_beat": true
+        },
+        {
+          "type": "pipeline_diagram_off",
+          "at_sec": 20,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 22,
+          "delay_from_beat": true
+        }
+      ]
+    },
+    {
+      "act": 3,
+      "trigger_type": "look_at",
+      "trigger_target": "monitor_left",
+      "delay_sec": 0,
+      "duration_sec": 42,
+      "voiceover_track_id": "nova_de_act3_02",
+      "ambient_audio_id": null,
+      "haptic_pattern": "soft_pulse",
+      "ui_overlay": {
+        "type": "dashboard",
+        "anchor_object": "monitor_left",
+        "payload": {
+          "source": "checkion.metrics"
+        }
+      },
+      "lines": [
+        {
+          "text": "Da — nicht Konzern-Floskeln. Fassaden-Cases. Cases, die sein München-Projekt treffen, die Schallschutz-Normen und Brandspezifikationen nennen, die er braucht.",
+          "at_sec": 15,
+          "pause_after_sec": 1.2
+        },
+        {
+          "text": "Und die Website zeigt es nicht als Marketing-Show: Technische Tiefe, 84 Prozent vollständig, Planungsunterlagen sichtbar, Normkonformität klar.",
+          "at_sec": 19,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Thomas atmet leise auf. Vielleicht — nur vielleicht — versteht Schott online doch, wer er ist. Nicht der Investor, nicht die Masse. Ein Fassadenplaner, der Klarheit braucht.",
+          "at_sec": 25,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Die Skepsis weicht, aber die Frage bleibt: Reicht das für echte Zusammenarbeit, oder ist es geschicktes Framing?",
+          "at_sec": 32,
+          "pause_after_sec": 0.8
+        }
+      ],
+      "estimated_duration_sec": 16,
+      "cues": [
+        {
+          "type": "overlay_show",
+          "at_sec": 14,
+          "delay_from_beat": true,
+          "anchor_object": "monitor_left"
+        },
+        {
+          "type": "data_viz_animate",
+          "at_sec": 18,
+          "delay_from_beat": true,
+          "anchor_object": "monitor_left"
+        },
+        {
+          "type": "chart_pulse",
+          "at_sec": 23,
+          "delay_from_beat": true,
+          "anchor_object": "monitor_left"
+        },
+        {
+          "type": "sentiment_shift",
+          "at_sec": 28,
+          "anchor_object": "monitor_left",
+          "mode": "in"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 40,
+          "delay_from_beat": true
+        }
+      ]
+    },
+    {
+      "act": 4,
+      "trigger_type": "sit_down",
+      "trigger_target": "office_chair",
+      "delay_sec": 0,
+      "duration_sec": 24,
+      "voiceover_track_id": "nova_de_act4_02",
+      "ambient_audio_id": null,
+      "haptic_pattern": "soft_pulse",
+      "ui_overlay": null,
+      "lines": [
+        {
+          "text": "Morgen: 68 Prozent. Die Informationsflut — Mails, Signale, Anfragen von Lieferanten. Sein Hirn war auf Überload.",
+          "at_sec": 9,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Jetzt, abends, sieht er klarer. Welche Last bleibt real? Welche kann er delegieren oder morgen lösen?",
+          "at_sec": 12,
+          "pause_after_sec": 1.2
+        },
+        {
+          "text": "82 Prozent Klarheit jetzt. Das ist nicht Optimierung — das ist innere Ordnung.",
+          "at_sec": 15,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Er schaut auf die roten Notizen neben seinem Laptop. Die Auszüge von der Website zeigen, wo Schott mit ihm ist — in seinen Normen, seinen Spezifikationen, seinen Fragen.",
+          "at_sec": 18,
+          "pause_after_sec": 1.2
+        },
+        {
+          "text": "Ein Partner, der die Präzision versteht — das ist das, was er braucht.",
+          "at_sec": 21,
+          "pause_after_sec": 1.5
+        }
+      ],
+      "estimated_duration_sec": 16,
+      "cues": [
+        {
+          "type": "metric_reveal",
+          "at_sec": 9,
+          "delay_from_beat": true,
+          "anchor_object": "audion_dashboard_screen"
+        },
+        {
+          "type": "data_viz_animate",
+          "at_sec": 10.5,
+          "delay_from_beat": true
+        },
+        {
+          "type": "overlay_show",
+          "at_sec": 12,
+          "delay_from_beat": true
+        },
+        {
+          "type": "metric_reveal",
+          "at_sec": 15,
+          "delay_from_beat": true,
+          "anchor_object": "red_pen_notes"
+        },
+        {
+          "type": "data_viz_animate",
+          "at_sec": 16.5,
+          "delay_from_beat": true
+        },
+        {
+          "type": "metric_reveal",
+          "at_sec": 18,
+          "delay_from_beat": true,
+          "anchor_object": "checkion_printouts"
+        },
+        {
+          "type": "data_viz_animate",
+          "at_sec": 19.5,
+          "delay_from_beat": true
+        },
+        {
+          "type": "reflection_peak",
+          "at_sec": 21,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 24,
+          "delay_from_beat": true
+        }
+      ]
+    },
+    {
+      "act": 5,
+      "trigger_type": "scene_enter",
+      "trigger_target": "void_space",
+      "delay_sec": 0,
+      "duration_sec": 24,
+      "voiceover_track_id": "nova_de_act5_02",
+      "ambient_audio_id": null,
+      "haptic_pattern": "soft_pulse",
+      "ui_overlay": {
+        "type": "qr_code",
+        "anchor_object": "constellation_lights",
+        "payload": {}
+      },
+      "lines": [
+        {
+          "text": "Drei Lichter im Nichts — sein Morgen-Druck, Schotts Klarheit, seine Ruhe.",
+          "at_sec": 0,
+          "pause_after_sec": 1.8
+        },
+        {
+          "text": "Nicht Baustellen-Optimierung. Nicht Marketing. Technische Tiefe, Zuverlässigkeit, eine Hand, die greift.",
+          "at_sec": 4,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Der QR führt ihn zu den genauen Normen, genau dem Projekt, das ihm morgen Sicherheit gibt.",
+          "at_sec": 7.5,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Schott versteht seinen Tag. Digital. Menschlich. Präzise.",
+          "at_sec": 10,
+          "pause_after_sec": 2.2
+        }
+      ],
+      "estimated_duration_sec": 16,
+      "cues": [
+        {
+          "type": "subtitle",
+          "at_sec": 0,
+          "delay_from_beat": true,
+          "track_id": "02"
+        },
+        {
+          "type": "overlay_transition",
+          "at_sec": 3,
+          "delay_from_beat": true,
+          "anchor_object": "connecting_lines",
+          "mode": "in"
+        },
+        {
+          "type": "emphasis",
+          "at_sec": 7,
+          "delay_from_beat": true,
+          "anchor_object": "constellation_lights"
+        },
+        {
+          "type": "hint_secondary",
+          "at_sec": 11,
+          "delay_from_beat": true,
+          "anchor_object": "qr_anchor"
+        },
+        {
+          "type": "overlay_show",
+          "at_sec": 12,
+          "delay_from_beat": true,
+          "anchor_object": "qr_anchor",
+          "mode": "in"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 24,
+          "delay_from_beat": true
+        }
+      ]
+    }
+  ],
+  "data_layers": {
+    "echeon": {
+      "feed_items": [
+        {
+          "headline": "EN Schallschutz überarbeitet — betrifft deine Fassaden-Spezifikation",
+          "source": "Haufe",
+          "category": "industry",
+          "relevance_score": 0.9,
+          "published_at": "2026-05-22T12:07:09.491Z",
+          "url": null
+        },
+        {
+          "headline": "Lieferkette Glas: Verzögerung, die deinen Montageplan spürbar macht",
+          "source": "SHK Profi",
+          "category": "operations",
+          "relevance_score": 0.85,
+          "published_at": "2026-05-22T12:07:09.491Z",
+          "url": null
+        },
+        {
+          "headline": "München Baustelle: Signal, das heute deine Aufmerksamkeit braucht",
+          "source": "SHK Profi",
+          "category": "regulation",
+          "relevance_score": 0.8,
+          "published_at": "2026-05-22T12:07:09.491Z",
+          "url": null
+        }
+      ],
+      "cache_ttl_sec": 1800
+    },
+    "checkion": {
+      "metrics": [
+        {
+          "label": "Relevanz Website",
+          "value": 78,
+          "unit": "%",
+          "comparison_value": 52,
+          "trend": "up"
+        },
+        {
+          "label": "Technische Tiefe",
+          "value": 84,
+          "unit": "%",
+          "trend": "up"
+        },
+        {
+          "label": "Social Sichtbarkeit",
+          "value": 61,
+          "unit": "%",
+          "trend": "flat"
+        }
+      ]
+    },
+    "audion": {
+      "diegetic_metrics": [
+        {
+          "metric_id": "info_overload_morning",
+          "label": "Morgen-Druck",
+          "value": 68,
+          "unit": "%",
+          "anchor_object": "home_office_laptop",
+          "animation_preset": "pulse_red"
+        },
+        {
+          "metric_id": "evening_clarity",
+          "label": "Abend-Klarheit",
+          "value": 74,
+          "unit": "%",
+          "anchor_object": "desk_lamp",
+          "animation_preset": "glow_warm"
+        }
+      ]
+    },
+    "storyblok": {
+      "page_variant_a_texture": "https://cdn.msqdx.de/persona-reality/storyblok/sick_personalized_v1.png",
+      "page_variant_b_texture": "https://cdn.msqdx.de/persona-reality/storyblok/sick_generic_v1.png"
+    }
+  },
+  "brand_layer": null,
+  "report": {
+    "qr_url": "https://msqdx.de/pr/r/se_schott_glasbau_ingenieur_v8_de",
+    "report_id": "se_schott_glasbau_ingenieur_v8_de"
+  }
+}

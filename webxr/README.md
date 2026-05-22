@@ -7,8 +7,29 @@ Act 2 (Küche) + Act 3 (Office) WebXR prototype. See `../knowledge/persona-reali
 ```bash
 cd TIK/webxr
 npm install
-npm run dev              # http://localhost:5173 — splats from ../image-blaster in dev
+npm run dev              # https://localhost:5173 — splats from ../image-blaster in dev
 ```
+
+## Studio (`/admin`)
+
+Persona-Reality-Sessions aus Zielgruppe + Company erzeugen (Claude + Node compile).
+
+```bash
+# Terminal 1 — API
+cd ../backend && source .venv/bin/activate
+export PYTHONPATH=. && uvicorn app.main:app --reload --port 8000
+
+# Terminal 2 — WebXR + Studio
+VITE_STUDIO_API_BASE=/api npm run dev
+
+# https://localhost:5173/admin
+```
+
+Preview einer fertigen Session: `/?config=/scene_configs/<persona_id>_de.json`
+
+Anker bearbeiten (image-blaster, anderer Port): `https://localhost:5174/<world_slug>/anchors`
+
+Doku: `../knowledge/persona-reality-studio.md`
 
 Optional — iPad companion mock (WebSocket):
 

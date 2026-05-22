@@ -2,7 +2,7 @@ import type { TimelineCue } from '@/schema/narrative-manifest'
 import type { NarrativeBeat } from '@/schema/scene-config'
 import { CueDispatcher } from './CueDispatcher'
 import { VoiceoverLinePlayer } from './VoiceoverLinePlayer'
-import { resolveTrackLines } from './resolveVoiceoverLines'
+import { resolvePlayableTrackId, resolveTrackLines } from './resolveVoiceoverLines'
 import type { NarrativeManifest } from '@/schema/narrative-manifest'
 import type { NarrativeListener } from './narrative-events'
 
@@ -15,6 +15,7 @@ export class ActTimelinePlayer {
     private readonly emit: NarrativeListener,
     private readonly dispatcher: CueDispatcher,
     private readonly manifest: NarrativeManifest | null,
+    private readonly language = 'de',
   ) {}
 
   get beatTimeOrigin() {
@@ -29,14 +30,17 @@ export class ActTimelinePlayer {
 
   onBeatFired(beat: NarrativeBeat, beatCues: TimelineCue[] = []) {
     this.beatAnchorTime = performance.now()
-    const trackId = beat.voiceover_track_id ?? 'unknown'
+    const rawTrackId = beat.voiceover_track_id ?? 'unknown'
+    const trackId = beat.voiceover_track_id
+      ? resolvePlayableTrackId(beat.voiceover_track_id, this.manifest, beat.act)
+      : rawTrackId
     this.linePlayer?.clear()
-    this.linePlayer = new VoiceoverLinePlayer(this.emit, trackId)
+    this.linePlayer = new VoiceoverLinePlayer(this.emit, trackId, this.language)
 
     const lines =
       beat.lines ??
       (beat.voiceover_track_id
-        ? resolveTrackLines(beat.voiceover_track_id, this.manifest)
+        ? resolveTrackLines(beat.voiceover_track_id, this.manifest, beat.act)
         : [])
 
     if (lines.length) {
@@ -44,7 +48,16 @@ export class ActTimelinePlayer {
     }
 
     const merged = [...(beat.cues ?? []), ...beatCues]
-    this.scheduleCues(merged, beat, 0, true)
+    const filtered =
+      lines.length > 0 && beat.voiceover_track_id
+        ? merged.filter(
+            (c) =>
+              c.type !== 'subtitle' ||
+              !c.track_id ||
+              c.track_id !== beat.voiceover_track_id,
+          )
+        : merged
+    this.scheduleCues(filtered, beat, 0, true)
   }
 
   private scheduleCues(

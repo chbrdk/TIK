@@ -43,6 +43,37 @@ describe('CueDispatcher', () => {
     })
   })
 
+  it('dispatches pipeline_diagram for echeon layer', () => {
+    const handler = vi.fn()
+    const dispatcher = new CueDispatcher(handler, minimalConfig, null, 2, () => null)
+    dispatcher.dispatch(
+      {
+        type: 'pipeline_diagram',
+        at_sec: 0,
+        layer: 'echeon',
+        anchor_object: 'diagram_center',
+      },
+      null,
+    )
+    expect(handler).toHaveBeenCalledWith({
+      type: 'pipeline_diagram',
+      layer: 'echeon',
+      active: true,
+      anchorObject: 'diagram_center',
+    })
+  })
+
+  it('dispatches pipeline_diagram_off', () => {
+    const handler = vi.fn()
+    const dispatcher = new CueDispatcher(handler, minimalConfig, null, 2, () => null)
+    dispatcher.dispatch({ type: 'pipeline_diagram_off', at_sec: 20 }, null)
+    expect(handler).toHaveBeenCalledWith({
+      type: 'pipeline_diagram',
+      layer: 'echeon',
+      active: false,
+    })
+  })
+
   it('dispatches act_complete', () => {
     const handler = vi.fn()
     const dispatcher = new CueDispatcher(handler, minimalConfig, null, 1, () => null)

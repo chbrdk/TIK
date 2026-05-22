@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "world": "void-mirror-identity",
+  "environment_id": null,
+  "mode": "world_and_anchors_only",
+  "semantics": {
+    "metric_scale_factor": 0.3104412,
+    "ground_plane_offset": 0.5541389,
+    "flip_y": true
+  },
+  "pipeline": {
+    "generate_3d_objects": false,
+    "generate_sfx": false,
+    "world_prompt_en": "Abstract void space, minimal diffuse light, large reflective mirror surface, engineering silhouette contemplating digital transformation, subtle digital grid overlay, philosophical identity question, 360 immersive void with void_minimal lighting, timeless ethereal atmosphere, cinematic",
+    "splat_tier": "150k"
+  },
+  "anchors": [
+    {
+      "id": "void_mirror",
+      "label": "void mirror",
+      "description": "Center of mirror plane, vertical axis, 1.65m height",
+      "trigger_type": "scene_enter",
+      "trigger_target": "void_mirror",
+      "position": null,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "placement_status": "pending",
+      "evidence": {}
+    }
+  ],
+  "updated_at": "2026-05-22T06:53:42.433Z"
+}

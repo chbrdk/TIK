@@ -1,0 +1,182 @@
+{
+  "act": 1,
+  "blueprint_id": "weber_betriebsleiter_metallverarbeitung_v1_act_01",
+  "persona_id": "weber_betriebsleiter_metallverarbeitung_v1",
+  "story": {
+    "core_message_de": "Identitätswechsel: wer bin ich als Betriebsleiter in dieser Welt? Spiegel, innere Stimme, erste Verantwortung.",
+    "core_message_en": "Dieter Hoffmann stands at the threshold between person and role. In the void—boundless, lightless—he sees his distorted reflection. A voice from nowhere asks: 'Every decision costs time or money. Which will you choose?' The weight of responsibility becomes tangible.",
+    "user_feeling": "Introspection, uncertainty, weight of leadership, threshold moment",
+    "nova_role": "Inner voice, mirror consciousness, guide to the void"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "void-mirror",
+      "prompt_en": "Abstract void space, diffuse light, man in silhouette facing a fractured mirror. Responsibility and uncertainty hanging in darkness. Minimalist, introspective, industrial undertones.",
+      "negative_prompt": "bright factory floor, people working, machinery, cheerful office, daylight",
+      "anchor_placements": [
+        {
+          "anchor_id": "mirror_reflection",
+          "description": "mirror_reflection — from session_arc"
+        }
+      ]
+    },
+    "prop_notes": "No physical props. Pure atmosphere and silhouette. Mirror is metaphorical—distortion and blur are essential."
+  },
+  "environment": {
+    "environment_id": "env_void_mirror",
+    "world_slug": "void-mirror",
+    "scene_concept_de": "Raum ohne Grenzen, Licht und Schatten. Dieter steht in der Mitte, sein Spiegelbild ist unscharf, verschoben — die Last der Entscheidungen, die Spannung zwischen Mensch und Rolle. Stimme aus dem Void: ‚Jede Entscheidung kostet Zeit oder Geld. Welche wählst du?'",
+    "setting_class": "void_threshold",
+    "style_hint": "Minimalist, introspective, industrial undertones, fractured geometry",
+    "region_hint": "Timeless, non-geographic",
+    "time_of_day": "timeless",
+    "lighting_preset": "void_minimal"
+  },
+  "scene_environment": {
+    "act": 1,
+    "environment_id": "env_void_mirror",
+    "world_slug": "void-mirror",
+    "lighting_preset": "void_minimal",
+    "time_of_day": "timeless",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "placeholder",
+    "scene_concept_de": "Raum ohne Grenzen, Licht und Schatten. Dieter steht in der Mitte, sein Spiegelbild ist unscharf, verschoben — die Last der Entscheidungen, die Spannung zwischen Mensch und Rolle. Stimme aus dem Void: ‚Jede Entscheidung kostet Zeit oder Geld. Welche wählst du?'"
+  },
+  "voiceover_tracks": {
+    "nova_de_act1_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Dieter Hoffmann. Betriebsleiter. Werksleiter Metallverarbeitung.",
+          "at_sec": 2,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Dieter Hoffmann, 48 Jahre. Betriebsleiter, Werksleiter Metallverarbeitung. Weber Antriebstechnik GmbH.",
+          "at_sec": 5.5,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Jede Entscheidung kostet Zeit oder Geld.",
+          "at_sec": 9.5,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Welche wählst du?",
+          "at_sec": 11.5,
+          "pause_after_sec": 3
+        }
+      ]
+    }
+  },
+  "act_script": {
+    "act": 1,
+    "target_duration_sec": 18,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "at_sec": 0,
+        "track_id": "01"
+      },
+      {
+        "type": "hint_primary",
+        "at_sec": 2,
+        "anchor_object": "mirror_reflection"
+      },
+      {
+        "type": "ambient_drone",
+        "at_sec": 1,
+        "mode": "in"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 9
+      }
+    ],
+    "beat_cue_templates": {
+      "nova_de_act1_01": [
+        {
+          "type": "overlay_show",
+          "at_sec": 5,
+          "delay_from_beat": true
+        },
+        {
+          "type": "light_shift",
+          "at_sec": 9,
+          "delay_from_beat": true
+        },
+        {
+          "type": "reflection_distort",
+          "at_sec": 11,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 16,
+          "delay_from_beat": true
+        }
+      ]
+    }
+  },
+  "narrative_beat": {
+    "act": 1,
+    "trigger_type": "scene_enter",
+    "trigger_target": "persona_entry",
+    "delay_sec": 0,
+    "duration_sec": 18,
+    "voiceover_track_id": "nova_de_act1_01",
+    "ambient_audio_id": null,
+    "haptic_pattern": "soft_pulse",
+    "ui_overlay": null,
+    "lines": [
+      {
+        "text": "Dieter Hoffmann. Betriebsleiter. Werksleiter Metallverarbeitung.",
+        "at_sec": 2,
+        "pause_after_sec": 1.5
+      },
+      {
+        "text": "Dieter Hoffmann, 48 Jahre. Betriebsleiter, Werksleiter Metallverarbeitung. Weber Antriebstechnik GmbH.",
+        "at_sec": 5.5,
+        "pause_after_sec": 2
+      },
+      {
+        "text": "Jede Entscheidung kostet Zeit oder Geld.",
+        "at_sec": 9.5,
+        "pause_after_sec": 1
+      },
+      {
+        "text": "Welche wählst du?",
+        "at_sec": 11.5,
+        "pause_after_sec": 3
+      }
+    ],
+    "estimated_duration_sec": 16,
+    "cues": [
+      {
+        "type": "overlay_show",
+        "at_sec": 5,
+        "delay_from_beat": true
+      },
+      {
+        "type": "light_shift",
+        "at_sec": 9,
+        "delay_from_beat": true
+      },
+      {
+        "type": "reflection_distort",
+        "at_sec": 11,
+        "delay_from_beat": true
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 16,
+        "delay_from_beat": true
+      }
+    ],
+    "_beat_cue_template_key": "nova_de_act1_01"
+  },
+  "data_layer_slice": {}
+}

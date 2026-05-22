@@ -1,0 +1,486 @@
+{
+  "meta": {
+    "scene_id": "se_weber_betriebsleiter_metallverarbeitung_v1_de",
+    "persona_id": "weber_betriebsleiter_metallverarbeitung_v1",
+    "generated_at": "2026-05-22T08:41:54Z",
+    "duration_sec": 300,
+    "language": "de",
+    "client_id": null,
+    "schema_version": "1.0"
+  },
+  "persona": {
+    "id": "weber_betriebsleiter_metallverarbeitung_v1",
+    "display_name": "Dieter Hoffmann",
+    "age": 48,
+    "gender_expression": "male",
+    "location": "Baden-Württemberg, DACH",
+    "occupation": "Betriebsleiter, Werksleiter Metallverarbeitung",
+    "household": "{\"family_status\": \"verheiratet, 2 erwachsene Kinder\", \"commute_time_min\": 25, \"work_intensity\": \"high\"}",
+    "axes": {
+      "sector": "industrial_manufacturing",
+      "life_stage": "established_professional",
+      "tech_affinity": "pragmatic_adopter",
+      "decision_style": "roi_driven",
+      "industry": "metallverarbeitung_automotive_zulieferer"
+    },
+    "pain_points": [
+      "Medienbrüche zwischen ERP/MES und Produktionslinie — Informationsverlust, manuelle Datenerfassung",
+      "Fehlende Echtzeit-Transparenz bei Störungen; Reaktionszeit zu lang, Ursachenanalyse im Nachhinein",
+      "Hoher Prüfdruck bei Kunden-Audits (OEE, Qualität, Traceability); Nachweise müssen schnell vorliegen",
+      "Fachkräftemangel: weniger erfahrenes Personal, höheres Fehlerrisiko, Wissenstransfer schwierig",
+      "Stillstandszeiten kosten Geld; jede Minute zählt, aber Ursachen sind oft unklar oder verspätet bekannt"
+    ],
+    "decision_drivers": [
+      "Bewiesener ROI und schnelle Amortisation — keine Experimente",
+      "Nahtlose Integration in bestehende ERP/MES-Infrastruktur, minimale Disruptionen",
+      "Echtzeit-Sichtbarkeit auf Shopfloor-Ebene (OEE, Störungen, Qualität, Traceability)",
+      "Reduzierte Reaktionszeit bei Problemen; schnellere Ursachenanalyse",
+      "Audit-Readiness: Daten und Nachweise sofort abrufbar, compliance-konform"
+    ]
+  },
+  "avatar": {
+    "avatar_asset_id": "avatar_weber_betriebsleiter_metallverarbeitung_v1_v1",
+    "rpm_avatar_id": "rpm_weber_betriebsleiter_metallverarbeitung_v1_v1",
+    "voice_id_elevenlabs": "el_weber_betriebsleiter_metallverarbeitung_v1_de_v1",
+    "outfit_preset": "business_casual"
+  },
+  "environments": [
+    {
+      "act": 1,
+      "environment_id": "env_void_mirror",
+      "world_slug": "void-mirror",
+      "lighting_preset": "void_minimal",
+      "time_of_day": "timeless",
+      "weather": "clear",
+      "skybox_id": null
+    },
+    {
+      "act": 2,
+      "environment_id": "env_residential_morning_kitchen",
+      "world_slug": "home-morning-kitchen",
+      "lighting_preset": "morning_warm",
+      "time_of_day": "07:15",
+      "weather": "clear",
+      "skybox_id": null
+    },
+    {
+      "act": 3,
+      "environment_id": "env_shopfloor_metalworking_line34",
+      "world_slug": "shopfloor-metalworking-lines",
+      "lighting_preset": "midday_neutral",
+      "time_of_day": "10:45",
+      "weather": "clear",
+      "skybox_id": null
+    },
+    {
+      "act": 4,
+      "environment_id": "env_residential_evening_homeoffice",
+      "world_slug": "home-evening-study",
+      "lighting_preset": "evening_warm",
+      "time_of_day": "20:30",
+      "weather": "clear",
+      "skybox_id": null
+    },
+    {
+      "act": 5,
+      "environment_id": "env_void_constellation",
+      "world_slug": "void-constellation",
+      "lighting_preset": "void_minimal",
+      "time_of_day": "timeless",
+      "weather": "clear",
+      "skybox_id": null
+    }
+  ],
+  "narrative_beats": [
+    {
+      "act": 1,
+      "trigger_type": "scene_enter",
+      "trigger_target": "persona_entry",
+      "delay_sec": 0,
+      "duration_sec": 18,
+      "voiceover_track_id": "nova_de_act1_01",
+      "ambient_audio_id": null,
+      "haptic_pattern": "soft_pulse",
+      "ui_overlay": null,
+      "lines": [
+        {
+          "text": "Dieter Hoffmann. Betriebsleiter. Werksleiter Metallverarbeitung.",
+          "at_sec": 2,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Dieter Hoffmann, 48 Jahre. Betriebsleiter, Werksleiter Metallverarbeitung. Weber Antriebstechnik GmbH.",
+          "at_sec": 5.5,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Jede Entscheidung kostet Zeit oder Geld.",
+          "at_sec": 9.5,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Welche wählst du?",
+          "at_sec": 11.5,
+          "pause_after_sec": 3
+        }
+      ],
+      "estimated_duration_sec": 16,
+      "cues": [
+        {
+          "type": "overlay_show",
+          "at_sec": 5,
+          "delay_from_beat": true
+        },
+        {
+          "type": "light_shift",
+          "at_sec": 9,
+          "delay_from_beat": true
+        },
+        {
+          "type": "reflection_distort",
+          "at_sec": 11,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 16,
+          "delay_from_beat": true
+        }
+      ]
+    },
+    {
+      "act": 2,
+      "trigger_type": "pickup",
+      "trigger_target": "tablet_with_echeon_app",
+      "delay_sec": 0,
+      "duration_sec": 24,
+      "voiceover_track_id": "nova_de_act2_01",
+      "ambient_audio_id": null,
+      "haptic_pattern": "soft_pulse",
+      "ui_overlay": {
+        "type": "news_feed",
+        "anchor_object": "tablet_on_table",
+        "payload": {
+          "feed_source": "echeon.feed_items"
+        }
+      },
+      "lines": [
+        {
+          "text": "Dieter sitzt in der Küche, Kaffee wird kalt. Sein Tablet leuchtet auf — echeon zeigt den Shopfloor, auch wenn er noch zu Hause ist.",
+          "at_sec": 0,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Linie 3: 23 Minuten Stillstand gestern. Grund: unklar. Das ist die Art von Information, die den Morgen sofort verändern kann.",
+          "at_sec": 4.5,
+          "pause_after_sec": 2.5
+        },
+        {
+          "text": "Dieter kennt jeden Stillstand. Er kennt auch den Preis. Jede Minute ist sichtbar, jetzt sofort, noch bevor er sein Auto startet.",
+          "at_sec": 9.5,
+          "pause_after_sec": 3
+        }
+      ],
+      "estimated_duration_sec": 16,
+      "cues": [
+        {
+          "type": "overlay_show",
+          "at_sec": 3,
+          "delay_from_beat": true
+        },
+        {
+          "type": "data_viz_reveal",
+          "at_sec": 7,
+          "delay_from_beat": true
+        },
+        {
+          "type": "haptic_trigger",
+          "at_sec": 6.5,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 24,
+          "delay_from_beat": true
+        }
+      ]
+    },
+    {
+      "act": 3,
+      "trigger_type": "proximity",
+      "trigger_target": "shopfloor_work_station",
+      "delay_sec": 0,
+      "duration_sec": 32,
+      "voiceover_track_id": "nova_de_act3_01",
+      "ambient_audio_id": null,
+      "haptic_pattern": "soft_pulse",
+      "ui_overlay": {
+        "type": "dashboard",
+        "anchor_object": "mobile_terminal_checkion",
+        "payload": {
+          "source": "checkion.metrics"
+        }
+      },
+      "lines": [
+        {
+          "text": "Dieter Hoffmann betritt die Halle. Die Maschinen laufen, die Schicht ist in vollem Gange.",
+          "at_sec": 0
+        },
+        {
+          "text": "Er spricht mit dem Schichtleiter: ‚Was ist gestern bei der Störung los gewesen?'",
+          "at_sec": 4
+        },
+        {
+          "text": "Der Schichtleiter zeigt auf dem checkion-Terminal: ‚Hier – Sensor-Fehler erkannt um 22:47. Ursache: Verschmutzung. Wir haben's nachts noch repariert.'",
+          "at_sec": 9,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Die Transparenz ist plötzlich da. Dieter Hoffmann sieht, dass die Fehlserie hätte vermieden werden können.",
+          "at_sec": 13
+        },
+        {
+          "text": "Eine schnelle Reaktion hätte Zeit und Material gespart. Aber wer hätte es gewusst – ohne diese Daten?",
+          "at_sec": 18
+        },
+        {
+          "text": "checkion zeigt nicht nur das Problem, sondern auch, wie teuer die Verzögerung war.",
+          "at_sec": 23,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Das ist die Last der Transparenz: Entscheidungen werden sichtbar. Und jede Sekunde zählt.",
+          "at_sec": 26
+        }
+      ],
+      "estimated_duration_sec": 16,
+      "cues": [
+        {
+          "type": "overlay_show",
+          "at_sec": 9,
+          "delay_from_beat": true
+        },
+        {
+          "type": "data_metric_highlight",
+          "at_sec": 13,
+          "delay_from_beat": true,
+          "anchor_object": "mobile_terminal_checkion"
+        },
+        {
+          "type": "data_metric_highlight",
+          "at_sec": 18,
+          "delay_from_beat": true,
+          "anchor_object": "mobile_terminal_checkion"
+        },
+        {
+          "type": "overlay_fade",
+          "at_sec": 30,
+          "delay_from_beat": true,
+          "mode": "out"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 32,
+          "delay_from_beat": true
+        }
+      ]
+    },
+    {
+      "act": 4,
+      "trigger_type": "sit_down",
+      "trigger_target": "home_desk_chair",
+      "delay_sec": 0,
+      "duration_sec": 32,
+      "voiceover_track_id": "nova_de_act4_04",
+      "ambient_audio_id": null,
+      "haptic_pattern": "soft_pulse",
+      "ui_overlay": null,
+      "lines": [
+        {
+          "text": "Der Tag ist vorbei. Die Daten liegen vor mir.",
+          "at_sec": 2,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "OEE 78 Prozent. Nicht schlecht, aber nicht gut genug.",
+          "at_sec": 5.5,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Und da — Linie 3. Verschmutzungs-Fehler. Alle zwei Wochen. Immer zur gleichen Zeit.",
+          "at_sec": 9.5,
+          "pause_after_sec": 2.5
+        },
+        {
+          "text": "Das habe ich gefühlt. Jetzt kann ich es beweisen.",
+          "at_sec": 13.5,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Die Wartung muss anders rhythmisiert werden. Präventiv, nicht reaktiv.",
+          "at_sec": 17.5,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Dieter Hoffmann, du weißt jetzt, wo es weh tut. Und wie man es heilt.",
+          "at_sec": 21,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Nächste Woche mit dem Schichtleiter. Ein Plan entsteht.",
+          "at_sec": 25,
+          "pause_after_sec": 1
+        }
+      ],
+      "estimated_duration_sec": 16,
+      "cues": [
+        {
+          "type": "metric_highlight",
+          "at_sec": 5,
+          "delay_from_beat": true,
+          "anchor_object": "laptop_with_audion_dashboard"
+        },
+        {
+          "type": "data_transition",
+          "at_sec": 9,
+          "delay_from_beat": true,
+          "anchor_object": "laptop_with_audion_dashboard"
+        },
+        {
+          "type": "insight_pulse",
+          "at_sec": 13,
+          "delay_from_beat": true,
+          "anchor_object": "laptop_with_audion_dashboard"
+        },
+        {
+          "type": "overlay_show",
+          "at_sec": 21,
+          "delay_from_beat": true,
+          "anchor_object": "notepad_and_pen"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 30,
+          "delay_from_beat": true
+        }
+      ]
+    },
+    {
+      "act": 5,
+      "trigger_type": "look_at",
+      "trigger_target": "closing_beacon",
+      "delay_sec": 0,
+      "duration_sec": 28,
+      "voiceover_track_id": "nova_de_act5_01",
+      "ambient_audio_id": null,
+      "haptic_pattern": "soft_pulse",
+      "ui_overlay": {
+        "type": "qr_code",
+        "anchor_object": "qr_code_or_light_beacon",
+        "payload": {}
+      },
+      "lines": [
+        {
+          "text": "Eine Schicht ist vorbei. Dieter Hoffmann, Betriebsleiter bei Weber Antriebstechnik GmbH, hält in diesem Moment alle Fäden in der Hand.",
+          "at_sec": 0,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Die echeon-Alerts vom Morgen. Die checkion-Befunde vom Mittag. Die audion-Erkenntnisse vom Abend.",
+          "at_sec": 3,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Jeder Datenpunkt ist eine Antwort. Jede Antwort führt zu einer besseren Frage.",
+          "at_sec": 7,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Morgen wird er es besser wissen. Nicht weil er alles perfekt macht, sondern weil er heute sieht, was möglich ist.",
+          "at_sec": 10,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Ein Lichtstern erscheint — eine Einladung, tiefer einzusteigen. Nicht in neue Technologie um der Technologie willen.",
+          "at_sec": 14,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Sondern in die Kontinuität: echeon, checkion, audion — ein Kreis, der sich morgen aufs Neue öffnet.",
+          "at_sec": 17,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Die Reise endet hier nicht. Sie wird nur tiefer.",
+          "at_sec": 21,
+          "pause_after_sec": 1
+        }
+      ],
+      "estimated_duration_sec": 16,
+      "cues": [
+        {
+          "type": "overlay_show",
+          "at_sec": 7,
+          "delay_from_beat": true
+        },
+        {
+          "type": "qr_or_beacon_activate",
+          "at_sec": 14,
+          "delay_from_beat": true,
+          "anchor_object": "closing_beacon"
+        },
+        {
+          "type": "haptic_trigger",
+          "at_sec": 21,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_closure",
+          "at_sec": 28,
+          "delay_from_beat": true
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 36
+        }
+      ]
+    }
+  ],
+  "data_layers": {
+    "echeon": {
+      "feed_items": [],
+      "cache_ttl_sec": 1800
+    },
+    "checkion": {
+      "metrics": [
+        {
+          "label": "Sichtbarkeit",
+          "value": 72,
+          "unit": "%",
+          "trend": "up"
+        }
+      ]
+    },
+    "audion": {
+      "diegetic_metrics": [
+        {
+          "metric_id": "metric_1",
+          "label": "Wert",
+          "value": 50,
+          "unit": "%",
+          "anchor_object": "laptop_with_audion_dashboard",
+          "animation_preset": "glow_warm"
+        }
+      ]
+    },
+    "storyblok": {
+      "page_variant_a_texture": "https://cdn.msqdx.de/persona-reality/storyblok/sick_personalized_v1.png",
+      "page_variant_b_texture": "https://cdn.msqdx.de/persona-reality/storyblok/sick_generic_v1.png"
+    }
+  },
+  "brand_layer": null,
+  "report": {
+    "qr_url": "https://msqdx.de/pr/r/se_weber_betriebsleiter_metallverarbeitung_v1_de",
+    "report_id": "se_weber_betriebsleiter_metallverarbeitung_v1_de"
+  }
+}

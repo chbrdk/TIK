@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "blueprint_id": "act-03_weber_checkion_shopfloor_v1",
+    "schema_version": "1.0",
+    "language": "de",
+    "product_layer": "checkion"
+  },
+  "act": 3,
+  "story": {
+    "core_message_de": "Um 10:45 in der Werkhalle, Linie 3–4: Dieter sieht auf dem checkion-Terminal, dass die gestrige Störung um 22:47 durch Sensorfehler (Verschmutzung) verursacht wurde. Die Transparenz macht das Unsichtbare sichtbar — aber jede Entscheidung, wie schnell man reagiert, kostet oder spart Geld.",
+    "core_message_en": "10:45 on the shopfloor, line 3–4: Dieter sees on the checkion terminal that yesterday's failure at 22:47 was caused by sensor contamination. Transparency reveals the invisible — but every decision about speed of response directly impacts cost and production.",
+    "user_feeling": "alert, purposeful, cautiously empowered — the data is there, but the weight of real decisions remains",
+    "nova_role": "embedded_expert"
+  },
+  "environment": {
+    "environment_id": "env_shopfloor_metalworking_line34",
+    "world_slug": "shopfloor-metalworking-lines",
+    "scene_concept_de": "Werkhalle, Linie 3–4, Morgenshift in vollem Gange. Schichtleiter mit mobilem checkion-Terminal in der Hand, Prüfer mit Tablet in der Nähe. Drehmaschinen und Fräsmaschinen laufen, Summen und Klacken der Produktion. Im Hintergrund Spanreste auf dem Boden, Geruch von Kühlmittel. Sicherheits-Warnwesten sichtbar. Dieter kommt herein, fragt nach der gestrigen Störung. Der Schichtleiter zeigt auf dem Screen: ‚Sensor-Fehler erkannt um 22:47, Ursache: Verschmutzung. Wir haben's nachts repariert.'",
+    "setting_class": "industrial_floor",
+    "style_hint": "realistic_industrial_documentary",
+    "region_hint": "Baden-Württemberg_DACH",
+    "time_of_day": "10:45",
+    "lighting_preset": "midday_neutral"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "shopfloor-metalworking-lines",
+      "prompt_en": "Industrial shopfloor with CNC turning and milling lines in active morning shift. Shift supervisor in safety vest holding mobile checkion terminal displaying quality data and sensor logs. Precision components on fixtures, metal chips and coolant smell evident. Fluorescent overhead lighting, machine noise, workers focused on their stations. Plant manager in background observing the terminal data. Realistic factory atmosphere, technical precision visible.",
+      "negative_prompt": "empty factory, after-hours quiet, office environment, clean white walls, abstract digital interface only, no workers present, bright clean laboratory, sterile boardroom, desk-only setup, no machinery, no safety equipment",
+      "anchor_placements": [
+        {
+          "anchor_id": "mobile_terminal_checkion",
+          "description": "Primary interaction anchor for shopfloor-metalworking-lines"
+        }
+      ]
+    },
+    "prop_notes": "Mobile checkion terminal (industrial tablet form factor, ruggedized, screen showing traceability log with timestamp 22:47 and sensor-error data). Tablet held by quality inspector. Safety vests on all personnel. Metal chips and coolant residue visible on floor near machines."
+  },
+  "voiceover": {
+    "pre_beat_tracks": [],
+    "beat_track": {
+      "track_id_suffix": "01",
+      "estimated_duration_sec": 16.0,
+      "lines": [
+        {
+          "text": "{{persona.display_name}} betritt die Halle. Die Maschinen laufen, die Schicht ist in vollem Gange.",
+          "at_sec": 0.0
+        },
+        {
+          "text": "Er spricht mit dem Schichtleiter: ‚Was ist gestern bei der Störung los gewesen?'",
+          "at_sec": 4.0
+        },
+        {
+          "text": "Der Schichtleiter zeigt auf dem checkion-Terminal: ‚Hier – Sensor-Fehler erkannt um 22:47. Ursache: Verschmutzung. Wir haben's nachts noch repariert.'",
+          "at_sec": 9.0,
+          "pause_after_sec": 2.0
+        },
+        {
+          "text": "Die Transparenz ist plötzlich da. {{persona.display_name}} sieht, dass die Fehlserie hätte vermieden werden können.",
+          "at_sec": 13.0
+        },
+        {
+          "text": "Eine schnelle Reaktion hätte Zeit und Material gespart. Aber wer hätte es gewusst – ohne diese Daten?",
+          "at_sec": 18.0
+        },
+        {
+          "text": "checkion zeigt nicht nur das Problem, sondern auch, wie teuer die Verzögerung war.",
+          "at_sec": 23.0,
+          "pause_after_sec": 1.0
+        },
+        {
+          "text": "Das ist die Last der Transparenz: Entscheidungen werden sichtbar. Und jede Sekunde zählt.",
+          "at_sec": 26.0
+        }
+      ]
+    }
+  },
+  "interaction": {
+    "trigger_type": "look_at",
+    "trigger_target": "shopfloor_work_station",
+    "primary_anchor": "mobile_terminal_checkion",
+    "delay_sec": 0,
+    "haptic_pattern": "soft_pulse"
+  },
+  "data_viz": {
+    "mode": "checkion_chart",
+    "checkion_chart": {
+      "chart_type": "bar_3d",
+      "metrics": [
+        {
+          "label": "Sichtbarkeit",
+          "value": 72.0,
+          "unit": "%",
+          "trend": "up"
+        }
+      ]
+    }
+  },
+  "timeline": {
+    "target_duration_sec": 32.0,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "at_sec": 0.0,
+        "track_id": "01"
+      },
+      {
+        "type": "hint_primary",
+        "at_sec": 9.0,
+        "anchor_object": "mobile_terminal_checkion"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 17.0
+      }
+    ],
+    "beat_cue_templates": [
+      {
+        "type": "overlay_show",
+        "at_sec": 9.0,
+        "delay_from_beat": true
+      },
+      {
+        "type": "data_metric_highlight",
+        "at_sec": 13.0,
+        "delay_from_beat": true,
+        "anchor_object": "mobile_terminal_checkion"
+      },
+      {
+        "type": "data_metric_highlight",
+        "at_sec": 18.0,
+        "delay_from_beat": true,
+        "anchor_object": "mobile_terminal_checkion"
+      },
+      {
+        "type": "overlay_fade",
+        "at_sec": 30.0,
+        "delay_from_beat": true,
+        "mode": "out"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 32.0,
+        "delay_from_beat": true
+      }
+    ]
+  }
+}

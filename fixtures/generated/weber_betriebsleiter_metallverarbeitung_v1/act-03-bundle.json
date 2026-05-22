@@ -1,0 +1,230 @@
+{
+  "act": 3,
+  "blueprint_id": "act-03_weber_checkion_shopfloor_v1",
+  "persona_id": "weber_betriebsleiter_metallverarbeitung_v1",
+  "story": {
+    "core_message_de": "Realität: Shopfloor ist chaotisch, dringend, menschlich. checkion macht das Unsichtbare sichtbar — aber die Entscheidungen sind immer noch hart.",
+    "core_message_en": "10:45 on the shopfloor, line 3–4: Dieter sees on the checkion terminal that yesterday's failure at 22:47 was caused by sensor contamination. Transparency reveals the invisible — but every decision about speed of response directly impacts cost and production.",
+    "user_feeling": "alert, purposeful, cautiously empowered — the data is there, but the weight of real decisions remains",
+    "nova_role": "embedded_expert"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "shopfloor-metalworking-lines",
+      "prompt_en": "Industrial shopfloor with CNC machines, turning and milling lines. Morning shift active, workers in safety vests. Mobile terminal held by shift supervisor showing quality data and traceability logs. Fluorescent overhead lights, machine noise, metal chips and coolant smell. Realistic factory atmosphere, precision components visible on fixtures.",
+      "negative_prompt": "empty factory, after-hours quiet, office setting, clean white walls, abstract digital interface, no workers, bright clean lab, boardroom",
+      "anchor_placements": [
+        {
+          "anchor_id": "mobile_terminal_checkion",
+          "description": "mobile_terminal_checkion — from session_arc"
+        }
+      ]
+    },
+    "prop_notes": "Mobile checkion terminal (industrial tablet form factor, ruggedized, screen showing traceability log with timestamp 22:47 and sensor-error data). Tablet held by quality inspector. Safety vests on all personnel. Metal chips and coolant residue visible on floor near machines."
+  },
+  "environment": {
+    "environment_id": "env_shopfloor_metalworking_line34",
+    "world_slug": "shopfloor-metalworking-lines",
+    "scene_concept_de": "Werkhalle, Linie 3–4, Morgenshift in vollem Gange. Schichtleiter an einem mobilen checkion-Terminal, Prüfer mit Tablet in der Hand. Im Hintergrund Drehmaschinen, Fräsmaschinen, das Summen und Klacken der Produktion. Dieter kommt herein, spricht mit dem Schichtleiter: ‚Was ist gestern bei der Störung los gewesen?' Der Schichtleiter zeigt auf dem checkion-Screen: ‚Hier, Sensor-Fehler erkannt um 22:47, Cause: Verschmutzung. Wir haben's nachts noch repariert.' Die Transparenz ist plötzlich da — und Dieter sieht auch, dass die Fehlserie vermeidbar gewesen wäre. Spanreste auf dem Boden, der Geruch von Kühlmittel, Sicherheits-Warnwesten.",
+    "setting_class": "industrial_floor",
+    "style_hint": "realistic_industrial_documentary",
+    "region_hint": "Baden-Württemberg_DACH",
+    "time_of_day": "10:45",
+    "lighting_preset": "midday_neutral"
+  },
+  "scene_environment": {
+    "act": 3,
+    "environment_id": "env_shopfloor_metalworking_line34",
+    "world_slug": "shopfloor-metalworking-lines",
+    "lighting_preset": "midday_neutral",
+    "time_of_day": "10:45",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "splat",
+    "scene_concept_de": "Werkhalle, Linie 3–4, Morgenshift in vollem Gange. Schichtleiter an einem mobilen checkion-Terminal, Prüfer mit Tablet in der Hand. Im Hintergrund Drehmaschinen, Fräsmaschinen, das Summen und Klacken der Produktion. Dieter kommt herein, spricht mit dem Schichtleiter: ‚Was ist gestern bei der Störung los gewesen?' Der Schichtleiter zeigt auf dem checkion-Screen: ‚Hier, Sensor-Fehler erkannt um 22:47, Cause: Verschmutzung. Wir haben's nachts noch repariert.' Die Transparenz ist plötzlich da — und Dieter sieht auch, dass die Fehlserie vermeidbar gewesen wäre. Spanreste auf dem Boden, der Geruch von Kühlmittel, Sicherheits-Warnwesten."
+  },
+  "voiceover_tracks": {
+    "nova_de_act3_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Dieter Hoffmann betritt die Halle. Die Maschinen laufen, die Schicht ist in vollem Gange.",
+          "at_sec": 0
+        },
+        {
+          "text": "Er spricht mit dem Schichtleiter: ‚Was ist gestern bei der Störung los gewesen?'",
+          "at_sec": 4
+        },
+        {
+          "text": "Der Schichtleiter zeigt auf dem checkion-Terminal: ‚Hier – Sensor-Fehler erkannt um 22:47. Ursache: Verschmutzung. Wir haben's nachts noch repariert.'",
+          "at_sec": 9,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Die Transparenz ist plötzlich da. Dieter Hoffmann sieht, dass die Fehlserie hätte vermieden werden können.",
+          "at_sec": 13
+        },
+        {
+          "text": "Eine schnelle Reaktion hätte Zeit und Material gespart. Aber wer hätte es gewusst – ohne diese Daten?",
+          "at_sec": 18
+        },
+        {
+          "text": "checkion zeigt nicht nur das Problem, sondern auch, wie teuer die Verzögerung war.",
+          "at_sec": 23,
+          "pause_after_sec": 1
+        },
+        {
+          "text": "Das ist die Last der Transparenz: Entscheidungen werden sichtbar. Und jede Sekunde zählt.",
+          "at_sec": 26
+        }
+      ]
+    }
+  },
+  "act_script": {
+    "act": 3,
+    "target_duration_sec": 32,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "at_sec": 0,
+        "track_id": "01"
+      },
+      {
+        "type": "hint_primary",
+        "at_sec": 9,
+        "anchor_object": "mobile_terminal_checkion"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 17
+      }
+    ],
+    "beat_cue_templates": {
+      "nova_de_act3_01": [
+        {
+          "type": "overlay_show",
+          "at_sec": 9,
+          "delay_from_beat": true
+        },
+        {
+          "type": "data_metric_highlight",
+          "at_sec": 13,
+          "delay_from_beat": true,
+          "anchor_object": "mobile_terminal_checkion"
+        },
+        {
+          "type": "data_metric_highlight",
+          "at_sec": 18,
+          "delay_from_beat": true,
+          "anchor_object": "mobile_terminal_checkion"
+        },
+        {
+          "type": "overlay_fade",
+          "at_sec": 30,
+          "delay_from_beat": true,
+          "mode": "out"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 32,
+          "delay_from_beat": true
+        }
+      ]
+    }
+  },
+  "narrative_beat": {
+    "act": 3,
+    "trigger_type": "proximity",
+    "trigger_target": "shopfloor_work_station",
+    "delay_sec": 0,
+    "duration_sec": 32,
+    "voiceover_track_id": "nova_de_act3_01",
+    "ambient_audio_id": null,
+    "haptic_pattern": "soft_pulse",
+    "ui_overlay": {
+      "type": "dashboard",
+      "anchor_object": "mobile_terminal_checkion",
+      "payload": {
+        "source": "checkion.metrics"
+      }
+    },
+    "lines": [
+      {
+        "text": "Dieter Hoffmann betritt die Halle. Die Maschinen laufen, die Schicht ist in vollem Gange.",
+        "at_sec": 0
+      },
+      {
+        "text": "Er spricht mit dem Schichtleiter: ‚Was ist gestern bei der Störung los gewesen?'",
+        "at_sec": 4
+      },
+      {
+        "text": "Der Schichtleiter zeigt auf dem checkion-Terminal: ‚Hier – Sensor-Fehler erkannt um 22:47. Ursache: Verschmutzung. Wir haben's nachts noch repariert.'",
+        "at_sec": 9,
+        "pause_after_sec": 2
+      },
+      {
+        "text": "Die Transparenz ist plötzlich da. Dieter Hoffmann sieht, dass die Fehlserie hätte vermieden werden können.",
+        "at_sec": 13
+      },
+      {
+        "text": "Eine schnelle Reaktion hätte Zeit und Material gespart. Aber wer hätte es gewusst – ohne diese Daten?",
+        "at_sec": 18
+      },
+      {
+        "text": "checkion zeigt nicht nur das Problem, sondern auch, wie teuer die Verzögerung war.",
+        "at_sec": 23,
+        "pause_after_sec": 1
+      },
+      {
+        "text": "Das ist die Last der Transparenz: Entscheidungen werden sichtbar. Und jede Sekunde zählt.",
+        "at_sec": 26
+      }
+    ],
+    "estimated_duration_sec": 16,
+    "cues": [
+      {
+        "type": "overlay_show",
+        "at_sec": 9,
+        "delay_from_beat": true
+      },
+      {
+        "type": "data_metric_highlight",
+        "at_sec": 13,
+        "delay_from_beat": true,
+        "anchor_object": "mobile_terminal_checkion"
+      },
+      {
+        "type": "data_metric_highlight",
+        "at_sec": 18,
+        "delay_from_beat": true,
+        "anchor_object": "mobile_terminal_checkion"
+      },
+      {
+        "type": "overlay_fade",
+        "at_sec": 30,
+        "delay_from_beat": true,
+        "mode": "out"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 32,
+        "delay_from_beat": true
+      }
+    ],
+    "_beat_cue_template_key": "nova_de_act3_01"
+  },
+  "data_layer_slice": {
+    "checkion": {
+      "metrics": [
+        {
+          "label": "Sichtbarkeit",
+          "value": 72,
+          "unit": "%",
+          "trend": "up"
+        }
+      ]
+    }
+  }
+}

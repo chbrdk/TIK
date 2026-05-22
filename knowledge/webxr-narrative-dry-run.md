@@ -1,6 +1,6 @@
 # WebXR Narrative Dry-Run Checklist
 
-Stand: Mai 2026 · Klaus DE golden session ohne ElevenLabs-Audio.
+Stand: Mai 2026 · Mit ElevenLabs-MP3 unter `webxr/public/voiceovers/de/<track_id>.mp3`.
 
 ## Voraussetzungen
 
@@ -30,6 +30,13 @@ Quest: `https://<LAN-IP>:5173`
 | Merged config | `fixtures/golden/klaus_dortmund_de.json` |
 | Runtime | `webxr/public/scene_configs/` + `webxr/public/narrative/` |
 
-## Nächster Schritt (nach Dry-Run)
+## NOVA-Audio (ElevenLabs)
 
-ElevenLabs-Batch → `webxr/public/voiceovers/de/<track_id>.mp3` (Phase 5, separater Sprint).
+1. Admin → Stories → **NOVA-Sprache** → Spuren generieren (`ELEVENLABS_*` in `backend/.env`).
+2. MP3s liegen unter `webxr/public/voiceovers/de/`.
+3. WebXR: `VoiceoverLinePlayer` spielt MP3 + Untertitel parallel; ohne Datei → nur Untertitel-Timing wie bisher.
+
+| Asset | Pfad |
+|-------|------|
+| MP3 | `webxr/public/voiceovers/de/<track_id>.mp3` |
+| URL-Helfer | `webxr/src/config/voiceover-audio.ts` |

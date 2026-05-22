@@ -1,0 +1,243 @@
+{
+  "act": 4,
+  "blueprint_id": "weber_betriebsleiter_act04_audion_reflection",
+  "persona_id": "weber_betriebsleiter_metallverarbeitung_v1",
+  "story": {
+    "core_message_de": "Innere Last und Rückblick: Der Tag ist vorbei, aber die Fragen bleiben. audion erlaubt Reflexion und Planung — ein Moment für sich selbst.",
+    "core_message_en": "Evening at home office desk: Dieter reviews the day's audion analysis. OEE graphs, error heatmaps, and trend data on the laptop screen. Printed shift reports scattered nearby. The day's uncertainty crystallizes into clarity: contamination errors on Line 3 follow a two-week cycle—maintenance timing must change. A moment of reflection before he writes a note: 'Preventive maintenance Line 3 — discuss with shift leader next week.'",
+    "user_feeling": "reflective, analytical, gaining agency",
+    "nova_role": "audion acts as Dieter's thinking partner, surfacing patterns he sensed but couldn't prove, validating his instincts and translating data into actionable next steps"
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "home-evening-study",
+      "prompt_en": "Cozy home study corner in evening light. Man in comfortable casual clothes sitting at small desk with open laptop showing analytics dashboard (OEE, error heatmaps, trend graphs). Printed shift reports and notepad beside laptop. Warm desk lamp. Window showing evening cityscape or quiet landscape. Cup of coffee on desk. Reflective, analytical atmosphere.",
+      "negative_prompt": "bright open-plan office, conference room, factory floor, multiple people in meeting, artificial harsh lighting, computer lab, nightshift warehouse, crowded space",
+      "anchor_placements": [
+        {
+          "anchor_id": "laptop_with_audion_dashboard",
+          "description": "laptop_with_audion_dashboard — from session_arc"
+        }
+      ]
+    },
+    "prop_notes": "Audion dashboard on laptop is the visual centerpiece. Data should be legible but not overwhelming: OEE percentage (e.g., 78%), error timeline showing the two-week contamination cycle on Line 3, trend arrows. Printed reports and notepad ground the scene in both analog and digital work. Cold coffee cup is a poignant detail—Dieter has been thinking for hours."
+  },
+  "environment": {
+    "environment_id": "env_residential_evening_homeoffice",
+    "world_slug": "home-evening-study",
+    "scene_concept_de": "Wohnzimmer oder Homeoffice-Ecke, Abendlicht (Sonnenuntergang oder künstliche Beleuchtung). Dieter sitzt im Sessel oder am kleinen Schreibtisch, Laptop vor sich. audion-Auswertung auf dem Bildschirm: OEE-Graph, Fehler-Heatmap, Trends. Daneben liegen ausgedruckte Schichten-Reports, eine Notiz-Block, eine Tasse kalter Kaffee. Durch das Fenster die Lichter der Stadt oder die stillen Felder. Er ruft sich den Moment von morgens in Erinnerung — die Notification, die Frage ‚warum'. Jetzt hat er die Antwort, aber auch neue Einsichten: die Verschmutzung-Fehler tritt alle 2 Wochen auf, die Wartung muss anders rhythmisiert werden. Er macht sich eine Notiz: ‚Präventiv-Wartung Linie 3 — nächste Woche mit Schichtleiter besprechen.' Der Abend ist privat, aber der Verstand ist noch im Werk.",
+    "setting_class": "residential_evening",
+    "style_hint": "warm, introspective, data-focused, late-afternoon domestic calm",
+    "region_hint": "Baden-Württemberg home, understated comfort, traces of industrial work (printed reports, coffee cup)",
+    "time_of_day": "20:30",
+    "lighting_preset": "evening_warm"
+  },
+  "scene_environment": {
+    "act": 4,
+    "environment_id": "env_residential_evening_homeoffice",
+    "world_slug": "home-evening-study",
+    "lighting_preset": "evening_warm",
+    "time_of_day": "20:30",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "splat",
+    "scene_concept_de": "Wohnzimmer oder Homeoffice-Ecke, Abendlicht (Sonnenuntergang oder künstliche Beleuchtung). Dieter sitzt im Sessel oder am kleinen Schreibtisch, Laptop vor sich. audion-Auswertung auf dem Bildschirm: OEE-Graph, Fehler-Heatmap, Trends. Daneben liegen ausgedruckte Schichten-Reports, eine Notiz-Block, eine Tasse kalter Kaffee. Durch das Fenster die Lichter der Stadt oder die stillen Felder. Er ruft sich den Moment von morgens in Erinnerung — die Notification, die Frage ‚warum'. Jetzt hat er die Antwort, aber auch neue Einsichten: die Verschmutzung-Fehler tritt alle 2 Wochen auf, die Wartung muss anders rhythmisiert werden. Er macht sich eine Notiz: ‚Präventiv-Wartung Linie 3 — nächste Woche mit Schichtleiter besprechen.' Der Abend ist privat, aber der Verstand ist noch im Werk."
+  },
+  "voiceover_tracks": {
+    "nova_de_act4_04": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Der Tag ist vorbei. Die Daten liegen vor mir.",
+          "at_sec": 2,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "OEE 78 Prozent. Nicht schlecht, aber nicht gut genug.",
+          "at_sec": 5.5,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Und da — Linie 3. Verschmutzungs-Fehler. Alle zwei Wochen. Immer zur gleichen Zeit.",
+          "at_sec": 9.5,
+          "pause_after_sec": 2.5
+        },
+        {
+          "text": "Das habe ich gefühlt. Jetzt kann ich es beweisen.",
+          "at_sec": 13.5,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Die Wartung muss anders rhythmisiert werden. Präventiv, nicht reaktiv.",
+          "at_sec": 17.5,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Dieter Hoffmann, du weißt jetzt, wo es weh tut. Und wie man es heilt.",
+          "at_sec": 21,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Nächste Woche mit dem Schichtleiter. Ein Plan entsteht.",
+          "at_sec": 25,
+          "pause_after_sec": 1
+        }
+      ]
+    }
+  },
+  "act_script": {
+    "act": 4,
+    "target_duration_sec": 32,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "at_sec": 0,
+        "track_id": "nova_de_act4_04"
+      },
+      {
+        "type": "hint_primary",
+        "at_sec": 1.5,
+        "anchor_object": "laptop_with_audion_dashboard"
+      },
+      {
+        "type": "data_viz_show",
+        "at_sec": 3,
+        "anchor_object": "laptop_with_audion_dashboard"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 11
+      }
+    ],
+    "beat_cue_templates": {
+      "nova_de_act4_04": [
+        {
+          "type": "metric_highlight",
+          "at_sec": 5,
+          "delay_from_beat": true,
+          "anchor_object": "laptop_with_audion_dashboard"
+        },
+        {
+          "type": "data_transition",
+          "at_sec": 9,
+          "delay_from_beat": true,
+          "anchor_object": "laptop_with_audion_dashboard"
+        },
+        {
+          "type": "insight_pulse",
+          "at_sec": 13,
+          "delay_from_beat": true,
+          "anchor_object": "laptop_with_audion_dashboard"
+        },
+        {
+          "type": "overlay_show",
+          "at_sec": 21,
+          "delay_from_beat": true,
+          "anchor_object": "notepad_and_pen"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 30,
+          "delay_from_beat": true
+        }
+      ]
+    }
+  },
+  "narrative_beat": {
+    "act": 4,
+    "trigger_type": "sit_down",
+    "trigger_target": "home_desk_chair",
+    "delay_sec": 0,
+    "duration_sec": 32,
+    "voiceover_track_id": "nova_de_act4_04",
+    "ambient_audio_id": null,
+    "haptic_pattern": "soft_pulse",
+    "ui_overlay": null,
+    "lines": [
+      {
+        "text": "Der Tag ist vorbei. Die Daten liegen vor mir.",
+        "at_sec": 2,
+        "pause_after_sec": 1.5
+      },
+      {
+        "text": "OEE 78 Prozent. Nicht schlecht, aber nicht gut genug.",
+        "at_sec": 5.5,
+        "pause_after_sec": 2
+      },
+      {
+        "text": "Und da — Linie 3. Verschmutzungs-Fehler. Alle zwei Wochen. Immer zur gleichen Zeit.",
+        "at_sec": 9.5,
+        "pause_after_sec": 2.5
+      },
+      {
+        "text": "Das habe ich gefühlt. Jetzt kann ich es beweisen.",
+        "at_sec": 13.5,
+        "pause_after_sec": 2
+      },
+      {
+        "text": "Die Wartung muss anders rhythmisiert werden. Präventiv, nicht reaktiv.",
+        "at_sec": 17.5,
+        "pause_after_sec": 1.5
+      },
+      {
+        "text": "Dieter Hoffmann, du weißt jetzt, wo es weh tut. Und wie man es heilt.",
+        "at_sec": 21,
+        "pause_after_sec": 2
+      },
+      {
+        "text": "Nächste Woche mit dem Schichtleiter. Ein Plan entsteht.",
+        "at_sec": 25,
+        "pause_after_sec": 1
+      }
+    ],
+    "estimated_duration_sec": 16,
+    "cues": [
+      {
+        "type": "metric_highlight",
+        "at_sec": 5,
+        "delay_from_beat": true,
+        "anchor_object": "laptop_with_audion_dashboard"
+      },
+      {
+        "type": "data_transition",
+        "at_sec": 9,
+        "delay_from_beat": true,
+        "anchor_object": "laptop_with_audion_dashboard"
+      },
+      {
+        "type": "insight_pulse",
+        "at_sec": 13,
+        "delay_from_beat": true,
+        "anchor_object": "laptop_with_audion_dashboard"
+      },
+      {
+        "type": "overlay_show",
+        "at_sec": 21,
+        "delay_from_beat": true,
+        "anchor_object": "notepad_and_pen"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 30,
+        "delay_from_beat": true
+      }
+    ],
+    "_beat_cue_template_key": "nova_de_act4_04"
+  },
+  "data_layer_slice": {
+    "audion": {
+      "diegetic_metrics": [
+        {
+          "metric_id": "metric_1",
+          "label": "Wert",
+          "value": 50,
+          "unit": "%",
+          "anchor_object": "laptop_with_audion_dashboard",
+          "animation_preset": "glow_warm"
+        }
+      ]
+    }
+  }
+}

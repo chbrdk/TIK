@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "narrative_preview",
+  "provider": "google-gemini",
+  "model": "gemini-2.5-flash-image",
+  "status": "completed",
+  "submitted_at": "2026-05-22T08:58:07Z",
+  "prompt": "Empty photorealistic environment plate for 3D Gaussian splat world generation. Architecture and atmosphere only: walls, floors, windows, lighting, materials, generic furniture without narrative staging. No people, no human silhouettes, no faces, no hands. No readable text, logos, UI screens, dashboards, or QR codes. Wide establishing interior or exterior view, clean sightlines, 360-friendly. Setting:\nCozy home study corner in warm evening light. Man in mid-forties, casual comfortable clothes, sitting at small desk with open laptop displaying audion analytics dashboard: OEE graph, error heatmap, trend visualizations in soft blue and amber tones. Printed shift reports and notepad with pen beside laptop. Warm desk lamp casting soft glow. Window behind showing evening cityscape or quiet landscape with distant lights. Cup of coffee on desk, slightly cold. Reflective, contemplative atmosphere. Analog and digital tools mixed. Soft evening shadows.\nSpatial layout (architecture only, do not add people or story props): Wohnzimmer oder Homeoffice-Ecke, Abendlicht. Dieter sitzt im Sessel oder am kleinen Schreibtisch, Laptop vor sich. audion-Auswertung auf dem Bildschirm: OEE-Graph, Fehler-Heatmap, Trends. Ausgedruckte Schichten-Reports und Notiz-Block neben dem Laptop. Warme Schreibtischlampe. Durch das Fenster die Lichter der Stadt oder die stillen Felder. Tasse kalter Kaffee auf dem Tisch. Privater Raum, aber der Verstand noch im Werk.\n Output style: empty architectural reference photo for world capture, not a movie still with actors or a marketing scene with models.\n\nAvoid: people, person, human figure, silhouette, crowd, portrait, face, hands, readable text, logo, watermark, UI overlay, HUD, dashboard on screen, speech bubble, comic panel, storyboard, cinematic action scene, multiple focal characters, product advertisement with model, bright open-plan office, conference room, factory floor, multiple people, artificial harsh overhead lighting, computer lab environment, night",
+  "act": 4,
+  "persona_id": "weber_betriebsleiter_metallverarbeitung_v1",
+  "world_slug": "home-evening-study",
+  "output": "act-04.png"
+}

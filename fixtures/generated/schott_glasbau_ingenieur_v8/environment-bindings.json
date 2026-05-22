@@ -1,0 +1,57 @@
+[
+  {
+    "act": 1,
+    "environment_id": "env_void_mirror_identity_v1",
+    "world_slug": "void-mirror-identity",
+    "lighting_preset": "void_minimal",
+    "time_of_day": "timeless",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "placeholder",
+    "scene_concept_de": "Void-Spiegel, diffuses Licht. Digitales Abbild — Entscheidungsmuster, Pain Points, Werte der Zielgruppe Glasfassaden-Ingenieur."
+  },
+  {
+    "act": 2,
+    "environment_id": "env_void_digital_particles_v1",
+    "world_slug": null,
+    "lighting_preset": "void_digital_cool",
+    "time_of_day": "07:20",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "placeholder",
+    "scene_concept_de": "Abstraktes Void mit fliegenden Lichtpunkten. 3D-Metapher: Signalwolke → Filter → drei Headlines (Norm, Lieferant, München). Keine Küche — nur digitales Gefühl."
+  },
+  {
+    "act": 3,
+    "environment_id": "env_schott_homeoffice_digital_v1",
+    "world_slug": "schott-homeoffice-evening",
+    "lighting_preset": "midday_neutral",
+    "time_of_day": "11:45",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "splat",
+    "scene_concept_de": "Homeoffice-Ecke, 11:45, Tageslicht. Monitor zeigt Schott-Website — personalisierte Fassaden-Cases vs. generische Startseite."
+  },
+  {
+    "act": 4,
+    "environment_id": "env_schott_homeoffice_evening_v1",
+    "world_slug": "schott-homeoffice-evening",
+    "lighting_preset": "evening_warm",
+    "time_of_day": "20:30",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "splat",
+    "scene_concept_de": "Homeoffice 20:30, warme Lampe. Laptop: innere Tagesbilanz (Druck, Klarheit) — Gefühl, nicht Baustellen-Optimierung. Notizbuch, ruhige Familie im Hintergrund."
+  },
+  {
+    "act": 5,
+    "environment_id": "env_void_constellation_closure_v1",
+    "world_slug": "void-constellation-closure",
+    "lighting_preset": "void_minimal",
+    "time_of_day": "timeless",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "placeholder",
+    "scene_concept_de": "Void-Konstellation, drei Lichtmomente (Morgen/Website/Abend). QR zu personalisiertem Schott-Content."
+  }
+]

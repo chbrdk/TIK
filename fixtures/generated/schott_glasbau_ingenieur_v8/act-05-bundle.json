@@ -1,0 +1,249 @@
+{
+  "act": 5,
+  "blueprint_id": "schott_glasbau_ingenieur_v8_act_05",
+  "persona_id": "schott_glasbau_ingenieur_v8",
+  "story": {
+    "core_message_de": "Abschluss: Ruhe und Zugehörigkeit — der Tag als Gefühlskette: überfordert, fokussiert, überrascht, reflektiert. Schott kennt ihn digital.",
+    "core_message_en": "Abends am Esstisch in der Vorstadt Stuttgart: Thomas atmet auf. Der Tag war eine Kette — überfordert morgens, fokussiert mittags, überrascht von Schotts Tiefe, jetzt reflektiv. Drei Lichter: sein Druck, Schotts Klarheit, seine Ruhe. Das Gefühl: Ich bin nicht allein in dieser Komplexität. Ein QR führt zu personalisiertem Schott-Content — genau die Norm, genau das Projekt, das ihm morgen Sicherheit gibt.",
+    "user_feeling": "Thomas sitzt erschöpft, aber geklärt da. Der Tag hat ihn durchgeschüttelt — zu viele Signale, zu viele Abstimmungen — doch in dieser Stille merkt er: Schott versteht seine Sprache. Nicht Baustellen-Optimierung, nicht Marketing-Glanz: technische Tiefe, Zuverlässigkeit, eine Hand, die greift. Er fühlt sich gesehen.",
+    "nova_role": "Die stille Stimme der Anerkennung — die seinen Tag benannt hat, ohne ihn zu überfordern. NOVA begleitet ihn in diese Void-Konstellation und zeigt: Deine Last ist Muster, dein Morgen-Druck ist Design, Schott kennt dich digital."
+  },
+  "image_prompts": {
+    "splat_world": {
+      "slug_hint": "void-constellation-closure",
+      "prompt_en": "Abstract void constellation space, three luminous orbs connected by subtle flowing lines morning midday evening mood, soft warm and cool light balance, contemplative stillness, timeless infinite expanse, 360 void closure serene",
+      "negative_prompt": "office, home, outdoor, daytime, people, construction, industrial, bright daylight, specific location",
+      "anchor_placements": [
+        {
+          "anchor_id": "constellation_lights",
+          "description": "constellation_lights — from session_arc"
+        },
+        {
+          "anchor_id": "connecting_lines",
+          "description": "connecting_lines — from session_arc"
+        },
+        {
+          "anchor_id": "soft_glow",
+          "description": "soft_glow — from session_arc"
+        }
+      ]
+    },
+    "prop_notes": "No physical props in splat. WebXR anchors will overlay: (1) three luminous orbs with dynamic subtle glow animation, (2) connecting lines with soft particle flow, (3) QR code for closure interaction. All elements should feel ethereal, not solid — void-native."
+  },
+  "environment": {
+    "environment_id": "env_void_constellation_closure_v1",
+    "world_slug": "void-constellation-closure",
+    "scene_concept_de": "Void-Konstellation, drei Lichtmomente (Morgen/Website/Abend). QR zu personalisiertem Schott-Content.",
+    "setting_class": "void_closure",
+    "style_hint": "Abstract, minimalist, contemplative void space with three luminous focal points",
+    "region_hint": "Timeless, non-geographic — emotional landscape",
+    "time_of_day": "timeless",
+    "lighting_preset": "void_minimal"
+  },
+  "scene_environment": {
+    "act": 5,
+    "environment_id": "env_void_constellation_closure_v1",
+    "world_slug": "void-constellation-closure",
+    "lighting_preset": "void_minimal",
+    "time_of_day": "timeless",
+    "weather": "clear",
+    "skybox_id": null,
+    "kind": "placeholder",
+    "scene_concept_de": "Void-Konstellation, drei Lichtmomente (Morgen/Website/Abend). QR zu personalisiertem Schott-Content."
+  },
+  "voiceover_tracks": {
+    "nova_de_act5_01": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Der Tag war ein Seil. Morgens zu viele Enden gleichzeitig.",
+          "at_sec": 0,
+          "pause_after_sec": 1.2
+        },
+        {
+          "text": "Dann kam Klarheit — Schott kennt seine Sprache.",
+          "at_sec": 3,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Jetzt, abends: Thomas atmet auf. Nicht allein mit der Last.",
+          "at_sec": 6,
+          "pause_after_sec": 2
+        }
+      ]
+    },
+    "nova_de_act5_02": {
+      "speaker": "nova",
+      "estimated_duration_sec": 16,
+      "lines": [
+        {
+          "text": "Drei Lichter im Nichts — sein Morgen-Druck, Schotts Klarheit, seine Ruhe.",
+          "at_sec": 0,
+          "pause_after_sec": 1.8
+        },
+        {
+          "text": "Nicht Baustellen-Optimierung. Nicht Marketing. Technische Tiefe, Zuverlässigkeit, eine Hand, die greift.",
+          "at_sec": 4,
+          "pause_after_sec": 2
+        },
+        {
+          "text": "Der QR führt ihn zu den genauen Normen, genau dem Projekt, das ihm morgen Sicherheit gibt.",
+          "at_sec": 7.5,
+          "pause_after_sec": 1.5
+        },
+        {
+          "text": "Schott versteht seinen Tag. Digital. Menschlich. Präzise.",
+          "at_sec": 10,
+          "pause_after_sec": 2.2
+        }
+      ]
+    }
+  },
+  "act_script": {
+    "act": 5,
+    "target_duration_sec": 24,
+    "ambient_audio_id": null,
+    "pre_beat_cues": [
+      {
+        "type": "subtitle",
+        "at_sec": 0,
+        "track_id": "01"
+      },
+      {
+        "type": "overlay_show",
+        "at_sec": 1.5,
+        "anchor_object": "constellation_lights"
+      },
+      {
+        "type": "hint_primary",
+        "at_sec": 4,
+        "anchor_object": "soft_glow"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 12
+      }
+    ],
+    "beat_cue_templates": {
+      "nova_de_act5_02": [
+        {
+          "type": "subtitle",
+          "at_sec": 0,
+          "delay_from_beat": true,
+          "track_id": "02"
+        },
+        {
+          "type": "overlay_transition",
+          "at_sec": 3,
+          "delay_from_beat": true,
+          "anchor_object": "connecting_lines",
+          "mode": "in"
+        },
+        {
+          "type": "emphasis",
+          "at_sec": 7,
+          "delay_from_beat": true,
+          "anchor_object": "constellation_lights"
+        },
+        {
+          "type": "hint_secondary",
+          "at_sec": 11,
+          "delay_from_beat": true,
+          "anchor_object": "qr_anchor"
+        },
+        {
+          "type": "overlay_show",
+          "at_sec": 12,
+          "delay_from_beat": true,
+          "anchor_object": "qr_anchor",
+          "mode": "in"
+        },
+        {
+          "type": "act_advance",
+          "at_sec": 24,
+          "delay_from_beat": true
+        }
+      ]
+    }
+  },
+  "narrative_beat": {
+    "act": 5,
+    "trigger_type": "scene_enter",
+    "trigger_target": "void_space",
+    "delay_sec": 0,
+    "duration_sec": 24,
+    "voiceover_track_id": "nova_de_act5_02",
+    "ambient_audio_id": null,
+    "haptic_pattern": "soft_pulse",
+    "ui_overlay": {
+      "type": "qr_code",
+      "anchor_object": "constellation_lights",
+      "payload": {}
+    },
+    "lines": [
+      {
+        "text": "Drei Lichter im Nichts — sein Morgen-Druck, Schotts Klarheit, seine Ruhe.",
+        "at_sec": 0,
+        "pause_after_sec": 1.8
+      },
+      {
+        "text": "Nicht Baustellen-Optimierung. Nicht Marketing. Technische Tiefe, Zuverlässigkeit, eine Hand, die greift.",
+        "at_sec": 4,
+        "pause_after_sec": 2
+      },
+      {
+        "text": "Der QR führt ihn zu den genauen Normen, genau dem Projekt, das ihm morgen Sicherheit gibt.",
+        "at_sec": 7.5,
+        "pause_after_sec": 1.5
+      },
+      {
+        "text": "Schott versteht seinen Tag. Digital. Menschlich. Präzise.",
+        "at_sec": 10,
+        "pause_after_sec": 2.2
+      }
+    ],
+    "estimated_duration_sec": 16,
+    "cues": [
+      {
+        "type": "subtitle",
+        "at_sec": 0,
+        "delay_from_beat": true,
+        "track_id": "02"
+      },
+      {
+        "type": "overlay_transition",
+        "at_sec": 3,
+        "delay_from_beat": true,
+        "anchor_object": "connecting_lines",
+        "mode": "in"
+      },
+      {
+        "type": "emphasis",
+        "at_sec": 7,
+        "delay_from_beat": true,
+        "anchor_object": "constellation_lights"
+      },
+      {
+        "type": "hint_secondary",
+        "at_sec": 11,
+        "delay_from_beat": true,
+        "anchor_object": "qr_anchor"
+      },
+      {
+        "type": "overlay_show",
+        "at_sec": 12,
+        "delay_from_beat": true,
+        "anchor_object": "qr_anchor",
+        "mode": "in"
+      },
+      {
+        "type": "act_advance",
+        "at_sec": 24,
+        "delay_from_beat": true
+      }
+    ],
+    "_beat_cue_template_key": "nova_de_act5_02"
+  },
+  "data_layer_slice": {}
+}

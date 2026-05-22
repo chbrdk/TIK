@@ -17,7 +17,7 @@ export class CueDispatcher {
     switch (cue.type) {
       case 'subtitle': {
         if (!cue.track_id) break
-        const lines = resolveTrackLines(cue.track_id, this.manifest)
+        const lines = resolveTrackLines(cue.track_id, this.manifest, this.act)
         if (lines.length) {
           const line = lines.find((l) => l.at_sec === cue.at_sec) ?? lines[0]
           this.emit({
@@ -72,6 +72,25 @@ export class CueDispatcher {
           type: 'chart_dashboard',
           visible: false,
           anchorObject: cue.anchor_object,
+        })
+        break
+      case 'pipeline_diagram': {
+        const layer = cue.layer === 'audion' || cue.layer === 'checkion' || cue.layer === 'cms'
+          ? cue.layer
+          : 'echeon'
+        this.emit({
+          type: 'pipeline_diagram',
+          layer,
+          active: true,
+          anchorObject: cue.anchor_object ?? 'diagram_center',
+        })
+        break
+      }
+      case 'pipeline_diagram_off':
+        this.emit({
+          type: 'pipeline_diagram',
+          layer: 'echeon',
+          active: false,
         })
         break
       case 'diegetic_metric':

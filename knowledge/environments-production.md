@@ -20,6 +20,16 @@ Anker-Namen müssen exakt in `anchors.json` / `scene_config` übereinstimmen.
 
 ## Workflow pro Raum (Beispiel Act 2 Küche)
 
+### Prompt-Quelle (Studio-Pipeline)
+
+Bei `generate_worlds: true` nutzt `worlds_step` in dieser Reihenfolge:
+
+1. `fixtures/act-blueprints/{persona}/act-0N.json` → `image_prompts.splat_world.prompt_en` + `negative_prompt` (als „Avoid:“ angehängt)
+2. `persona_profile.session_arc.acts[].splat_prompt_en`
+3. generischer Slug-Fallback
+
+Anker-Init weiterhin mit `--from-act-blueprint` derselben Act-Datei.
+
 ### 1. World generieren (image-blaster)
 
 ```bash

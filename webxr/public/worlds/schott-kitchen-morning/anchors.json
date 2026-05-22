@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "world": "schott-kitchen-morning",
+  "environment_id": null,
+  "mode": "world_and_anchors_only",
+  "semantics": {
+    "metric_scale_factor": 0.84592295,
+    "ground_plane_offset": 1.0607282,
+    "flip_y": true
+  },
+  "pipeline": {
+    "generate_3d_objects": false,
+    "generate_sfx": false,
+    "world_prompt_en": "Photorealistic modern kitchen breakfast nook, warm golden sunlight streaming through large window, tablet on dining table displaying echeon feed with technical notifications, printed facade elevation sheets with red markup annotations, steaming coffee cup, technical notebook with hand-written notes, Stuttgart suburban garden hint outside, cozy lived-in engineer home, 360 interior photorealism",
+    "splat_tier": "150k"
+  },
+  "anchors": [
+    {
+      "id": "kitchen_tablet",
+      "label": "kitchen tablet",
+      "description": "Tablet on dining table displaying echeon feed with technical notifications",
+      "trigger_type": "pickup",
+      "trigger_target": "kitchen_tablet",
+      "position": null,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "placement_status": "pending",
+      "evidence": {}
+    },
+    {
+      "id": "facade_print_on_table",
+      "label": "facade print on table",
+      "description": "Printed facade elevation sheets with red markup for mounting requirements",
+      "trigger_type": "look_at",
+      "trigger_target": "facade_print_on_table",
+      "position": null,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "placement_status": "pending",
+      "evidence": {}
+    },
+    {
+      "id": "window_morning_light",
+      "label": "window morning light",
+      "description": "Large window with warm golden morning light, suburban garden view",
+      "trigger_type": "look_at",
+      "trigger_target": "window_morning_light",
+      "position": null,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "placement_status": "pending",
+      "evidence": {}
+    },
+    {
+      "id": "coffee_cup",
+      "label": "coffee cup",
+      "description": "Steaming coffee cup on table near tablet",
+      "trigger_type": "look_at",
+      "trigger_target": "coffee_cup",
+      "position": null,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "placement_status": "pending",
+      "evidence": {}
+    },
+    {
+      "id": "technical_notes_pad",
+      "label": "technical notes pad",
+      "description": "Technical notebook with hand-written project notes",
+      "trigger_type": "look_at",
+      "trigger_target": "technical_notes_pad",
+      "position": null,
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "placement_status": "pending",
+      "evidence": {}
+    }
+  ],
+  "updated_at": "2026-05-22T06:59:10.321Z"
+}

@@ -40,6 +40,9 @@ Für Messe/WebXR **kein** voller IMAGE-BLAST mit 3D-Objekten. Skill: `image-blas
 node .claude/scripts/world/generate-world.mjs --world <slug> --prompt "..." --image worlds/<slug>/source/...
 
 # Anker aus Act-Blueprint
+Aufräumen alter Welten (nur `schott_glasbau_ingenieur_v8`-Slugs): `scripts/cleanup-worlds.sh` im image-blaster-Repo; in TIK zusätzlich `scripts/cleanup-webxr-worlds.sh`.
+
+```bash
 node .claude/scripts/world-anchors/init-anchors.mjs --world <slug> \
   --from-act-blueprint ../TIK/fixtures/act-blueprints/<persona>/act-02.json \
   --environment-id env_kitchen_lived_in_dach_v1

@@ -1,0 +1,17 @@
+{
+  "slug": "void-mirror-identity",
+  "environment_id": "void-mirror-identity",
+  "splat_url": "/worlds/void-mirror-identity/splat.spz",
+  "splat_tier": "150k",
+  "collider_url": "/worlds/void-mirror-identity/collider.glb",
+  "semantics": {
+    "metric_scale_factor": 0.3104412,
+    "ground_plane_offset": 0.5541389,
+    "flip_y": true
+  },
+  "mode": "world_and_anchors_only",
+  "anchors": [],
+  "anchors_pending": [
+    "void_mirror"
+  ]
+}
